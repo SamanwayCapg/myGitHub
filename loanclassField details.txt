@@ -47,3 +47,6 @@ public ServiceType Occupation { get; set; } //user input
 public int ServiceYears { get; set; } //user input 
 public double GrossIncome { get; set; } // user input 
 public double SalaryDeductions { get; set; } //user input
+
+
+///carloan completed without any compilation error on 17sept night
