@@ -1,0 +1,13 @@
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Entities.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Exceptions.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Entities.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Exceptions.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Newtonsoft.Json.xml
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.csprojResolveAssemblyReference.cache
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.pdb

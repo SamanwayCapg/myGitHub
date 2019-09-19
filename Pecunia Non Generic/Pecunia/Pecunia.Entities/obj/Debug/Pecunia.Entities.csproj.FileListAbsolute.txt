@@ -1,0 +1,9 @@
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Entities\obj\Debug\Pecunia.Entities.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Entities\obj\Debug\Pecunia.Entities.csproj.CoreCompileInputs.cache
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Entities\bin\Debug\Pecunia.Entities.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Entities\bin\Debug\Pecunia.Entities.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Entities\bin\Debug\Newtonsoft.Json.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Entities\bin\Debug\Newtonsoft.Json.xml
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Entities\obj\Debug\Pecunia.Entities.csprojResolveAssemblyReference.cache
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Entities\obj\Debug\Pecunia.Entities.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Entities\obj\Debug\Pecunia.Entities.pdb
