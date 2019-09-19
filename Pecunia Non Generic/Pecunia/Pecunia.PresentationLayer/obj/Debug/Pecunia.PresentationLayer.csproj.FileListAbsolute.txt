@@ -16,3 +16,19 @@ E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.PresentationLayer\bin\D
 E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
 E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.PresentationLayer\obj\Debug\Pecunia.PresentationLayer.exe
 E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.PresentationLayer\obj\Debug\Pecunia.PresentationLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\obj\Debug\Pecunia.PresentationLayer.csprojResolveAssemblyReference.cache
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\obj\Debug\Pecunia.PresentationLayer.exe
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\obj\Debug\Pecunia.PresentationLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.PresentationLayer.exe.config
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.PresentationLayer.exe
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.PresentationLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.DataAccessLayer.pdb

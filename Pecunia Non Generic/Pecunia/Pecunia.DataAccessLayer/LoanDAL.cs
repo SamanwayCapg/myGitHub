@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Pecunia.DataAccessLayer
 {
-    public interface ILoanDAL
+   /* public interface ILoanDAL
     {
         bool ApplyLoanDAL<T>(T obj);
         LoanStatus GetLoanStatusDAL<T>(string loanID);
@@ -14,27 +14,27 @@ namespace Pecunia.DataAccessLayer
         Object ApproveLoanDAL<T>(string loanID, LoanStatus updatedStatus);
         Object GetLoanByLoanID_DAL<T>(string loanID);
         
-    }
+    }*/
 
 
 
 
-    public class EduLoanDAL : ILoanDAL
+    public class EduLoanDAL// : ILoanDAL
     {
         public static List<EduLoan> EduLoans;
 
-        public bool ApplyLoanDAL<T>(T obj)
+        public bool ApplyLoanDAL(EduLoan edu)
         {
-            EduLoan edu = (EduLoan)(object)obj;
+            //EduLoan edu = (EduLoan)(object)obj;
             List<EduLoan> loanList = DeserializeFromJSON("EduLoans.txt");
             loanList.Add(edu);
             return SerializeIntoJSON(loanList, "EduLoans.txt");
         }
 
-        public Object ApproveLoanDAL<T>(string loanID, LoanStatus updatedStatus)
+        public EduLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            foreach (var Loan in eduLoans)
+            foreach (EduLoan Loan in eduLoans)
             {
                 if (Loan.LoanID == loanID)
                 {
@@ -45,10 +45,10 @@ namespace Pecunia.DataAccessLayer
             return default(EduLoan);
         }
 
-        public Object GetLoanByCustomerID_DAL<T>(string customerID)
+        public EduLoan GetLoanByCustomerID_DAL(string customerID)
         {
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            foreach (var Loan in eduLoans)
+            foreach (EduLoan Loan in eduLoans)
             {
                 if (Loan.CustomerID == customerID)
                     return Loan;
@@ -56,10 +56,10 @@ namespace Pecunia.DataAccessLayer
             return default(EduLoan);
         }
 
-        public Object GetLoanByLoanID_DAL<T>(string loanID)
+        public EduLoan GetLoanByLoanID_DAL(string loanID)
         {
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            foreach (var Loan in eduLoans)
+            foreach (EduLoan Loan in eduLoans)
             {
                 if (Loan.LoanID == loanID)
                     return Loan;
@@ -67,10 +67,10 @@ namespace Pecunia.DataAccessLayer
             return default(EduLoan);
         }
 
-        public LoanStatus GetLoanStatusDAL<T>(string loanID)
+        public LoanStatus GetLoanStatusDAL(string loanID)
         {
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            foreach (var Loan in eduLoans)
+            foreach (EduLoan Loan in eduLoans)
             {
                 if (Loan.LoanID == loanID)
                     return Loan.Status;
@@ -86,13 +86,20 @@ namespace Pecunia.DataAccessLayer
 
         public static bool SerializeIntoJSON(List<EduLoan> eduLoans, string fileName)
         {
-            JsonSerializer serializer = new JsonSerializer();
-            using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
-            using (StreamWriter sw = new StreamWriter(fs))   //filename is used so that we can have access over our own file
-            using (JsonWriter writer = new JsonTextWriter(sw))
+            try
             {
-                serializer.Serialize(writer, eduLoans);
-                return true;
+                JsonSerializer serializer = new JsonSerializer();
+                using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+                using (StreamWriter sw = new StreamWriter(fs))   //filename is used so that we can have access over our own file
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    serializer.Serialize(writer, eduLoans);
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -107,21 +114,21 @@ namespace Pecunia.DataAccessLayer
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class CarLoanDAL : ILoanDAL
+    public class CarLoanDAL //: ILoanDAL
     {
         public static List<CarLoan> CarLoans;
-        public bool ApplyLoanDAL<T>(T obj)
+        public bool ApplyLoanDAL(CarLoan car)
         {
-            CarLoan car = (CarLoan)(object)obj;
+            //CarLoan car = (CarLoan)(object)obj;
             List<CarLoan> loanList = DeserializeFromJSON("CarLoans.txt");
             loanList.Add(car);
             return SerializeIntoJSON(loanList, "CarLoans.txt");
         }
 
-        public Object ApproveLoanDAL<T>(string loanID, LoanStatus updatedStatus)
+        public CarLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
-            foreach(var Loan in carLoans)
+            foreach(CarLoan Loan in carLoans)
             {
                 if (Loan.LoanID == loanID)
                 {
@@ -132,10 +139,10 @@ namespace Pecunia.DataAccessLayer
             return default(CarLoan);
         }
 
-        public Object GetLoanByCustomerID_DAL<T>(string customerID)
+        public CarLoan GetLoanByCustomerID_DAL(string customerID)
         {
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
-            foreach (var Loan in carLoans)
+            foreach (CarLoan Loan in carLoans)
             {
                 if (Loan.CustomerID == customerID)
                     return Loan;
@@ -143,10 +150,10 @@ namespace Pecunia.DataAccessLayer
             return default(CarLoan);
         }
 
-        public Object GetLoanByLoanID_DAL<T>(string loanID)
+        public CarLoan GetLoanByLoanID_DAL(string loanID)
         {
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
-            foreach (var Loan in carLoans)
+            foreach (CarLoan Loan in carLoans)
             {
                 if (Loan.LoanID == loanID)
                     return Loan;
@@ -154,10 +161,10 @@ namespace Pecunia.DataAccessLayer
             return default(CarLoan);
         }
 
-        public LoanStatus GetLoanStatusDAL<T>(string loanID)
+        public LoanStatus GetLoanStatusDAL(string loanID)
         {
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
-            foreach (var Loan in carLoans)
+            foreach (CarLoan Loan in carLoans)
             {
                 if (Loan.LoanID == loanID)
                     return Loan.Status;
@@ -173,15 +180,21 @@ namespace Pecunia.DataAccessLayer
 
         public static bool SerializeIntoJSON(List<CarLoan> CarLoans, string fileName)
         {
-
+            try
+            {
                 JsonSerializer serializer = new JsonSerializer();
                 using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
                 using (StreamWriter sw = new StreamWriter(fs))   //filename is used so that we can have access over our own file
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
-                    serializer.Serialize(writer, CarLoans); 
+                    serializer.Serialize(writer, CarLoans);
                     return true;
                 }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public List<CarLoan> ListAllLoans()
@@ -194,22 +207,22 @@ namespace Pecunia.DataAccessLayer
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public class HomeLoanDAL : ILoanDAL
+    public class HomeLoanDAL //: ILoanDAL
     {
         public static List<HomeLoan> HomeLoans;
 
-        public bool ApplyLoanDAL<T>(T obj)
+        public bool ApplyLoanDAL(HomeLoan home)
         {
-            HomeLoan home = (HomeLoan)(object)obj;
-            List<HomeLoan> loanList = DeserializeFromJSON("HomeLoans.txt");
+            //List<HomeLoan> loanList = new List<HomeLoan>();
+            var loanList = DeserializeFromJSON("HomeLoans.txt");
             loanList.Add(home);
             return SerializeIntoJSON(loanList, "HomeLoans.txt");
         }
 
-        public Object ApproveLoanDAL<T>(string loanID, LoanStatus updatedStatus)
+        public HomeLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
-            foreach (var Loan in homeLoans)
+            foreach (HomeLoan Loan in homeLoans)
             {
                 if (Loan.LoanID == loanID)
                 {
@@ -220,10 +233,10 @@ namespace Pecunia.DataAccessLayer
             return default(HomeLoan);
         }
 
-        public Object GetLoanByCustomerID_DAL<T>(string customerID)
+        public HomeLoan GetLoanByCustomerID_DAL(string customerID)
         {
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
-            foreach (var Loan in homeLoans)
+            foreach (HomeLoan Loan in homeLoans)
             {
                 if (Loan.CustomerID == customerID)
                     return Loan;
@@ -231,10 +244,10 @@ namespace Pecunia.DataAccessLayer
             return default(HomeLoan);
         }
 
-        public Object GetLoanByLoanID_DAL<T>(string loanID)
+        public HomeLoan GetLoanByLoanID_DAL(string loanID)
         {
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
-            foreach (var Loan in homeLoans)
+            foreach (HomeLoan Loan in homeLoans)
             {
                 if (Loan.LoanID == loanID)
                     return Loan;
@@ -242,10 +255,10 @@ namespace Pecunia.DataAccessLayer
             return default(HomeLoan);
         }
 
-        public LoanStatus GetLoanStatusDAL<T>(string loanID)
+        public LoanStatus GetLoanStatusDAL(string loanID)
         {
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
-            foreach (var Loan in homeLoans)
+            foreach (HomeLoan Loan in homeLoans)
             {
                 if (Loan.LoanID == loanID)
                     return Loan.Status;

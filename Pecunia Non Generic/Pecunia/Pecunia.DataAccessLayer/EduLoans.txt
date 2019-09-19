@@ -1,0 +1,1 @@
+[{"LoanID":00000000000000,"CustomerID":0000000000000,"AmountApplied":0,"InterestRate":0,"EMI_Amount":0,"RepaymentPeriod":0,"DateOfApplication":0,"Status":INVALID,"Course":OTHERS,"InstituteName":ABC,"StudentID":123,"RepaymentHoliday":0}]

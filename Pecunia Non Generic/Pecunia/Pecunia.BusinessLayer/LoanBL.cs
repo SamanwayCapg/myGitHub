@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 namespace Pecunia.BusinessLayer
-{
+{/*
     public  interface ILoanBL
     {
         bool ApplyLoanBL<T> (T obj);
@@ -18,15 +18,16 @@ namespace Pecunia.BusinessLayer
         
 
     }
+    */
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class EduLoanBL : ILoanBL
+    public class EduLoanBL 
     {
-        public bool ApplyLoanBL<T>(T obj)
+        public bool ApplyLoanBL(EduLoan edu)
         {
-            EduLoan edu = (EduLoan)(Object)obj;
+            //EduLoan edu = (EduLoan)(Object)obj;
             if (validate(edu) == true)
             {
                 edu.LoanID = "EDU" + BusinessLogicUtil.SystemDateToString();
@@ -36,46 +37,46 @@ namespace Pecunia.BusinessLayer
                 edu.Status = (LoanStatus)0;
 
                 EduLoanDAL eduDAL = new EduLoanDAL();
-                return eduDAL.ApplyLoanDAL<EduLoan>(edu);
+                return eduDAL.ApplyLoanDAL(edu);
             }
             return false;
         }
         
 
-        public EduLoan ApproveLoanBL<EduLoan>(string loanID, LoanStatus updatedStatus)
+        public EduLoan ApproveLoanBL(string loanID, LoanStatus updatedStatus)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid loan ID");
 
             EduLoanDAL EduLoanDALobj = new EduLoanDAL();
-            return (EduLoan)EduLoanDALobj.ApproveLoanDAL<EduLoan>(loanID, updatedStatus);
+            return EduLoanDALobj.ApproveLoanDAL(loanID, updatedStatus);
         }
 
-        public EduLoan GetLoanByCustomerID_BL<EduLoan>(string customerID)
+        public EduLoan GetLoanByCustomerID_BL(string customerID)
         {
             if (BusinessLogicUtil.validate(customerID) == false)
                 throw new InvalidStringException("Invalid customer ID");
 
             EduLoanDAL EduLoanDALobj = new EduLoanDAL();
-            return (EduLoan)EduLoanDALobj.GetLoanByCustomerID_DAL<EduLoan>(customerID);
+            return EduLoanDALobj.GetLoanByCustomerID_DAL(customerID);
         }
 
-        public LoanStatus GetLoanStatusBL<EduLoan>(string loanID)
+        public LoanStatus GetLoanStatusBL(string loanID)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid loan ID");
 
             EduLoanDAL EduLoanDALobj = new EduLoanDAL();
-            return EduLoanDALobj.GetLoanStatusDAL<EduLoan>(loanID);
+            return EduLoanDALobj.GetLoanStatusDAL(loanID);
         }
 
-        public EduLoan GetLoanByLoanID_BL<EduLoan>(string loanID)
+        public EduLoan GetLoanByLoanID_BL(string loanID)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid loan ID");
 
             EduLoanDAL EduLoanDALobj = new EduLoanDAL();
-            return (EduLoan)EduLoanDALobj.GetLoanByLoanID_DAL<EduLoan>(loanID);
+            return EduLoanDALobj.GetLoanByLoanID_DAL(loanID);
         }
       
         public bool validate(EduLoan edu)
@@ -107,11 +108,11 @@ namespace Pecunia.BusinessLayer
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public class CarLoanBL : CarLoan, ILoanBL
+    public class CarLoanBL : CarLoan //, ILoanBL
     {
-        public bool ApplyLoanBL<T>(T obj)
+        public bool ApplyLoanBL(CarLoan car)
         {
-            CarLoan car = (CarLoan)(Object)obj;
+            //CarLoan car = (CarLoan)(Object)obj;
             if(validate(car) == true)
             {
                 car.LoanID = "CAR" + BusinessLogicUtil.SystemDateToString();
@@ -121,45 +122,45 @@ namespace Pecunia.BusinessLayer
                 car.Status = (LoanStatus)0;
                 
                 CarLoanDAL carDAL = new CarLoanDAL();
-                return carDAL.ApplyLoanDAL<CarLoan>(car);
+                return carDAL.ApplyLoanDAL(car);
             }
             return false;
         }
 
-        public CarLoan ApproveLoanBL<CarLoan>(string loanID, LoanStatus updatedStatus)
+        public CarLoan ApproveLoanBL(string loanID, LoanStatus updatedStatus)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid loan ID");
 
             CarLoanDAL carDAL = new CarLoanDAL();
-            return (CarLoan)carDAL.ApproveLoanDAL<CarLoan>(loanID, updatedStatus);
+            return carDAL.ApproveLoanDAL(loanID, updatedStatus);
         }
 
-        public CarLoan GetLoanByCustomerID_BL<CarLoan>(string customerID)
+        public CarLoan GetLoanByCustomerID_BL(string customerID)
         {
             if (BusinessLogicUtil.validate(customerID) == false)
                 throw new InvalidStringException("Invalid customer ID");
 
             CarLoanDAL carDAL = new CarLoanDAL();
-            return (CarLoan)carDAL.GetLoanByCustomerID_DAL<CarLoan>(customerID);
+            return carDAL.GetLoanByCustomerID_DAL(customerID);
         }
 
-        public CarLoan GetLoanByLoanID_BL<CarLoan>(string loanID)
+        public CarLoan GetLoanByLoanID_BL(string loanID)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid loan ID");
 
             CarLoanDAL CarDAL = new CarLoanDAL();
-            return (CarLoan)CarDAL.GetLoanByLoanID_DAL<CarLoan>(loanID);
+            return CarDAL.GetLoanByLoanID_DAL(loanID);
         }
 
-        public LoanStatus GetLoanStatusBL<CarLoan>(string loanID)
+        public LoanStatus GetLoanStatusBL(string loanID)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid loan ID");
 
             CarLoanDAL carDAL = new CarLoanDAL();
-            return carDAL.GetLoanStatusDAL<CarLoan>(loanID);
+            return carDAL.GetLoanStatusDAL(loanID);
 
         }
 
@@ -191,11 +192,11 @@ namespace Pecunia.BusinessLayer
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class HomeLoanBL : HomeLoan, ILoanBL
+    public class HomeLoanBL : HomeLoan//, ILoanBL
     {
-        public bool ApplyLoanBL<T>(T obj)
+        public bool ApplyLoanBL(HomeLoan home)
         {
-            HomeLoan home = (HomeLoan)(Object)obj;
+            //HomeLoan home = (HomeLoan)(Object)obj;
             if(validate(home) == true)
             {
                 home.LoanID = "HOME" + BusinessLogicUtil.SystemDateToString();
@@ -205,45 +206,45 @@ namespace Pecunia.BusinessLayer
                 home.Status = (LoanStatus)0; // APPLIED
 
                 HomeLoanDAL homeDAL = new HomeLoanDAL();
-                return homeDAL.ApplyLoanDAL<HomeLoan>(home);
+                return homeDAL.ApplyLoanDAL(home);
             }
             return false;
         }
 
-        public LoanStatus GetLoanStatusBL<HomeLoan>(string loanID)
+        public LoanStatus GetLoanStatusBL(string loanID)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid Loan ID");
 
             HomeLoanDAL homeloanDALobj = new HomeLoanDAL();
-            return homeloanDALobj.GetLoanStatusDAL<HomeLoan>(loanID);
+            return homeloanDALobj.GetLoanStatusDAL(loanID);
         }
 
-        public HomeLoan GetLoanByCustomerID_BL<HomeLoan>(string customerID)
+        public HomeLoan GetLoanByCustomerID_BL(string customerID)
         {
             if (BusinessLogicUtil.validate(customerID) == false)
                 throw new InvalidStringException("Invalid Customer ID");
 
             HomeLoanDAL homeloanDALobj = new HomeLoanDAL();
-            return (HomeLoan)homeloanDALobj.GetLoanByCustomerID_DAL<HomeLoan>(customerID);
+            return homeloanDALobj.GetLoanByCustomerID_DAL(customerID);
         }
 
-        public HomeLoan ApproveLoanBL<HomeLoan>(string loanID, LoanStatus updatedStatus)
+        public HomeLoan ApproveLoanBL(string loanID, LoanStatus updatedStatus)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid Loan ID");
 
             HomeLoanDAL homeloanDALobj = new HomeLoanDAL();
-            return (HomeLoan)homeloanDALobj.ApproveLoanDAL<HomeLoan>(loanID, updatedStatus);
+            return homeloanDALobj.ApproveLoanDAL(loanID, updatedStatus);
         }
 
-        public HomeLoan GetLoanByLoanID_BL<HomeLoan>(string loanID)
+        public HomeLoan GetLoanByLoanID_BL(string loanID)
         {
             if (BusinessLogicUtil.validate(loanID) == false)
                 throw new InvalidStringException("Invalid loan ID");
 
             HomeLoanDAL LoanDALobj = new HomeLoanDAL();
-            return (HomeLoan)LoanDALobj.GetLoanByLoanID_DAL<HomeLoan>(loanID);
+            return LoanDALobj.GetLoanByLoanID_DAL(loanID);
         }
 
         public bool validate(HomeLoan home)

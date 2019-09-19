@@ -11,3 +11,14 @@ E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\bin\Deb
 E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.csprojResolveAssemblyReference.cache
 E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.dll
 E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.pdb

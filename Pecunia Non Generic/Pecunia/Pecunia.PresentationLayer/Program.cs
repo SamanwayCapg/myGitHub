@@ -332,7 +332,7 @@ namespace Pecunia.PresentationLayer
             newLoan.StudentID = studentID;
 
             EduLoanBL newLoanBL = new EduLoanBL();
-            return newLoanBL.ApplyLoanBL<EduLoan>(newLoan);
+            return newLoanBL.ApplyLoanBL(newLoan);
         }
         public bool ApplyCarLoan()
         {
@@ -387,7 +387,7 @@ namespace Pecunia.PresentationLayer
             newLoan.Vehicle = EnumVehicle;
 
             CarLoanBL newLoanBL = new CarLoanBL();
-            return newLoanBL.ApplyLoanBL<CarLoan>(newLoan);
+            return newLoanBL.ApplyLoanBL(newLoan);
 
         }
 
@@ -442,7 +442,7 @@ namespace Pecunia.PresentationLayer
             newLoan.SalaryDeductions = salaryDeduction;
 
             HomeLoanBL newLoanBL = new HomeLoanBL();
-            return newLoanBL.ApplyLoanBL<HomeLoan>(newLoan);
+            return newLoanBL.ApplyLoanBL(newLoan);
         }
 
         public void MenuOfApproveLoan()
@@ -542,7 +542,7 @@ namespace Pecunia.PresentationLayer
                 EduLoanBL eduLoanBL = new EduLoanBL();
                 EduLoan eduLoan = new EduLoan();
 
-                eduLoan = eduLoanBL.GetLoanByLoanID_BL<EduLoan>(loanID);
+                eduLoan = eduLoanBL.GetLoanByLoanID_BL(loanID);
                 Console.WriteLine("Current Status and Loan Details:");
                 Console.WriteLine($"Loan ID:{eduLoan.LoanID}");
                 Console.WriteLine($"Customer ID:{eduLoan.CustomerID}");
@@ -561,7 +561,7 @@ namespace Pecunia.PresentationLayer
                 string updatedStatusStr = Console.ReadLine();
                 Enum.TryParse(updatedStatusStr, out updatedStatus);
 
-                eduLoan = eduLoanBL.ApproveLoanBL<EduLoan>(loanID, updatedStatus);
+                eduLoan = eduLoanBL.ApproveLoanBL(loanID, updatedStatus);
                 Console.WriteLine($"New Status of {loanID} is {eduLoan.Status}");
 
             }
@@ -570,7 +570,7 @@ namespace Pecunia.PresentationLayer
                 CarLoanBL carLoanBL = new CarLoanBL();
                 CarLoan carLoan = new CarLoan();
 
-                carLoan = carLoanBL.GetLoanByLoanID_BL<CarLoan>(loanID);
+                carLoan = carLoanBL.GetLoanByLoanID_BL(loanID);
                 Console.WriteLine("Current Status and Loan Details:");
                 Console.WriteLine($"Loan ID:{carLoan.LoanID}");
                 Console.WriteLine($"Customer ID:{carLoan.CustomerID}");
@@ -589,7 +589,7 @@ namespace Pecunia.PresentationLayer
                 string updatedStatusStr = Console.ReadLine();
                 Enum.TryParse(updatedStatusStr, out updatedStatus);
 
-                carLoan = carLoanBL.ApproveLoanBL<CarLoan>(loanID, updatedStatus);
+                carLoan = carLoanBL.ApproveLoanBL(loanID, updatedStatus);
                 Console.WriteLine($"New Status of {loanID} is {carLoan.Status}");
             }
             else if(Regex.IsMatch(loanID, "[HOME][0-9]{14}") == true)
@@ -597,7 +597,7 @@ namespace Pecunia.PresentationLayer
                 HomeLoanBL homeLoanBL = new HomeLoanBL();
                 HomeLoan homeLoan = new HomeLoan();
 
-                homeLoan = homeLoanBL.GetLoanByLoanID_BL<HomeLoan>(loanID);
+                homeLoan = homeLoanBL.GetLoanByLoanID_BL(loanID);
                 Console.WriteLine("Current Status and Loan Details:");
                 Console.WriteLine($"Loan ID:{homeLoan.LoanID}");
                 Console.WriteLine($"Customer ID:{homeLoan.CustomerID}");
@@ -616,7 +616,7 @@ namespace Pecunia.PresentationLayer
                 string updatedStatusStr = Console.ReadLine();
                 Enum.TryParse(updatedStatusStr, out updatedStatus);
 
-                homeLoan = homeLoanBL.ApproveLoanBL<HomeLoan>(loanID, updatedStatus);
+                homeLoan = homeLoanBL.ApproveLoanBL(loanID, updatedStatus);
                 Console.WriteLine($"New Status of {loanID} is {homeLoan.Status}");
             }
             else
