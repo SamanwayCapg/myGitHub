@@ -34,15 +34,19 @@ namespace Pecunia.DataAccessLayer
         public EduLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
+            EduLoan objToReturn = new EduLoan();
             foreach (EduLoan Loan in eduLoans)
             {
                 if (Loan.LoanID == loanID)
                 {
                     Loan.Status = updatedStatus;
-                    return Loan;
+                    objToReturn = Loan;
+                    break;
                 }
             }
-            return default(EduLoan);
+
+            SerializeIntoJSON(eduLoans, "EduLoans.txt");
+            return objToReturn;
         }
 
         public EduLoan GetLoanByCustomerID_DAL(string customerID)
@@ -128,15 +132,18 @@ namespace Pecunia.DataAccessLayer
         public CarLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
-            foreach(CarLoan Loan in carLoans)
+            CarLoan objToReturn = new CarLoan();
+            foreach(var Loan in carLoans)
             {
                 if (Loan.LoanID == loanID)
                 {
                     Loan.Status = updatedStatus;
-                    return Loan;
+                    objToReturn = Loan;
+                    break;
                 }
             }
-            return default(CarLoan);
+            SerializeIntoJSON(carLoans, "CarLoans.txt");
+            return objToReturn;
         }
 
         public CarLoan GetLoanByCustomerID_DAL(string customerID)
@@ -222,15 +229,19 @@ namespace Pecunia.DataAccessLayer
         public HomeLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
+            HomeLoan objToReturn = new HomeLoan();
             foreach (HomeLoan Loan in homeLoans)
             {
                 if (Loan.LoanID == loanID)
                 {
                     Loan.Status = updatedStatus;
-                    return Loan;
+                    objToReturn = Loan;
+                    break;
                 }
             }
-            return default(HomeLoan);
+
+            SerializeIntoJSON(homeLoans, "HomeLoans.txt");
+            return objToReturn;
         }
 
         public HomeLoan GetLoanByCustomerID_DAL(string customerID)

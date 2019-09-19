@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Pecunia.Exceptions;
 using Pecunia.Entities;
 using Pecunia.BusinessLayer;
@@ -23,17 +20,20 @@ namespace Pecunia.PresentationLayer
         
         public bool MenuOfLoan()
         {
+           
             int input;
             ///////Loan level 1 Menu
-            Console.WriteLine("---------Loan Menu --------");
-            Console.WriteLine("1. Apply for loan");
-            Console.WriteLine("2. Approve Loan (Admin Only!)");
-            Console.WriteLine("3. Show Loan List");
-            Console.WriteLine("4. Back");
-
-
             do
             {
+                Console.Clear();
+                Console.WriteLine("---------Loan Menu --------");
+                Console.WriteLine("1. Apply for loan");
+                Console.WriteLine("2. Approve Loan (Admin Only!)");
+                Console.WriteLine("3. Show Loan List");
+                Console.WriteLine("4. Back");
+
+
+           
                 Console.WriteLine("Enter Your Choice");
                 input = Convert.ToInt32(Console.ReadLine());
                 if (input != 4) // at input = 4 menu exit
@@ -56,7 +56,8 @@ namespace Pecunia.PresentationLayer
                             break;
 
                         default:
-                            Console.WriteLine("Not a valid entry!");
+                            Console.WriteLine("Not a valid entry!\nPress any key -> Continue");
+                            Console.ReadKey();
                             break;
                     }
                 }
@@ -66,17 +67,19 @@ namespace Pecunia.PresentationLayer
         }
 
 
-        public void MenuOfShowLoanList()
+        public bool MenuOfShowLoanList()
         {
+            
             int input;
-
-            Console.WriteLine("------- List Loan Menu ----------");
-            Console.WriteLine("1. Search by CustomerID");
-            Console.WriteLine("2. Search by LoanID");
-            Console.WriteLine("3. Back");
-
             do
             {
+                Console.Clear();
+                Console.WriteLine("------- List Loan Menu ----------");
+                Console.WriteLine("1. Search by CustomerID");
+                Console.WriteLine("2. Search by LoanID");
+                Console.WriteLine("3. Back");
+
+           
                 Console.WriteLine("Enter your input");
                 input = Convert.ToInt16(Console.ReadLine());
 
@@ -85,25 +88,34 @@ namespace Pecunia.PresentationLayer
                     switch (input)
                     {
                         case 1:
-                            GetLoanByCustomerID_PL();
+                            if (GetLoanByCustomerID_PL() == true)
+                                return true;
+                            else
+                                MenuOfShowLoanList();
                             break;
 
                         case 2:
-                            GetLoanByLoanID_PL();
+                            if (GetLoanByLoanID_PL() == true)
+                                return true;
+                            else
+                                MenuOfShowLoanList();
                             break;
 
                         default:
-                            Console.WriteLine("Invalid choice");
+                            Console.WriteLine("Not a valid entry!\nPress any key -> Continue");
+                            Console.ReadKey();
                             break;
                     }
                 }
             } while (input != 3);
+
+            return true;
         }
 
 
-        public void GetLoanByCustomerID_PL()
+        public bool GetLoanByCustomerID_PL()
         {
-            Console.WriteLine("Enter Customer ID:");
+            Console.Write("Enter Customer ID:");
             string customerID = Console.ReadLine();
 
             
@@ -144,105 +156,126 @@ namespace Pecunia.PresentationLayer
                 }
             }
 
-            if(loanFound == false)
-                Console.WriteLine($"No loan found for the {customerID}");
+            if (loanFound == false)
+            {
+                Console.WriteLine($"No loan found for the {customerID}\nPress any key -> Search Again");
+                Console.ReadKey();
+                return false;
+            }
+
+            Console.WriteLine("Press any key -> Previous Menu");
+            Console.ReadKey();
+            return true;
         }
 
-        public void GetLoanByLoanID_PL()
+        public bool GetLoanByLoanID_PL()
         {
-            Console.WriteLine("Enter Loan ID:");
+            Console.Write("Enter Loan ID:");
             string loanID = Console.ReadLine();
+            bool loanFound = false;
 
-            if(Regex.IsMatch(loanID, "[EDU][0-9]{14}") == true)
+            try
             {
-                EduLoanBL loanBL = new EduLoanBL();
-                List<EduLoan> loans = loanBL.ListAllLoans();
-                foreach(var loan in loans)
+                if (Regex.IsMatch(loanID, "[EDU][0-9]{14}$") == true)
                 {
-                    if(loan.LoanID == loanID)
-                    {
-                        Console.WriteLine("Loan Details:");
-                        Console.WriteLine($"Loan ID:{loan.LoanID}");
-                        Console.WriteLine($"Customer ID:{loan.CustomerID}");
-                        Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
-                        Console.WriteLine($"Interest Rate:{loan.InterestRate}");
-                        Console.WriteLine($"EMI:{loan.EMI_Amount}");
-                        Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
-                        Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
-                        Console.WriteLine($"Current Status:{loan.Status}");
-                        Console.WriteLine($"Course of Study:{loan.Course}");
-                        Console.WriteLine($"Institute Name:{loan.InstituteName}");
-                        Console.WriteLine($"Student ID:{loan.StudentID}");
-                        Console.WriteLine($"Repayment Holiday:{loan.RepaymentHoliday}");
-                        break;
-                    }
+                    EduLoan loan = new EduLoan();
+                    EduLoanBL loanBL = new EduLoanBL();
+                    loan = loanBL.GetLoanByLoanID_BL(loanID);
+
+                    Console.WriteLine("Loan Details:");
+                    Console.WriteLine($"Loan ID:{loan.LoanID}");
+                    Console.WriteLine($"Customer ID:{loan.CustomerID}");
+                    Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
+                    Console.WriteLine($"Interest Rate:{loan.InterestRate}");
+                    Console.WriteLine($"EMI:{loan.EMI_Amount}");
+                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
+                    Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
+                    Console.WriteLine($"Current Status:{loan.Status}");
+                    Console.WriteLine($"Course of Study:{loan.Course}");
+                    Console.WriteLine($"Institute Name:{loan.InstituteName}");
+                    Console.WriteLine($"Student ID:{loan.StudentID}");
+                    Console.WriteLine($"Repayment Holiday:{loan.RepaymentHoliday}");
+                    loanFound = true;
+
                 }
-            }
-            else if (Regex.IsMatch(loanID, "[HOME][0-9]{14}") == true)
-            {
-                HomeLoanBL loanBL = new HomeLoanBL();
-                List<HomeLoan> loans = loanBL.ListAllLoans();
-                foreach (var loan in loans)
+                if (Regex.IsMatch(loanID, "[HOME][0-9]{14}$") == true)
                 {
-                    if (loan.LoanID == loanID)
-                    {
-                        Console.WriteLine("Loan Details:");
-                        Console.WriteLine($"Loan ID:{loan.LoanID}");
-                        Console.WriteLine($"Customer ID:{loan.CustomerID}");
-                        Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
-                        Console.WriteLine($"Interest Rate:{loan.InterestRate}");
-                        Console.WriteLine($"EMI:{loan.EMI_Amount}");
-                        Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
-                        Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
-                        Console.WriteLine($"Current Status:{loan.Status}");
-                        Console.WriteLine($"Occupation of Applicant:{loan.Occupation}");
-                        Console.WriteLine($"Net Income per month:{loan.GrossIncome - loan.SalaryDeductions}");
-                        Console.WriteLine($"Total service years:{loan.ServiceYears}");
-                        break;
-                    }
+                    HomeLoan loan = new HomeLoan();
+                    HomeLoanBL loanBL = new HomeLoanBL();
+                    loan = loanBL.GetLoanByLoanID_BL(loanID);
+
+                    Console.WriteLine("Loan Details:");
+                    Console.WriteLine($"Loan ID:{loan.LoanID}");
+                    Console.WriteLine($"Customer ID:{loan.CustomerID}");
+                    Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
+                    Console.WriteLine($"Interest Rate:{loan.InterestRate}");
+                    Console.WriteLine($"EMI:{loan.EMI_Amount}");
+                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
+                    Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
+                    Console.WriteLine($"Current Status:{loan.Status}");
+                    Console.WriteLine($"Occupation of Applicant:{loan.Occupation}");
+                    Console.WriteLine($"Net Income per month:{loan.GrossIncome - loan.SalaryDeductions}");
+                    Console.WriteLine($"Total service years:{loan.ServiceYears}");
+                    loanFound = true;
+
                 }
-            }
-            else if (Regex.IsMatch(loanID, "[CAR][0-9]{14}") == true)
-            {
-                CarLoanBL loanBL = new CarLoanBL();
-                List<CarLoan> loans = loanBL.ListAllLoans();
-                foreach (var loan in loans)
+                if (Regex.IsMatch(loanID, "[CAR][0-9]{14}$") == true)
                 {
-                    if (loan.LoanID == loanID)
-                    {
-                        Console.WriteLine("Loan Details:");
-                        Console.WriteLine($"Loan ID:{loan.LoanID}");
-                        Console.WriteLine($"Customer ID:{loan.CustomerID}");
-                        Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
-                        Console.WriteLine($"Interest Rate:{loan.InterestRate}");
-                        Console.WriteLine($"EMI:{loan.EMI_Amount}");
-                        Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
-                        Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
-                        Console.WriteLine($"Current Status:{loan.Status}");
-                        Console.WriteLine($"Occupation of Applicant:{loan.Occupation}");
-                        Console.WriteLine($"Net Income per month:{loan.GrossIncome - loan.SalaryDeductions}");
-                        Console.WriteLine($"Vehicle Type:{loan.Vehicle}");
-                        break;
-                    }
+                    CarLoan loan = new CarLoan();
+                    CarLoanBL loanBL = new CarLoanBL();
+                    loan = loanBL.GetLoanByLoanID_BL(loanID);
+
+                    Console.WriteLine("Loan Details:");
+                    Console.WriteLine($"Loan ID:{loan.LoanID}");
+                    Console.WriteLine($"Customer ID:{loan.CustomerID}");
+                    Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
+                    Console.WriteLine($"Interest Rate:{loan.InterestRate}");
+                    Console.WriteLine($"EMI:{loan.EMI_Amount}");
+                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
+                    Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
+                    Console.WriteLine($"Current Status:{loan.Status}");
+                    Console.WriteLine($"Occupation of Applicant:{loan.Occupation}");
+                    Console.WriteLine($"Net Income per month:{loan.GrossIncome - loan.SalaryDeductions}");
+                    Console.WriteLine($"Vehicle Type:{loan.Vehicle}");
+                    loanFound = true;
+
                 }
+                else
+                {
+                    // nothing to do
+                }
+
+                if (loanFound == false)
+                {
+                    Console.WriteLine("Not a valid Loan ID\nPress any key -> Search Again");
+                    Console.ReadKey();
+                    return false;
+                }
+
+                Console.WriteLine("Press any key -> Previous Menu");
+                Console.ReadKey();
+                return true;
             }
-            else
+            catch(InvalidStringException e)
             {
-                Console.WriteLine("Not a valid Loan ID");
+                Console.WriteLine($"{e.Message}\nPress any key -> List Loans");
+                return false;
             }
         }
         public bool MenuOfApplyForLoan()
         {
             int input;
             ///////Loan level 1 Menu
-            Console.WriteLine("--------- Apply Loan Menu --------");
-            Console.WriteLine("1. Apply for a Home Loan");
-            Console.WriteLine("2. Apply for a Car Loan");
-            Console.WriteLine("3. Apply for a Educational Loan");
-            Console.WriteLine("4. Back");
-
             do
             {
+                Console.Clear();
+                Console.WriteLine("--------- Apply Loan Menu --------");
+                Console.WriteLine("1. Apply for a Home Loan");
+                Console.WriteLine("2. Apply for a Car Loan");
+                Console.WriteLine("3. Apply for a Educational Loan");
+                Console.WriteLine("4. Back");
+
+            
                 Console.WriteLine("Enter your choice: ");
                 input = Convert.ToInt32(Console.ReadLine());
 
@@ -255,7 +288,12 @@ namespace Pecunia.PresentationLayer
                             {
                                 Console.WriteLine("Loan Applied successfully");
                                 Console.WriteLine("To get your loan ID, please press BACK and select SHOW LOAN LIST");
-                            }
+                                Console.WriteLine("Press any key to get back to previous menu");
+                                Console.ReadKey();
+                                return true;
+                            }// if operation unsuccessful get back to previous menu
+                            else
+                                MenuOfApplyForLoan();
                             break;
 
                         case 2:
@@ -263,19 +301,30 @@ namespace Pecunia.PresentationLayer
                             {
                                 Console.WriteLine("Loan Applied successfully");
                                 Console.WriteLine("To get your loan ID, please press BACK and select SHOW LOAN LIST");
-                            }
+                                Console.WriteLine("Press any key to get back to previous menu");
+                                Console.ReadKey();
+                                return true;
+                            }// if operation unsuccessful get back to previous menu
+                            else
+                                MenuOfApplyForLoan();
                             break;
 
                         case 3:
-                            if(ApplyEduLoan() == true)
+                            if (ApplyEduLoan() == true)
                             {
                                 Console.WriteLine("Loan Applied successfully");
                                 Console.WriteLine("To get your loan ID, please press BACK and select SHOW LOAN LIST");
-                            }
+                                Console.WriteLine("Press any key to get back to previous menu");
+                                Console.ReadKey();
+                                return true;
+                            }// if operation unsuccessful get back to previous menu
+                            else
+                                MenuOfApplyForLoan();
                             break;
 
                         default:
-                            Console.WriteLine("Invalid Entry!");
+                            Console.WriteLine("Not a valid entry!\nPress any key -> Continue");
+                            Console.ReadKey();
                             break;
                     }
                 }
@@ -288,6 +337,7 @@ namespace Pecunia.PresentationLayer
         
         public bool ApplyEduLoan()
         {
+            Console.Clear();
             Console.WriteLine("--------Educational Loan Application---------");
             Console.WriteLine("If you don't have a customerID, please apply for one.");
             Console.WriteLine("Only registered customers are eligible for loans.");
@@ -295,47 +345,84 @@ namespace Pecunia.PresentationLayer
 
             string customerID, instituteName, studentID;
             double amountApplied;
-            int repaymentPeriod;
+            int repaymentPeriod, courseDuration;
             CourseType course;
 
-            Console.WriteLine("Enter your CustomerID:");
-            customerID = Console.ReadLine();
-            if (customerID == "NEW")
+            try
             {
-                MenuOfCustomer();
-                return false;
+                Console.Write("Enter your CustomerID:");
+                customerID = Console.ReadLine();
+                if (customerID == "NEW")
+                {
+                    MenuOfCustomer();
+                    Console.ReadKey();
+                    return false;
+                }
+
+                Console.WriteLine("Maximum Loan Amount is Rs.20Lakh");
+                Console.Write("Enter amount of loan (in Rs.) you want to apply for:");
+                amountApplied = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Maximum Allowed Repayment Period is 8 years");
+                Console.Write("Enter Repayment Period (in years) you want to opt for:");
+                repaymentPeriod = Convert.ToInt16(Console.ReadLine());
+
+                Console.WriteLine("Available choices (case sensitive)\nUNDERGRADUATE\nMASTERS\nPHD\nM_PHIL\nOTHERS ");
+                Console.Write("Enter type of your eductional degree:");
+                string degree = Console.ReadLine();
+                bool isValidCourseType = Enum.TryParse(degree, out course);
+
+                Console.Write("Enter Course Duration (years):");
+                courseDuration = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Only alphabets, digits and comma(,)");
+                Console.Write("Enter Institute Name:");
+                instituteName = Console.ReadLine();
+
+                Console.WriteLine("Only alphabets and digits");
+                Console.Write("Enter ID provided by your institution:");
+                studentID = Console.ReadLine();
+
+                if (isValidCourseType == false)
+                {
+                    Console.WriteLine("Not a valid Course Type\nPress any key to get back to previous menu");
+                    Console.ReadKey();
+                    return false;
+                }
+
+                EduLoan newLoan = new EduLoan();
+                newLoan.CustomerID = customerID;
+                newLoan.AmountApplied = amountApplied;
+                newLoan.RepaymentPeriod = repaymentPeriod;
+                newLoan.Course = course;
+                newLoan.InstituteName = instituteName;
+                newLoan.StudentID = studentID;
+                newLoan.CourseDuration = courseDuration;
+
+                EduLoanBL newLoanBL = new EduLoanBL();
+                return newLoanBL.ApplyLoanBL(newLoan);
             }
-
-            Console.WriteLine("Enter amount of loan (in Rs.) you want to apply for:");
-            amountApplied = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter Repayment Period (in years) you want to opt for:");
-            repaymentPeriod = Convert.ToInt16(Console.ReadLine());
-
-            Console.WriteLine("Available choices (case sensitive)\nUNDERGRADUATE\nMASTERS\nPHD\nM_PHIL\nOTHERS ");
-            Console.WriteLine("Enter type of your eductional degree:");
-            string degree = Console.ReadLine();
-            Enum.TryParse(degree, out course);
-
-            Console.WriteLine("Enter Institute Name:");
-            instituteName = Console.ReadLine();
-
-            Console.WriteLine("Enter ID provided by your institution");
-            studentID = Console.ReadLine();
-
-            EduLoan newLoan = new EduLoan();
-            newLoan.CustomerID = customerID;
-            newLoan.AmountApplied = amountApplied;
-            newLoan.RepaymentPeriod = repaymentPeriod;
-            newLoan.Course = course;
-            newLoan.InstituteName = instituteName;
-            newLoan.StudentID = studentID;
-
-            EduLoanBL newLoanBL = new EduLoanBL();
-            return newLoanBL.ApplyLoanBL(newLoan);
+            catch(InvalidStringException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch(InvalidAmountException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch(InvalidRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+            Console.WriteLine("Current Application Cancelled. Please Start a Fresh One");
+            Console.ReadKey();
+            return false;
+            
         }
         public bool ApplyCarLoan()
         {
+            Console.Clear();
             Console.WriteLine("--------Car Loan Application---------");
             Console.WriteLine("If you don't have a customerID, please apply for one.");
             Console.WriteLine("Only registered customers are eligible for loans.");
@@ -347,52 +434,81 @@ namespace Pecunia.PresentationLayer
             ServiceType currentOccupation;
             VehicleType EnumVehicle;
 
-            Console.WriteLine("Enter your CustomerID:");
-            customerID = Console.ReadLine();
-            if (customerID == "NEW")
+            try
             {
-                MenuOfCustomer();
-                return false;
+                Console.Write("Enter your CustomerID:");
+                customerID = Console.ReadLine();
+                if (customerID == "NEW")
+                {
+                    MenuOfCustomer();
+                    return false;
+                }
+
+                Console.WriteLine("Maixmum Loan Amount is Rs.20 Lakh");
+                Console.Write("Enter amount of loan (in Rs.) you want to apply for:");
+                amountApplied = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Maximum Allowed Repayment Period is 10 years");
+                Console.Write("Enter Repayment Period (in years) you want to opt for:");
+                repaymentPeriod = Convert.ToInt16(Console.ReadLine());
+
+                Console.WriteLine("Available choices (case sensitive)\nAGRICULTURE\nBUSINESS\nOTHERS\nRETIRED\nSELF_EMPLOYED\nSERVICE\nOTHERS");
+                Console.Write("Enter your current occupation:");
+                string occupation = Console.ReadLine();
+                bool isValidOccupation = Enum.TryParse(occupation, out currentOccupation);
+
+                Console.Write("Enter your gross income (Rs.) per month :");
+                grossIncome = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Deductions must be less than gross income");
+                Console.Write("Enter your salary deductions amount (Rs.) per month:");
+                salaryDeduction = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Available choices (case sensitive)\nTWO_WHEELER\nFOUR_WHEELER\nMULTI_AXLE\nOTHERS");
+                Console.Write("Enter vehicle type for which you wish to apply a loan:");
+                string vehicle = Console.ReadLine();
+                bool isValidVehicle = Enum.TryParse(vehicle, out EnumVehicle);
+
+                if (isValidVehicle == false || isValidOccupation == false)
+                {
+                    Console.WriteLine("Not a valid Vehicle Type or Occupation Type\nPress any key to get to previous menu to start a fresh application");
+                    Console.ReadKey();
+                    return false;
+                }
+
+                CarLoan newLoan = new CarLoan();
+                newLoan.CustomerID = customerID;
+                newLoan.AmountApplied = amountApplied;
+                newLoan.RepaymentPeriod = repaymentPeriod;
+                newLoan.Occupation = currentOccupation;
+                newLoan.GrossIncome = grossIncome;
+                newLoan.SalaryDeductions = salaryDeduction;
+                newLoan.Vehicle = EnumVehicle;
+
+                CarLoanBL newLoanBL = new CarLoanBL();
+                return newLoanBL.ApplyLoanBL(newLoan);
+            }
+            catch(InvalidStringException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch(InvalidRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch(InvalidAmountException e)
+            {
+                Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine("Enter amount of loan (in Rs.) you want to apply for:");
-            amountApplied = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter Repayment Period (in years) you want to opt for:");
-            repaymentPeriod = Convert.ToInt16(Console.ReadLine());
-
-            Console.WriteLine("Available choices (case sensitive)\nAGRICULTURE\nBUSINESS\nOTHERS\nRETIRED\nSELF_EMPLOYED\nSERVICE\nOTHERS");
-            Console.WriteLine("Enter your current occupation:");
-            string occupation = Console.ReadLine();
-            Enum.TryParse(occupation, out currentOccupation);
-            
-            Console.WriteLine("Enter your gross salary (Rs.) per month :");
-            grossIncome = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter your salary deductions amount (Rs.):");
-            salaryDeduction = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Available choices (case sensitive)\nTWO_WHEELER\nFOUR_WHEELER\nMULTI_AXLE\nOTHERS");
-            Console.WriteLine("Enter vehicle type for which you wish to apply a loan:");
-            string vehicle = Console.ReadLine();
-            Enum.TryParse(vehicle, out EnumVehicle);
-
-            CarLoan newLoan = new CarLoan();
-            newLoan.CustomerID = customerID;
-            newLoan.AmountApplied = amountApplied;
-            newLoan.RepaymentPeriod = repaymentPeriod;
-            newLoan.Occupation = currentOccupation;
-            newLoan.GrossIncome = grossIncome;
-            newLoan.SalaryDeductions = salaryDeduction;
-            newLoan.Vehicle = EnumVehicle;
-
-            CarLoanBL newLoanBL = new CarLoanBL();
-            return newLoanBL.ApplyLoanBL(newLoan);
-
+            Console.WriteLine("Current Application Cancelled. Please Start a Fresh One");
+            Console.ReadKey();
+            return false;
         }
 
         public bool ApplyHomeLoan()
         {
+            Console.Clear();
             Console.WriteLine("--------Home Loan Application---------");
             Console.WriteLine("If you don't have a customerID, please apply for one");
             Console.WriteLine("Only registered customers are eligible for loans.");
@@ -403,46 +519,77 @@ namespace Pecunia.PresentationLayer
             int repaymentPeriod, serviceYears;
             ServiceType currentOccupation;
 
-            Console.WriteLine("Enter your CustomerID:");
-            customerID = Console.ReadLine();
-            // in case customer dont have a ID
-            if (customerID == "NEW")
+            try
             {
-                MenuOfCustomer();
-                return false;
+                Console.Write("Enter your CustomerID:");
+                customerID = Console.ReadLine();
+                // in case customer dont have a ID
+                if (customerID == "NEW")
+                {
+                    MenuOfCustomer();
+                    Console.ReadKey();
+                    return false;
+                }
+
+                Console.WriteLine("Maximum Loan Amount is Rs.20 Lakh");
+                Console.Write("Enter amount of loan (in Rs.) you want to apply for:");
+                amountApplied = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Maximum Repayment Period is 15 years");
+                Console.Write("Enter Repayment Period (in years) you want to opt for:");
+                repaymentPeriod = Convert.ToInt16(Console.ReadLine());
+
+                Console.WriteLine("Available choices (case sensitive)\nAGRICULTURE\nBUSINESS\nOTHERS\nRETIRED\nSELF_EMPLOYED\nSERVICE\nOTHERS");
+                Console.Write("Enter your current occupation:");
+                string occupation = Console.ReadLine();
+                bool isValidOccupation = Enum.TryParse(occupation, out currentOccupation);
+
+                Console.WriteLine("Need a minimum service experience of 5 years");
+                Console.Write("Enter years of experience in your current occupation:");
+                serviceYears = Convert.ToInt16(Console.ReadLine());
+
+                Console.Write("Enter your gross income (Rs.) per month :");
+                grossIncome = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Deductions must be less than gross income");
+                Console.Write("Enter your income deductions amount (Rs.) per month:");
+                salaryDeduction = Convert.ToDouble(Console.ReadLine());
+
+                if (isValidOccupation == false)
+                {
+                    Console.WriteLine("Not a valid Occupation\nPress any key to get to previous menu");
+                    Console.ReadKey();
+                    return false;
+                }
+                HomeLoan newLoan = new HomeLoan();
+                newLoan.CustomerID = customerID;
+                newLoan.AmountApplied = amountApplied;
+                newLoan.RepaymentPeriod = repaymentPeriod;
+                newLoan.Occupation = currentOccupation;
+                newLoan.ServiceYears = serviceYears;
+                newLoan.GrossIncome = grossIncome;
+                newLoan.SalaryDeductions = salaryDeduction;
+
+                HomeLoanBL newLoanBL = new HomeLoanBL();
+                return newLoanBL.ApplyLoanBL(newLoan);
+            }
+            catch (InvalidStringException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (InvalidRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (InvalidAmountException e)
+            {
+                Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine("Enter amount of loan (in Rs.) you want to apply for:");
-            amountApplied = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Current Application Cancelled. Please Start a Fresh One");
+            Console.ReadKey();
+            return false;
 
-            Console.WriteLine("Enter Repayment Period (in years) you want to opt for:");
-            repaymentPeriod = Convert.ToInt16(Console.ReadLine());
-
-            Console.WriteLine("Available choices (case sensitive)\nAGRICULTURE\nBUSINESS\nOTHERS\nRETIRED\nSELF_EMPLOYED\nSERVICE\nOTHERS");
-            Console.WriteLine("Enter your current occupation:");
-            string occupation = Console.ReadLine();
-            Enum.TryParse(occupation, out currentOccupation);
-
-            Console.WriteLine("Enter years of experience in your current occupation:");
-            serviceYears = Convert.ToInt16(Console.ReadLine());
-
-            Console.WriteLine("Enter your gross salary (Rs.) per month :");
-            grossIncome = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter your salary deductions amount (Rs.):");
-            salaryDeduction = Convert.ToDouble(Console.ReadLine());
-
-            HomeLoan newLoan = new HomeLoan();
-            newLoan.CustomerID = customerID;
-            newLoan.AmountApplied = amountApplied;
-            newLoan.RepaymentPeriod = repaymentPeriod;
-            newLoan.Occupation = currentOccupation;
-            newLoan.ServiceYears = serviceYears;
-            newLoan.GrossIncome = grossIncome;
-            newLoan.SalaryDeductions = salaryDeduction;
-
-            HomeLoanBL newLoanBL = new HomeLoanBL();
-            return newLoanBL.ApplyLoanBL(newLoan);
         }
 
         public void MenuOfApproveLoan()
@@ -450,14 +597,16 @@ namespace Pecunia.PresentationLayer
             int input;
             string loanID;
             ///////Loan level 1 Menu
-            Console.WriteLine("--------- Approve Loan Menu --------");
-            Console.WriteLine("1. List of Non-approved Home Loan");
-            Console.WriteLine("2. List of Non-approved Car Loan");
-            Console.WriteLine("3. List of Non-approved Educational Loan");
-            Console.WriteLine("4. Back");
-
             do
             {
+                Console.Clear();
+                Console.WriteLine("--------- Approve Loan Menu --------");
+                Console.WriteLine("1. List of Non-approved Home Loan");
+                Console.WriteLine("2. List of Non-approved Car Loan");
+                Console.WriteLine("3. List of Non-approved Educational Loan");
+                Console.WriteLine("4. Back");
+
+            
                 Console.WriteLine("Enter your choice: ");
                 input = Convert.ToInt32(Console.ReadLine());
 
@@ -487,7 +636,8 @@ namespace Pecunia.PresentationLayer
                             break;
 
                         default:
-                            Console.WriteLine("Invalid entry!");
+                            Console.WriteLine("Not a valid entry!\nPress any key -> Continue");
+                            Console.ReadKey(); 
                             break;
                     }
 
@@ -534,95 +684,149 @@ namespace Pecunia.PresentationLayer
             else
                 Console.WriteLine("Input must be one of the following (case sensitive):\nHOME\nCAR\nEDU");
         }
-        public void ApproveLoanPL(string loanID)
+        public bool ApproveLoanPL(string loanID)
         {
-            
-            if(Regex.IsMatch(loanID, "[EDU][0-9]{14}") == true)
+            bool isValidStatus = false;
+            bool isValidLoanID = false;
+
+            try
             {
-                EduLoanBL eduLoanBL = new EduLoanBL();
-                EduLoan eduLoan = new EduLoan();
+                if (Regex.IsMatch(loanID, "[EDU][0-9]{14}") == true)
+                {
+                    isValidLoanID = true;
+                    EduLoanBL eduLoanBL = new EduLoanBL();
+                    EduLoan eduLoan = new EduLoan();
 
-                eduLoan = eduLoanBL.GetLoanByLoanID_BL(loanID);
-                Console.WriteLine("Current Status and Loan Details:");
-                Console.WriteLine($"Loan ID:{eduLoan.LoanID}");
-                Console.WriteLine($"Customer ID:{eduLoan.CustomerID}");
-                Console.WriteLine($"Amount Applied:{eduLoan.AmountApplied}");
-                Console.WriteLine($"EMI:{eduLoan.EMI_Amount}");
-                Console.WriteLine($"Repayment Period:{eduLoan.RepaymentPeriod}");
-                Console.WriteLine($"Date of Application:{eduLoan.DateOfApplication}");
-                Console.WriteLine($"Current Status:{eduLoan.Status}");
-                Console.WriteLine($"Course of Study:{eduLoan.Course}");
-                Console.WriteLine($"Institute Name:{eduLoan.InstituteName}");
-                Console.WriteLine($"Student ID:{eduLoan.StudentID}");
+                    eduLoan = eduLoanBL.GetLoanByLoanID_BL(loanID);
+                    Console.WriteLine("Current Status and Loan Details:");
+                    Console.WriteLine($"Loan ID:{eduLoan.LoanID}");
+                    Console.WriteLine($"Customer ID:{eduLoan.CustomerID}");
+                    Console.WriteLine($"Amount Applied:{eduLoan.AmountApplied}");
+                    Console.WriteLine($"EMI:{eduLoan.EMI_Amount}");
+                    Console.WriteLine($"Repayment Period:{eduLoan.RepaymentPeriod}");
+                    Console.WriteLine($"Date of Application:{eduLoan.DateOfApplication}");
+                    Console.WriteLine($"Current Status:{eduLoan.Status}");
+                    Console.WriteLine($"Course of Study:{eduLoan.Course}");
+                    Console.WriteLine($"Institute Name:{eduLoan.InstituteName}");
+                    Console.WriteLine($"Student ID:{eduLoan.StudentID}");
 
-                LoanStatus updatedStatus;
-                Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
-                Console.WriteLine("Enter the updated loan status");
-                string updatedStatusStr = Console.ReadLine();
-                Enum.TryParse(updatedStatusStr, out updatedStatus);
+                    LoanStatus updatedStatus;
+                    Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
+                    Console.Write("Enter the updated loan status:");
+                    string updatedStatusStr = Console.ReadLine();
+                    isValidStatus = Enum.TryParse(updatedStatusStr, out updatedStatus);
 
-                eduLoan = eduLoanBL.ApproveLoanBL(loanID, updatedStatus);
-                Console.WriteLine($"New Status of {loanID} is {eduLoan.Status}");
+                    if (isValidStatus == true)
+                    {
+                        eduLoan = eduLoanBL.ApproveLoanBL(loanID, updatedStatus);
+                        Console.WriteLine($"New Status of {loanID} is {eduLoan.Status}");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thats not a valid status");
+                        Console.WriteLine("Press any key -> Approve Loan");
+                        Console.ReadKey();
+                        return false;
+                    }
 
+                }
+
+                if (Regex.IsMatch(loanID, "[CAR][0-9]{14}") == true)
+                {
+                    isValidLoanID = true;
+                    CarLoanBL carLoanBL = new CarLoanBL();
+                    CarLoan carLoan = new CarLoan();
+
+                    carLoan = carLoanBL.GetLoanByLoanID_BL(loanID);
+                    Console.WriteLine("Current Status and Loan Details:");
+                    Console.WriteLine($"Loan ID:{carLoan.LoanID}");
+                    Console.WriteLine($"Customer ID:{carLoan.CustomerID}");
+                    Console.WriteLine($"Amount Applied:{carLoan.AmountApplied}");
+                    Console.WriteLine($"EMI:{carLoan.EMI_Amount}");
+                    Console.WriteLine($"Repayment Period:{carLoan.RepaymentPeriod}");
+                    Console.WriteLine($"Date of Application:{carLoan.DateOfApplication}");
+                    Console.WriteLine($"Current Status:{carLoan.Status}");
+                    Console.WriteLine($"Occupation of Applicant:{carLoan.Occupation}");
+                    Console.WriteLine($"Net Income per month:{carLoan.GrossIncome - carLoan.SalaryDeductions}");
+                    Console.WriteLine($"Loan applied for {carLoan.Vehicle} type of vehicle");
+
+                    LoanStatus updatedStatus;
+                    Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
+                    Console.WriteLine("Enter the updated loan status");
+                    string updatedStatusStr = Console.ReadLine();
+                    isValidStatus = Enum.TryParse(updatedStatusStr, out updatedStatus);
+
+                    if (isValidStatus == true)
+                    {
+                        carLoan = carLoanBL.ApproveLoanBL(loanID, updatedStatus);
+                        Console.WriteLine($"New Status of {loanID} is {carLoan.Status}");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thats not a valid status");
+                        Console.WriteLine("Press any key -> Approve Loan");
+                        Console.ReadKey();
+                        return false;
+                    }
+                }
+
+                if (Regex.IsMatch(loanID, "[HOME][0-9]{14}") == true)
+                {
+                    isValidLoanID = true;
+                    HomeLoanBL homeLoanBL = new HomeLoanBL();
+                    HomeLoan homeLoan = new HomeLoan();
+
+                    homeLoan = homeLoanBL.GetLoanByLoanID_BL(loanID);
+                    Console.WriteLine("Current Status and Loan Details:");
+                    Console.WriteLine($"Loan ID:{homeLoan.LoanID}");
+                    Console.WriteLine($"Customer ID:{homeLoan.CustomerID}");
+                    Console.WriteLine($"Amount Applied:{homeLoan.AmountApplied}");
+                    Console.WriteLine($"EMI:{homeLoan.EMI_Amount}");
+                    Console.WriteLine($"Repayment Period:{homeLoan.RepaymentPeriod}");
+                    Console.WriteLine($"Date of Application:{homeLoan.DateOfApplication}");
+                    Console.WriteLine($"Current Status:{homeLoan.Status}");
+                    Console.WriteLine($"Occupation of Applicant:{homeLoan.Occupation}");
+                    Console.WriteLine($"Net Income per month:{homeLoan.GrossIncome - homeLoan.SalaryDeductions}");
+                    Console.WriteLine($"Total service years:{homeLoan.ServiceYears}");
+
+                    LoanStatus updatedStatus;
+                    Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
+                    Console.WriteLine("Enter the updated loan status");
+                    string updatedStatusStr = Console.ReadLine();
+                    isValidStatus = Enum.TryParse(updatedStatusStr, out updatedStatus);
+
+                    if (isValidStatus == true)
+                    {
+                        homeLoan = homeLoanBL.ApproveLoanBL(loanID, updatedStatus);
+                        Console.WriteLine($"New Status of {loanID} is {homeLoan.Status}");
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thats not a valid status");
+                        Console.WriteLine("Press any key -> Approve Loan");
+                        Console.ReadKey();
+                        return false;
+                    }
+                }
+
+                if (isValidLoanID == false)
+                {
+                    Console.WriteLine("Please enter a valid loan ID");
+                    Console.WriteLine("Press any Key -> Approve Loan");
+                    Console.ReadKey();
+                    return false;
+                }
             }
-            else if(Regex.IsMatch(loanID, "[CAR][0-9]{14}") == true)
+            catch(InvalidStringException e)
             {
-                CarLoanBL carLoanBL = new CarLoanBL();
-                CarLoan carLoan = new CarLoan();
-
-                carLoan = carLoanBL.GetLoanByLoanID_BL(loanID);
-                Console.WriteLine("Current Status and Loan Details:");
-                Console.WriteLine($"Loan ID:{carLoan.LoanID}");
-                Console.WriteLine($"Customer ID:{carLoan.CustomerID}");
-                Console.WriteLine($"Amount Applied:{carLoan.AmountApplied}");
-                Console.WriteLine($"EMI:{carLoan.EMI_Amount}");
-                Console.WriteLine($"Repayment Period:{carLoan.RepaymentPeriod}");
-                Console.WriteLine($"Date of Application:{carLoan.DateOfApplication}");
-                Console.WriteLine($"Current Status:{carLoan.Status}");
-                Console.WriteLine($"Occupation of Applicant:{carLoan.Occupation}");
-                Console.WriteLine($"Net Income per month:{carLoan.GrossIncome - carLoan.SalaryDeductions}");
-                Console.WriteLine($"Loan applied for {carLoan.Vehicle} type of vehicle");
-
-                LoanStatus updatedStatus;
-                Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
-                Console.WriteLine("Enter the updated loan status");
-                string updatedStatusStr = Console.ReadLine();
-                Enum.TryParse(updatedStatusStr, out updatedStatus);
-
-                carLoan = carLoanBL.ApproveLoanBL(loanID, updatedStatus);
-                Console.WriteLine($"New Status of {loanID} is {carLoan.Status}");
+                Console.WriteLine($"{e.Message}\nPress any key -> Approve Loan");
+                Console.ReadKey();
+                return false;
             }
-            else if(Regex.IsMatch(loanID, "[HOME][0-9]{14}") == true)
-            {
-                HomeLoanBL homeLoanBL = new HomeLoanBL();
-                HomeLoan homeLoan = new HomeLoan();
-
-                homeLoan = homeLoanBL.GetLoanByLoanID_BL(loanID);
-                Console.WriteLine("Current Status and Loan Details:");
-                Console.WriteLine($"Loan ID:{homeLoan.LoanID}");
-                Console.WriteLine($"Customer ID:{homeLoan.CustomerID}");
-                Console.WriteLine($"Amount Applied:{homeLoan.AmountApplied}");
-                Console.WriteLine($"EMI:{homeLoan.EMI_Amount}");
-                Console.WriteLine($"Repayment Period:{homeLoan.RepaymentPeriod}");
-                Console.WriteLine($"Date of Application:{homeLoan.DateOfApplication}");
-                Console.WriteLine($"Current Status:{homeLoan.Status}");
-                Console.WriteLine($"Occupation of Applicant:{homeLoan.Occupation}");
-                Console.WriteLine($"Net Income per month:{homeLoan.GrossIncome - homeLoan.SalaryDeductions}");
-                Console.WriteLine($"Total service years:{homeLoan.ServiceYears}");
-
-                LoanStatus updatedStatus;
-                Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
-                Console.WriteLine("Enter the updated loan status");
-                string updatedStatusStr = Console.ReadLine();
-                Enum.TryParse(updatedStatusStr, out updatedStatus);
-
-                homeLoan = homeLoanBL.ApproveLoanBL(loanID, updatedStatus);
-                Console.WriteLine($"New Status of {loanID} is {homeLoan.Status}");
-            }
-            else
-            {
-                Console.WriteLine("Please enter a valid loan ID");
-            }
+            return true;
         }
         public bool AdminLogin()
         {

@@ -35,6 +35,7 @@ namespace Pecunia.BusinessLayer
                 edu.EMI_Amount = BusinessLogicUtil.ComputeEMI(edu.AmountApplied, edu.RepaymentPeriod, edu.InterestRate);
                 edu.DateOfApplication = DateTime.Now;
                 edu.Status = (LoanStatus)0;
+                edu.RepaymentHoliday = 1;
 
                 EduLoanDAL eduDAL = new EduLoanDAL();
                 return eduDAL.ApplyLoanDAL(edu);
@@ -96,6 +97,7 @@ namespace Pecunia.BusinessLayer
             if (Regex.IsMatch(edu.StudentID, "[a-zA-Z0-9]$") == false)
                 throw new InvalidStringException("Student can consists of alphabets and digits only");
 
+            
             return true;
         }
 
@@ -170,10 +172,10 @@ namespace Pecunia.BusinessLayer
                 throw new InvalidStringException("Invalid Customer ID");
 
             if (car.AmountApplied >= 2000001)
-                throw new InvalidAmountException("Maximum Education loan amount is Rs.20 lakh");
+                throw new InvalidAmountException("Maximum loan amount is Rs.20 lakh");
 
             if (car.RepaymentPeriod >= 11)
-                throw new InvalidRangeException("Repayment period can be maximum of 8 years");
+                throw new InvalidRangeException("Repayment period can be maximum of 10 years");
 
             if (car.SalaryDeductions >= car.GrossIncome)
                 throw new InvalidAmountException("Salary deduction can't be greater than or equal to Gross salary");
@@ -253,10 +255,10 @@ namespace Pecunia.BusinessLayer
                 throw new InvalidStringException("Invalid Customer ID");
 
             if (home.AmountApplied >= 2000001)
-                throw new InvalidAmountException("Maximum Education loan amount is Rs.20 lakh");
+                throw new InvalidAmountException("Maximum loan amount is Rs.20 lakh");
 
-            if (home.RepaymentPeriod >= 11)
-                throw new InvalidRangeException("Repayment period can be maximum of 10 years");
+            if (home.RepaymentPeriod >= 16)
+                throw new InvalidRangeException("Repayment period can be maximum of 15 years");
 
             if (home.SalaryDeductions >= home.GrossIncome)
                 throw new InvalidAmountException("Salary deduction can't be greater than or equal to Gross salary");

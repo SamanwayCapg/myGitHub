@@ -13,7 +13,7 @@ public CourseType Course { get; set; } //user input
 public string InstituteName { get; set; } //user input 
 public string StudentID { get; set; } //user input 
 public int RepaymentHoliday { get; set; } // system fixed 
-
+public int CourseDuration {get; set;} //user input
 
 
 Car Loan 
