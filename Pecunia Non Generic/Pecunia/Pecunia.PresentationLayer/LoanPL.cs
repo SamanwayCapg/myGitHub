@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Pecunia.PresentationLayer
 {
-    public class Program{
+    public class LoanPL{
 
         public static void Main() {
             LoanPresentationLayer loan = new LoanPresentationLayer();
@@ -32,8 +32,7 @@ namespace Pecunia.PresentationLayer
                 Console.WriteLine("3. Show Loan List");
                 Console.WriteLine("4. Back");
 
-
-           
+                
                 Console.WriteLine("Enter Your Choice");
                 input = Convert.ToInt32(Console.ReadLine());
                 if (input != 4) // at input = 4 menu exit
@@ -48,7 +47,12 @@ namespace Pecunia.PresentationLayer
                             if (AdminLogin() == true)
                                 MenuOfApproveLoan();
                             else
+                            {
+                                Console.WriteLine("Invalid Credential!\nPress any key -> Previous Menu");
+                                Console.ReadKey();
+                                MenuOfLoan();
                                 break;
+                            }
                             break;
 
                         case 3:
@@ -77,13 +81,14 @@ namespace Pecunia.PresentationLayer
                 Console.WriteLine("------- List Loan Menu ----------");
                 Console.WriteLine("1. Search by CustomerID");
                 Console.WriteLine("2. Search by LoanID");
-                Console.WriteLine("3. Back");
+                Console.WriteLine("3. Show LoanID with Status (Admin Only)");
+                Console.WriteLine("4. Back");
 
-           
+
                 Console.WriteLine("Enter your input");
                 input = Convert.ToInt16(Console.ReadLine());
 
-                if(input != 3)
+                if(input != 4)
                 {
                     switch (input)
                     {
@@ -101,64 +106,141 @@ namespace Pecunia.PresentationLayer
                                 MenuOfShowLoanList();
                             break;
 
+                        case 3:
+                            if (AdminLogin() == true)
+                            {
+                                if (ListAllLoan_PL() == true)
+                                    return true;
+                                else
+                                    MenuOfShowLoanList();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid Credential\nPress any key -> Previous Menu");
+                                Console.ReadKey();
+                                MenuOfShowLoanList();
+                            }
+                            break;
+
                         default:
                             Console.WriteLine("Not a valid entry!\nPress any key -> Continue");
                             Console.ReadKey();
                             break;
                     }
                 }
-            } while (input != 3);
+            } while (input != 4);
 
             return true;
         }
 
+        private bool ListAllLoan_PL()
+        {
+            Console.Clear();
+            Console.WriteLine("--------------ALL LOANS--------------");
+            bool isLoanFound = false;
+
+            // printing educational loans with ID and current status
+            EduLoanBL edu = new EduLoanBL();
+            List<EduLoan> eduLoans = edu.ListAllLoans();
+            foreach (EduLoan loan in eduLoans)
+            {   
+                isLoanFound = true;
+                Console.WriteLine($"LoanID:{loan.LoanID} -> Status:{loan.Status}");
+            }
+
+            // printing car loans with ID and current status
+            CarLoanBL car = new CarLoanBL();
+            List<CarLoan> carLoans = car.ListAllLoans();
+            foreach (CarLoan loan in carLoans)
+            {
+                isLoanFound = true;
+                Console.WriteLine($"LoanID:{loan.LoanID} -> Status:{loan.Status}");
+            }
+
+            // printing home loans with ID and current status
+            HomeLoanBL home = new HomeLoanBL();
+            List<HomeLoan> homeLoans = home.ListAllLoans();
+            foreach (HomeLoan loan in homeLoans)
+            {
+                isLoanFound = true;
+                Console.WriteLine($"LoanID:{loan.LoanID} -> Status:{loan.Status}");
+            }
+
+            // if there is not any type of loans applied at all
+            if(isLoanFound == false)
+                Console.WriteLine("No loans found");
+
+            Console.WriteLine("Press any key -> Loan Menu");
+            Console.ReadKey();
+            return true;
+
+        }
 
         public bool GetLoanByCustomerID_PL()
         {
+            Console.Clear();
+            Console.WriteLine("----- Loans of Customer -----");
             Console.Write("Enter Customer ID:");
             string customerID = Console.ReadLine();
 
-            
+            // if customerID is not in specific format i.e. [0-9]{14}
+            if(BusinessLogicUtil.validate(customerID) == false)
+            {
+                Console.WriteLine("Not a valid customer ID\nPress any key -> Search Again");
+                Console.ReadKey();
+                return false;
+            }
+
+            // if customerID is not found in customer DB
+            if(isValidCustomer(customerID) == false)
+            {
+                Console.WriteLine($"No customer found in database as {customerID}\nPress any key -> Search Again");
+                Console.ReadKey();
+                return false;
+            }
             bool loanFound = false;
 
+            //searching if the customer has any homeloan
             HomeLoanBL homeLoanBL = new HomeLoanBL();
             List<HomeLoan> homeLoans = homeLoanBL.ListAllLoans();
             foreach(var loan in homeLoans)
             {
                 if (loan.CustomerID == customerID)
                 {
-                    Console.WriteLine($"loan ID:{loan.LoanID}");
+                    Console.WriteLine($"loan ID:{loan.LoanID} -> Status:{loan.Status}");
                     loanFound = true;
                 }
             }
 
 
+            //searching if the customer has any carloan
             CarLoanBL carLoanBL = new CarLoanBL();
             List<CarLoan> carLoans = carLoanBL.ListAllLoans();
             foreach (var loan in carLoans)
             {
                 if (loan.CustomerID == customerID)
                 {
-                    Console.WriteLine($"loan ID:{loan.LoanID}");
+                    Console.WriteLine($"loan ID:{loan.LoanID} -> Status:{loan.Status}");
                     loanFound = true;
                 }
             }
 
 
+            //searching if the customer has any eduloan
             EduLoanBL eduLoanBL = new EduLoanBL();
             List<EduLoan> eduLoans = eduLoanBL.ListAllLoans();
             foreach (var loan in eduLoans)
             {
                 if (loan.CustomerID == customerID)
                 {
-                    Console.WriteLine($"loan ID:{loan.LoanID}");
+                    Console.WriteLine($"loan ID:{loan.LoanID} -> Status:{loan.Status}");
                     loanFound = true;
                 }
             }
 
             if (loanFound == false)
             {
-                Console.WriteLine($"No loan found for the {customerID}\nPress any key -> Search Again");
+                Console.WriteLine($"No loan found in the records of {customerID}\nPress any key -> Search Again");
                 Console.ReadKey();
                 return false;
             }
@@ -170,12 +252,15 @@ namespace Pecunia.PresentationLayer
 
         public bool GetLoanByLoanID_PL()
         {
+            Console.Clear();
+            Console.WriteLine("----------------- Search Loan with LoanID -----------------");
             Console.Write("Enter Loan ID:");
             string loanID = Console.ReadLine();
             bool loanFound = false;
 
             try
             {
+                // if loanID is a educational loan then ID starts with EDU
                 if (Regex.IsMatch(loanID, "[EDU][0-9]{14}$") == true)
                 {
                     EduLoan loan = new EduLoan();
@@ -185,10 +270,10 @@ namespace Pecunia.PresentationLayer
                     Console.WriteLine("Loan Details:");
                     Console.WriteLine($"Loan ID:{loan.LoanID}");
                     Console.WriteLine($"Customer ID:{loan.CustomerID}");
-                    Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
-                    Console.WriteLine($"Interest Rate:{loan.InterestRate}");
-                    Console.WriteLine($"EMI:{loan.EMI_Amount}");
-                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
+                    Console.WriteLine($"Amount Applied:Rs.{loan.AmountApplied}");
+                    Console.WriteLine($"Interest Rate:{loan.InterestRate}% per annum");
+                    Console.WriteLine($"EMI:Rs.{loan.EMI_Amount}/month");
+                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod} year(s)");
                     Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
                     Console.WriteLine($"Current Status:{loan.Status}");
                     Console.WriteLine($"Course of Study:{loan.Course}");
@@ -198,6 +283,8 @@ namespace Pecunia.PresentationLayer
                     loanFound = true;
 
                 }
+
+                // if loanID is a home loan then ID starts with HOME
                 if (Regex.IsMatch(loanID, "[HOME][0-9]{14}$") == true)
                 {
                     HomeLoan loan = new HomeLoan();
@@ -207,18 +294,20 @@ namespace Pecunia.PresentationLayer
                     Console.WriteLine("Loan Details:");
                     Console.WriteLine($"Loan ID:{loan.LoanID}");
                     Console.WriteLine($"Customer ID:{loan.CustomerID}");
-                    Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
-                    Console.WriteLine($"Interest Rate:{loan.InterestRate}");
-                    Console.WriteLine($"EMI:{loan.EMI_Amount}");
-                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
+                    Console.WriteLine($"Amount Applied:Rs.{loan.AmountApplied}");
+                    Console.WriteLine($"Interest Rate:{loan.InterestRate}% per annum");
+                    Console.WriteLine($"EMI:Rs.{loan.EMI_Amount}/month");
+                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod} year(s)");
                     Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
                     Console.WriteLine($"Current Status:{loan.Status}");
                     Console.WriteLine($"Occupation of Applicant:{loan.Occupation}");
-                    Console.WriteLine($"Net Income per month:{loan.GrossIncome - loan.SalaryDeductions}");
+                    Console.WriteLine($"Net Income per month:Rs.{loan.GrossIncome - loan.SalaryDeductions}");
                     Console.WriteLine($"Total service years:{loan.ServiceYears}");
                     loanFound = true;
 
                 }
+
+                // if loanID is a car loan then ID starts with CAR
                 if (Regex.IsMatch(loanID, "[CAR][0-9]{14}$") == true)
                 {
                     CarLoan loan = new CarLoan();
@@ -228,14 +317,14 @@ namespace Pecunia.PresentationLayer
                     Console.WriteLine("Loan Details:");
                     Console.WriteLine($"Loan ID:{loan.LoanID}");
                     Console.WriteLine($"Customer ID:{loan.CustomerID}");
-                    Console.WriteLine($"Amount Applied:{loan.AmountApplied}");
-                    Console.WriteLine($"Interest Rate:{loan.InterestRate}");
-                    Console.WriteLine($"EMI:{loan.EMI_Amount}");
-                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod}");
+                    Console.WriteLine($"Amount Applied:Rs.{loan.AmountApplied}");
+                    Console.WriteLine($"Interest Rate:{loan.InterestRate}% per annum");
+                    Console.WriteLine($"EMI:Rs.{loan.EMI_Amount}/month");
+                    Console.WriteLine($"Repayment Period:{loan.RepaymentPeriod} year(s)");
                     Console.WriteLine($"Date of Application:{loan.DateOfApplication}");
                     Console.WriteLine($"Current Status:{loan.Status}");
                     Console.WriteLine($"Occupation of Applicant:{loan.Occupation}");
-                    Console.WriteLine($"Net Income per month:{loan.GrossIncome - loan.SalaryDeductions}");
+                    Console.WriteLine($"Net Income per month:Rs.{loan.GrossIncome - loan.SalaryDeductions}");
                     Console.WriteLine($"Vehicle Type:{loan.Vehicle}");
                     loanFound = true;
 
@@ -833,6 +922,10 @@ namespace Pecunia.PresentationLayer
             return true;
         }
 
+        public bool isValidCustomer(string customerID)
+        {
+            return true;
+        }
         public void MenuOfCustomer()
         {
             Console.WriteLine("Customer Menu here");

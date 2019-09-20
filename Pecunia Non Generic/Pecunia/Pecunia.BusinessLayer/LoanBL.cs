@@ -298,9 +298,11 @@ namespace Pecunia.BusinessLayer
         public static double ComputeEMI(double Amount, int RepaymentPeriod, double InterestRate)
         {
             // implements simple interset 
-            double TotalAmountToBePaid = (Amount * InterestRate * RepaymentPeriod) / 100;
+            double TotalAmountToBePaid = Amount * (1 + (InterestRate / 100));
             int TotalMonths = RepaymentPeriod * 12;
-            double EMI = TotalAmountToBePaid / TotalMonths;
+            double EMI = TotalAmountToBePaid / (double)TotalMonths;
+
+            Console.WriteLine($"total mounts to be paid {TotalAmountToBePaid}");
             return EMI;
         }
     }
