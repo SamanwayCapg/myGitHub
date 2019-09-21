@@ -98,6 +98,8 @@ namespace Pecunia.DataAccessLayer
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
                     serializer.Serialize(writer, eduLoans);
+                    sw.Close();
+                    fs.Close();
                     return true;
                 }
             }
@@ -195,6 +197,8 @@ namespace Pecunia.DataAccessLayer
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
                     serializer.Serialize(writer, CarLoans);
+                    sw.Close();
+                    fs.Close();
                     return true;
                 }
             }
@@ -293,6 +297,8 @@ namespace Pecunia.DataAccessLayer
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
                     serializer.Serialize(writer, CarLoans);
+                    sw.Close();
+                    fs.Close();
                     return true;
                 }
             }
