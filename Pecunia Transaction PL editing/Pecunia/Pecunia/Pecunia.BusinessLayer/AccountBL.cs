@@ -7,151 +7,235 @@ using Pecunia.Entities;
 using Pecunia.Exceptions;
 using Pecunia.DataAccessLayer;
 using System.Text.RegularExpressions;
-
+using static System.Console;
+using  System.IO;
 namespace Pecunia.BusinessLayer
 {
-    public class AccountBL
+
+    interface IAccountBL
     {
-        static List<long> AccnogenSavings = new List<long>()
-        {
+        bool ValidateAccountType(string accountType, Account accountObject);
+        bool ValidateInitialAmount(double initialAmount, Account accountObject);
+        bool AddAccountBL(string accountType, double initialAmount, string homeBranch,string customerID);
+        bool ValidateAccountNumber(long accountNumber);
+        bool DeleteAccount(long accountNo, string feedback);
+        bool ValidateCustomerID(string customerID);
 
-        };
-        static List<long> AccnogenCurrent = new List<long>()
-        {
+        List<Account> GetAccountByCustomerIDBL(string customerID);
 
-        };
+        Account GetAccountByAccountNoBL(long accountNumber);
+        bool ChangeAccountTypeBL(long accountNumber, string accountType);
+        bool ChangeBranchBL(long accountNumber, string homeBranch);
+        List<Account> GetAllAccountsBL();
+        bool UpdateFDAmountBL(long accountNumber, double newAmount);
 
-        static List<long> AccnogenFD = new List<long>()
-        {
 
-        };
-        //---------------------------------------------------------------------------------------------------------------------1)
-        public bool AddAccountBL()
+
+
+    }
+
+    public class AccountBL : IAccountBL
+    {
+        //static List<long> AccountNumberGeneratorSavings = new List<long>();  // Lists to generate Account Number
+
+        //static List<long> AccountNumberGeneratorCurrent = new List<long>();         // Lists to generate Account Number
+
+
+        //static List<long> AccountNumberGeneratorFD = new List<long>();          // Lists to generate Account Number
+        
+        public bool ValidateAccountType(string accountType, Account accountObject)    // Validate if account Type is one which is listed in Enum
         {
             bool result = false;
-            Account account = new Account();
 
-            //AddCustomer(); //  First we will make him a customer in Customer if he already exists then skip this step
-            Console.WriteLine("Choose Account Type(Savings, Current,FD)");
-            if ((Enum.TryParse(Console.ReadLine(), out account._accType) == true))
+            if ((Enum.TryParse(accountType, out accountObject._accType) == true))
             {
-
+                result = true;
             }
             else
             {
                 throw new EnterValidAccountTypeException("Enter Valid Account Type");
             }
-            Console.WriteLine("Choose Your Home Branch");
-            account.HomeBranch = Console.ReadLine();
+            return result;
+        }
 
-            Console.WriteLine("Enter Initial Amount(For FD minimum 20,000)");
-            double temp = double.Parse(Console.ReadLine());
-            if ((int)account._accType == 2 && temp < 20000)
+        public bool ValidateInitialAmount(double initialAmount, Account accountObject)         // Validate if FD amount is atleast 20,000
+        {
+            bool result = false;
+            if ((int)accountObject._accType == 2 && initialAmount < 20000)
             {
                 throw new InitialAmountOfFDException("Amount should be Atleast 20000");
             }
-            else if ((int)account._accType == 2 && temp > 20000)
+            else if ((int)accountObject._accType == 2 && initialAmount > 20000)
             {
-                account.FdDeposit = temp;
+                accountObject.FdDeposit = initialAmount;
+                result = true;
             }
             else
             {
-                account.InitialAmount = temp;
-                account.Balance = account.Balance + account.InitialAmount;
+                accountObject.InitialAmount = initialAmount;
+                accountObject.Balance = accountObject.Balance + accountObject.InitialAmount;
+                result = true;
 
             }
+            return result;
+        }
+        //---------------------------------------------------------------------------------------------------------------------1)
+        public bool AddAccountBL(string accountType, double initialAmount, string homeBranch,string customerID)
+        {
+            bool result = false;
+            Account account = new Account();
+            if(ValidateCustomerID(customerID))
+            {
+                account.CustomerID = customerID;
+            }
+         
+
+
+
+            if (ValidateAccountType(accountType, account))
+            {
+                account.HomeBranch = homeBranch;
+
+            }
+
+
+
+
+            ValidateInitialAmount(initialAmount, account);
+
             if ((int)account._accType == 0)
             {
                 account.InterestRate = 5;
-                if (AccnogenSavings.Count == 0)            // If list empty then only
+                /* if (AccountNumberGeneratorSavings.Count == 0)  */          // If list empty then only
 
-                {
-                    account.AccountNo = 500001;            // Account No of Savings Account Starts with 5 series
-                    AccnogenSavings.Add(account.AccountNo);
-                }
-                else
-                {
-                    int i = AccnogenSavings.Count;
-                    account.AccountNo = (AccnogenSavings[i - 1] + 1); // Add the existing list number + 1 (eg 500001 +1)
-                }
+                //{
+                //    account.AccountNo = 500001;            // Account Number of Savings Account Starts with 5 series and add First Account Number
+                //    AccountNumberGeneratorSavings.Add(account.AccountNo);
+                //}
+                //else
+                //{
+                //    int index = AccountNumberGeneratorSavings.Count;
+                //    Console.WriteLine(AccountNumberGeneratorSavings[index - 1]);
+                //    account.AccountNo = (AccountNumberGeneratorSavings[index - 1] + 1);
+                //    AccountNumberGeneratorSavings.Add(account.AccountNo);// Add the existing list number + 1 (eg 500001 +1)
+                //}
+                StreamReader sr = new StreamReader("AccountNumberSavings.txt");
+                //string data = File.ReadAllText("AccountNumberSavings.txt");
+                string data = sr.ReadToEnd();
+                sr.Close();
+                long temporary = long.Parse(data);
+                account.AccountNo = temporary + 1;
+                temporary = temporary + 1;
+                //data = temporary.ToString();
+                StreamWriter sw = new StreamWriter("AccountNumberSavings.txt");
+                sw.WriteLine(temporary);
+                sw.Close();
+                
+
 
             }
 
             else if ((int)account._accType == 1)
             {
 
-                account.InterestRate = 0;
-                if (AccnogenCurrent.Count == 0)
+                //account.InterestRate = 0;
+                //if (AccountNumberGeneratorCurrent.Count == 0)
 
-                {
-                    account.AccountNo = 400001;                 // Account No of Current Account Starts with 4 series
-                    AccnogenCurrent.Add(account.AccountNo);
-                }
+                //{
+                //    account.AccountNo = 400001;                 // Account Number of Current Account Starts with 4 series
+                //    AccountNumberGeneratorCurrent.Add(account.AccountNo);
+                //}
 
-                else
-                {
-                    int i = AccnogenCurrent.Count;
-                    account.AccountNo = (AccnogenCurrent[i - 1] + 1);
-                }
+                //else
+                //{
+                //    int index = AccountNumberGeneratorCurrent.Count;
+                //    account.AccountNo = (AccountNumberGeneratorCurrent[index - 1] + 1);
+                //    AccountNumberGeneratorCurrent.Add(account.AccountNo);// Add the existing list number + 1 (eg 400001 +1)
+                //}
+                StreamReader sr = new StreamReader("AccountNumberCurrent.txt");
+           
+                string data = sr.ReadToEnd();
+                sr.Close();
+                long temporary = long.Parse(data);
+                account.AccountNo = temporary + 1;
+                temporary = temporary + 1;
+                //data = temporary.ToString();
+                StreamWriter sw = new StreamWriter("AccountNumberCurrent.txt");
+                sw.WriteLine(temporary);
+                sw.Close();
             }
 
             else
             {
-                if (account.InitialAmount > 100000)
-                {
-                    account.InterestRate = 5.5;
-                }
+                //if (account.InitialAmount > 100000)
+                //{
+                //    account.InterestRate = 5.5;
+                //}
 
-                if (account.InitialAmount < 100000)
-                {
-                    account.InterestRate = 5;
-                }
+                //if (account.InitialAmount < 100000)
+                //{
+                //    account.InterestRate = 6;
+                //}
 
 
-                if (AccnogenFD.Count == 0)
+                //if (AccountNumberGeneratorFD.Count == 0)
 
-                {
-                    account.AccountNo = 300001;                      // Account No of FD Account Starts with 3 series
-                    AccnogenFD.Add(account.AccountNo);
-                }
+                //{
+                //    account.AccountNo = 300001;                      // Account No of FD Account Starts with 3 series
+                //    AccountNumberGeneratorFD.Add(account.AccountNo);
+                //}
 
-                else
-                {
-                    int i = AccnogenFD.Count;
-                    account.AccountNo = (AccnogenFD[i - 1] + 1);
-                }
+                //else
+                //{
+                //    int index = AccountNumberGeneratorFD.Count;
+                //    account.AccountNo = (AccountNumberGeneratorFD[index - 1] + 1);
+                //    AccountNumberGeneratorFD.Add(account.AccountNo);
+                //    // Add the existing list number + 1 (eg 300001 +1)
+                //}
+                StreamReader sr = new StreamReader("AccountNumberFD.txt");
+
+                string data = sr.ReadToEnd();
+                sr.Close();
+                long temporary = long.Parse(data);
+                account.AccountNo = temporary + 1;
+                temporary = temporary + 1;
+                //data = temporary.ToString();
+                StreamWriter sw = new StreamWriter("AccountNumberFD.txt");
+                sw.WriteLine(temporary);
+                sw.Close();
+
 
             }
 
-            AccountDAL ad = new AccountDAL();
-            result = ad.AddAccountDAL(account); // After adding Method
+            AccountDAL accountDAL = new AccountDAL();
+            result = accountDAL.AddAccountDAL(account); // Calling Method of DAL to add the object
 
 
             return result;
 
         }
         //----------------------------------------------------------------------------------------
-        public bool ValidateAccNo(long AcNo)
-        {
-            bool res = false;
-            if ((AcNo > 500000 && AcNo < 599999) || (AcNo > 400000 && AcNo < 499999) || (AcNo > 300000 && AcNo < 399999))
-            {
-                res = true;
-            }
-            else
-            {
-                // Throw Exception
-            }
-            return res;
-        }
-        //------------------------------------------------------------------------------------------2)
-        public bool DeleteAccount(long AccountNo)
+        public bool ValidateAccountNumber(long accountNumber)
         {
             bool result = false;
-            if (ValidateAccNo(AccountNo))
+            if ((accountNumber > 500000 && accountNumber < 599999) || (accountNumber > 400000 && accountNumber < 499999) || (accountNumber > 300000 && accountNumber < 399999))
             {
-                AccountDAL a = new AccountDAL();
-                result = a.DeleteAccountDAL(AccountNo);
+                result = true;
+            }
+            else
+            {
+                throw new AccountDoesNotExistException("Enter Valid Account Number");
+            }
+            return result;
+        }
+        //------------------------------------------------------------------------------------------2)
+        public bool DeleteAccount(long accountNo, string feedback)
+        {
+            bool result = false;
+            if (ValidateAccountNumber(accountNo))
+            {
+                AccountDAL accountDAL = new AccountDAL();
+                result = accountDAL.DeleteAccountDAL(accountNo, feedback);         // Calling DAL Method of Delete Account
             }
 
 
@@ -159,23 +243,28 @@ namespace Pecunia.BusinessLayer
             return result;
         }
         //----------------------------------------------------------------------------------------
-        bool ValidateCustID(string CID)
+        public bool ValidateCustomerID(string customerID)
         {
-            bool res = true;
-            if (Regex.IsMatch(CID, "[0-9]{14}$") == false)
+            bool result = false;
+            if (Regex.IsMatch(customerID, "[0-9]{14}$") == false)  // The CustomerID must be 14 Digits long
             {
                 throw new InvalidStringException("Customer ID must be of 14 Digits");
-
             }
-            return res;
+
+
+            else
+            {
+                result = true;
+            }
+            return result;
         }
         //----------------------------------------------------------------------------------------3)
-        public Account GetAccountByCustomerID_BL(string CustomerID)
+        public List<Account> GetAccountByCustomerIDBL(string customerID)
         {
-            if (ValidateCustID(CustomerID))
+            if (ValidateCustomerID(customerID))
             {
-                AccountDAL a = new AccountDAL();
-                return a.GetAccountByCustomerID_DAL(CustomerID);
+                AccountDAL accountDAL = new AccountDAL();
+                return accountDAL.GetAccountByCustomerIDDAL(customerID);
             }
             else
             {
@@ -186,16 +275,17 @@ namespace Pecunia.BusinessLayer
 
         }
         //-----------------------------------------------------------------------------------------
-        public Account GetAccountByAccountNo_BL(long AccountNo)
+        public Account GetAccountByAccountNoBL(long accountNumber)
         {
-            if (ValidateAccNo(AccountNo))
+            if (ValidateAccountNumber(accountNumber))
             {
                 AccountDAL a = new AccountDAL();
-                return a.GetAccountByAccountNo_DAL(AccountNo);
+                return a.GetAccountByAccountNoDAL(accountNumber);
             }
             else
             {
-                throw new EnterValidCustomerIDException("ENter Valid Customer ID");
+                throw new EnterValidCustomerIDException("ENter Valid AccountNumber"); // Account Number Kar Hyala
+
 
             }
 
@@ -203,27 +293,52 @@ namespace Pecunia.BusinessLayer
         }
 
         //----------------------------------------------------------------------------------------4)
-        public bool ChangeAccountType_BL(long AccNo)
+        public bool ChangeAccountTypeBL(long accountNumber, string accountType) // Change Account Type
         {
-            bool res = false;
-            if (ValidateAccNo(AccNo))
-            {
-                AccountDAL a = new AccountDAL();
+            //--------------------------------
 
-                res = a.ChangeAccountType_DAL(AccNo);
+            //===========
+            bool result = false;
+
+            Account temporaryObject = new Account();
+            AccountDAL accountDAL = new AccountDAL();
+
+
+            temporaryObject = accountDAL.GetAccountByAccountNoDAL(accountNumber);  // Getting Account Object having that particular account Number
+            if ((int)temporaryObject._accType == 2)
+            {
+
+                //Raise excpetion
+                throw new FDAccountCannotBeChangedException("Cannot change from FD account");
             }
-            return res;
+            if (ValidateAccountType(accountType, temporaryObject))
+            {
+                accountDAL.SerializeUpdated(temporaryObject);
+                result = true;
+            }
+
+
+
+            return result;
         }
+        //-----------------------
+
 
         //---------------------------------------------------------------------------------------5)
-        public bool ChangeBranch_BL(String CustomerID)     // Change Branch
+        public bool ChangeBranchBL(long accountNumber, string homeBranch)     // Change Branch
         {
+
+            Account temporaryObject = new Account();
+            AccountDAL accountDAL = new AccountDAL();
             bool res = false;
-            if (ValidateCustID(CustomerID))
+            if (ValidateAccountNumber(accountNumber))
             {
-                AccountDAL a = new AccountDAL();
-                res = a.ChangeBranch_DAL(CustomerID);
+               
+
+                temporaryObject = accountDAL.GetAccountByAccountNoDAL(accountNumber);
             }
+            temporaryObject.HomeBranch = homeBranch;
+            accountDAL.SerializeUpdated(temporaryObject);
             return res;
         }
 
@@ -231,27 +346,51 @@ namespace Pecunia.BusinessLayer
 
         public List<Account> GetAllAccountsBL()
         {
-            AccountDAL a = new AccountDAL();
-            return a.GetAllAccountsDAL();
+            AccountDAL accountDAL = new AccountDAL();
+            return accountDAL.GetAllAccountsDAL();
         }
 
         //-------------------------------------------------------------------------------------7)
 
-        public bool UpdateFDAmount_BL(long AccountNo)
+        public bool ValidateNewAount(double newAmount)
         {
-            bool res = false;
-            if (ValidateAccNo(AccountNo))
+            bool result = true;
+            if (newAmount < 20000)
             {
-                if (ValidateAccNo(AccountNo))
-                {
-                    AccountDAL a = new AccountDAL();
-                    res = a.UpdateFDAmount_DAL(AccountNo);
+                result = false;
+                throw new InitialAmountOfFDException("Amount should be Atleast 20000");
 
-                }
             }
-            return res;
+            return result;
+
+        }
+        public bool UpdateFDAmountBL(long accountNumber, double newAmount)
+        {
+            bool result = false;
+            if (ValidateAccountNumber(accountNumber) && ValidateNewAount(newAmount))
+            {
+
+                AccountDAL accountDAL = new AccountDAL();
+                Account accountTemporary = accountDAL.GetAccountByAccountNoDAL(accountNumber);
+                accountTemporary.FdDeposit = newAmount;
+                if (newAmount > 100000)
+                {
+                    accountTemporary.InterestRate = 5;
+                    result = true;
+                }
+                else
+                {
+                    accountTemporary.InterestRate = 6;
+                    result = true;
+                }
+                accountDAL.SerializeUpdated(accountTemporary);
+
+            }
+            return result;
         }
 
-
     }
+
+
 }
+

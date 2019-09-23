@@ -305,6 +305,37 @@ namespace Pecunia.BusinessLayer
             Console.WriteLine($"total mounts to be paid {TotalAmountToBePaid}");
             return EMI;
         }
+
+        public static DateTime validateDate(string dateFormat, string date)
+        {
+            DateTime Date;
+            bool isValidDate = DateTime.TryParseExact(date, dateFormat, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out Date);
+            if (isValidDate == true)
+                return Date;
+            else
+                return default(DateTime);
+        }
+
+        public static bool validateAccountNo(string accountNo)
+        {
+            long accNo = long.Parse(accountNo);
+            if ((accNo > 300000 && accNo < 399999) || (accNo > 400000 && accNo < 499999) || (accNo > 500000 && accNo < 599999))
+                return true;
+            else
+                return false;
+        }
+
+        public static void ShowTransactionDetails(TransactionEntities transaction)
+        {
+            Console.WriteLine($"TransactionID:{transaction.TransactionID}");
+            Console.WriteLine($"Customer ID:{transaction.CustomerID}");
+            Console.WriteLine($"Account No:{transaction.AccountNo}");
+            Console.WriteLine($"Amount:{transaction.Amount}");
+            Console.WriteLine($"Debit/Credit:{transaction.Type}");
+            Console.WriteLine($"Date of Transaction:{transaction.DateOfTransaction}");
+            Console.WriteLine($"Mode:{transaction.Mode}");
+            Console.WriteLine("------------------------------------------------------");
+        }
     }
 
 

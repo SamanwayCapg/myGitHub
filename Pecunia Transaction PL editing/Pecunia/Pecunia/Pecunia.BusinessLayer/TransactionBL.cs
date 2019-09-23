@@ -2,6 +2,8 @@
 using Pecunia.Exceptions;
 using Pecunia.DataAccessLayer;
 using System.Text.RegularExpressions;
+using Pecunia.Entities;
+using System.Collections.Generic;
 
 namespace Pecunia.BusinessLayer
 {
@@ -10,7 +12,7 @@ namespace Pecunia.BusinessLayer
         public bool DebitTransactionByWithdrawalSlipBL(long AccountNo, double Amount)
         {
             // FD accountNo ranges from 30000 - 39999, Current accountNo ranges from 40000-49999, savings accountNo ranges from 50000-59999
-            if ((AccountNo > 50000 && AccountNo < 59999) || (AccountNo > 40000 && AccountNo < 49999) || (AccountNo > 30000 && AccountNo < 39999) && Amount <= 50000)
+            if (BusinessLogicUtil.validateAccountNo(Convert.ToString(AccountNo)) && Amount <= 50000)
             {
                 TransactionDAL debit = new TransactionDAL();
                 return debit.DebitTransactionByWithdrawalSlipDAL(AccountNo, Amount);
@@ -23,7 +25,7 @@ namespace Pecunia.BusinessLayer
         public bool CreditTransactionByDepositSlipBL(long AccountNo, Double Amount)
         {
 
-            if ((AccountNo > 50000 && AccountNo < 59999) || (AccountNo > 40000 && AccountNo < 49999) || (AccountNo > 30000 && AccountNo < 39999) && Amount <= 50000)
+            if (BusinessLogicUtil.validateAccountNo(Convert.ToString(AccountNo)) && Amount <= 50000)
             {
                 TransactionDAL credit = new TransactionDAL();
                 return credit.CreditTransactionByDepositSlipDAL(AccountNo, Amount);
@@ -36,7 +38,7 @@ namespace Pecunia.BusinessLayer
         public bool DebitTransactionByChequeBL(long AccountNo, double Amount, string ChequeNo)
         {
 
-            if ((AccountNo > 50000 && AccountNo < 59999) || (AccountNo > 40000 && AccountNo < 49999) || (AccountNo > 30000 && AccountNo < 39999) && Amount <= 50000 && ChequeNo.Length == 10 && (Regex.IsMatch(ChequeNo, "[A-Z0-9]$") == true))
+            if (BusinessLogicUtil.validateAccountNo(Convert.ToString(AccountNo)) && Amount <= 50000 && ChequeNo.Length == 10 && (Regex.IsMatch(ChequeNo, "[A-Z0-9]$") == true))
             {
                 TransactionDAL Cheque = new TransactionDAL();
                 return Cheque.DebitTransactionByChequeDAL(AccountNo, Amount, ChequeNo);
@@ -49,8 +51,7 @@ namespace Pecunia.BusinessLayer
         }
         public bool CreditTransactionByChequeBL(long AccountNo, double Amount, string ChequeNo)
         {
-            
-            if ((AccountNo > 50000 && AccountNo < 59999) || (AccountNo > 40000 && AccountNo < 49999) || (AccountNo > 30000 && AccountNo < 39999) && Amount <= 50000 && ChequeNo.Length == 10 && (ValidateCheque(ChequeNo) == true))
+            if ( BusinessLogicUtil.validateAccountNo(Convert.ToString(AccountNo)) && ValidateCheque(ChequeNo) == true && Amount <= 50000)
             {
                 TransactionDAL Cheque = new TransactionDAL();
                 return Cheque.CreditTransactionByChequeDAL(AccountNo, Amount, ChequeNo);
@@ -74,7 +75,7 @@ namespace Pecunia.BusinessLayer
         }
         public void DisplayTransactionByAccountNoBL(long AccountNo)
         {
-            if ((AccountNo > 50000 && AccountNo < 59999) || (AccountNo > 40000 && AccountNo < 49999) || (AccountNo > 30000 && AccountNo < 39999))
+            if (BusinessLogicUtil.validateAccountNo(Convert.ToString(AccountNo)))
             {
                 TransactionDAL acc = new TransactionDAL();
                 acc.DisplayTransactionByAccountNo_DAL(AccountNo);
@@ -84,24 +85,32 @@ namespace Pecunia.BusinessLayer
                 throw new TransactionDisplayAccountException("Invalid AccountNo");
             }
         }
-        public void DisplayTransactionDetailsByTransactionID_DAL(string TransactionID)
+        public TransactionEntities DisplayTransactionByTransactionID_BL(string transactionID)
         {
-            /*if ()
+            if (Regex.IsMatch(transactionID, "[TRANS][0-9]{14}$") == true)
             {
-                return;
+                TransactionDAL transDAL = new TransactionDAL();
+                return transDAL.DisplayTransactionByTransactionID_DAL(transactionID);
             }
             else
             {
                 throw new TransactionDetailsException("Invalid Transaction ID");
-            }*/
+            }
+            
         }
         public bool ValidateCheque(string ChequeNo)
         {
-            if (Regex.IsMatch(ChequeNo, "[0-9]{6}$")==true)
+            if (Regex.IsMatch(ChequeNo, "[0-9]{10}$")==true)
             {
                 return true;
             }
             return false;
+        }
+
+        public List<TransactionEntities> GetAllTransactionBL()
+        {
+            TransactionDAL transDAL = new TransactionDAL();
+            return transDAL.GetAllTransactionsDAL();
         }
 
     }

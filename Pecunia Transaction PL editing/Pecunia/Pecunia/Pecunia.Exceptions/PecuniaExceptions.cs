@@ -125,6 +125,21 @@ namespace Pecunia.Exceptions
         }
     }
 
+    public class InsufficientBalanceException : ApplicationException
+    {
+        public InsufficientBalanceException(string message) : base(message)
+        {
+
+        }
+    }
+
+    public class FDAccountCannotBeChangedException : ApplicationException
+    {
+        public FDAccountCannotBeChangedException(string msg) : base(msg)
+        {
+
+        }
+    }
     public class PecuniaException : ApplicationException
     {
         public PecuniaException()
