@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Pecunia.Entities;
+using Capgemini.Pecunia.Entities;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace Pecunia.DataAccessLayer
+namespace Capgemini.Pecunia.DataAccessLayer
 {
    /* public interface ILoanDAL
     {
@@ -37,7 +37,7 @@ namespace Pecunia.DataAccessLayer
             EduLoan objToReturn = new EduLoan();
             foreach (EduLoan Loan in eduLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                 {
                     Loan.Status = updatedStatus;
                     objToReturn = Loan;
@@ -54,7 +54,7 @@ namespace Pecunia.DataAccessLayer
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
             foreach (EduLoan Loan in eduLoans)
             {
-                if (Loan.CustomerID == customerID)
+                if (Loan.CustomerID.ToString().Equals(customerID) == true)
                     return Loan;
             }
             return default(EduLoan);
@@ -65,7 +65,7 @@ namespace Pecunia.DataAccessLayer
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
             foreach (EduLoan Loan in eduLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                     return Loan;
             }
             return default(EduLoan);
@@ -76,7 +76,7 @@ namespace Pecunia.DataAccessLayer
             List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
             foreach (EduLoan Loan in eduLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                     return Loan.Status;
             }
             return (LoanStatus)4;//LoanStatus for INVALID
@@ -115,6 +115,17 @@ namespace Pecunia.DataAccessLayer
             return eduLoans;
         }
 
+        public bool isLoanIDExistDAL(string loanID)
+        {
+            List<EduLoan> loans = DeserializeFromJSON("EduLoans.txt");
+            foreach(var loan in loans)
+            {
+                if (loan.LoanID.Equals(loanID))
+                    return true;
+            }
+            return false;
+        }
+
         
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -137,7 +148,7 @@ namespace Pecunia.DataAccessLayer
             CarLoan objToReturn = new CarLoan();
             foreach(var Loan in carLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                 {
                     Loan.Status = updatedStatus;
                     objToReturn = Loan;
@@ -153,7 +164,7 @@ namespace Pecunia.DataAccessLayer
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
             foreach (CarLoan Loan in carLoans)
             {
-                if (Loan.CustomerID == customerID)
+                if (Loan.CustomerID.ToString().Equals(customerID) == true)
                     return Loan;
             }
             return default(CarLoan);
@@ -164,7 +175,7 @@ namespace Pecunia.DataAccessLayer
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
             foreach (CarLoan Loan in carLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                     return Loan;
             }
             return default(CarLoan);
@@ -175,7 +186,7 @@ namespace Pecunia.DataAccessLayer
             List<CarLoan> carLoans = DeserializeFromJSON("CarLoans.txt");
             foreach (CarLoan Loan in carLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                     return Loan.Status;
             }
             return (LoanStatus)4;//LoanStatus for INVALID 
@@ -214,6 +225,17 @@ namespace Pecunia.DataAccessLayer
             return carLoans;
         }
 
+        public bool isLoanIDExistDAL(string loanID)
+        {
+            List<CarLoan> loans = DeserializeFromJSON("CarLoans.txt");
+            foreach (var loan in loans)
+            {
+                if (loan.LoanID.Equals(loanID))
+                    return true;
+            }
+            return false;
+        }
+
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -236,7 +258,7 @@ namespace Pecunia.DataAccessLayer
             HomeLoan objToReturn = new HomeLoan();
             foreach (HomeLoan Loan in homeLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                 {
                     Loan.Status = updatedStatus;
                     objToReturn = Loan;
@@ -253,7 +275,7 @@ namespace Pecunia.DataAccessLayer
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
             foreach (HomeLoan Loan in homeLoans)
             {
-                if (Loan.CustomerID == customerID)
+                if (Loan.CustomerID.ToString().Equals(customerID) == true)
                     return Loan;
             }
             return default(HomeLoan);
@@ -264,7 +286,7 @@ namespace Pecunia.DataAccessLayer
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
             foreach (HomeLoan Loan in homeLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                     return Loan;
             }
             return default(HomeLoan);
@@ -275,7 +297,7 @@ namespace Pecunia.DataAccessLayer
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
             foreach (HomeLoan Loan in homeLoans)
             {
-                if (Loan.LoanID == loanID)
+                if (Loan.LoanID.ToString().Equals(loanID) == true)
                     return Loan.Status;
             }
             return (LoanStatus)4;//LoanStatus for INVALID 
@@ -312,6 +334,17 @@ namespace Pecunia.DataAccessLayer
         {
             List<HomeLoan> homeLoans = DeserializeFromJSON("HomeLoans.txt");
             return homeLoans;
+        }
+
+        public bool isLoanIDExistDAL(string loanID)
+        {
+            List<HomeLoan> loans = DeserializeFromJSON("HomeLoans.txt");
+            foreach (var loan in loans)
+            {
+                if (loan.LoanID.Equals(loanID))
+                    return true;
+            }
+            return false;
         }
     }
 

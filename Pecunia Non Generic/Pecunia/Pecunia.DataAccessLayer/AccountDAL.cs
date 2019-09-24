@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pecunia.Entities;
-using Pecunia.Exceptions;
+using Capgemini.Pecunia.Entities;
+using Capgemini.Pecunia.Exceptions;
 
-namespace Pecunia.DataAccessLayer
+namespace Capgemini.Pecunia.DataAccessLayer
 {
     public class AccountDAL
     {

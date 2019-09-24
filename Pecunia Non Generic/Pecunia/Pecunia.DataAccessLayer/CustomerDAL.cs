@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Pecunia.Entities;
-using Pecunia.Exceptions;
+using Capgemini.Pecunia.Entities;
+using Capgemini.Pecunia.Exceptions;
 using System.Text.RegularExpressions;
 
-namespace Pecunia.DataAccessLayer
+namespace Capgemini.Pecunia.DataAccessLayer
 {
     public class CustomerDAL
     {
@@ -20,7 +20,7 @@ namespace Pecunia.DataAccessLayer
 
                 return true;
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }
@@ -41,7 +41,7 @@ namespace Pecunia.DataAccessLayer
                 }
                 return true;
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }
@@ -67,7 +67,7 @@ namespace Pecunia.DataAccessLayer
                 CustomerEntities c = new CustomerEntities();
                 return c;
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 CustomerEntities c = new CustomerEntities();
                 return c;
@@ -132,7 +132,7 @@ namespace Pecunia.DataAccessLayer
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 Console.WriteLine("cannot update");
             }

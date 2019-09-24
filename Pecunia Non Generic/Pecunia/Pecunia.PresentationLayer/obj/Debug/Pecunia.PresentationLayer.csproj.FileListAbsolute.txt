@@ -32,3 +32,5 @@ C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.P
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.Exceptions.pdb
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Helpers.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\bin\Debug\Helpers.pdb

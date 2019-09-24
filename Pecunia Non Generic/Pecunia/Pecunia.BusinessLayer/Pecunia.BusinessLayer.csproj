@@ -45,13 +45,20 @@
   <ItemGroup>
     <Compile Include="AccountBL.cs" />
     <Compile Include="AdminBL.cs" />
+    <Compile Include="BLbase.cs" />
     <Compile Include="CustomerBL.cs" />
     <Compile Include="EmployeeBL.cs" />
-    <Compile Include="LoanBL.cs" />
+    <Compile Include="LoanBL\CarLoanBL.cs" />
+    <Compile Include="LoanBL\EduLoanBL.cs" />
+    <Compile Include="LoanBL\HomeLoanBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionBL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{bd02ec7e-90e2-47bb-abb1-c0ac26fcb7e6}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pecunia.DataAccessLayer\Pecunia.DataAccessLayer.csproj">
       <Project>{071de7db-bad2-4b3c-92b2-337b50b1039a}</Project>
       <Name>Pecunia.DataAccessLayer</Name>

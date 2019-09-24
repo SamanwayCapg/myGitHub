@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pecunia.Entities;
-using Pecunia.DataAccessLayer;
+using Capgemini.Pecunia.Entities;
+using Capgemini.Pecunia.DataAccessLayer;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Pecunia.DataAccessLayer
+namespace Capgemini.Pecunia.DataAccessLayer
 {
     public class TransactionDAL
     {

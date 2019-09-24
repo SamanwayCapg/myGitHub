@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pecunia.Entities;
-using Pecunia.Exceptions;
-using Pecunia.DataAccessLayer;
+using Capgemini.Pecunia.Entities;
+using Capgemini.Pecunia.Exceptions;
+using Capgemini.Pecunia.DataAccessLayer;
 
-namespace Pecunia.BusinessLayer
+namespace Capgemini.Pecunia.BusinessLayer
 {
     public class AdminBL
     {

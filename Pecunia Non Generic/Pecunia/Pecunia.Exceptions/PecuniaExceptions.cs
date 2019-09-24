@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pecunia.Exceptions
+namespace Capgemini.Pecunia.Exceptions
 {
     public class InvalidStringException : ApplicationException{
         public InvalidStringException(string msg) : base(msg){

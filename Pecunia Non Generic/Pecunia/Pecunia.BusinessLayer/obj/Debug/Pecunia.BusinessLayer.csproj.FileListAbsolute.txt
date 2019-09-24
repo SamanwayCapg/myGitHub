@@ -26,3 +26,5 @@ C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.B
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb

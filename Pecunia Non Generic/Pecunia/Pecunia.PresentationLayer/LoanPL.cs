@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using Pecunia.Exceptions;
-using Pecunia.Entities;
-using Pecunia.BusinessLayer;
+using Capgemini.Pecunia.Exceptions;
+using Capgemini.Pecunia.Entities;
+using Capgemini.Pecunia.BusinessLayer;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Capgemini.Pecunia.BusinessLayer.LoanBL;
 
-namespace Pecunia.PresentationLayer
+namespace Capgemini.Pecunia.PresentationLayer
 {
     public class LoanPL{
 
-        public static void Main() {
+        static async void Main(string[] args)
+        {
             LoanPresentationLayer loan = new LoanPresentationLayer();
-            loan.MenuOfLoan();
+            await loan.MenuOfLoan();
         }
     }
 
     public class LoanPresentationLayer
     {
         
-        public bool MenuOfLoan()
+        public async Task<bool> MenuOfLoan()
         {
            
             int input;
@@ -40,23 +43,23 @@ namespace Pecunia.PresentationLayer
                     switch (input)
                     {
                         case 1:
-                            MenuOfApplyForLoan();
+                            await MenuOfApplyForLoan();
                             break;
 
                         case 2:
                             if (AdminLogin() == true)
-                                MenuOfApproveLoan();
+                                await MenuOfApproveLoan();
                             else
                             {
                                 Console.WriteLine("Invalid Credential!\nPress any key -> Previous Menu");
                                 Console.ReadKey();
-                                MenuOfLoan();
+                                await MenuOfLoan();
                                 break;
                             }
                             break;
 
                         case 3:
-                            MenuOfShowLoanList();
+                            await MenuOfShowLoanList();
                             break;
 
                         default:
@@ -71,7 +74,7 @@ namespace Pecunia.PresentationLayer
         }
 
 
-        public bool MenuOfShowLoanList()
+        public async Task<bool> MenuOfShowLoanList()
         {
             
             int input;
@@ -96,14 +99,14 @@ namespace Pecunia.PresentationLayer
                             if (GetLoanByCustomerID_PL() == true)
                                 return true;
                             else
-                                MenuOfShowLoanList();
+                                await MenuOfShowLoanList();
                             break;
 
                         case 2:
-                            if (GetLoanByLoanID_PL() == true)
+                            if (await GetLoanByLoanID_PL() == true)
                                 return true;
                             else
-                                MenuOfShowLoanList();
+                                await MenuOfShowLoanList();
                             break;
 
                         case 3:
@@ -112,13 +115,13 @@ namespace Pecunia.PresentationLayer
                                 if (ListAllLoan_PL() == true)
                                     return true;
                                 else
-                                    MenuOfShowLoanList();
+                                    await MenuOfShowLoanList();
                             }
                             else
                             {
                                 Console.WriteLine("Invalid Credential\nPress any key -> Previous Menu");
                                 Console.ReadKey();
-                                MenuOfShowLoanList();
+                                await MenuOfShowLoanList();
                             }
                             break;
 
@@ -181,18 +184,13 @@ namespace Pecunia.PresentationLayer
             Console.Clear();
             Console.WriteLine("----- Loans of Customer -----");
             Console.Write("Enter Customer ID:");
-            string customerID = Console.ReadLine();
+            Guid customerID = Guid.Parse(Console.ReadLine());
 
-            // if customerID is not in specific format i.e. [0-9]{14}
-            if(BusinessLogicUtil.validate(customerID) == false)
-            {
-                Console.WriteLine("Not a valid customer ID\nPress any key -> Search Again");
-                Console.ReadKey();
-                return false;
-            }
+
 
             // if customerID is not found in customer DB
-            if(isValidCustomer(customerID) == false)
+            CustomerBL cust = new CustomerBL();
+            if (cust.isCustomerIDExistBL(customerID) == false)
             {
                 Console.WriteLine($"No customer found in database as {customerID}\nPress any key -> Search Again");
                 Console.ReadKey();
@@ -250,7 +248,7 @@ namespace Pecunia.PresentationLayer
             return true;
         }
 
-        public bool GetLoanByLoanID_PL()
+        public async Task<bool> GetLoanByLoanID_PL()
         {
             Console.Clear();
             Console.WriteLine("----------------- Search Loan with LoanID -----------------");
@@ -258,14 +256,18 @@ namespace Pecunia.PresentationLayer
             string loanID = Console.ReadLine();
             bool loanFound = false;
 
+            EduLoanBL eduLoan = new EduLoanBL();
+            HomeLoanBL homeLoan = new HomeLoanBL();
+            CarLoanBL carLoan = new CarLoanBL();
+
             try
             {
-                // if loanID is a educational loan then ID starts with EDU
-                if (Regex.IsMatch(loanID, "[EDU][0-9]{14}$") == true)
+                
+                if (eduLoan.isLoanIDExistBL(loanID) == true)
                 {
                     EduLoan loan = new EduLoan();
                     EduLoanBL loanBL = new EduLoanBL();
-                    loan = loanBL.GetLoanByLoanID_BL(loanID);
+                    loan = await loanBL.GetLoanByLoanID_BL(loanID);
 
                     Console.WriteLine("Loan Details:");
                     Console.WriteLine($"Loan ID:{loan.LoanID}");
@@ -284,12 +286,12 @@ namespace Pecunia.PresentationLayer
 
                 }
 
-                // if loanID is a home loan then ID starts with HOME
-                if (Regex.IsMatch(loanID, "[HOME][0-9]{14}$") == true)
+                // if loanID is not found in eduloan list
+                if (loanFound == false && homeLoan.IsLoanIDExistBL(loanID) == true )
                 {
                     HomeLoan loan = new HomeLoan();
                     HomeLoanBL loanBL = new HomeLoanBL();
-                    loan = loanBL.GetLoanByLoanID_BL(loanID);
+                    loan = await loanBL.GetLoanByLoanID_BL(loanID);
 
                     Console.WriteLine("Loan Details:");
                     Console.WriteLine($"Loan ID:{loan.LoanID}");
@@ -307,12 +309,12 @@ namespace Pecunia.PresentationLayer
 
                 }
 
-                // if loanID is a car loan then ID starts with CAR
-                if (Regex.IsMatch(loanID, "[CAR][0-9]{14}$") == true)
+                // if loanID is not found in eduloan list as well as homeloan list
+                if (loanFound == false && carLoan.isLoanIDExistBL(loanID) == true)
                 {
                     CarLoan loan = new CarLoan();
                     CarLoanBL loanBL = new CarLoanBL();
-                    loan = loanBL.GetLoanByLoanID_BL(loanID);
+                    loan = await loanBL.GetLoanByLoanID_BL(loanID);
 
                     Console.WriteLine("Loan Details:");
                     Console.WriteLine($"Loan ID:{loan.LoanID}");
@@ -351,9 +353,10 @@ namespace Pecunia.PresentationLayer
                 return false;
             }
         }
-        public bool MenuOfApplyForLoan()
+        public async Task<bool> MenuOfApplyForLoan()
         {
             int input;
+            
             ///////Loan level 1 Menu
             do
             {
@@ -373,7 +376,8 @@ namespace Pecunia.PresentationLayer
                     switch (input)
                     {
                         case 1:
-                            if (ApplyHomeLoan() == true)
+                            //result = await ApplyHomeLoan();
+                            if (await ApplyHomeLoan() == true)
                             {
                                 Console.WriteLine("Loan Applied successfully");
                                 Console.WriteLine("To get your loan ID, please press BACK and select SHOW LOAN LIST");
@@ -382,11 +386,11 @@ namespace Pecunia.PresentationLayer
                                 return true;
                             }// if operation unsuccessful get back to previous menu
                             else
-                                MenuOfApplyForLoan();
+                                await MenuOfApplyForLoan();
                             break;
 
                         case 2:
-                            if( ApplyCarLoan() == true)
+                            if( await ApplyCarLoan() == true)
                             {
                                 Console.WriteLine("Loan Applied successfully");
                                 Console.WriteLine("To get your loan ID, please press BACK and select SHOW LOAN LIST");
@@ -395,11 +399,11 @@ namespace Pecunia.PresentationLayer
                                 return true;
                             }// if operation unsuccessful get back to previous menu
                             else
-                                MenuOfApplyForLoan();
+                                await MenuOfApplyForLoan();
                             break;
 
                         case 3:
-                            if (ApplyEduLoan() == true)
+                            if (await ApplyEduLoan() == true)
                             {
                                 Console.WriteLine("Loan Applied successfully");
                                 Console.WriteLine("To get your loan ID, please press BACK and select SHOW LOAN LIST");
@@ -408,7 +412,7 @@ namespace Pecunia.PresentationLayer
                                 return true;
                             }// if operation unsuccessful get back to previous menu
                             else
-                                MenuOfApplyForLoan();
+                                await MenuOfApplyForLoan();
                             break;
 
                         default:
@@ -424,7 +428,7 @@ namespace Pecunia.PresentationLayer
         }
 
         
-        public bool ApplyEduLoan()
+        public async Task<bool> ApplyEduLoan()
         {
             Console.Clear();
             Console.WriteLine("--------Educational Loan Application---------");
@@ -432,7 +436,8 @@ namespace Pecunia.PresentationLayer
             Console.WriteLine("Only registered customers are eligible for loans.");
             Console.WriteLine("If you are not a customer, hence need one, enter CustomerID as NEW (case sensitive)");
 
-            string customerID, instituteName, studentID;
+            Guid customerID;
+            string instituteName, studentID;
             double amountApplied;
             int repaymentPeriod, courseDuration;
             CourseType course;
@@ -440,8 +445,8 @@ namespace Pecunia.PresentationLayer
             try
             {
                 Console.Write("Enter your CustomerID:");
-                customerID = Console.ReadLine();
-                if (customerID == "NEW")
+                customerID = Guid.Parse(Console.ReadLine());
+                if (customerID.ToString() == "NEW")
                 {
                     MenuOfCustomer();
                     Console.ReadKey();
@@ -452,8 +457,8 @@ namespace Pecunia.PresentationLayer
                 Console.Write("Enter amount of loan (in Rs.) you want to apply for:");
                 amountApplied = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Maximum Allowed Repayment Period is 8 years");
-                Console.Write("Enter Repayment Period (in years) you want to opt for:");
+                Console.WriteLine("Maximum Allowed Repayment Period is 96 months ");
+                Console.Write("Enter Repayment Period (in months) you want to opt for:");
                 repaymentPeriod = Convert.ToInt16(Console.ReadLine());
 
                 Console.WriteLine("Available choices (case sensitive)\nUNDERGRADUATE\nMASTERS\nPHD\nM_PHIL\nOTHERS ");
@@ -489,7 +494,7 @@ namespace Pecunia.PresentationLayer
                 newLoan.CourseDuration = courseDuration;
 
                 EduLoanBL newLoanBL = new EduLoanBL();
-                return newLoanBL.ApplyLoanBL(newLoan);
+                return await newLoanBL.ApplyLoanBL(newLoan);
             }
             catch(InvalidStringException e)
             {
@@ -509,7 +514,7 @@ namespace Pecunia.PresentationLayer
             return false;
             
         }
-        public bool ApplyCarLoan()
+        public async Task<bool> ApplyCarLoan()
         {
             Console.Clear();
             Console.WriteLine("--------Car Loan Application---------");
@@ -517,7 +522,7 @@ namespace Pecunia.PresentationLayer
             Console.WriteLine("Only registered customers are eligible for loans.");
             Console.WriteLine("If you are not a customer, hence need one, enter CustomerID as NEW (case sensitive)");
 
-            string customerID;
+            Guid customerID;
             double amountApplied, grossIncome, salaryDeduction;
             int repaymentPeriod;
             ServiceType currentOccupation;
@@ -526,8 +531,8 @@ namespace Pecunia.PresentationLayer
             try
             {
                 Console.Write("Enter your CustomerID:");
-                customerID = Console.ReadLine();
-                if (customerID == "NEW")
+                customerID = Guid.Parse(Console.ReadLine());
+                if (customerID.ToString() == "NEW")
                 {
                     MenuOfCustomer();
                     return false;
@@ -537,8 +542,8 @@ namespace Pecunia.PresentationLayer
                 Console.Write("Enter amount of loan (in Rs.) you want to apply for:");
                 amountApplied = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Maximum Allowed Repayment Period is 10 years");
-                Console.Write("Enter Repayment Period (in years) you want to opt for:");
+                Console.WriteLine("Maximum Allowed Repayment Period is 120 months");
+                Console.Write("Enter Repayment Period (in months) you want to opt for:");
                 repaymentPeriod = Convert.ToInt16(Console.ReadLine());
 
                 Console.WriteLine("Available choices (case sensitive)\nAGRICULTURE\nBUSINESS\nOTHERS\nRETIRED\nSELF_EMPLOYED\nSERVICE\nOTHERS");
@@ -575,7 +580,7 @@ namespace Pecunia.PresentationLayer
                 newLoan.Vehicle = EnumVehicle;
 
                 CarLoanBL newLoanBL = new CarLoanBL();
-                return newLoanBL.ApplyLoanBL(newLoan);
+                return await newLoanBL.ApplyLoanBL(newLoan);
             }
             catch(InvalidStringException e)
             {
@@ -595,7 +600,7 @@ namespace Pecunia.PresentationLayer
             return false;
         }
 
-        public bool ApplyHomeLoan()
+        public async Task<bool> ApplyHomeLoan()
         {
             Console.Clear();
             Console.WriteLine("--------Home Loan Application---------");
@@ -603,7 +608,7 @@ namespace Pecunia.PresentationLayer
             Console.WriteLine("Only registered customers are eligible for loans.");
             Console.WriteLine("If you are not a customer, hence need one, enter CustomerID as NEW (case sensitive)");
 
-            string customerID;
+            Guid customerID;
             double amountApplied, grossIncome, salaryDeduction;
             int repaymentPeriod, serviceYears;
             ServiceType currentOccupation;
@@ -611,21 +616,30 @@ namespace Pecunia.PresentationLayer
             try
             {
                 Console.Write("Enter your CustomerID:");
-                customerID = Console.ReadLine();
+                customerID = Guid.Parse(Console.ReadLine());
                 // in case customer dont have a ID
-                if (customerID == "NEW")
+                if (customerID.ToString() == "NEW")
                 {
                     MenuOfCustomer();
                     Console.ReadKey();
                     return false;
                 }
+                //check if customerID exists
+                CustomerBL cust = new CustomerBL();
+                if (cust.isCustomerIDExistBL(customerID) == false)
+                {
+                    Console.WriteLine("CustomerID not found in database\nPress Any key -> Try Again");
+                    Console.ReadKey();
+                    return false;
+                }
+
 
                 Console.WriteLine("Maximum Loan Amount is Rs.20 Lakh");
                 Console.Write("Enter amount of loan (in Rs.) you want to apply for:");
                 amountApplied = Convert.ToDouble(Console.ReadLine());
 
-                Console.WriteLine("Maximum Repayment Period is 15 years");
-                Console.Write("Enter Repayment Period (in years) you want to opt for:");
+                Console.WriteLine("Maximum Repayment Period is 180 months");
+                Console.Write("Enter Repayment Period (in months) you want to opt for:");
                 repaymentPeriod = Convert.ToInt16(Console.ReadLine());
 
                 Console.WriteLine("Available choices (case sensitive)\nAGRICULTURE\nBUSINESS\nOTHERS\nRETIRED\nSELF_EMPLOYED\nSERVICE\nOTHERS");
@@ -660,19 +674,24 @@ namespace Pecunia.PresentationLayer
                 newLoan.SalaryDeductions = salaryDeduction;
 
                 HomeLoanBL newLoanBL = new HomeLoanBL();
-                return newLoanBL.ApplyLoanBL(newLoan);
+                bool isApplied =  await newLoanBL.ApplyLoanBL(newLoan);
+                Console.WriteLine(isApplied);
+                return isApplied;
             }
             catch (InvalidStringException e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message+"\nPress Any Key -> Try Again");
+                
             }
             catch (InvalidRangeException e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message + "\nPress Any Key -> Try Again");
+                
             }
             catch (InvalidAmountException e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message + "\nPress Any Key -> Try Again");
+                
             }
 
             Console.WriteLine("Current Application Cancelled. Please Start a Fresh One");
@@ -681,7 +700,7 @@ namespace Pecunia.PresentationLayer
 
         }
 
-        public void MenuOfApproveLoan()
+        public async Task<bool> MenuOfApproveLoan()
         {
             int input;
             string loanID;
@@ -707,21 +726,21 @@ namespace Pecunia.PresentationLayer
                             ListNonApprovedLoans("HOME");
                             Console.WriteLine("Enter loanID to take action:");
                             loanID = Console.ReadLine();
-                            ApproveLoanPL(loanID);
+                            await ApproveLoanPL(loanID);
                             break;
 
                         case 2:
                             ListNonApprovedLoans("CAR");
                             Console.WriteLine("Enter loanID to take action:");
                             loanID = Console.ReadLine();
-                            ApproveLoanPL(loanID);
+                            await ApproveLoanPL(loanID);
                             break;
 
                         case 3:
                             ListNonApprovedLoans("EDU");
                             Console.WriteLine("Enter loanID to take action:");
                             loanID = Console.ReadLine();
-                            ApproveLoanPL(loanID);
+                            await ApproveLoanPL(loanID);
                             break;
 
                         default:
@@ -732,7 +751,7 @@ namespace Pecunia.PresentationLayer
 
                 }
             } while (input != 4);
-
+            return true;
         }
 
         public void ListNonApprovedLoans(string typeOfLoan)
@@ -773,7 +792,7 @@ namespace Pecunia.PresentationLayer
             else
                 Console.WriteLine("Input must be one of the following (case sensitive):\nHOME\nCAR\nEDU");
         }
-        public bool ApproveLoanPL(string loanID)
+        public async Task<bool> ApproveLoanPL(string loanID)
         {
             bool isValidStatus = false;
             bool isValidLoanID = false;
@@ -786,7 +805,7 @@ namespace Pecunia.PresentationLayer
                     EduLoanBL eduLoanBL = new EduLoanBL();
                     EduLoan eduLoan = new EduLoan();
 
-                    eduLoan = eduLoanBL.GetLoanByLoanID_BL(loanID);
+                    eduLoan = await eduLoanBL.GetLoanByLoanID_BL(loanID);
                     Console.WriteLine("Current Status and Loan Details:");
                     Console.WriteLine($"Loan ID:{eduLoan.LoanID}");
                     Console.WriteLine($"Customer ID:{eduLoan.CustomerID}");
@@ -807,7 +826,7 @@ namespace Pecunia.PresentationLayer
 
                     if (isValidStatus == true)
                     {
-                        eduLoan = eduLoanBL.ApproveLoanBL(loanID, updatedStatus);
+                        eduLoan = await eduLoanBL.ApproveLoanBL(loanID, updatedStatus);
                         Console.WriteLine($"New Status of {loanID} is {eduLoan.Status}");
                         return true;
                     }
@@ -827,7 +846,7 @@ namespace Pecunia.PresentationLayer
                     CarLoanBL carLoanBL = new CarLoanBL();
                     CarLoan carLoan = new CarLoan();
 
-                    carLoan = carLoanBL.GetLoanByLoanID_BL(loanID);
+                    carLoan = await carLoanBL.GetLoanByLoanID_BL(loanID);
                     Console.WriteLine("Current Status and Loan Details:");
                     Console.WriteLine($"Loan ID:{carLoan.LoanID}");
                     Console.WriteLine($"Customer ID:{carLoan.CustomerID}");
@@ -848,7 +867,7 @@ namespace Pecunia.PresentationLayer
 
                     if (isValidStatus == true)
                     {
-                        carLoan = carLoanBL.ApproveLoanBL(loanID, updatedStatus);
+                        carLoan = await carLoanBL.ApproveLoanBL(loanID, updatedStatus);
                         Console.WriteLine($"New Status of {loanID} is {carLoan.Status}");
                         return true;
                     }
@@ -867,7 +886,7 @@ namespace Pecunia.PresentationLayer
                     HomeLoanBL homeLoanBL = new HomeLoanBL();
                     HomeLoan homeLoan = new HomeLoan();
 
-                    homeLoan = homeLoanBL.GetLoanByLoanID_BL(loanID);
+                    homeLoan = await homeLoanBL.GetLoanByLoanID_BL(loanID);
                     Console.WriteLine("Current Status and Loan Details:");
                     Console.WriteLine($"Loan ID:{homeLoan.LoanID}");
                     Console.WriteLine($"Customer ID:{homeLoan.CustomerID}");
@@ -888,7 +907,7 @@ namespace Pecunia.PresentationLayer
 
                     if (isValidStatus == true)
                     {
-                        homeLoan = homeLoanBL.ApproveLoanBL(loanID, updatedStatus);
+                        homeLoan = await homeLoanBL.ApproveLoanBL(loanID, updatedStatus);
                         Console.WriteLine($"New Status of {loanID} is {homeLoan.Status}");
                         return true;
                     }
@@ -922,7 +941,7 @@ namespace Pecunia.PresentationLayer
             return true;
         }
 
-        public bool isValidCustomer(string customerID)
+        public bool IsValidCustomer(string customerID)
         {
             return true;
         }

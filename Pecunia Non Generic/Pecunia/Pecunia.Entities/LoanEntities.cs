@@ -1,6 +1,7 @@
 ﻿using System;
+using Capgemini.Pecunia.Helper;
 
-namespace Pecunia.Entities
+namespace Capgemini.Pecunia.Entities
 {
     public enum LoanType
     {
@@ -27,8 +28,8 @@ namespace Pecunia.Entities
     }
     public interface ILoanEntities
     {
-        string LoanID { get; set; }
-        string CustomerID { get; set; }
+        Guid LoanID { get; set; }
+        Guid CustomerID { get; set; }
         double AmountApplied { get; set; }
         double InterestRate { get; set; }
         double EMI_Amount { get; set; }
@@ -40,11 +41,19 @@ namespace Pecunia.Entities
 
     public abstract class LoanEntities : ILoanEntities
     {
-        public string LoanID { get; set; }
-        public string CustomerID { get; set; }
+        [Required("Loan ID can't be blank")]
+        public Guid LoanID { get; set; }
+
+        [Required("Customer ID can't be blank")]
+        public Guid CustomerID { get; set; }
+
+        [Required("You must specify the amount of loan to be applied")]
         public double AmountApplied { get; set; }
+
         public double InterestRate { get; set; }
         public double EMI_Amount { get; set; }
+
+        [Required("You must specify the repayment period")]
         public int RepaymentPeriod { get; set; }
         public DateTime DateOfApplication { get; set; }
         public LoanStatus Status { get; set; }
@@ -53,9 +62,16 @@ namespace Pecunia.Entities
 
     public class HomeLoan : LoanEntities
     {
+        [Required("Occupation can't be blank")]
         public ServiceType Occupation { get; set; }
+
+        [Required("Experience can't be blank")]
         public int ServiceYears { get; set; }
+
+        [Required("Monthly Income can't be blank")]
         public double GrossIncome { get; set; }
+
+        [Required("Deductions can't be blank")]
         public double SalaryDeductions { get; set; }
 
         
@@ -63,18 +79,35 @@ namespace Pecunia.Entities
 
     public class EduLoan : LoanEntities
     {
+        [Required("Course can't be blank")]
         public CourseType Course { get; set; }
+
+        [Required("Course duration can't be blank")]
         public int CourseDuration {get; set;}
+
+        [Required("Institute name can't be blank")]
+        [RegExp("[a-zA-Z,]$", "Institute name should contains only alphabets and comma(,)")]
         public string InstituteName { get; set; }
+
+        [Required("Student ID can't be blank")]
+        [RegExp("[a-zA-Z0-9]", "Institute ID can contains only alphabets and digits only")]
         public string StudentID { get; set; }
+
         public int RepaymentHoliday { get; set; }
     }
 
     public class CarLoan : LoanEntities
     {
+        [Required("Occupation can't be blank")]
         public ServiceType Occupation { get; set; }
+
+        [Required("Gross income can't be blank")]
         public double GrossIncome { get; set; }
+
+        [Required("Gross income can't be blank")]
         public double SalaryDeductions { get; set; }
+
+        [Required("Vehicle can't be blank")]
         public VehicleType Vehicle { get; set; }
     }
 }

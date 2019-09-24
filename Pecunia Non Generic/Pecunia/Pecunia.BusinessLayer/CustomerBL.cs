@@ -1,10 +1,10 @@
 ﻿using System;
-using Pecunia.Entities;
-using Pecunia.Exceptions;
-using Pecunia.DataAccessLayer;
+using Capgemini.Pecunia.Entities;
+using Capgemini.Pecunia.Exceptions;
+using Capgemini.Pecunia.DataAccessLayer;
 using System.Text.RegularExpressions;
 
-namespace Pecunia.BusinessLayer
+namespace Capgemini.Pecunia.BusinessLayer
 {
     public class CustomerBL
     {
@@ -76,5 +76,9 @@ namespace Pecunia.BusinessLayer
             obj.UpdateCustomerByCustomerID_DAL(CustomerID);
         }
 
+        public bool isCustomerIDExistBL(Guid customerID)
+        {
+            return true;
+        }
     }
 }

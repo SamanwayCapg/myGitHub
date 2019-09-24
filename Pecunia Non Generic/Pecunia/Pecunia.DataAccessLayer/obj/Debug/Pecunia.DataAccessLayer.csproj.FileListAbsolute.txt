@@ -22,3 +22,5 @@ C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.D
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.dll
 C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\obj\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Helpers.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.DataAccessLayer\bin\Debug\Helpers.pdb

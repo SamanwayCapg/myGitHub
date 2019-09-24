@@ -47,7 +47,9 @@
     <Compile Include="AdminDAL.cs" />
     <Compile Include="CustomerDAL.cs" />
     <Compile Include="EmployeeDAL.cs" />
-    <Compile Include="LoanDAL.cs" />
+    <Compile Include="LoanDAL\CarLoanDAL.cs" />
+    <Compile Include="LoanDAL\EduLoanDAL.cs" />
+    <Compile Include="LoanDAL\HomeLoanDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionDAL.cs" />
   </ItemGroup>

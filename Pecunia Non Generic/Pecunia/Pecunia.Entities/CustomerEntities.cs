@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pecunia.Entities
+namespace Capgemini.Pecunia.Entities
 {
     public class CustomerEntities
     {

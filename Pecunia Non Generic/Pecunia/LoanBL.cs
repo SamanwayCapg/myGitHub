@@ -85,8 +85,8 @@ namespace Capgemini.Pecunia.BusinessLayer
 
                 await Task.Run(() =>
                 {
-                    CustomerDAL custDAL = new CustomerDAL();
-                    if (custDAL.isCustomerIDExistDAL(customerID) == false)
+                    CustomerBL custBL = new CustomerBL();
+                    if (custBL.isCustomerIDExistBL(Guid.Parse(customerID)) == false)
                         throw new InvalidStringException("Customer ID not found");
                 });
 
@@ -238,8 +238,8 @@ namespace Capgemini.Pecunia.BusinessLayer
 
                 await Task.Run(() =>
                 {
-                    CustomerDAL custDAL = new CustomerDAL();
-                    if (custDAL.isCustomerIDExistDAL(customerID) == false)
+                    CustomerBL custBL = new CustomerBL();
+                    if (custBL.isCustomerIDExistBL(Guid.Parse(customerID)) == false)
                         throw new InvalidStringException("Customer ID not found");
                 });
 
@@ -396,8 +396,8 @@ namespace Capgemini.Pecunia.BusinessLayer
 
                 await Task.Run(() =>
                 {
-                    CustomerDAL custDAL = new CustomerDAL();
-                    if (custDAL.isCustomerIDExistDAL(customerID) == false)
+                    CustomerBL custBL = new CustomerBL();
+                    if (custBL.isCustomerIDExistBL(Guid.Parse(customerID)) == false)
                         throw new InvalidStringException("customer ID not found");
                 });
 

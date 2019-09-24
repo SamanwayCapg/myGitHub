@@ -1,9 +1,9 @@
 ﻿using System;
-using Pecunia.Exceptions;
-using Pecunia.DataAccessLayer;
+using Capgemini.Pecunia.Exceptions;
+using Capgemini.Pecunia.DataAccessLayer;
 using System.Text.RegularExpressions;
 
-namespace Pecunia.BusinessLayer
+namespace Capgemini.Pecunia.BusinessLayer
 {
     public class TransactionsBL
     {

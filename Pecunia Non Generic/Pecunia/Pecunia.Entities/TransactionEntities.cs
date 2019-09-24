@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Pecunia.Entities
+namespace Capgemini.Pecunia.Entities
 {
     [Serializable]
     public enum TypeOfTranscation
