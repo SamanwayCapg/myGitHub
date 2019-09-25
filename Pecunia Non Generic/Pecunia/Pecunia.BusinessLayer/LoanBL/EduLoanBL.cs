@@ -15,9 +15,11 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
         public async Task<bool> ApplyLoanBL(EduLoan edu)
         {
             //EduLoan edu = (EduLoan)(Object)obj;
+            bool isValid, isApplied = false;
             try
             {
-                if (await Validate(edu))
+                isValid = await Validate(edu);
+                if (isValid == true)
                 {
                     await Task.Run(() =>
                     {
@@ -30,7 +32,7 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
                         edu.RepaymentHoliday = 1;
 
                         EduLoanDAL eduDAL = new EduLoanDAL();
-                        return eduDAL.ApplyLoanDAL(edu);
+                        isApplied = eduDAL.ApplyLoanDAL(edu);
                     });
                 }
             }
@@ -38,7 +40,7 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             {
                 return false;
             }
-            return false;
+            return isApplied;
         }
 
 

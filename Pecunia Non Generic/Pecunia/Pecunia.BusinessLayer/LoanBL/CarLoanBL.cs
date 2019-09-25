@@ -14,6 +14,7 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
     {
         public async Task<bool> ApplyLoanBL(CarLoan car)
         {
+            bool isApplied = false;
             //CarLoan car = (CarLoan)(Object)obj;
             try
             {
@@ -29,7 +30,7 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
                         car.Status = (LoanStatus)0;
 
                         CarLoanDAL carDAL = new CarLoanDAL();
-                        return carDAL.ApplyLoanDAL(car);
+                        isApplied = carDAL.ApplyLoanDAL(car);
                     });
                 }
             }
@@ -37,7 +38,7 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             {
                 return false;
             }
-            return false;
+            return isApplied;
         }
 
         public async Task<CarLoan> ApproveLoanBL(string loanID, LoanStatus updatedStatus)

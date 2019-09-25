@@ -10,11 +10,11 @@ using Capgemini.Pecunia.BusinessLayer.LoanBL;
 namespace Capgemini.Pecunia.PresentationLayer
 {
     public class LoanPL{
-
-        static async void Main(string[] args)
+        [STAThread]
+        public static void Main(string[] args)
         {
             LoanPresentationLayer loan = new LoanPresentationLayer();
-            await loan.MenuOfLoan();
+            loan.MenuOfLoan().Wait();
         }
     }
 
@@ -441,6 +441,7 @@ namespace Capgemini.Pecunia.PresentationLayer
             double amountApplied;
             int repaymentPeriod, courseDuration;
             CourseType course;
+            bool isApplied;
 
             try
             {
@@ -494,7 +495,8 @@ namespace Capgemini.Pecunia.PresentationLayer
                 newLoan.CourseDuration = courseDuration;
 
                 EduLoanBL newLoanBL = new EduLoanBL();
-                return await newLoanBL.ApplyLoanBL(newLoan);
+                isApplied = await newLoanBL.ApplyLoanBL(newLoan);
+                return isApplied;
             }
             catch(InvalidStringException e)
             {
@@ -527,6 +529,7 @@ namespace Capgemini.Pecunia.PresentationLayer
             int repaymentPeriod;
             ServiceType currentOccupation;
             VehicleType EnumVehicle;
+            bool isApplied;
 
             try
             {
@@ -580,7 +583,9 @@ namespace Capgemini.Pecunia.PresentationLayer
                 newLoan.Vehicle = EnumVehicle;
 
                 CarLoanBL newLoanBL = new CarLoanBL();
-                return await newLoanBL.ApplyLoanBL(newLoan);
+                isApplied = await newLoanBL.ApplyLoanBL(newLoan);
+                Console.ReadKey();
+                return isApplied;
             }
             catch(InvalidStringException e)
             {
@@ -675,7 +680,6 @@ namespace Capgemini.Pecunia.PresentationLayer
 
                 HomeLoanBL newLoanBL = new HomeLoanBL();
                 bool isApplied =  await newLoanBL.ApplyLoanBL(newLoan);
-                Console.WriteLine(isApplied);
                 return isApplied;
             }
             catch (InvalidStringException e)

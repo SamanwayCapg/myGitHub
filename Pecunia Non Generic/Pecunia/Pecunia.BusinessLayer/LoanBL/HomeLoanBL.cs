@@ -18,7 +18,8 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             bool loanApplied = false;
             try
             {
-                if (await Validate(home))
+                bool isValid = await Validate(home);
+                if (isValid == true)
                 {
                     await Task.Run(() =>
                     {
