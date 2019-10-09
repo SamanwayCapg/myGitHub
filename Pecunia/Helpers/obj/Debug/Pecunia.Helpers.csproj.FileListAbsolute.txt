@@ -1,0 +1,18 @@
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\Helpers\obj\Debug\Helpers.pdb

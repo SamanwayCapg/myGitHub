@@ -1,0 +1,4 @@
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\UnitTestProject2\obj\Debug\netcoreapp2.1\UnitTestProject2.csprojAssemblyReference.cache
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\UnitTestProject2\obj\Debug\netcoreapp2.1\UnitTestProject2.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\UnitTestProject2\obj\Debug\netcoreapp2.1\UnitTestProject2.AssemblyInfoInputs.cache
+C:\Users\samasaho\source\Pecuniafinal\Pecunia\UnitTestProject2\obj\Debug\netcoreapp2.1\UnitTestProject2.AssemblyInfo.cs

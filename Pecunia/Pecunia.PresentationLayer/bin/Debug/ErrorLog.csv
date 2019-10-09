@@ -1,0 +1,207 @@
+"25-09-2019 16:37:26","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.
+Mobile number should be of 10 digits.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<Validate>d__2.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 39
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<AddEmployeeBL>d__3.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 64
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<AddEmployee>d__1.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 103","",""
+"25-09-2019 16:41:05","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Email is invalid.
+Mobile number should be of 10 digits.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<Validate>d__2.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 39
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<UpdateEmployeeBL>d__9.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 201
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<UpdateEmployee>d__2.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 152","",""
+"25-09-2019 16:44:48","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 106
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"25-09-2019 16:59:16","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 106
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"25-09-2019 17:04:41","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 106
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"25-09-2019 17:10:22","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 110
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"25-09-2019 17:12:23","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"25-09-2019 17:28:02","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"26-09-2019 09:58:50","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"26-09-2019 10:01:53","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"26-09-2019 10:08:26","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 109
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"26-09-2019 10:10:59","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.AdminBL.<UpdateAdminPasswordBL>d__5.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\AdminBL.cs:line 109
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.AdminPresentation.<ChangeAdminPassword>d__4.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\AdminPresentation.cs:line 267","",""
+"26-09-2019 10:31:58","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<Validate>d__2.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 39
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<UpdateEmployeePasswordBL>d__11.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 248
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.EmployeePresentation.<ChangeEmployeePassword>d__1.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\EmployeePresentation.cs:line 461","",""
+"26-09-2019 10:35:53","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<Validate>d__2.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 39
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<UpdateEmployeePasswordBL>d__11.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 249
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.EmployeePresentation.<ChangeEmployeePassword>d__1.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\EmployeePresentation.cs:line 461","",""
+"26-09-2019 10:39:55","Capgemini.Pecunia.Exceptions.InvalidStringException","
+Password should be 6 to 15 characters with at least one digit, one uppercase letter, one lower case letter.","   at Capgemini.Pecunia.BusinessLayer.BLbase`1.<Validate>d__0.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\BLbase.cs:line 55
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<Validate>d__2.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 39
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.BusinessLayer.EmployeeBL.<UpdateEmployeePasswordBL>d__11.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\EmployeeBL.cs:line 249
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Capgemini.Pecunia.PresentationLayer.EmployeePresentation.<ChangeEmployeePassword>d__1.MoveNext() in C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.PresentationLayer\EmployeePresentation.cs:line 461","",""
