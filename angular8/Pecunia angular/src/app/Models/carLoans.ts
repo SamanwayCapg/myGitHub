@@ -14,6 +14,7 @@ export class CarLoan {
   grossIncome: number;
   salaryDeductions: number;
   vehicle: string;
+ // constructor() {}
 
   constructor(ID: number,
     LoanID: string,
@@ -44,5 +45,5 @@ export class CarLoan {
     this.salaryDeductions = SalaryDeductions;
     this.vehicle = Vehicle;
   }
-
+ 
 }

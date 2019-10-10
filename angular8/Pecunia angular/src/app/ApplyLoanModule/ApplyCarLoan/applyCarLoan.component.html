@@ -1,0 +1,70 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Apply Loan</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Car
+      <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showOrderSpinner"></i>
+    </li>
+  </ol>
+</nav>
+
+
+<form [formGroup]="newApplyForm">
+  <div class="container">
+    <div class="form-group col-6">
+      <label for="customerID">Customer ID</label>
+      <input type="text" formControlName="customerID" class="form-control" id="customerID" placeholder="input your customer id here">
+    </div>
+
+    <div class="form-group col-6">
+      <label for="amount">Amount(Rs.)</label>
+      <input type="number" formControlName="amountApplied" class="form-control" id="amount" placeholder="Maximum allowed amount is Rs.20 lakh">
+    </div>
+
+    <div class="form-group col-6">
+      <label for="repaymentPeriod">Repayment Period</label>
+      <input type="number" formControlName="repaymentPeriod" class="form-control" id="repaymentPeriod" placeholder="Maximum repayment period is x months">
+    </div>
+
+    <div class="form-group col-6">
+      <label for="exampleFormControlSelect1">Occupation</label>
+      <select formControlName="occupation" class="form-control" id="exampleFormControlSelect1">
+        <option>AGRICULTURE</option>
+        <option>BUSINESS</option>
+        <option>RETIRED</option>
+        <option>SELF EMPLOYED</option>
+        <option>SERVICE</option>
+        <option>OTHERS</option>
+      </select>
+    </div>
+
+    <div class="form-group col-6">
+      <label for="grossIncome">Gross Income</label>
+      <input type="number" formControlName="grossIncome" class="form-control" id="grossIncome" placeholder="your gross income per month here">
+    </div>
+
+
+    <div class="form-group col-6">
+      <label for="salaryDeduction">Salary Deduction</label>
+      <input type="number" formControlName="salaryDeductions" class="form-control" id="salaryDeduction" placeholder="Deductions must be less than gross income">
+    </div>
+
+    <div class="form-group col-6">
+      <label for="exampleFormControlSelect1">Vehicle</label>
+      <select formControlName="vehicle" class="form-control" id="exampleFormControlSelect1" placeholder="Type of vehicle you wants to buy!">
+        <option>TWO_WHEELER</option>
+        <option>FOUR_WHEELER</option>
+        <option>MULTI_AXLE</option>
+        <option>OTHERS</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="mx-auto" style="width: 600px;" >
+    <button class="btn btn-primary " type="submit" value="click" (click)="onApplyCarLoanClick()">Submit</button>
+  </div>
+</form>
+
+

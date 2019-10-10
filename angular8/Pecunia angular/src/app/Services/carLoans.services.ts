@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CarLoan } from '../Models/carLoans';
@@ -11,14 +11,16 @@ export class CarLoanServices {
 
     }
 
-    ApplyCarLoan(newCarLoan: CarLoan): Observable<boolean>{
+  ApplyCarLoan(newCarLoan: CarLoan): Observable<boolean> {
+    //alert(newCarLoan.loanID);
         newCarLoan.loanID = this.uuidv4();
         newCarLoan.interestRate = 10.65;
         newCarLoan.EMI_amount = (newCarLoan.amountApplied * (1 + (10.65 / 100))) / newCarLoan.reapaymentPeriod;
-        newCarLoan.dateOfApplication = new Date.ToLocaleDateString();
-        newCarLoan.status = "APPLIED";
-
-        return this.httpClient.post<boolean>(`/api/carLoans`, newCarLoan);
+        newCarLoan.dateOfApplication = new Date().toLocaleDateString();
+    newCarLoan.status = "APPLIED";
+    newCarLoan.id = 13;
+    console.log(newCarLoan);
+      return this.httpClient.post<boolean>(`/api/carloans`, newCarLoan);
     }
 
     ApproveCarLoan(existingCarLoan: CarLoan, newStatus: string): Observable<boolean> {
