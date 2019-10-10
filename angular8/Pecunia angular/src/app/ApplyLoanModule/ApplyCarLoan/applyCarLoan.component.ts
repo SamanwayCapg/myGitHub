@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CarLoan } from '../../Models/carLoans';
+﻿import { Component, OnInit } from '@angular/core';
 import { CarLoanServices } from '../../Services/carLoans.services';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { PecuniaComponentBase } from '../../pecunia-component';
 import * as $ from "jquery";
-
+import { CarLoan } from '../../Models/carLoans';
 import { Router } from '@angular/router';
 
 
@@ -45,21 +44,37 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase
     this.newApplyForm["submitted"] = true;
     
     if (this.newApplyForm.valid) {
-      var newCarLoan: CarLoan;// = this.newApplyForm.value;
-      newCarLoan = new CarLoan(); //alert(55);
-      newCarLoan.customerID = this.newApplyForm.value.customerID;
-      newCarLoan.amountApplied = this.newApplyForm.value.amountApplied;
-      newCarLoan.reapaymentPeriod = this.newApplyForm.value.repaymentPeriod;
-      newCarLoan.occupation = this.newApplyForm.value.occupation;
-      newCarLoan.grossIncome = this.newApplyForm.value.grossIncome;
-      newCarLoan.salaryDeductions = this.newApplyForm.value.salaryDeductions;
-      newCarLoan.vehicle = this.newApplyForm.value.vehicle;
+      //var newCarLoan: CarLoan;// = this.newApplyForm.value;
+        //alert(55);
+        var customerID: string = this.newApplyForm.value.customerID;
+        var amountApplied: number = this.newApplyForm.value.amountApplied;
+        var repaymentPeriod: number = this.newApplyForm.value.repaymentPeriod;
+        var occupation: string = this.newApplyForm.value.occupation;
+        var grossIncome: number = this.newApplyForm.value.grossIncome;
+        var salaryDeductions: number = this.newApplyForm.value.salaryDeductions;
+        var vehicle: string = this.newApplyForm.value.vehicle;
 
-      /*newCarLoan.loanID = "123456789";
-      newCarLoan.EMI_amount = (newCarLoan.amountApplied * (1 + (10.65 / 100))) / newCarLoan.reapaymentPeriod
-      newCarLoan.dateOfApplication = "12/12/2012";
-      newCarLoan.status = "APPLIED";
-      */
+        var loanID: string = this.uuidv4();
+        var interestRate: number = 10.65;
+        var EMI_amount: number = (amountApplied * (1 + (10.65 / 100))) / repaymentPeriod;
+        var dateOfApplication: string = new Date().toLocaleDateString();
+        var status: string = "APPLIED";
+      
+        var newCarLoan: CarLoan = new CarLoan(1,
+            loanID,
+            customerID,
+            amountApplied,
+            interestRate,
+            EMI_amount,
+            repaymentPeriod,
+            dateOfApplication,
+            status,
+            occupation,
+            grossIncome,
+            salaryDeductions,
+          vehicle
+          );
+
       console.log(this.newApplyForm.value);
       this.carLoanService.ApplyCarLoan(newCarLoan).subscribe((addResponse) => {
         this.newApplyForm.reset();
@@ -74,4 +89,10 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase
   }
   
 
+  uuidv4() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+      });
+  }
 }

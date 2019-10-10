@@ -1,4 +1,4 @@
-export class CarLoan {
+﻿export class CarLoan {
 
   id: number;
   loanID: string;
