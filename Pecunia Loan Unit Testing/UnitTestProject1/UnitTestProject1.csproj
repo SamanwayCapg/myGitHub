@@ -52,8 +52,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountTestCases\ChangeAccountTypeBLTest.cs" />
+    <Compile Include="AccountTestCases\ChangeBranchBLTest.cs" />
+    <Compile Include="AccountTestCases\DeleteAccountBLTest.cs" />
+    <Compile Include="AccountTestCases\AddAccountBLTest.cs" />
+    <Compile Include="customerTestCases.cs" />
+    <Compile Include="EmployeeAdminTestCases\AdminBLTest.cs" />
+    <Compile Include="EmployeeAdminTestCases\EmployeeBLTest.cs" />
     <Compile Include="LoanTestCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionTestCases.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -63,11 +71,24 @@
       <Project>{d3ca5e1a-2d48-4d88-906c-dc2da09ea5f0}</Project>
       <Name>Pecunia.BusinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pecunia.Contracts\Pecunia.Contracts.csproj">
+      <Project>{4E56CF6F-49A6-408A-9B56-C4612F9260AD}</Project>
+      <Name>Pecunia.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pecunia.DataAccessLayer\Pecunia.DataAccessLayer.csproj">
+      <Project>{071de7db-bad2-4b3c-92b2-337b50b1039a}</Project>
+      <Name>Pecunia.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pecunia.Entities\Pecunia.Entities.csproj">
       <Project>{ccb8bed5-565e-438f-9415-46a1b75aae20}</Project>
       <Name>Pecunia.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pecunia.Exceptions\Pecunia.Exceptions.csproj">
+      <Project>{faa9b1fd-bb7d-4f4e-bc83-3a19d65f718d}</Project>
+      <Name>Pecunia.Exceptions</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

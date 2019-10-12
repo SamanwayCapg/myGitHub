@@ -49,3 +49,14 @@ C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exc
 C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
 C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
 C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
