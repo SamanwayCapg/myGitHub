@@ -5,9 +5,8 @@
     "\\app\\ApplyLoanModule",
     "\\app\\ApplyLoanModule\\ApplyCarLoan",
     "\\app\\InMemoryWebAPIServices",
-    "\\app\\Models",
     "\\app\\Services"
   ],
-  "SelectedNode": "\\app\\Services\\carLoans.services.ts",
+  "SelectedNode": "\\app\\ApplyLoanModule\\ApplyCarLoan\\applyCarLoan.component.ts",
   "PreviewInSolutionExplorer": false
 }
