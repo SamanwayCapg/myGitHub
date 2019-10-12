@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-3 col-lg-2 ml-0 pl-0 pt-0 pr-0 border-right left-menu">
 
+    <span *ngIf="showLoadingSpinner"><i class="fa fa-refresh fa-spin" ></i></span>
     <table class="table mt-2">
       <thead>
         <tr class="table-secondary">
@@ -16,9 +17,10 @@
           <td style="font-size:100%">{{customer.customerName}}</td>
           <td style="font-size:100%">{{customer.customerMobile}}</td>
           <td style="font-size:100%">{{customer.customerEmail}}</td>
+
           <td>
             <div class="btn-group">
-              <button class="btn btn-primary" data-toggle="modal" data-target="#applyCarLoanModal" (click)="onApplyNowClick(index)">Apply Now</button>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#applyCarLoanModal" (click)="onApplyHereClick(index)">Apply Here</button>
             </div>
           </td>
         </tr>
@@ -43,22 +45,77 @@
         <div class="modal-body">
 
           <div class="form-group form-row">
-            <label for="amountApplied" class="col-form-label col-md-4">Amount: *</label>
+            <label for="amountApplied" class="col-form-label col-md-4">Amount: </label>
             <div class="col-md-8">
-              <input type="text" placeholder="Loan Amount (Rs.)" class="form-control" id="loanAmount" formControlName="amountApplied"  />
+              <input type="text" placeholder="Loan Amount (Rs.)" class="form-control" id="loanAmount" formControlName="amountApplied" [ngClass]="getFormControlCSSInfo(newApplyForm, 'amountApplied')" />
               <small class="form-text text-muted">Maximum allowed amount Rs.20 lakhs</small>
-
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('amountApplied', 'required', newApplyForm)">{{getFormControlErrorMessage('amountApplied', 'required')}}</span>
-             </div>
+              <span class="text-danger" *ngIf="getFormControlStatus('amountApplied', 'required', newApplyForm)">{{getFormControlErrorMessage('amountApplied', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('amountApplied', 'min', newApplyForm)">{{getFormControlErrorMessage('amountApplied', 'min')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('amountApplied', 'max', newApplyForm)">{{getFormControlErrorMessage('amountApplied', 'max')}}</span>
+            </div>
           </div>
-         </div>
-          
+
+          <div class="form-group form-row">
+            <label for="repaymentPeriod" class="col-form-label col-md-4">Repayment Period: </label>
+            <div class="col-md-8">
+              <input type="number" placeholder="Months" class="form-control" id="repaymentPeriod" formControlName="repaymentPeriod" />
+              <small class="form-text text-muted">Maximum allowed repayment period is 120 months</small>
+              <span class="text-danger" *ngIf="getFormControlStatus('repaymentPeriod', 'required', newApplyForm)">{{getFormControlErrorMessage('repaymentPeriod', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('repaymentPeriod', 'min', newApplyForm)">{{getFormControlErrorMessage('repaymentPeriod', 'min')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('repaymentPeriod', 'max', newApplyForm)">{{getFormControlErrorMessage('repaymentPeriod', 'max')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="occupation" class="col-form-label col-md-4">Occupation: </label>
+            <select class="form-control" formControlName="occupation" placeholder="your occupation here" id="occupation" style="width:auto">
+              <option>AGRICULTURE</option>
+              <option>BUSINESS</option>
+              <option>SERVICE</option>
+              <option>RETIRED</option>
+              <option>SELF_EMPLOYED</option>
+              <option>OTHERS</option>
+            </select>
+            <span class="text-danger" *ngIf="getFormControlStatus('occupation', 'required', newApplyForm)">{{getFormControlErrorMessage('occupation', 'required')}}</span>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="grossIncome" class="col-form-label col-md-4">Gross Income: </label>
+            <div class="col-md-8">
+              <input type="number" placeholder="Rs." class="form-control" id="grossIncome" formControlName="grossIncome" />
+              <span class="text-danger" *ngIf="getFormControlStatus('grossIncome', 'required', newApplyForm)">{{getFormControlErrorMessage('grossIncome', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('grossIncome', 'min', newApplyForm)">{{getFormControlErrorMessage('grossIncome', 'min')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="salaryDeductions" class="col-form-label col-md-4">Salary Deductions: </label>
+            <div class="col-md-8">
+              <input type="number" placeholder="Rs." class="form-control" id="salaryDeductions" formControlName="salaryDeductions" />
+              <span class="text-danger" *ngIf="getFormControlStatus('salaryDeductions', 'required', newApplyForm)">{{getFormControlErrorMessage('salaryDeductions', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('salaryDeductions', 'min', newApplyForm)">{{getFormControlErrorMessage('salaryDeductions', 'min')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="vehicle" class="col-form-label col-md-4">Vehicle: </label>
+            <select class="form-control" formControlName="vehicle" placeholder="vehicle type" id="occupation" style="width:auto">
+              <option>TWO_WHEELER</option>
+              <option>FOUR_WHEELER</option>
+              <option>MULTI_AXLE</option>
+              <option>OTHERS</option>
+            </select>
+            <span class="text-danger" *ngIf="getFormControlStatus('vehicle', 'required', newApplyForm)">{{getFormControlErrorMessage('vehicle', 'required')}}</span>
+          </div>
+        </div>
+
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnNewApplyCancel">
-            <i class="fa fa-times-circle"></i> Cancel
+          <button type="submit" class="btn btn-secondary" data-dismiss="modal" id="btnNewApplyCancel" (click)="onCancelClick($event)">
+            <span><i class="fa fa-times-circle"></i> Cancel</span>
           </button>
-          <button type="submit" class="btn btn-success" (click)="onApplyNowClick($event)">
-            <span ><i class="fa fa-save"></i> Apply</span>
+          <button type="submit" class="btn btn-success" (click)="onApplyClick($event)">
+            <span><i class="fa fa-save"></i> Apply</span>
             <!--<span *ngIf="newSupplierDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>-->
           </button>
         </div>

@@ -38,9 +38,9 @@ export class LoanDataService implements InMemoryDbService {
     ];
 
       let customers = [
-          new Customer(1, "614AE31F-650E-49D5-AAAA-6C40C9218389", "Customer1", "1236547890", "email@email.com"),
-          new Customer(2, "614AE31F-650E-AAAA-AAAA-6C40C9218389", "Customer2", "1236547891", "email3@email.com"),
-          new Customer(3, "614AE31F-AAAA-49D5-AAAA-6C40C9218389", "Customer3", "1236547892", "email2@email.com"),
+          new Customer(1, "AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA", "Customer1", "1236547890", "email@email.com"),
+          new Customer(2, "BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB", "Customer2", "1236547891", "email3@email.com"),
+          new Customer(3, "CCCCCCCC-CCCC-CCCC-CCCC-CCCCCCCCCCCC", "Customer3", "1236547892", "email2@email.com"),
           new Customer(4, "61AAAAAA-650E-49D5-AAAA-6C40C9218389", "Customer4", "1236547893", "email1@email.com")
       ];
     return { homeloans, carloans, eduloans, customers };
