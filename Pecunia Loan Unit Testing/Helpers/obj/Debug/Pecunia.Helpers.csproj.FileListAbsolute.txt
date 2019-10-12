@@ -23,3 +23,12 @@ C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj
 C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
 C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.dll
 C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.pdb

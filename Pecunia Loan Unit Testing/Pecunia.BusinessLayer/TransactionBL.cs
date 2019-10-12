@@ -40,15 +40,15 @@ namespace Capgemini.Pecunia.BusinessLayer
             try
             {
                 AccountDAL accountnoexist = new AccountDAL();
-                if (amount <= 50000 && accountnoexist.AccountIDExists(accountID) == true)
+                if ((amount <= 50000) && (amount > 0) && accountnoexist.AccountIDExists(accountID) == true)
                 {
                     await Task.Run(() =>
                     {
                         TransactionDAL transactionDAL = new TransactionDAL();
                         transactionDAL.DebitTransactionByWithdrawalSlipDAL(accountID, amount);
                         transactionWithdrawal = true;
-                    });                       
-                                      
+                    });
+
                 }
                 return transactionWithdrawal;
             }
@@ -56,7 +56,7 @@ namespace Capgemini.Pecunia.BusinessLayer
             {
                 throw new InsufficientBalanceException(ex.Message);
             }
-           
+
         }
 
         /// <summary>
@@ -71,20 +71,20 @@ namespace Capgemini.Pecunia.BusinessLayer
             try
             {
                 AccountDAL accountnoexist = new AccountDAL();
-                if (accountnoexist.AccountIDExists(accountID) == true && amount <= 50000)
+                if (accountnoexist.AccountIDExists(accountID) == true && (amount <= 50000) && (amount > 0))
                 {
-                    await Task.Run(() => 
+                    await Task.Run(() =>
                     {
                         TransactionDAL transactionDAL = new TransactionDAL();
                         transactionDAL.CreditTransactionByDepositSlipDAL(accountID, amount);
                         transactionWithdrawal = true;
                     });
-                    
+
                 }
                 return transactionWithdrawal;
             }
-            
-            catch(PecuniaException ex)
+
+            catch (PecuniaException ex)
             {
                 throw new CreditSlipException(ex.Message);
             }
@@ -103,7 +103,7 @@ namespace Capgemini.Pecunia.BusinessLayer
             try
             {
                 AccountDAL accountnoexist = new AccountDAL();
-                if (accountnoexist.AccountIDExists(accountID) == true && amount <= 50000 && chequeNumber.Length == 10 && (Regex.IsMatch(chequeNumber, "[A-Z0-9]$") == true))
+                if (accountnoexist.AccountIDExists(accountID) == true && (amount <= 50000) && (amount > 0) && chequeNumber.Length == 6 && (Regex.IsMatch(chequeNumber, "[A-Z0-9]$") == true))
                 {
                     await Task.Run(() =>
                     {
@@ -114,9 +114,9 @@ namespace Capgemini.Pecunia.BusinessLayer
                 }
                 return transactionCheque;
             }
-            
-           
-            catch(PecuniaException ex)
+
+
+            catch (PecuniaException ex)
             {
                 throw new DebitChequeException(ex.Message);
             }
@@ -136,7 +136,8 @@ namespace Capgemini.Pecunia.BusinessLayer
             try
             {
                 AccountDAL accountnoexist = new AccountDAL();
-                if (accountnoexist.AccountIDExists(accountID) == true && await ValidateChequeNumber(chequeNumber) == true && amount <= 50000)
+                if (accountnoexist.AccountIDExists(accountID) == true && await ValidateChequeNumber(chequeNumber) == true && (amount <= 50000) && (amount > 0)
+                   )
                 {
                     await Task.Run(() =>
                     {
@@ -144,15 +145,16 @@ namespace Capgemini.Pecunia.BusinessLayer
                         transactionDAL.CreditTransactionByChequeDAL(accountID, amount, chequeNumber);
                         transactionCheque = true;
                     });
-                    
+
                 }
                 return transactionCheque;
             }
-            
-            catch(PecuniaException ex)
+
+            catch (PecuniaException ex)
             {
                 throw new CreditChequeException(ex.Message);
             }
+
         }
 
         /// <summary>
@@ -172,15 +174,15 @@ namespace Capgemini.Pecunia.BusinessLayer
                         TransactionDAL transactionDAL = new TransactionDAL();
                         transactionDAL.DisplayTransactionByAccountIDDAL(accountID);
                     });
-                   
+
                 }
             }
             catch (PecuniaException ex)
             {
                 throw new TransactionDisplayAccountException(ex.Message);
             }
-           
-            
+
+
         }
 
         /// <summary>
@@ -194,7 +196,7 @@ namespace Capgemini.Pecunia.BusinessLayer
             try
             {
                 TransactionDAL transactionDAL = new TransactionDAL();
-                if(transactionDAL.TransactionIDExistsDAL(transactionID))
+                if (transactionDAL.TransactionIDExistsDAL(transactionID))
                 {
                     await Task.Run(() =>
                     {
@@ -226,7 +228,7 @@ namespace Capgemini.Pecunia.BusinessLayer
                         TransactionDAL transactionDAL = new TransactionDAL();
                         transaction = transactionDAL.DisplayTransactionByTransactionIDDAL(transactionID);
                     });
-                   
+
                 }
                 return transaction;
             }
@@ -261,7 +263,7 @@ namespace Capgemini.Pecunia.BusinessLayer
 
                 throw new ValidateChequeNumberException("Invalid Cheque Number.");
             }
-            
+
         }
 
         /// <summary>
@@ -273,7 +275,7 @@ namespace Capgemini.Pecunia.BusinessLayer
             List<Transaction> transactions = new List<Transaction>();
             try
             {
-                await Task.Run(() => 
+                await Task.Run(() =>
                 {
                     TransactionDAL transactionDAL = new TransactionDAL();
                     transactions = transactionDAL.GetAllTransactionsDAL();
@@ -285,7 +287,7 @@ namespace Capgemini.Pecunia.BusinessLayer
 
                 throw new GetAllTransactionException(ex.Message);
             }
-            
+
         }
 
         /// <summary>
