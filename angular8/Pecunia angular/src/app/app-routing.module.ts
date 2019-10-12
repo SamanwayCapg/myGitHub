@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: "ApplyNewLoan", component: ApplyLoanComponent },
   { path: "ShowLoans", component: ShowLoanComponent },
   { path: "applyloanmodule", loadChildren: () => import("./ApplyLoanModule/applyLoan.module").then(m => m.ApplyLoanModule) },
-  { path: "", redirectTo: "ApplyNewLoan", pathMatch: "full" },
+  //{ path: "", redirectTo: "ApplyNewLoan", pathMatch: "full" },
   { path: "**", redirectTo: "ApplyNewLoan", pathMatch: "full" },
   
 ];

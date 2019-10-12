@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CarLoan } from '../Models/carLoans';
@@ -25,21 +25,24 @@ export class CarLoanServices {
 
     ApproveCarLoan(existingCarLoan: CarLoan, newStatus: string): Observable<boolean> {
         existingCarLoan.status = newStatus;
-        return this.httpClient.put<boolean>(`api/carLoans`, existingCarLoan);
+        return this.httpClient.put<boolean>(`/api/carloans`, existingCarLoan);
     }
 
     GetCarLoanByCustomerID(customerID: string): Observable<CarLoan> {
-        return this.httpClient.get<CarLoan>(`/api/carLoans?customerID=${customerID}`);
+        return this.httpClient.get<CarLoan>(`/api/carloans?customerID=${customerID}`);
     }
 
     GetCarLoanByLoanID(loanID: string): Observable<CarLoan> {
-        return this.httpClient.get<CarLoan>(`api/carLoans ? loanID=${loanID}`);
+        return this.httpClient.get<CarLoan>(`/api/carloans?loanID=${loanID}`);
     }
 
     GetCarLoanStatus(loanID: string): Observable<string> {
-        return this.httpClient.get<string>(`api/carLoans/status ? loanID=${loanID}`);
+        return this.httpClient.get<string>(`/api/carloans/status?loanID=${loanID}`);
     }
 
+    GetAllCarLoans(): Observable<CarLoan[]> {
+        return this.httpClient.get<CarLoan[]>(`/api/carloans`);
+    }
     uuidv4() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);

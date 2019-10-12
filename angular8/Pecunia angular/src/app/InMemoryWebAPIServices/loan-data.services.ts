@@ -1,8 +1,10 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { HomeLoan } from '../Models/homeLoans';
 import { CarLoan } from '../Models/carLoans';
 import { EduLoan } from '../Models/eduLoans';
+import { Customer } from '../Models/customers';
+
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +37,13 @@ export class LoanDataService implements InMemoryDbService {
       new EduLoan(3, "68BE45CD-9968-4555-BCBD-8E9F5D1D62C9", "D7D203E8-5E19-478D-AAE3-55403C96D731", 1300000, 10.65, 2345.67, 145, "12/11/2015", "APPLIED", "UNDERGRADUATE", "def institute", "ASDFSDRE", 1)
     ];
 
-    return { homeloans, carloans, eduloans };
+      let customers = [
+          new Customer(1, "614AE31F-650E-49D5-AAAA-6C40C9218389", "Customer1", "1236547890", "email@email.com"),
+          new Customer(2, "614AE31F-650E-AAAA-AAAA-6C40C9218389", "Customer2", "1236547891", "email3@email.com"),
+          new Customer(3, "614AE31F-AAAA-49D5-AAAA-6C40C9218389", "Customer3", "1236547892", "email2@email.com"),
+          new Customer(4, "61AAAAAA-650E-49D5-AAAA-6C40C9218389", "Customer4", "1236547893", "email1@email.com")
+      ];
+    return { homeloans, carloans, eduloans, customers };
   }
 }
 
