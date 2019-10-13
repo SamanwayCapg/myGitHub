@@ -43,9 +43,21 @@
         </div>
 
         <div class="modal-body">
+          <span *ngIf="showLoadingSpinner"><i class="fa fa-circle-o-notch  fa-spin"></i> Please Wait</span>
+          
+          <!--If customer already have a car loan, then show a message-->
+          <div class="form-group form-row" *ngIf="alreadyHaveCarLoan">
+            <label for="alreadyHaveCarLoan" class="col-form-label col-md-4 text-danger">
+              <i class="fa fa-info-circle" aria-hidden="true"></i> You already have a car loan!
+            </label>
+            <!--<span class="text-primary">Amount: Rs.</span>
+        <span class="text-primary">EMI: Rs.</span>
+        <span class="text-primary">Date of application: </span>-->
+          </div>
 
-          <div class="form-group form-row">
-            <label for="amountApplied" class="col-form-label col-md-4">Amount: </label>
+          <!--If customer dont have a car loan, then allow to apply-->
+          <div class="form-group form-row" *ngIf="!alreadyHaveCarLoan">
+            <label for="amountApplied" class="col-form-label col-md-4"><i class="fa fa-university" aria-hidden="true"></i> Amount: </label>
             <div class="col-md-8">
               <input type="text" placeholder="Loan Amount (Rs.)" class="form-control" id="loanAmount" formControlName="amountApplied" [ngClass]="getFormControlCSSInfo(newApplyForm, 'amountApplied')" />
               <small class="form-text text-muted">Maximum allowed amount Rs.20 lakhs</small>
@@ -55,8 +67,8 @@
             </div>
           </div>
 
-          <div class="form-group form-row">
-            <label for="repaymentPeriod" class="col-form-label col-md-4">Repayment Period: </label>
+          <div class="form-group form-row" *ngIf="!alreadyHaveCarLoan">
+            <label for="repaymentPeriod" class="col-form-label col-md-4"><i class="fa fa-calendar" aria-hidden="true"></i> Repayment Period: </label>
             <div class="col-md-8">
               <input type="number" placeholder="Months" class="form-control" id="repaymentPeriod" formControlName="repaymentPeriod" />
               <small class="form-text text-muted">Maximum allowed repayment period is 120 months</small>
@@ -66,8 +78,8 @@
             </div>
           </div>
 
-          <div class="form-group form-row">
-            <label for="occupation" class="col-form-label col-md-4">Occupation: </label>
+          <div class="form-group form-row" *ngIf="!alreadyHaveCarLoan">
+            <label for="occupation" class="col-form-label col-md-4"><i class="fa fa-briefcase" aria-hidden="true"></i> Occupation: </label>
             <select class="form-control" formControlName="occupation" placeholder="your occupation here" id="occupation" style="width:auto">
               <option>AGRICULTURE</option>
               <option>BUSINESS</option>
@@ -79,8 +91,8 @@
             <span class="text-danger" *ngIf="getFormControlStatus('occupation', 'required', newApplyForm)">{{getFormControlErrorMessage('occupation', 'required')}}</span>
           </div>
 
-          <div class="form-group form-row">
-            <label for="grossIncome" class="col-form-label col-md-4">Gross Income: </label>
+          <div class="form-group form-row" *ngIf="!alreadyHaveCarLoan">
+            <label for="grossIncome" class="col-form-label col-md-4"><i class="fa fa-money" aria-hidden="true"></i> Gross Income: </label>
             <div class="col-md-8">
               <input type="number" placeholder="Rs." class="form-control" id="grossIncome" formControlName="grossIncome" />
               <span class="text-danger" *ngIf="getFormControlStatus('grossIncome', 'required', newApplyForm)">{{getFormControlErrorMessage('grossIncome', 'required')}}</span>
@@ -88,8 +100,8 @@
             </div>
           </div>
 
-          <div class="form-group form-row">
-            <label for="salaryDeductions" class="col-form-label col-md-4">Salary Deductions: </label>
+          <div class="form-group form-row" *ngIf="!alreadyHaveCarLoan">
+            <label for="salaryDeductions" class="col-form-label col-md-4"><i class="fa fa-money" aria-hidden="true"></i> Salary Deductions: </label>
             <div class="col-md-8">
               <input type="number" placeholder="Rs." class="form-control" id="salaryDeductions" formControlName="salaryDeductions" />
               <span class="text-danger" *ngIf="getFormControlStatus('salaryDeductions', 'required', newApplyForm)">{{getFormControlErrorMessage('salaryDeductions', 'required')}}</span>
@@ -97,8 +109,8 @@
             </div>
           </div>
 
-          <div class="form-group form-row">
-            <label for="vehicle" class="col-form-label col-md-4">Vehicle: </label>
+          <div class="form-group form-row" *ngIf="!alreadyHaveCarLoan">
+            <label for="vehicle" class="col-form-label col-md-4"> <i class="fa fa-car" aria-hidden="true"></i> Vehicle: </label>
             <select class="form-control" formControlName="vehicle" placeholder="vehicle type" id="occupation" style="width:auto">
               <option>TWO_WHEELER</option>
               <option>FOUR_WHEELER</option>
@@ -114,7 +126,11 @@
           <button type="submit" class="btn btn-secondary" data-dismiss="modal" id="btnNewApplyCancel" (click)="onCancelClick($event)">
             <span><i class="fa fa-times-circle"></i> Cancel</span>
           </button>
-          <button type="submit" class="btn btn-success" (click)="onApplyClick($event)">
+          <label class="text-info" *ngIf="!getFormGroupStatus(newApplyForm)">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            Apply button will appear here
+          </label>
+          <button *ngIf="!alreadyHaveCarLoan && getFormGroupStatus(newApplyForm)" type="submit" class="btn btn-success" data-dismiss="modal" (click)="onApplyClick($event)">
             <span><i class="fa fa-save"></i> Apply</span>
             <!--<span *ngIf="newSupplierDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>-->
           </button>

@@ -23,13 +23,15 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
 
     newCarLoan: CarLoan;
     showLoadingSpinner: boolean = false;
-
+    
     newApplyForm: FormGroup;
     newApplyFormErrorMessages: any;
 
     customers: Customer[] = [];
     carloans: CarLoan[] = [];
     carloan: CarLoan;
+
+    alreadyHaveCarLoan: boolean = false;
 
     constructor(private carLoanService: CarLoanServices, private customerService: CustomerServices) {
     super();
@@ -75,6 +77,25 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
 
 
     onApplyHereClick(index) {
+        this.showLoadingSpinner = true;
+        //checking if customer already have a car laon
+        this.carLoanService.GetCarLoanByCustomerID(this.customers[index].customerID).subscribe((response) => {
+            if (response.length == 1) {//the error showing in vs is false its working
+                this.alreadyHaveCarLoan = true;
+                this.carloan = response;
+                //this.carloan.amountApplied = response.amountApplied;
+                //this.carloan.dateOfApplication = response.dateOfApplication;
+                //this.carloan.EMI_amount = response.EMI_amount;
+            }
+            else
+                this.alreadyHaveCarLoan = false;
+
+            this.showLoadingSpinner = false;
+        },
+        (error) => {
+            console.log(error);
+        });
+
         this.newApplyForm.reset();
         this.newApplyForm["submitted"] = false;
         this.newApplyForm.patchValue({
@@ -85,6 +106,15 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
   // applying for a new car loan
   onApplyClick(event) {
       this.newApplyForm["submitted"] = true;
+      var alreadyHaveCarLoan: boolean = false;
+
+      //checking if customer already have a car laon
+      this.carLoanService.GetCarLoanByCustomerID(this.newApplyForm.value.customerID).subscribe((response) => {
+          console.log("already have a laon");
+      },
+      (error) => {
+              console.log("dont have a laon");
+      });
       
       if (this.newApplyForm.valid) {
           var newCarLoan = this.newApplyForm.value;
@@ -100,19 +130,18 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
           });
 
       
-        console.log(this.newApplyForm.value);
-        this.carLoanService.ApplyCarLoan(newCarLoan).subscribe((addResponse) => {
-        this.newApplyForm.reset();
-        this.showLoadingSpinner = true;
-
-            console.log(newCarLoan);
-      }, (error) => {
-        console.log(error);
-      });
-    }
-    else {
+            console.log(this.newApplyForm.value);
+            this.carLoanService.ApplyCarLoan(newCarLoan).subscribe((addResponse) => {
+              this.newApplyForm.reset();
+                this.showLoadingSpinner = true;
+                
+            }, (error) => {
+              console.log(error);
+            });
+      } 
+      else {
       super.getFormGroupErrors(this.newApplyForm);
-    }
+      }
   }
 
     onCancelClick() {
@@ -144,7 +173,11 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
             
     }
 
-  uuidv4() {
+    getFormGroupStatus(formGroupName: FormGroup) {
+        return formGroupName.valid;
+    }
+
+    uuidv4() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
           var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
           return v.toString(16);
