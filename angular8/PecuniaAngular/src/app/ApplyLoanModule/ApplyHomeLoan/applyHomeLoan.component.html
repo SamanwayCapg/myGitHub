@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="col-md-3 col-lg-4 mx-auto">
+
+    <span *ngIf="showLoadingSpinner"><i class="fa fa-refresh fa-spin" ></i></span>
+    <table class="table mt-2">
+      <thead>
+        <tr class="table-secondary">
+          <th>Name</th>
+          <th>Mobile</th>
+          <th>Email</th>
+          <th class="text-secondary">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let customer of customers; let index = index">
+          <td style="font-size:100%">{{customer.customerName}}</td>
+          <td style="font-size:100%">{{customer.customerMobile}}</td>
+          <td style="font-size:100%">{{customer.customerEmail}}</td>
+
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#applyHomeLoanModal" (click)="onApplyHereClick(index)">Apply Here</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- Apply Home Loan Modal -->
+<form [formGroup]="newApplyForm">
+  <div class="modal fade" id="applyHomeLoanModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Apply Home Loan</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <span *ngIf="showLoadingSpinner"><i class="fa fa-circle-o-notch  fa-spin"></i> Please Wait</span>
+          <label class="text-danger" *ngIf="!getFormGroupStatus(newApplyForm) && !alreadyHaveHomeLoan">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            Form is incomplete!
+          </label>
+
+          <!--If customer already have a home loan, then show a message-->
+          <div class="form-group form-row" *ngIf="alreadyHaveHomeLoan">
+            <label for="alreadyHaveHomeLoan" class="col-form-label col-md-4 text-danger">
+              <i class="fa fa-info-circle" aria-hidden="true"></i> You already have a home loan!
+            </label>
+            <!--<span class="text-primary">Amount: Rs.</span>
+    <span class="text-primary">EMI: Rs.</span>
+    <span class="text-primary">Date of application: </span>-->
+          </div>
+
+          <!--If customer dont have a home loan, then allow to apply-->
+          <div class="form-group form-row" *ngIf="!alreadyHaveHomeLoan">
+            <label for="amountApplied" class="col-form-label col-md-4"><i class="fa fa-university" aria-hidden="true"></i> Amount: </label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Loan Amount (Rs.)" class="form-control" id="loanAmount" formControlName="amountApplied" [ngClass]="getFormControlCSSInfo(newApplyForm, 'amountApplied')" />
+              <small class="form-text text-muted">Maximum allowed amount Rs.20 lakhs</small>
+              <span class="text-danger" *ngIf="getFormControlStatus('amountApplied', 'required', newApplyForm)">{{getFormControlErrorMessage('amountApplied', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('amountApplied', 'min', newApplyForm)">{{getFormControlErrorMessage('amountApplied', 'min')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('amountApplied', 'max', newApplyForm)">{{getFormControlErrorMessage('amountApplied', 'max')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row" *ngIf="!alreadyHaveHomeLoan">
+            <label for="reapaymentPeriod" class="col-form-label col-md-4"><i class="fa fa-calendar" aria-hidden="true"></i> Repayment Period: </label>
+            <div class="col-md-8">
+              <input type="number" placeholder="Months" class="form-control" id="reapaymentPeriod" formControlName="reapaymentPeriod" />
+              <small class="form-text text-muted">Maximum allowed repayment period is 120 months</small>
+              <span class="text-danger" *ngIf="getFormControlStatus('reapaymentPeriod', 'required', newApplyForm)">{{getFormControlErrorMessage('reapaymentPeriod', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('reapaymentPeriod', 'min', newApplyForm)">{{getFormControlErrorMessage('reapaymentPeriod', 'min')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('reapaymentPeriod', 'max', newApplyForm)">{{getFormControlErrorMessage('reapaymentPeriod', 'max')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row" *ngIf="!alreadyHaveHomeLoan">
+            <label for="occupation" class="col-form-label col-md-4"><i class="fa fa-briefcase" aria-hidden="true"></i> Occupation: </label>
+            <select class="form-control" formControlName="occupation" id="occupation" style="width:auto">
+              <option>AGRICULTURE</option>
+              <option>BUSINESS</option>
+              <option>SERVICE</option>
+              <option>RETIRED</option>
+              <option>SELF_EMPLOYED</option>
+              <option>OTHERS</option>
+            </select>
+            <span class="text-danger" *ngIf="getFormControlStatus('occupation', 'required', newApplyForm)">{{getFormControlErrorMessage('occupation', 'required')}}</span>
+          </div>
+
+          <div class="form-group form-row" *ngIf="!alreadyHaveHomeLoan">
+            <label for="grossIncome" class="col-form-label col-md-4"><i class="fa fa-money" aria-hidden="true"></i> Gross Income: </label>
+            <div class="col-md-8">
+              <input type="number" placeholder="Rs." class="form-control" id="grossIncome" formControlName="grossIncome" />
+              <span class="text-danger" *ngIf="getFormControlStatus('grossIncome', 'required', newApplyForm)">{{getFormControlErrorMessage('grossIncome', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('grossIncome', 'min', newApplyForm)">{{getFormControlErrorMessage('grossIncome', 'min')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row" *ngIf="!alreadyHaveHomeLoan">
+            <label for="salaryDeductions" class="col-form-label col-md-4"><i class="fa fa-money" aria-hidden="true"></i> Salary Deductions: </label>
+            <div class="col-md-8">
+              <input type="number" placeholder="Rs." class="form-control" id="salaryDeductions" formControlName="salaryDeductions" />
+              <span class="text-danger" *ngIf="getFormControlStatus('salaryDeductions', 'required', newApplyForm)">{{getFormControlErrorMessage('salaryDeductions', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('salaryDeductions', 'min', newApplyForm)">{{getFormControlErrorMessage('salaryDeductions', 'min')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row" *ngIf="!alreadyHaveHomeLoan">
+            <label for="serviceYears" class="col-form-label col-md-4"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience: </label>
+            <div class="col-md-8">
+              <input type="number" placeholder="Years of experience" class="form-control" id="serviceYears" formControlName="serviceYears" />
+              <span class="text-danger" *ngIf="getFormControlStatus('serviceYears', 'required', newApplyForm)">{{getFormControlErrorMessage('serviceYears', 'required')}}</span>
+              <span class="text-danger" *ngIf="getFormControlStatus('serviceYears', 'min', newApplyForm)">{{getFormControlErrorMessage('serviceYears', 'min')}}</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" data-dismiss="modal" id="btnNewApplyCancel" (click)="onCancelClick($event)">
+            <span><i class="fa fa-times-circle"></i> Cancel</span>
+          </button>
+          <label class="text-info" *ngIf="!getFormGroupStatus(newApplyForm)">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            Apply button will appear here
+          </label>
+          <button *ngIf="!alreadyHaveHomeLoan && getFormGroupStatus(newApplyForm)" type="submit" class="btn btn-success" data-dismiss="modal" (click)="onApplyClick($event)">
+            <span><i class="fa fa-save"></i> Apply</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
