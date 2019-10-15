@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApplyLoanComponent } from './Components/ApplyLoan/applyLoan.component';
+import { ApproveLoanComponent } from './Components/ApproveLoan/approveLoan.component';
 import { ShowLoanComponent } from './Components/ShowLoan/showLoan.component';
 import { ApplyLoanModule } from './ApplyLoanModule/applyLoan.module';
 import { LoanDataService } from './InMemoryWebAPIServices/loan-data.services';
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     ApplyLoanComponent,
-    ShowLoanComponent
+        ShowLoanComponent,
+        ApproveLoanComponent
   ],
 
   imports: [
