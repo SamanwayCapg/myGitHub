@@ -9,6 +9,7 @@ import { ApplyLoanModule } from './ApplyLoanModule/applyLoan.module';
 import { LoanDataService } from './InMemoryWebAPIServices/loan-data.services';
 import { environment } from '../environments/environment.prod';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
   ],
 
   imports: [
+      FormsModule,
+      ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

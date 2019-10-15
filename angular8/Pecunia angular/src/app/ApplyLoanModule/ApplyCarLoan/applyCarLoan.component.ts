@@ -3,10 +3,10 @@ import { CarLoanServices } from '../../Services/carLoans.services';
 import { CustomerServices } from '../../Services/cutomers.services';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { PecuniaComponentBase } from '../../pecunia-component';
-import * as $ from "jquery";
+//import * as $ from "jquery";
 import { CarLoan } from '../../Models/carLoans';
 import { Customer } from '../../Models/customers';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 
 
 @Component({
@@ -33,7 +33,8 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
 
     alreadyHaveCarLoan: boolean = false;
 
-    constructor(private carLoanService: CarLoanServices, private customerService: CustomerServices) {
+  constructor(private carLoanService: CarLoanServices, private customerService: CustomerServices)
+  {
     super();
     this.newApplyForm = new FormGroup({
         //user inputs
@@ -64,6 +65,10 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
 
   }
 
+    test() {
+        console.log("test");
+    }
+
     ngOnInit() {
         this.showLoadingSpinner = true;
         this.customerService.GetAllCustomers().subscribe((response) => {
@@ -79,10 +84,11 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
     onApplyHereClick(index) {
         this.showLoadingSpinner = true;
         //checking if customer already have a car laon
-        this.carLoanService.GetCarLoanByCustomerID(this.customers[index].customerID).subscribe((response) => {
-            if (response.length == 1) {//the error showing in vs is false its working
+      this.carLoanService.GetCarLoanByCustomerID(this.customers[index].customerID).subscribe((response) => {
+        console.log(response);
+        if (response.length == 1) {//the error showing in vs is false its working
                 this.alreadyHaveCarLoan = true;
-                this.carloan = response;
+                this.carloans = response;
                 //this.carloan.amountApplied = response.amountApplied;
                 //this.carloan.dateOfApplication = response.dateOfApplication;
                 //this.carloan.EMI_amount = response.EMI_amount;
@@ -132,8 +138,8 @@ export class ApplyCarLoanComponent extends PecuniaComponentBase implements OnIni
       
             console.log(this.newApplyForm.value);
             this.carLoanService.ApplyCarLoan(newCarLoan).subscribe((addResponse) => {
-              this.newApplyForm.reset();
-                this.showLoadingSpinner = true;
+            this.newApplyForm.reset();
+            this.showLoadingSpinner = false;
                 
             }, (error) => {
               console.log(error);

@@ -28,12 +28,12 @@ export class CarLoanServices {
         return this.httpClient.put<boolean>(`/api/carloans`, existingCarLoan);
     }
 
-    GetCarLoanByCustomerID(customerID: string): Observable<CarLoan> {
-        return this.httpClient.get<CarLoan>(`/api/carloans?customerID=${customerID}`);
+    GetCarLoanByCustomerID(customerID: string): Observable<CarLoan[]> {
+        return this.httpClient.get<CarLoan[]>(`/api/carloans?customerID=${customerID}`);
     }
 
-    GetCarLoanByLoanID(loanID: string): Observable<CarLoan> {
-        return this.httpClient.get<CarLoan>(`/api/carloans?loanID=${loanID}`);
+    GetCarLoanByLoanID(loanID: string): Observable<CarLoan[]> {
+        return this.httpClient.get<CarLoan[]>(`/api/carloans?loanID=${loanID}`);
     }
 
     GetCarLoanStatus(loanID: string): Observable<string> {
