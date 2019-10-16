@@ -15,7 +15,11 @@ import { EduLoan } from '../../Models/eduLoans';
 export class ApproveLoanComponent implements OnInit {
 
     searchBoxForm: FormGroup;
-  searchBoxErrorMsg: any;
+    updateStatusForm: FormGroup;
+
+    searchBoxErrorMsg: any;
+    updatedStatusErrorMsg: any;
+    updatedStatus: string;
   carLoans: CarLoan[] =[];
   homeLoans: HomeLoan[] =[];
   eduLoans: EduLoan[] = [];
@@ -24,7 +28,7 @@ export class ApproveLoanComponent implements OnInit {
   homeLoansTableDisplay: HomeLoan[] = [];
   eduLoansTableDisplay: EduLoan[] = [];
 
-    IDselected: boolean = false;
+  IDselected: boolean = false;
   IDtype: number = 0;
   showLoadingSpinner: boolean = false;
   isValidID: boolean;
@@ -43,6 +47,14 @@ export class ApproveLoanComponent implements OnInit {
         this.searchBoxErrorMsg = {
             inputID: { minLength:"ID length 36",   required:"ID is required"}
         };
+
+      this.updateStatusForm = new FormGroup({
+          updatedStatus: new FormControl(null, Validators.required)
+      })
+
+      this.updatedStatusErrorMsg = {
+          updatedStatus: {required:"Status must be updated"}
+      }
   }
 
   ngOnInit() {
@@ -77,8 +89,12 @@ export class ApproveLoanComponent implements OnInit {
         return formGroupName.valid;
     }
 
-    getFormControlErrorMessage(formControlName: string, validationProperty: string): string {
+    getSearchBoxFormErrorMessage(formControlName: string, validationProperty: string): string {
         return this.searchBoxErrorMsg[formControlName][validationProperty];
+    }
+
+    getUpdateStatusFormErrorMessage(formControlName: string, validationProperty: string): string {
+        return this.updateStatusForm[formControlName][validationProperty];
     }
 
   
@@ -195,8 +211,78 @@ export class ApproveLoanComponent implements OnInit {
   }
 
   public resetshowLoanDetailsModal() {
-    this.searchBoxForm.reset();
-    this.IDselected = false;
+      this.searchBoxForm.reset();
+      this.updateStatusForm.reset();
+      this.IDselected = false;
+      this.isCarLoan = false;
+      this.isEduLoan = false;
+      this.isHomeLoan = false;
   }
+
+    onClickUpdateStatus() {
+        this.showLoadingSpinner = true;
+        this.updatedStatus = this.updateStatusForm.value.updatedStatus;
+        if (this.isCarLoan == true) {
+            this.carLoanService.ApproveCarLoan(this.carLoans[0], this.updatedStatus).subscribe((response) => {
+                this.showLoadingSpinner = false;
+                console.log("status updation:" + response);
+            }, (error) => {
+                    console.log(error);
+            })
+        } else if (this.isEduLoan == true) {
+            this.eduLoanService.ApproveEduLoan(this.eduLoans[0], this.updatedStatus).subscribe((response) => {
+                this.showLoadingSpinner = false;
+                console.log("status updation:" + response);
+            }, (error) => {
+                console.log(error);
+            })
+        } else {//this is home loan
+            this.homeLoanService.ApproveHomeLoan(this.homeLoans[0], this.updatedStatus).subscribe((response) => {
+                this.showLoadingSpinner = false;
+                console.log("status updation:" + response);
+            }, (error) => {
+                console.log(error);
+            })
+        }
+    }
+
+    
+    showLoanInModal(value: number, loanID: string) {
+        this.isCarLoan = false;
+        this.isEduLoan = false;
+        this.isHomeLoan = false;
+        console.log(loanID);
+        console.log(value);
+        if (value == 3) {
+            this.isCarLoan = true;
+            this.carLoanService.GetCarLoanByLoanID(loanID).subscribe((response) => {
+                this.carLoans = response;
+                console.log(this.carLoans[0]);
+            },
+                (error) => {
+                    console.log(error);
+                })
+        }
+        else if (value == 2) {
+            this.isEduLoan = true;
+            this.eduLoanService.GetEduLoanByLoanID(loanID).subscribe((response) => {
+                this.eduLoans = response;
+                console.log(this.eduLoans[0]);
+            },
+                (error) => {
+                    console.log(error);
+                })
+        }
+        else {
+            this.isHomeLoan = true;
+            this.homeLoanService.GetHomeLoanByLoanID(loanID).subscribe((response) => {
+                this.homeLoans = response;
+                console.log(this.homeLoans[0]);
+            },
+                (error) => {
+                    console.log(error);
+                })
+        }
+    }
 }
 
