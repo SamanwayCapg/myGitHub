@@ -1,15 +1,15 @@
 use Pecunia
 go
 
-create procedure approveEduLoan (@LoanID varchar(40), @updatedStatus varchar(15))
+alter procedure Pecunia.approveEduLoan (@LoanID uniqueidentifier, @updatedStatus varchar(15))
 as
 begin
-	if(exists (select * from Loans.EduLoan where LoanID=@LoanID) )
+	if(exists (select * from Pecunia.EduLoan where LoanID=@LoanID) )
 		begin
-			if(@updatedStatus = (select LoanStatus from Loans.EduLoan where LoanID=@LoanID))		
+			if(@updatedStatus = (select LoanStatus from Pecunia.EduLoan where LoanID=@LoanID))		
 				throw 50000, 'Status cant be updated to existing status', 1
 
-			update Loans.EduLoan set LoanStatus=@updatedStatus
+			update Pecunia.EduLoan set LoanStatus=@updatedStatus
 			where LoanID=@LoanID
 		end
 	else

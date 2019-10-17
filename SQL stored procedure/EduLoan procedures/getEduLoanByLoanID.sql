@@ -1,22 +1,22 @@
 use Pecunia
 go
 
-create procedure getEduLoanByLoanID (@loanID varchar(40),
-											@customerID varchar(40) output,
+alter procedure Pecunia.getEduLoanByLoanID (@loanID uniqueidentifier,
+											@customerID uniqueidentifier output,
 											@loanStatus varchar(15) output,
 											@amountApplied money output,
 											@EMI money output,
 											@repaymentPeriod tinyint output)
 as			
 begin
-	if(exists (select * from Loans.EduLoan where LoanID=@loanID) )
+	if(exists (select * from Pecunia.EduLoan where LoanID=@loanID) )
 		begin
 			select  @customerID=CustomerID,
 					@loanStatus = LoanStatus,
 					@amountApplied = AmountApplied,
 					@EMI = EMI_amount,
 					@repaymentPeriod = RepaymentPeriod
-			from Loans.EduLoan
+			from Pecunia.EduLoan
 			where LoanID = @loanID
 		end
 	else

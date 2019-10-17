@@ -1,22 +1,22 @@
 use Pecunia
 go
 
-create procedure getCarLoanByLoanID (@loanID varchar(40),
-											@customerID varchar(40) output,
+alter procedure Pecunia.getCarLoanByLoanID (@loanID uniqueidentifier,
+											@customerID uniqueidentifier output,
 											@loanStatus varchar(15) output,
 											@amountApplied money output,
 											@EMI money output,
 											@repaymentPeriod tinyint output)
 as			
 begin
-	if(exists (select * from Loans.CarLoan where LoanID=@loanID) )
+	if(exists (select * from Pecunia.CarLoan where LoanID=@loanID) )
 		begin
 			select  @customerID=CustomerID,
 					@loanStatus = LoanStatus,
 					@amountApplied = AmountApplied,
 					@EMI = EMI_amount,
 					@repaymentPeriod = RepaymentPeriod
-			from Loans.CarLoan
+			from Pecunia.CarLoan
 			where LoanID = @loanID
 		end
 	else

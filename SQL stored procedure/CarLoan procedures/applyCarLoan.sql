@@ -1,8 +1,8 @@
 use Pecunia
 go
 
-create procedure applyCarLoan (	@LoanID varchar(40),
-								@CustomerID varchar(40),
+alter procedure Pecunia.applyCarLoan (	@LoanID uniqueidentifier,
+								@CustomerID uniqueidentifier,
 								@AmountApplied money,
 								@InterestRate money,
 								@EMI_amount money,
@@ -16,9 +16,7 @@ create procedure applyCarLoan (	@LoanID varchar(40),
 								@VehicleType varchar(15))
 as 
 begin
-	if(len(@LoanID)<>36 or len(@CustomerID)<>36)
-		throw 50000, 'All ID length must be 36', 1
-
+	
 	if(@AmountApplied > 2000000)
 		throw 50000, 'Maximum allowed amount is Rs. 20 lakh', 1
 
@@ -28,7 +26,7 @@ begin
 	if(@SalaryDeduction > @GrossIncome)
 		throw 50000, 'Salary deductions must not be greater than gross income', 1
 
-	insert into Loans.CarLoan
+	insert into Pecunia.CarLoan
 	values( @LoanID,
 			@CustomerID,
 			@AmountApplied,

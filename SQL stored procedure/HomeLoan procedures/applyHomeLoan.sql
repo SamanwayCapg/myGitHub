@@ -1,8 +1,8 @@
 use Pecunia
 go
 
-create procedure applyHomeLoan (	@LoanID varchar(40),
-								@CustomerID varchar(40),
+alter procedure Pecunia.applyHomeLoan (	@LoanID uniqueidentifier,
+								@CustomerID uniqueidentifier,
 								@AmountApplied money,
 								@InterestRate money,
 								@EMI_amount money,
@@ -16,8 +16,6 @@ create procedure applyHomeLoan (	@LoanID varchar(40),
 								@SalaryDeduction money)
 as 
 begin
-	if(len(@LoanID)<>36 or len(@CustomerID)<>36)
-		throw 50000, 'All ID length must be 40', 1
 
 	if(@AmountApplied > 2000000 and @AmountApplied>0)
 		throw 50000, 'Maximum allowed amount is Rs. 20 lakh and figure must be positive', 1
@@ -34,7 +32,7 @@ begin
 	if(@SalaryDeduction<0 or @GrossIncome<=0)
 		throw 50000, 'salary and deduction figures must be positive', 1
 
-	insert into Loans.HomeLoan
+	insert into Pecunia.HomeLoan
 	values( @LoanID,
 			@CustomerID,
 			@AmountApplied,

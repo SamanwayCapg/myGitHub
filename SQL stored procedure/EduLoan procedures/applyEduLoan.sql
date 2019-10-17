@@ -1,8 +1,8 @@
 use Pecunia
 go
 
-create procedure applyEduLoan (	@LoanID varchar(40),
-								@CustomerID varchar(40),
+alter procedure Pecunia.applyEduLoan (	@LoanID uniqueidentifier,
+								@CustomerID uniqueidentifier,
 								@AmountApplied money,
 								@InterestRate money,
 								@EMI_amount money,
@@ -16,16 +16,14 @@ create procedure applyEduLoan (	@LoanID varchar(40),
 								@RepaymentHoliday tinyint)
 as 
 begin
-	if(len(@LoanID)<>36 or len(@CustomerID)<>36)
-		throw 50000, 'All ID length must be 36', 1
-
+	
 	if(@AmountApplied > 2000000)
 		throw 50000, 'Maximum allowed amount is Rs. 20 lakh', 1
 
 	if(@RepaymentPeriod > 96)
 		throw 50000, 'Maximum allowed repayment period is 96 months', 1
 
-	insert into Loans.EduLoan
+	insert into Pecunia.EduLoan
 	values( @LoanID,
 			@CustomerID,
 			@AmountApplied,
