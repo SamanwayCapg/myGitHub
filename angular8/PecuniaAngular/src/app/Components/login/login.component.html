@@ -1,0 +1,58 @@
+<!--
+   DEVELOPED BY - AISHWARYA SARNA
+   DATE OF CREATION - 10/10/2019
+   LOGIN COMPONENT HTML
+-->
+
+
+
+
+<div class="row">
+  <div class="col-lg-6 col-md-9 mx-auto">
+    <form [formGroup]="loginForm">
+      <div class="card mt-2">
+        <div class="card-header bg-info text-white">
+          <!--<h4>Login</h4>-->
+          <ul class="nav nav-tabs card-header-tabs">
+            <li>
+                <a class=" nav-link text-dark active" data-toggle="tab" id="admin" (click)="onAdminClick()">Admin</a>
+              
+            </li>
+            <li> 
+                  <a class=" nav-link text-dark" data-toggle="tab"  id="employee" (click)="onEmployeeClick()">Employee</a>
+                
+            </li>
+          </ul>
+        </div>
+        <div  class="card-body" >
+          <div class="form-group">
+            <label for="email">Email: *</label>   <!--email-->
+            <input type="text" class="form-control" placeholder="Email" autofocus="autofocus" id="email" formControlName="email" (change)="onChangeEmail()" />
+            <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'required', loginForm)">{{getFormControlErrorMessage('email', 'required')}}</span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password: *</label>     <!--password-->
+            <input type="password" class="form-control" placeholder="Password" id="password" formControlName="password" (change)="onChangePassword()"/>
+            <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('password', 'required', loginForm)">{{getFormControlErrorMessage('password', 'required')}}</span>
+          </div>
+          <!--<div class="form-group">
+      <label for="userType">User Type: *</label>      <!--user type
+      <select name="userType" class="custom-select" id="userType" formControlName="userType">
+        <option value="Admin">Admin</option>
+        <option value="Employee">Employee</option>
+      </select>
+      <small class="form-text text-muted">Select User Type to Log In.</small>
+      <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('userType', 'required', loginForm)">{{getFormControlErrorMessage('userType', 'required')}}</span>
+    </div>-->
+
+        </div>
+
+        <div class="card-footer text-right" *ngIf="loginEmail && loginPassword">
+          <!--Login-->
+          <button class="btn btn-success" (click)="onLoginClick()" ><span class="fa fa-sign-in"></span> Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

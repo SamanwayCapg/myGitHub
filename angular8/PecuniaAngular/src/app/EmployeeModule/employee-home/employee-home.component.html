@@ -1,0 +1,108 @@
+<!--
+   DEVELOPED BY - AISHWARYA SARNA
+   DATE OF CREATION - 10/10/2019
+   EMPLOYEE-HOME COMPONENT HTML
+-->
+
+
+
+
+<!--Employee Home Page, shows admin details-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]=" [ '/employee', 'home' ] ">Employee</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Home
+      <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showEmployeeHomeSpinner"></i>
+    </li>
+  </ol>
+</nav>
+
+<div class="row">
+  <table class=" table mt-2 mx-5 table-bordered table-hover">
+    <thead>
+      <tr class="table-info">
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Mobile</th>
+        <th>Created On</th>
+        <th>Last Modified On</th>
+        <th>Change Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees; let i = index">
+        <td >{{employee.employeeID}}</td>
+        <td style="font-size:120%">{{employee.employeeName}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.employeeMobile}}</td>
+        <td>{{employee.creationDateTime}}</td>
+        <td>{{employee.lastModifiedDateTime}}</td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-secondary button" data-toggle="modal" data-target="#changeEmployeePasswordModal" (click)="onChangeEmployeePasswordClick()" style="font-size:15px;">Change Password</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+<!--Change Employee Password-->
+<form [formGroup]="changeEmployeePassword">
+  <div class="modal fade" id="changeEmployeePasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Change Password</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group form-row">
+            <label for="currentPassword" class="col-form-label col-md-4">Current Password:</label>
+            <div class="col-md-8">
+              <input type="password" placeholder="Current Password" class="form-control" id="currentPassword" formControlName="currentPassword" [ngClass]="getFormControlCssClass(changeEmployeePassword.get('currentPassword'), changeEmployeePassword)" />
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('currentPassword', 'required', changeEmployeePassword)">{{getChangePasswordFormControlErrorMessage('currentPassword', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('currentPassword', 'pattern', changeEmployeePassword)">{{getChangePasswordFormControlErrorMessage('currentPassword', 'pattern')}}</span>
+            </div>
+          </div>
+          <div class="form-group form-row">
+            <label for="newPassword" class="col-form-label col-md-4">New Password:</label>
+            <div class="col-md-8">
+              <input type="password" placeholder="New Password" class="form-control" id="newPassword" formControlName="newPassword" [ngClass]="getFormControlCssClass(changeEmployeePassword.get('newPassword'), changeEmployeePassword)" />
+              <small class="form-text text-muted">At least one uppercase letter, one lowercase letter and one digit.</small>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('newPassword', 'required', changeEmployeePassword)">{{getChangePasswordFormControlErrorMessage('newPassword', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('newPassword', 'pattern', changeEmployeePassword)">{{getChangePasswordFormControlErrorMessage('newPassword', 'pattern')}}</span>
+            </div>
+          </div>
+          <div class="form-group form-row">
+            <label for="confirmNewpassword" class="col-form-label col-md-4">Confirm New Password:</label>
+            <div class="col-md-8">
+              <input type="password" placeholder="Confirm New Password" class="form-control" id="confirmNewPassword" formControlName="confirmNewPassword" [ngClass]="getFormControlCssClass(changeEmployeePassword.get('confirmNewPassword'), changeEmployeePassword)" />
+              <small class="form-text text-muted">Should Match With New Password.</small>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('confirmNewPassword', 'required', changeEmployeePassword)">{{getChangePasswordFormControlErrorMessage('confirmNewPassword', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('confirmNewPassword', 'pattern', changeEmployeePassword)">{{getChangePasswordFormControlErrorMessage('confirmNewPassword', 'pattern')}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnChangePasswordCancel">
+            <i class="fa fa-times-circle"></i> Cancel
+          </button>
+          <button type="submit" class="btn btn-success" (click)="onChangePasswordConfirmClick($event)" [disabled]="changePasswordDisabled">
+            <span *ngIf="!changePasswordDisabled"><i class="fa fa-save"></i>Change</span>
+            <span *ngIf="changePasswordDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,39 +1,45 @@
+/**  DEVELOPED BY - AISHWARYA SARNA
+ *  DATE OF CREATION - 10/10/2019
+ *  APP MODULE
+ * 
+*/
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApplyLoanComponent } from './Components/ApplyLoan/applyLoan.component';
-import { ApproveLoanComponent } from './Components/ApproveLoan/approveLoan.component';
-import { ShowLoanComponent } from './Components/ShowLoan/showLoan.component';
-import { ApplyLoanModule } from './ApplyLoanModule/applyLoan.module';
-import { LoanDataService } from './InMemoryWebAPIServices/loan-data.services';
+import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment.prod';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './Components/about/about.component';
+import { LoginComponent } from './Components/login/login.component';
+import { AdminModule } from './AdminModule/admin.module';
+import { EmployeeModule } from './EmployeeModule/employee.module';
+import { PecuniaDataService } from './InMemoryWebAPIServices/employees-data.service';
 
+
+
+//decorator
 @NgModule({
   declarations: [
     AppComponent,
-    ApplyLoanComponent,
-        ShowLoanComponent,
-        ApproveLoanComponent
+    AboutComponent,
+    LoginComponent,
   ],
-
   imports: [
-      FormsModule,
-      ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ApplyLoanModule,
-    environment.production ? HttpClientInMemoryWebApiModule.forRoot(LoanDataService, { delay: 1000 }) : [],
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientInMemoryWebApiModule.forRoot(PecuniaDataService, { delay: 1000 })
   ],
-
   providers: [],
-
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }

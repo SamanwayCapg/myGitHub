@@ -1,0 +1,325 @@
+<!--Project Name: Pecunia
+    Module: Transaction
+    Created by: Ayush Soni-->
+<div class="btn-group" align="center">
+  <button class="btn btn-primary" [routerLink]="['/employee','home']" [routerLinkActive]="['active']">Back</button>
+</div>
+
+<div class="row">
+  <div class="col-md-3 col-lg-2 ml-0 pl-0 pt-0 pr-0 border-right left-menu">
+    <div class="p-2">
+      <h5>
+        Transaction <span class="badge badge-secondary float-right" *ngIf="transactions.length > 0">{{transactions.length}}</span>
+      </h5>
+    </div>
+
+    <!--Button for making a Transaction by Cheque-->
+    <div class="list-group mb-2 mt-4">
+      <a class="list-group-item list-group-item-action list-group-item-primary" data-toggle="modal" href="#newTransactionModal" (click)="onCreateTransactionClick()">Cheque Transaction</a>
+    </div>
+
+    <!--Button for making a Transaction by Slip-->
+    <div class="list-group mb-5">
+      <a class="list-group-item list-group-item-action list-group-item-primary" data-toggle="modal" href="#newTransactionModal1" (click)="onCreateTransactionClick()">Slip Transaction</a>
+    </div>
+
+    <!--Dropdown for sorting transactions by Type-->
+    <div>
+      <strong>Sort Transactions by:</strong>
+      <select class="form-control" [(ngModel)]="typeOfTransaction" (change)="onTypeOfTransactionChange()">
+        <option value="Credit">Credit</option>
+        <option value="Debit">Debit</option>
+      </select>
+    </div>
+
+    <!--Checkboxes for adding or removing a column-->
+    <div class="p-2 border-top mt-5"><h5>View</h5></div>
+    <div class="px-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewAccountNumber" [(ngModel)]="viewTransactionCheckBoxes.accountNumber">
+        <label class="form-check-label" for="viewAccountNumber">
+          Account Number
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewTypeOfTransaction" [(ngModel)]="viewTransactionCheckBoxes.typeOfTransaction">
+        <label class="form-check-label" for="viewTypeOfTransaction">
+          Type of Transaction
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewAmount" [(ngModel)]="viewTransactionCheckBoxes.amount">
+        <label class="form-check-label" for="viewAmount">
+          Amount
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewDateOfTransaction" [(ngModel)]="viewTransactionCheckBoxes.dateOfTransaction">
+        <label class="form-check-label" for="viewDateOfTransaction">
+          Date of Transaction
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewModeOfTransaction" [(ngModel)]="viewTransactionCheckBoxes.modeOfTransaction">
+        <label class="form-check-label" for="viewModeOfTransaction">
+          Mode of Transaction
+        </label>
+      </div>
+      <div class="form-group my-2">
+        <button class="btn btn-secondary btn-sm mr-1" (click)="onViewSelectAllClick()">Select All</button>
+        <button class="btn btn-secondary btn-sm" (click)="onViewDeselectAllClick()">Deselect All</button>
+      </div>
+    </div>
+  </div>
+  <!--Displaying list of all Transactions using table format-->
+  <div class="col-md-9 col-lg-10" *ngIf="ListOfAllTransactions">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Transactions
+          <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showTransactionsSpinner"></i>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="float-left mb-5"><h4>List of All Transactions: </h4></div>
+
+    <!--Search by account number button-->
+    <form [formGroup]="newSearchForm" class="form-inline float-right mb-5">
+      <input class="form-control mr-sm-2" type="number" placeholder="Search by Account Number" aria-label="Search" formControlName="accountnumber">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onAddSearchClick()">Search</button>
+    </form>
+
+    <!--Table Creation for the list-->
+    <table class="table mt-2" border="1">
+      <thead>
+        <tr class="table-info">
+          <th *ngIf="viewTransactionCheckBoxes.accountNumber">Account Number</th>
+          <th *ngIf="viewTransactionCheckBoxes.typeOfTransaction">Type of Transaction</th>
+          <th *ngIf="viewTransactionCheckBoxes.amount">Amount</th>
+          <th *ngIf="viewTransactionCheckBoxes.dateOfTransaction">Date of Transaction</th>
+          <th *ngIf="viewTransactionCheckBoxes.modeOfTransaction">Mode of Transaction</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions; let index = index">
+          <td style="font-size:120%" *ngIf="viewTransactionCheckBoxes.accountNumber">{{transaction.accountNumber}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.typeOfTransaction">{{transaction.typeOfTransaction}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.amount">{{transaction.amount}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.dateOfTransaction">{{transaction.dateOfTransaction}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.modeOfTransaction">{{transaction.modeOfTransaction}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Displaying the details for a particular choosen account number-->
+  <div class="col-md-9 col-lg-10" *ngIf="SearchList">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Transactions
+          <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showTransactionsSpinner"></i>
+        </li>
+      </ol>
+    </nav>
+    <table class="table mt-2" border="1">
+      <thead>
+        <tr class="table-info">
+          <th *ngIf="viewTransactionCheckBoxes.accountNumber">Account Number</th>
+          <th *ngIf="viewTransactionCheckBoxes.typeOfTransaction">Type of Transaction</th>
+          <th *ngIf="viewTransactionCheckBoxes.amount">Amount</th>
+          <th *ngIf="viewTransactionCheckBoxes.dateOfTransaction">Date of Transaction</th>
+          <th *ngIf="viewTransactionCheckBoxes.modeOfTransaction">Mode of Transaction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactionsearch; let index = index">
+          <td style="font-size:120%" *ngIf="viewTransactionCheckBoxes.accountNumber">{{transaction.accountNumber}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.typeOfTransaction">{{transaction.typeOfTransaction}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.amount">{{transaction.amount}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.dateOfTransaction">{{transaction.dateOfTransaction}}</td>
+          <td *ngIf="viewTransactionCheckBoxes.modeOfTransaction">{{transaction.modeOfTransaction}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Form for Cheque Transaction-->
+  <form [formGroup]="newTransactionForm">
+    <div class="modal fade" id="newTransactionModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-info text-white">
+            <h5 class="modal-title">Cheque Transaction</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!--Form body-->
+          <div class="modal-body">
+            <div class="form-group form-row">
+              <label for="accountNumber" class="col-form-label col-md-4">Account Number: *</label>
+              <div class="col-md-8">
+                <input type="text" placeholder="Account Number" class="form-control" id="accountNumber" formControlName="accountNumber" [ngClass]="getFormControlCssClass(newTransactionForm.get('accountNumber'), newTransactionForm)" />
+                <small class="form-text text-muted">Account Number | Can't be duplicate.</small>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('accountNumber', 'required', newTransactionForm)">{{getFormControlErrorMessage('accountNumber', 'required')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('accountNumber', 'min', newTransactionForm)">{{getFormControlErrorMessage('accountNumber', 'min')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('accountNumber', 'max', newTransactionForm)">{{getFormControlErrorMessage('accountNumber', 'max')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('accountNumber', 'pattern', newTransactionForm)">{{getFormControlErrorMessage('accountNumber', 'pattern')}}</span>
+
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="typeOfTransaction" class="col-form-label col-md-4">Type of Transaction: *</label>
+              <div class="col-md-8">
+                <select class="custom-select" placeholder="Type of Transaction" id="typeOfTransaction" formControlName="typeOfTransaction" [ngClass]="getFormControlCssClass(newTransactionForm.get('typeOfTransaction'), newTransactionForm)">
+                  <option value="Debit">Debit Transaction</option>
+                  <option value="Credit">Credit Transaction</option>
+                </select>
+                <small class="form-text text-muted">Need to choose a type.</small>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('typeOfTransaction', 'required', newTransactionForm)">{{getFormControlErrorMessage('typeOfTransaction', 'required')}}</span>
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="amount" class="col-form-label col-md-4">Amount: *</label>
+              <div class="col-md-8">
+                <input type="text" placeholder="Amount:" class="form-control" id="amount" formControlName="amount" [ngClass]="getFormControlCssClass(newTransactionForm.get('amount'), newTransactionForm)" />
+                <small class="form-text text-muted">Enter a valid amount</small>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('amount', 'required', newTransactionForm)">{{getFormControlErrorMessage('amount', 'required')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('amount', 'min', newTransactionForm)">{{getFormControlErrorMessage('amount', 'min')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('amount', 'max', newTransactionForm)">{{getFormControlErrorMessage('amount', 'max')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('amount', 'pattern', newTransactionForm)">{{getFormControlErrorMessage('amount', 'pattern')}}</span>
+
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="modeOfTransaction" class="col-form-label col-md-4">Mode: * </label>
+              <div class="col-md-8">
+                <select class="custom-select" placeholder="Type of Transaction" id="modeOfTransaction" formControlName="modeOfTransaction" [ngClass]="getFormControlCssClass(newTransactionForm.get('modeOfTransaction'), newTransactionForm)">
+                  <option value="Cheque(D)">Cheque(D)</option>
+                  <option value="Cheque(C)">Cheque(C)</option>
+                </select>
+                <small class="form-text text-muted">Confirm mode</small>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('modeOfTransaction', 'required', newTransactionForm)">{{getFormControlErrorMessage('modeOfTransaction', 'required')}}</span>
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="chequeNumber" class="col-form-label col-md-4">Cheque Number: *</label>
+              <div class="col-md-8">
+                <input type="text" placeholder="Cheque Number" class="form-control" id="chequeNumber" formControlName="chequeNumber" [ngClass]="getFormControlCssClass(newTransactionForm.get('chequeNumber'), newTransactionForm)" (change)="saveChequeTransaction()"/>
+                <small class="form-text text-muted">Enter valid Cheque Number</small>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('chequeNumber', 'required', newTransactionForm)">{{getFormControlErrorMessage('chequeNumber', 'required')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('chequeNumber', 'min', newTransactionForm)">{{getFormControlErrorMessage('chequeNumber', 'minLength')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('chequeNumber', 'max', newTransactionForm)">{{getFormControlErrorMessage('chequeNumber', 'maxLength')}}</span>
+                <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('chequeNumber', 'pattern', newTransactionForm)">{{getFormControlErrorMessage('chequeNumber', 'pattern')}}</span>
+
+              </div>
+            </div>
+
+            <!--Form footer-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnAddTransactionCancel">
+              <i class="fa fa-times-circle"></i> Cancel
+            </button>
+            <button type="submit" class="btn btn-success" (click)="onAddTransactionClick($event)" [disabled]="newTransactionDisabled" *ngIf="saveCheque">
+              <span *ngIf="!newTransactionDisabled"><i class="fa fa-save"></i> Save</span>
+              <span *ngIf="newTransactionDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <!--Form for Slip Transaction-->
+  <form [formGroup]="newTransactionForm1">
+    <div class="modal fade" id="newTransactionModal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-info text-white">
+            <h5 class="modal-title">Slip Transaction</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!--Form body-->
+          <div class="modal-body">
+            <div class="form-group form-row">
+              <label for="accountNumber" class="col-form-label col-md-4">Account Number: *</label>
+              <div class="col-md-8">
+                <input type="text" placeholder="Account Number" class="form-control" id="accountNumber" formControlName="accountNumber" [ngClass]="getFormControlCssClass(newTransactionForm1.get('accountNumber'), newTransactionForm1)" />
+                <small class="form-text text-muted">Account Number | Can't be duplicate.</small>
+                <span class="text-danger" *ngIf="newTransactionForm1.get('accountNumber').invalid&&newTransactionForm1.get('accountNumber').errors.required&&(newTransactionForm1.get('accountNumber').touched || newTransactionForm1.get('accountNumber').dirty || newTransactionForm1.submitted)"></span>
+                <span class="text-danger" *ngIf="newTransactionForm1.get('accountNumber').invalid&&newTransactionForm1.get('accountNumber').errors.min&&(newTransactionForm1.get('accountNumber').touched || newTransactionForm1.get('accountNumber').dirty || newTransactionForm1.submitted)"></span>
+                <span class="text-danger" *ngIf="newTransactionForm1.get('accountNumber').invalid&&newTransactionForm1.get('accountNumber').errors.max&&(newTransactionForm1.get('accountNumber').touched || newTransactionForm1.get('accountNumber').dirty || newTransactionForm1.submitted)"></span>
+                <span class="text-danger" *ngIf="newTransactionForm1.get('accountNumber').invalid&&newTransactionForm1.get('accountNumber').errors.pattern&&(newTransactionForm1.get('accountNumber').touched || newTransactionForm1.get('accountNumber').dirty || newTransactionForm1.submitted)"></span>
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="typeOfTransaction" class="col-form-label col-md-4">Type of Transaction: *</label>
+              <div class="col-md-8">
+
+                <select class="custom-select" placeholder="Type of Transaction" id="typeOfTransaction" formControlName="typeOfTransaction" [ngClass]="getFormControlCssClass(newTransactionForm1.get('typeOfTransaction'), newTransactionForm1)">
+                  <option value="debit">Debit Transaction</option>
+                  <option value="credit">Credit Transaction</option>
+                </select>
+                <small class="form-text text-muted">Need to choose a type.</small>
+                <span class="text-danger" *ngIf="newTransactionForm.get('typeOfTransaction').invalid&&newTransactionForm.get('typeOfTransaction').errors.required&&(newTransactionForm.get('typeOfTransaction').touched || newTransactionForm.get('typeOfTransaction').dirty || newTransactionForm.submitted)"></span>
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="amount" class="col-form-label col-md-4">Amount: *</label>
+              <div class="col-md-8">
+                <input type="text" placeholder="Amount:" class="form-control" id="amount" formControlName="amount" [ngClass]="getFormControlCssClass(newTransactionForm1.get('amount'), newTransactionForm1)" />
+                <small class="form-text text-muted">Enter a valid amount</small>
+                <span class="text-danger" *ngIf="newTransactionForm.get('amount').invalid&&newTransactionForm.get('amount').errors.required&&(newTransactionForm.get('amount').touched || newTransactionForm.get('amount').dirty || newTransactionForm.submitted)"></span>
+                <span class="text-danger" *ngIf="newTransactionForm1.get('amount').invalid&&newTransactionForm1.get('amount').errors.min&&(newTransactionForm1.get('amount').touched || newTransactionForm1.get('amount').dirty || newTransactionForm1.submitted)"></span>
+                <span class="text-danger" *ngIf="newTransactionForm1.get('amount').invalid&&newTransactionForm1.get('amount').errors.max&&(newTransactionForm1.get('amount').touched || newTransactionForm1.get('amount').dirty || newTransactionForm1.submitted)"></span>
+                <span class="text-danger" *ngIf="newTransactionForm1.get('amount').invalid&&newTransactionForm1.get('amount').errors.pattern&&(newTransactionForm1.get('amount').touched || newTransactionForm1.get('amount').dirty || newTransactionForm1.submitted)"></span>
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="modeOfTransaction" class="col-form-label col-md-4">Mode: * </label>
+              <div class="col-md-8">
+                <select class="custom-select" placeholder="Type of Transaction" id="modeOfTransaction" formControlName="modeOfTransaction" [ngClass]="getFormControlCssClass(newTransactionForm.get('modeOfTransaction'), newTransactionForm)" (change)="saveSlipTransaction()">
+                  <option value="Withdrawal Slip">Withdrawal Slip</option>
+                  <option value="Deposit Slip">Deposit Slip</option>
+                </select>
+                <small class="form-text text-muted">Confirm mode</small>
+                <span class="text-danger" *ngIf="newTransactionForm.get('modeOfTransaction').invalid&&newTransactionForm.get('modeOfTransaction').errors.required&&(newTransactionForm.get('modeOfTransaction').touched || newTransactionForm.get('modeOfTransaction').dirty || newTransactionForm.submitted)"></span>
+              </div>
+            </div>
+          </div>
+
+          <!--Form footer-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnAddTransactionCancel1">
+              <i class="fa fa-times-circle"></i> Cancel
+            </button>
+            <button type="submit" class="btn btn-success" (click)="onAddTransactionClick1($event)" [disabled]="newTransactionDisabled" *ngIf="saveSlip">
+              <span *ngIf="!newTransactionDisabled"><i class="fa fa-save"></i> Save</span>
+              <span *ngIf="newTransactionDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

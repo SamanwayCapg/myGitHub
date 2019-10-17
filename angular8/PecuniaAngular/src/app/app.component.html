@@ -1,39 +1,67 @@
+<!--
+  DEVELOPED BY - AISHWARYA SARNA
+  DATE OF CREATION - 10/10/2019
+  APP COMPONENT HTML
+ 
+-->
+
+
+<!--NavBar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Pecunia Loan Management</a>
+  <i class="fa fa-rupee" style="color:white; font-size: 1.5em"></i> <a class="navbar-brand" href="#">Pecunia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]=" [ '/login' ] " [routerLinkActive]="['active']" *ngIf="!userAccountService.isLoggedIn">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]=" [ '/admin', 'home' ] " [routerLinkActive]="['active']" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">
+          Admin Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">
+          <a class="dropdown-item" [routerLink]=" [ '/admin', 'employees' ] " [routerLinkActive]="['active']">Employees</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Approve Loan</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]=" [ '/admin', 'view-customers' ] " [routerLinkActive]="['active']">View Customer Details</a>
+        </div>
+
+        <!--Employee Menu-->
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Employee' ">
+          Employee Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Employee' ">
+          <a class="dropdown-item" [routerLink]="['/employee', 'customers']" [routerLinkActive]="['active']">Customers</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Accounts</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/employee', 'transactions']" [routerLinkActive]="['active']">Transactions</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/employee','loans','loan']" [routerLinkActive]="['active']">Loans</a>
+        </div>
+        <!--End Employee Menu-->
+
+      </li>
+
 
       <li class="nav-item">
-        <div class="dropdown mr-auto">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Apply Loan
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" [routerLink]=" [ '/applyloanmodule', 'applycarloan' ] " [routerLinkActive]="['active']">Car Loan</a>
-            <a class="dropdown-item" [routerLink]="['/applyloanmodule', 'applyeduloan']" [routerLinkActive]="['active']">Edu Loan</a>
-            <a class="dropdown-item" [routerLink]="['/applyloanmodule', 'applyhomeloan']" [routerLinkActive]="['active']">Home Loan</a>
-          </div>
-        </div>
+        <a class="nav-link" [routerLink]=" [ '/about' ] " [routerLinkActive]="['active']">About</a>
       </li>
-
-      <li class="button">
-        <button class="btn btn-secondary" [routerLink]="['showLoans']" [routerLinkActive]="['active']" type="button" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
-          Show Loan
-        </button>
-      </li>
-
-      <li class="button">
-        <button class="btn btn-secondary" [routerLink]="['approveloans']" [routerLinkActive]="['active']" type="button" id="approveLoans" aria-haspopup="true" aria-expanded="false">
-          Approve Loan
-        </button>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="return false" *ngIf="userAccountService.isLoggedIn" (click)="onLogOutClick()">Logout</a>
       </li>
     </ul>
   </div>
-</nav>
 
+
+</nav>
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>

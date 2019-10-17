@@ -1,0 +1,152 @@
+<!--
+   DEVELOPED BY - AISHWARYA SARNA
+   DATE OF CREATION - 10/10/2019
+   ADMIN-HOME COMPONENT HTML
+-->
+
+
+
+<!--Admin Home Page, shows admin details-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]=" [ '/admin', 'home' ] ">Admin</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Home
+      <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showAdminSpinner"></i>
+    </li>
+
+  </ol>
+</nav>
+
+
+<!--Admin details table-->
+<div class="row">
+  <table class="table mt-2 ml-5 mr-5 table-bordered table-hover">
+    <thead>
+      <tr class="table-info">
+        <th *ngIf="viewAdminCheckBoxes.adminName">Admin ID</th>
+        <th *ngIf="viewAdminCheckBoxes.adminName">Admin Name</th>
+        <th *ngIf="viewAdminCheckBoxes.email">Admin Email</th>
+        <th *ngIf="viewAdminCheckBoxes.lastModifiedOn">Last Modified on</th>
+        <th class="text-secondary">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admin of admins; let index = index">
+        <td style="font-size:120%" *ngIf="viewAdminCheckBoxes.adminID">{{admin.adminID}}</td>
+        <td style="font-size:120%" *ngIf="viewAdminCheckBoxes.adminName">{{admin.adminName}}</td>
+        <td *ngIf="viewAdminCheckBoxes.email">{{admin.email}}</td>
+        <td *ngIf="viewAdminCheckBoxes.lastModifiedOn">{{admin.lastModifiedDateTime}}</td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-secondary button" data-toggle="modal" data-target="#editAdminModal" (click)="onEditAdminClick(index)" style="font-size:20px;">Edit</button>
+            <button class="btn btn-primary button" data-toggle="modal" data-target="#changeAdminPasswordModal" (click)="onChangePasswordClick()" style="font-size:20px;">Change Password</button>
+          </div>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Edit Admin Modal -->
+<form [formGroup]="editAdminForm">
+  <div class="modal fade" id="editAdminModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Update Admin</h5>
+          <button type="button"  id="btnUpdateEmployeeCancel" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group form-row">
+            <label for="adminName" class="col-form-label col-md-4">Admin Name:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Admin Name" class="form-control" id="adminName" formControlName="adminName" [ngClass]="getFormControlCssClass(editAdminForm.get('adminName'), editAdminForm)" />
+              <small class="form-text text-muted">Name of the Admin | Can't be duplicate.</small>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('adminName', 'required', editAdminForm)">{{getFormControlErrorMessage('adminName', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('adminName', 'minlength', editAdminForm)">{{getFormControlErrorMessage('adminName', 'minlength')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('adminName', 'maxlength', editAdminForm)">{{getFormControlErrorMessage('adminName', 'maxlength')}}</span>
+            </div>
+          </div>
+          <div class="form-group form-row">
+            <label for="email" class="col-form-label col-md-4">Email:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="getFormControlCssClass(editAdminForm.get('email'), editAdminForm)" />
+              <small class="form-text text-muted">Email address of the Admin | Can't be duplicate.</small>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'required', editAdminForm)">{{getFormControlErrorMessage('email', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'email', editAdminForm)">{{getFormControlErrorMessage('email', 'email')}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnUpdateAdminCancel">
+            <i class="fa fa-times-circle"></i> Cancel
+          </button>
+          <button type="submit" class="btn btn-success" (click)="onUpdateAdminClick($event)" [disabled]="editAdminDisabled">
+            <span *ngIf="!editAdminDisabled"><i class="fa fa-save"></i> Save</span>
+            <span *ngIf="editAdminDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<!--Change Admin Password-->
+<form [formGroup]="changeAdminPassword">
+  <div class="modal fade" id="changeAdminPasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Change Password</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group form-row">
+            <label for="currentPassword" class="col-form-label col-md-4">Current Password:</label>
+            <div class="col-md-8">
+              <input type="password" placeholder="Current Password" class="form-control" id="currentPassword" formControlName="currentPassword" [ngClass]="getFormControlCssClass(changeAdminPassword.get('currentPassword'), changeAdminPassword)" />
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('currentPassword', 'required', changeAdminPassword)">{{getChangePasswordFormControlErrorMessage('currentPassword', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('currentPassword', 'pattern', changeAdminPassword)">{{getChangePasswordFormControlErrorMessage('currentPassword', 'pattern')}}</span>
+            </div>
+          </div>
+          <div class="form-group form-row">
+            <label for="newPassword" class="col-form-label col-md-4">New Password:</label>
+            <div class="col-md-8">
+              <input type="password" placeholder="New Password" class="form-control" id="newPassword" formControlName="newPassword" [ngClass]="getFormControlCssClass(changeAdminPassword.get('newPassword'), changeAdminPassword)" />
+              <small class="form-text text-muted">At least one uppercase letter, one lowercase letter and one digit.</small>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('newPassword', 'required', changeAdminPassword)">{{getChangePasswordFormControlErrorMessage('newPassword', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('newPassword', 'pattern', changeAdminPassword)">{{getChangePasswordFormControlErrorMessage('newPassword', 'pattern')}}</span>
+            </div>
+          </div>
+          <div class="form-group form-row">
+            <label for="confirmNewpassword" class="col-form-label col-md-4">Confirm New Password:</label>
+            <div class="col-md-8">
+              <input type="password" placeholder="Confirm New Password" class="form-control" id="confirmNewPassword" formControlName="confirmNewPassword" [ngClass]="getFormControlCssClass(changeAdminPassword.get('confirmNewPassword'), changeAdminPassword)" />
+              <small class="form-text text-muted">Should Match With New Password.</small>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('confirmNewPassword', 'required', changeAdminPassword)">{{getChangePasswordFormControlErrorMessage('confirmNewPassword', 'required')}}</span>
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('confirmNewPassword', 'pattern', changeAdminPassword)">{{getChangePasswordFormControlErrorMessage('confirmNewPassword', 'pattern')}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnChangePasswordCancel">
+            <i class="fa fa-times-circle"></i> Cancel
+          </button>
+          <button type="submit" class="btn btn-success" (click)="onChangePasswordConfirmClick($event)" [disabled]="changePasswordDisabled">
+            <span *ngIf="!changePasswordDisabled"><i class="fa fa-save"></i>Change</span>
+            <span *ngIf="changePasswordDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

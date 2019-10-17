@@ -25,8 +25,7 @@ export class CarLoanServices {
     }
 
     ApproveCarLoan(existingCarLoan: CarLoan, newStatus: string): Observable<boolean> {
-      existingCarLoan.status = newStatus;
-      console.log("updated car loan" + existingCarLoan.amountApplied + " " + existingCarLoan.status);
+        existingCarLoan.status = newStatus;
         return this.httpClient.put<boolean>(`/api/carloans`, existingCarLoan);
     }
 

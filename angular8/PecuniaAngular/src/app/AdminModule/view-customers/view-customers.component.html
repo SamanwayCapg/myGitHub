@@ -1,0 +1,70 @@
+<!--
+   DEVELOPED BY - AKSHAY TOPLE
+   DATE OF CREATION - 10/10/2019
+  VIEW-CUSTOMERS COMPONENT HTML
+-->
+
+
+
+
+<!--Customer List is shown-->
+<div class="col-md-9 col-lg-12">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]=" [ '/admin', 'home' ] ">Admin</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Customers
+        <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showCustomersSpinner"></i>
+      </li>
+    </ol>
+  </nav>
+  <!--New customernumber {{newCustomerNumber}}-->
+  <!--<h4>Customers </h4>-->
+  <!--<button class="btn btn-primary" data-toggle="modal" data-target="#newCustomerModal" (click)="onCreateCustomerClick()">Create Customer</button>-->
+  <div style="width:100%;overflow:auto;">
+    <table class="table mt-2">
+      <thead>
+        <tr class="table-secondary">
+          <th *ngIf="viewCustomerCheckBoxes.id">ID</th>
+          <th *ngIf="viewCustomerCheckBoxes.customerName">Customer Name</th>
+          <th *ngIf="viewCustomerCheckBoxes.customerNumber">Customer Number</th>
+          <th *ngIf="viewCustomerCheckBoxes.customerID">Customer ID</th>
+          <th *ngIf="viewCustomerCheckBoxes.customerAddress">Address</th>
+          <th *ngIf="viewCustomerCheckBoxes.panNumber">PAN Number</th>
+          <th *ngIf="viewCustomerCheckBoxes.aadharNumber">Aadhar Number</th>
+          <th *ngIf="viewCustomerCheckBoxes.customerGender">Gender</th>
+          <th *ngIf="viewCustomerCheckBoxes.customerDOB">Customer DOB</th>
+          <th *ngIf="viewCustomerCheckBoxes.mobile">Mobile</th>
+          <th *ngIf="viewCustomerCheckBoxes.email">Email</th>
+          <th *ngIf="viewCustomerCheckBoxes.createdOn">Created on</th>
+          <th *ngIf="viewCustomerCheckBoxes.lastModifiedOn">Last Modified on</th>
+          <!--<th class="text-secondary">Actions</th>-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers; let index = index">
+          <td *ngIf="viewCustomerCheckBoxes.id">{{customer.id}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.customerName">{{customer.customerName}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.customerNumber">{{customer.customerNumber}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.customerID">{{customer.customerID}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.customerAddress">{{customer.customerAddress}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.panNumber">{{customer.panNumber}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.aadharNumber">{{customer.aadharNumber}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.customerGender">{{customer.customerGender}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.customerDOB">{{customer.customerDOB}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.mobile">{{customer.customerMobile}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.email">{{customer.email}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.createdOn">{{customer.creationDateTime}}</td>
+          <td *ngIf="viewCustomerCheckBoxes.lastModifiedOn">{{customer.lastModifiedDateTime}}</td>
+          <!--<td>
+            <div class="btn-group">
+              <button class="btn btn-secondary" data-toggle="modal" data-target="#editCustomerModal" (click)="onEditCustomerClick(index)">Edit</button>
+              <button class="btn btn-danger" data-toggle="modal" data-target="#deleteCustomerModal" (click)="onDeleteCustomerClick(index)">Delete</button>
+            </div>
+          </td>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

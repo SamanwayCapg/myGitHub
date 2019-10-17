@@ -1,23 +1,32 @@
+/**  DEVELOPED BY - TEAM F - PECUNIA
+ *  DATE OF CREATION - 10/10/2019
+ *  APP - ROUTING MODULE
+ * 
+*/
+
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ApplyLoanComponent } from './Components/ApplyLoan/applyLoan.component';
-import { ShowLoanComponent } from './Components/ShowLoan/showLoan.component';
-import { ApproveLoanComponent } from './Components/ApproveLoan/approveLoan.component';
+import { LoginComponent } from './Components/login/login.component';
+import { AboutComponent } from './Components/about/about.component';
 
+
+//routes
 const routes: Routes = [
-  { path: "ApplyNewLoan", component: ApplyLoanComponent },
-  { path: "showLoans", component: ShowLoanComponent },
-    { path: "applyloanmodule", loadChildren: () => import("./ApplyLoanModule/applyLoan.module").then(m => m.ApplyLoanModule) },
-    { path: "approveloans", component:ApproveLoanComponent },
-  //{ path: "", redirectTo: "ApplyNewLoan", pathMatch: "full" },
-  { path: "**", redirectTo: "ApplyNewLoan", pathMatch: "full" },
-  
+  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "login", component: LoginComponent },
+  { path: "about", component: AboutComponent },
+  { path: "admin", loadChildren: () => import("./AdminModule/admin.module").then(m => m.AdminModule) },
+  { path: "employee", loadChildren: () => import("./EmployeeModule/employee.module").then(m => m.EmployeeModule) },
+  { path: "**", redirectTo: '/login', pathMatch: 'full' },
 ];
 
+
+//decorator, import, export routes
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
+export class AppRoutingModule { }
 
-}
+
