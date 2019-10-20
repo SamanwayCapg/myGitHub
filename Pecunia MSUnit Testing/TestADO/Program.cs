@@ -6,88 +6,71 @@ using System.Threading.Tasks;
 using Capgemini.Pecunia.Helpers;
 using System.Data.SqlClient;
 using System.Data;
+using Capgemini.Pecunia.BusinessLayer.LoanBL;
+using Capgemini.Pecunia.Entities;
 
 namespace TestADO
 {
     class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        public static void Main()
         {
-            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
-            SqlConnection conn = SQLServerUtil.getConnetion("Pecunia");
-            try
-            {
-                conn.Open();
-                Console.WriteLine("connected to the database");
 
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-
-            SqlCommand comm = new SqlCommand("TeamF.applyCarLoan", conn);
-
-            Guid loanID = Guid.NewGuid(); Console.WriteLine(loanID);
-            SqlParameter param1 = new SqlParameter("@LoanID", loanID);
-            param1.SqlDbType = SqlDbType.UniqueIdentifier;
-
-            Guid customerID;
-            Guid.TryParse("33EA6038-57D3-4912-8EA8-662BC1B1C413", out customerID);
-            SqlParameter param2 = new SqlParameter("@CustomerID", customerID);
-            param2.SqlDbType = SqlDbType.UniqueIdentifier;
-
-            SqlParameter param3 = new SqlParameter("@AmountApplied", 120000);
-            param3.SqlDbType = SqlDbType.Money;
-
-            SqlParameter param4 = new SqlParameter("@InterestRate", 10.65);
-            param4.SqlDbType = SqlDbType.Money;
-
-            SqlParameter param5 = new SqlParameter("@EMI_amount", 4512.12);
-            param5.SqlDbType = SqlDbType.Money;
-
-            SqlParameter param6 = new SqlParameter("@RepaymentPeriod", 120);
-            param6.SqlDbType = SqlDbType.TinyInt;
-
-            DateTime dateOfApplication = DateTime.Now;
-            SqlParameter param7 = new SqlParameter("@DateOfApplication", dateOfApplication);
-            param7.SqlDbType = SqlDbType.DateTime;
-
-            SqlParameter param8 = new SqlParameter("@LoanStatus", "APPLIED");
-            param8.SqlDbType = SqlDbType.VarChar;
-
-            SqlParameter param9 = new SqlParameter("@Occupation", "SERVICE");
-            param9.SqlDbType = SqlDbType.VarChar;
-
-            SqlParameter param10 = new SqlParameter("@GrossIncome", 50200);
-            param10.SqlDbType = SqlDbType.Money;
-
-            SqlParameter param11 = new SqlParameter("@SalaryDeduction", 2015);
-            param11.SqlDbType = SqlDbType.Money;
-
-            SqlParameter param12 = new SqlParameter("@VehicleType", "OTHERS");
-            param12.SqlDbType = SqlDbType.VarChar;
-
-            List<SqlParameter> Params = new List<SqlParameter>();
-            Params.Add(param1);
-            Params.Add(param2);
-            Params.Add(param3);
-            Params.Add(param4);
-            Params.Add(param5);
-            Params.Add(param6);
-            Params.Add(param7);
-            Params.Add(param8);
-            Params.Add(param9);
-            Params.Add(param10);
-            Params.Add(param11);
-            Params.Add(param12);
-
-            comm.Parameters.AddRange(Params.ToArray());
-            comm.CommandType = CommandType.StoredProcedure;
-            comm.ExecuteNonQuery();
-            conn.Close();
-
+            Test.MenuOfPecunia().Wait();
         }
+
+    }
+
+    public class Test
+    {
+        public static async Task MenuOfPecunia()
+        {
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from TeamF.Customers", conn);
+            SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
+            adapter.DeleteCommand = cmd.GetDeleteCommand(true);
+            adapter.UpdateCommand = cmd.GetUpdateCommand(true);
+            adapter.InsertCommand = cmd.GetInsertCommand(true);
+
+            DataSet ds = new DataSet("Customers");
+            adapter.Fill(ds);
+            Console.WriteLine(ds.Tables[0].Rows[0][0]);
+            ds.Tables[0].AcceptChanges();
+            for (int a=0; a<ds.Tables.Count; a++)
+            {
+                for(int i=0; i<ds.Tables[a].Rows.Count; i++)
+                {
+                    //for(int j=0; j<ds.Tables[a].Columns.Count; j++)
+                    // {
+                    //     //Console.WriteLine(ds.Tables[a].Rows[i][j]);
+                    // }
+                    if (ds.Tables[a].Rows[0][1].Equals("Ayush"))
+                    {
+                        Console.WriteLine("here");
+                        ds.Tables[a].Rows[0].Delete();
+                        break;
+                    }
+                }
+            }
+            ds.Tables[0].AcceptChanges();
+            adapter.Update(ds.Tables[0]);
+            conn.Close();
+            Console.WriteLine("done");
+
+
+        //    for (int a = 0; a < ds.Tables.Count; a++)
+        //    {
+        //        for (int i = 0; i < ds.Tables[a].Rows.Count; i++)
+        //        {
+        //            for (int j = 0; j < ds.Tables[a].Columns.Count; j++)
+        //            {
+        //                Console.WriteLine(ds.Tables[a].Rows[i][j]);
+        //            }
+
+        //        }
+        //    }
+        }
+
     }
 }

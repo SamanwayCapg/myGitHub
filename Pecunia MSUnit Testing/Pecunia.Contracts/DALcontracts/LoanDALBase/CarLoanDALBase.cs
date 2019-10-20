@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,8 @@ namespace Pecunia.Contracts.DALcontracts.LoanDALBase
         public abstract CarLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus);
         public abstract CarLoan GetLoanByCustomerIDDAL(string customerID);
         public abstract CarLoan GetLoanByLoanIDDAL(string loanID);
-        public abstract LoanStatus GetLoanStatusDAL(string loanID);
-        public abstract List<CarLoan> ListAllLoansDAL();
+        public abstract string GetLoanStatusDAL(string loanID);
+        public abstract DataSet ListAllLoansDAL();
         public abstract bool IsLoanIDExistDAL(string loanID);
 
     }

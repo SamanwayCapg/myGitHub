@@ -1,6 +1,7 @@
 ﻿using Capgemini.Pecunia.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,8 @@ namespace Capgemini.Pecunia.Contracts.DALcontracts.LoanDALBase
         public abstract EduLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus);
         public abstract EduLoan GetLoanByCustomerIDDAL(string customerID);
         public abstract EduLoan GetLoanByLoanIDDAL(string loanID);
-        public abstract LoanStatus GetLoanStatusDAL(string loanID);
-        public abstract List<EduLoan> ListAllLoansDAL();
+        public abstract string GetLoanStatusDAL(string loanID);
+        public abstract DataSet ListAllLoansDAL();
         public abstract bool IsLoanIDExistDAL(string loanID);
     }
 }

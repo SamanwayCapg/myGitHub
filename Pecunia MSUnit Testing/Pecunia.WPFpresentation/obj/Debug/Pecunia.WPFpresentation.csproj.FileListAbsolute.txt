@@ -1,0 +1,15 @@
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\bin\Debug\Pecunia.WPFpresentation.exe.config
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\bin\Debug\Pecunia.WPFpresentation.exe
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\bin\Debug\Pecunia.WPFpresentation.pdb
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation.csprojAssemblyReference.cache
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\MainWindow.g.cs
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\App.g.cs
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation_MarkupCompile.cache
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation_MarkupCompile.lref
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\MainWindow.baml
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation.g.resources
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation.Properties.Resources.resources
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation.csproj.GenerateResource.cache
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation.csproj.CoreCompileInputs.cache
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation.exe
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\Pecunia.WPFpresentation\obj\Debug\Pecunia.WPFpresentation.pdb

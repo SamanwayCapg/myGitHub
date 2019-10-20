@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 using System.IO;
 using System;
 using Capgemini.Pecunia.Contracts.DALcontracts.LoanDALBase;
+using System.Data.SqlClient;
+using System.Data;
+using Capgemini.Pecunia.Helpers;
 
 namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
 {
@@ -20,11 +23,90 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         /// <param name="HomeLoan">Represents home loan object that contains details of home loan.</param>
         /// <returns>Returns a boolean value, that indicates whether loan is applied or not.</returns>
         public override bool ApplyLoanDAL(HomeLoan home)
-        { 
-            //List<HomeLoan> loanList = new List<HomeLoan>();
-            var loanList = DeserializeFromJSON(fileName);
-            loanList.Add(home);
-            return SerializeIntoJSON(loanList, fileName);
+        {
+
+            //var loanList = DeserializeFromJSON(fileName);
+            //loanList.Add(home);
+            //return SerializeIntoJSON(loanList, fileName);
+
+            SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            //SqlConnection conn = SQLServerUtil.getConnetion("Pecunia");
+            try
+            {
+                conn.Open();
+
+
+                SqlCommand comm = new SqlCommand("TeamF.applyHomeLoan", conn);
+
+                Guid loanID = Guid.NewGuid();
+                SqlParameter param1 = new SqlParameter("@LoanID", loanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                //Guid customerID;
+                //Guid.TryParse(car.CustomerID, out customerID);
+                SqlParameter param2 = new SqlParameter("@CustomerID", home.CustomerID);
+                param2.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                SqlParameter param3 = new SqlParameter("@AmountApplied", home.AmountApplied);
+                param3.SqlDbType = SqlDbType.Money;
+
+                SqlParameter param4 = new SqlParameter("@InterestRate", home.InterestRate);
+                param4.SqlDbType = SqlDbType.Money;
+
+                SqlParameter param5 = new SqlParameter("@EMI_amount", home.EMI_Amount);
+                param5.SqlDbType = SqlDbType.Money;
+
+                SqlParameter param6 = new SqlParameter("@RepaymentPeriod", home.RepaymentPeriod);
+                param6.SqlDbType = SqlDbType.TinyInt;
+
+                DateTime dateOfApplication = DateTime.Now;
+                SqlParameter param7 = new SqlParameter("@DateOfApplication", dateOfApplication);
+                param7.SqlDbType = SqlDbType.DateTime;
+
+                SqlParameter param8 = new SqlParameter("@LoanStatus", home.Status);
+                param8.SqlDbType = SqlDbType.VarChar;
+
+                SqlParameter param9 = new SqlParameter("@Occupation", home.Occupation);
+                param9.SqlDbType = SqlDbType.VarChar;
+
+                SqlParameter param10 = new SqlParameter("@ServiceYears", home.ServiceYears);
+                param10.SqlDbType = SqlDbType.TinyInt;
+
+                SqlParameter param11 = new SqlParameter("@GrossIncome", home.GrossIncome);
+                param11.SqlDbType = SqlDbType.Money;
+
+                SqlParameter param12 = new SqlParameter("@SalaryDeduction", home.SalaryDeductions);
+                param12.SqlDbType = SqlDbType.Money;
+
+                
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                Params.Add(param2);
+                Params.Add(param3);
+                Params.Add(param4);
+                Params.Add(param5);
+                Params.Add(param6);
+                Params.Add(param7);
+                Params.Add(param8);
+                Params.Add(param9);
+                Params.Add(param10);
+                Params.Add(param11);
+                Params.Add(param12);
+
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                //Console.WriteLine(e.Message);
+                //Console.ReadKey();
+                BusinessLogicUtil.PecuniaLogException("applyHomeLoan", e.Message);
+                return false;
+            }
         }
 
         /// <summary>
@@ -35,26 +117,55 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         /// <returns>Returns Home loan object.</returns>
         public override HomeLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
-            List<HomeLoan> HomeLoans = DeserializeFromJSON(fileName);
-            HomeLoan objToReturn = new HomeLoan();
-            Guid loanIDGuid;
-            bool isValidGuid = Guid.TryParse(loanID, out loanIDGuid);
 
-            if (isValidGuid == true)
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            try
             {
-                foreach (HomeLoan Loan in HomeLoans)
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.approveHomeLoan", conn);
+
+                Guid LoanID;
+                Guid.TryParse(loanID, out LoanID);
+                SqlParameter param1 = new SqlParameter("@LoanID", LoanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                SqlParameter param2 = new SqlParameter("@updatedStatus", updatedStatus);
+                param2.SqlDbType = SqlDbType.VarChar;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                Params.Add(param2);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+                
+
+                HomeLoan objToReturn = new HomeLoan();
+                comm = new SqlCommand($"select * from TeamF.HomeLoan where LoanID='{loanID}'", conn);
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
                 {
-                    if (Guid.Parse(loanID) == Loan.LoanID)
-                    {
-                        Loan.Status = updatedStatus;
-                        objToReturn = Loan;
-                        break;
-                    }
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        objToReturn = getNETdataTypes(reader, objToReturn);
+
                 }
+                conn.Close();
+                return objToReturn;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(HomeLoan);
             }
 
-            SerializeIntoJSON(HomeLoans, fileName);
-            return objToReturn;
+            
         }
 
         /// <summary>
@@ -64,19 +175,48 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         /// <returns>Returns Home Loan for Customer.</returns>
         public override HomeLoan GetLoanByCustomerIDDAL(string customerID)
         {
-            List<HomeLoan> HomeLoans = DeserializeFromJSON(fileName);
-            Guid customerIDGuid;
-            bool isValidGuid = Guid.TryParse(customerID, out customerIDGuid);
-
-            if (isValidGuid == true)
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            HomeLoan objToReturn = new HomeLoan();
+            try
             {
-                foreach (HomeLoan Loan in HomeLoans)
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.getHomeLoanByCustomerID", conn);
+
+                Guid CustomerID;
+                Guid.TryParse(customerID, out CustomerID);
+                SqlParameter param1 = new SqlParameter("@CustomerID", CustomerID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+
+
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
                 {
-                    if (Guid.Parse(customerID) == Loan.CustomerID)
-                        return Loan;
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        objToReturn = getNETdataTypes(reader, objToReturn);
+
                 }
+                conn.Close();
+                return objToReturn;
             }
-            return default(HomeLoan);
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(HomeLoan);
+            }
+            
         }
 
         /// <summary>
@@ -86,19 +226,47 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         /// <returns>Returns Home loan object.</returns>
         public override HomeLoan GetLoanByLoanIDDAL(string loanID)
         {
-            List<HomeLoan> HomeLoans = DeserializeFromJSON(fileName);
-            Guid loanIDGuid;
-            bool isValidGuid = Guid.TryParse(loanID, out loanIDGuid);
-
-            if (isValidGuid == true)
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            HomeLoan objToReturn = new HomeLoan();
+            try
             {
-                foreach (HomeLoan Loan in HomeLoans)
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.getHomeLoanByLoanID", conn);
+
+                Guid LoanID;
+                Guid.TryParse(loanID, out LoanID);
+                SqlParameter param1 = new SqlParameter("@LoanID", LoanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+
+
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
                 {
-                    if (Guid.Parse(loanID) == Loan.LoanID)
-                        return Loan;
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        objToReturn = getNETdataTypes(reader, objToReturn);
+
                 }
+                conn.Close();
+                return objToReturn;
             }
-            return default(HomeLoan);
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(HomeLoan);
+            }
         }
 
         /// <summary>
@@ -106,58 +274,66 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         /// </summary>
         /// <param name="loanID">Represents Loan ID.</param>
         /// <returns>Returns Loan Status for Loans.</returns>
-        public override LoanStatus GetLoanStatusDAL(string loanID)
+        public override string GetLoanStatusDAL(string loanID)
         {
-            List<HomeLoan> HomeLoans = DeserializeFromJSON(fileName);
-            Guid loanIDGuid;
-            bool isValidGuid = Guid.TryParse(loanID, out loanIDGuid);
-
-            if (isValidGuid == true)
-            {
-                foreach (HomeLoan Loan in HomeLoans)
-                {
-                    if (Guid.Parse(loanID) == Loan.LoanID)
-                        return Loan.Status;
-                }
-            }
-            return (LoanStatus)4;//LoanStatus for INVALID 
-        }
-
-        public static List<HomeLoan> DeserializeFromJSON(string fileName)
-        {
-            List<HomeLoan> HomeLoans = JsonConvert.DeserializeObject<List<HomeLoan>>(File.ReadAllText(fileName));// Done to read data from file
-            return HomeLoans;
-        }
-
-        public static bool SerializeIntoJSON(List<HomeLoan> CarLoans, string fileName)
-        {
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            string status = "";
             try
             {
-                JsonSerializer serializer = new JsonSerializer();
-                using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
-                using (StreamWriter sw = new StreamWriter(fs))   //filename is used so that we can have access over our own file
-                using (JsonWriter writer = new JsonTextWriter(sw))
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.getHomeLoanStatus", conn);
+
+                Guid LoanID;
+                Guid.TryParse(loanID, out LoanID);
+                SqlParameter param1 = new SqlParameter("@LoanID", LoanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+
+
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
                 {
-                    serializer.Serialize(writer, CarLoans);
-                    sw.Close();
-                    fs.Close();
-                    return true;
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        status = reader.GetString(0);
+
                 }
+                conn.Close();
+                return status;
             }
-            catch
+            catch (Exception e)
             {
-                return false;
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(string);
             }
         }
+
+        
 
         /// <summary>
         /// Lists all Loans.
         /// </summary>    
         /// <returns>Returns list of Home loan objects.</returns>
-        public override List<HomeLoan> ListAllLoansDAL()
+        public override DataSet ListAllLoansDAL()
         {
-            List<HomeLoan> HomeLoans = DeserializeFromJSON(fileName);
-            return HomeLoans;
+            List<HomeLoan> HomeLoans = new List<HomeLoan>();
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from TeamF.HomeLoan", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            return ds;
         }
 
         /// <summary>
@@ -166,24 +342,30 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         /// <returns>Returns bool value to know if loan ID exists or not.</returns>
         public override bool IsLoanIDExistDAL(string loanID)
         {
-            List<HomeLoan> loans = DeserializeFromJSON(fileName);
-            Guid loanIDGuid;
-            bool isValidGuid = Guid.TryParse(loanID, out loanIDGuid);
-
-            if (isValidGuid == true)
-            {
-                foreach (var loan in loans)
-                {
-                    //if (loan.LoanID.Equals(loanID))
-                    if (Guid.Parse(loanID) == loan.LoanID)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
+            return true;
         }
 
+
+        HomeLoan getNETdataTypes(SqlDataReader reader, HomeLoan objToReturn)
+        {
+            objToReturn.LoanID = reader.GetGuid(0);
+            objToReturn.CustomerID = reader.GetGuid(1);
+            objToReturn.AmountApplied = Convert.ToDouble(reader.GetDecimal(2));
+            objToReturn.InterestRate = Convert.ToDouble(reader.GetDecimal(3));
+            objToReturn.EMI_Amount = Convert.ToDouble(reader.GetDecimal(4));
+            objToReturn.RepaymentPeriod = reader.GetByte(5);
+            objToReturn.DateOfApplication = reader.GetDateTime(6);
+            LoanStatus status;
+            Enum.TryParse(reader.GetString(7), out status);
+            objToReturn.Status = status;
+            ServiceType service;
+            Enum.TryParse(reader.GetString(8), out service);
+            objToReturn.Occupation = service;
+            objToReturn.ServiceYears = reader.GetByte(9);
+            objToReturn.GrossIncome = Convert.ToDouble(reader.GetDecimal(10));
+            objToReturn.SalaryDeductions = Convert.ToDouble(reader.GetDecimal(11));
+            return objToReturn;
+        }
         /// <summary>
         /// Clears unmanaged resources such as db connections or file streams.
         /// </summary>

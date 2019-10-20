@@ -6,6 +6,7 @@ using Capgemini.Pecunia.Exceptions;
 using Capgemini.Pecunia.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,16 +73,16 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             try
             {
                 EduLoanDAL EduLoanDALobj = new EduLoanDAL();
+                EduLoan edu = new EduLoan();
                 await Task.Run(() =>
                 {
-                    if (EduLoanDALobj.IsLoanIDExistDAL(loanID) == false)
-                        throw new InvalidStringException("Loan ID not found");
+                    edu = EduLoanDALobj.ApproveLoanDAL(loanID, updatedStatus);
                 });
-                return EduLoanDALobj.ApproveLoanDAL(loanID, updatedStatus);
+                return edu;
             }
             catch
             {
-                return null;
+                return default(EduLoan);
             }
         }
 
@@ -92,26 +93,20 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
         /// <returns>Returns Home Loan for Customer.</returns>
         public async Task<EduLoan> GetLoanByCustomerIDBL(string customerID)
         {
-            //if (BusinessLogicUtil.validate(customerID) == false)
-            //    throw new InvalidStringException("Invalid customer ID");
-
             try
             {
                 EduLoanDAL EduLoanDALobj = new EduLoanDAL();
-                CustomerBL custBL = new CustomerBL();
-                bool isExist = await custBL.isCustomerIDExistBL(Guid.Parse(customerID));
+                EduLoan edu = new EduLoan();
                 await Task.Run(() =>
                 {
-                    
-                    if ( isExist == false)
-                        throw new InvalidStringException("Customer ID not found");
+                    edu = EduLoanDALobj.GetLoanByCustomerIDDAL(customerID);
                 });
 
-                return EduLoanDALobj.GetLoanByCustomerIDDAL(customerID);
+                return edu;
             }
             catch
             {
-                return null;
+                return default(EduLoan);
             }
         }
 
@@ -120,26 +115,23 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
         /// </summary>
         /// <param name="loanID">Represents Loan ID.</param>
         /// <returns>Returns Loan Status for Loans.</returns>
-        public async Task<LoanStatus> GetLoanStatusBL(string loanID)
+        public async Task<string> GetLoanStatusBL(string loanID)
         {
-            //if (BusinessLogicUtil.validate(loanID) == false)
-            //    throw new InvalidStringException("Invalid loan ID");
-
+            string status = "";
             try
             {
                 EduLoanDAL EduLoanDALobj = new EduLoanDAL();
-
+                
                 await Task.Run(() =>
                 {
-                    if (EduLoanDALobj.IsLoanIDExistDAL(loanID) == false)
-                        throw new InvalidStringException("Loan ID not found");
+                    status = EduLoanDALobj.GetLoanStatusDAL(loanID);
                 });
 
-                return EduLoanDALobj.GetLoanStatusDAL(loanID);
+                return status;
             }
             catch
             {
-                return 0;
+                return default(string);
             }
         }
 
@@ -150,24 +142,20 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
         /// <returns>Returns Home loan object.</returns>
         public async Task<EduLoan> GetLoanByLoanIDBL(string loanID)
         {
-            //if (BusinessLogicUtil.validate(loanID) == false)
-            //    throw new InvalidStringException("Invalid loan ID");
-
             try
             {
                 EduLoanDAL EduLoanDALobj = new EduLoanDAL();
-
+                EduLoan edu = new EduLoan();
                 await Task.Run(() =>
                 {
-                    if (EduLoanDALobj.IsLoanIDExistDAL(loanID) == false)
-                        throw new InvalidStringException("Loan ID not found");
+                    edu = EduLoanDALobj.GetLoanByLoanIDDAL(loanID);
                 });
 
-                return EduLoanDALobj.GetLoanByLoanIDDAL(loanID);
+                return edu;
             }
-            catch
+            catch(Exception e)
             {
-                return null;
+                throw new PecuniaException("invalid details");
             }
         }
 
@@ -196,21 +184,29 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
         /// Lists all Loans.
         /// </summary>    
         /// <returns>Returns list of Education loan objects.</returns>
-        public List<EduLoan> ListAllLoans()
+        public async Task<DataSet> ListAllLoans()
         {
             EduLoanDAL loanDAL = new EduLoanDAL();
-            return loanDAL.ListAllLoansDAL();
+            DataSet eduLoans = new DataSet();
+            try
+            {
+                await Task.Run(() =>
+                {
+                    eduLoans = loanDAL.ListAllLoansDAL();
+                });
+                return eduLoans;
+            }
+            catch
+            {
+                return default(DataSet);
+            }
         }
 
         /// <summary>
         /// Checks if a particular loan ID exists.
         /// </summary>    
         /// <returns>Returns bool value to know if loan ID exists or not.</returns>
-        public bool isLoanIDExistBL(string loanID)
-        {
-            EduLoanDAL loanDAL = new EduLoanDAL();
-            return loanDAL.IsLoanIDExistDAL(loanID);
-        }
+        
         /// <summary>
         /// Disposes DAL object(s).
         /// </summary>
@@ -219,5 +215,10 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             ((EduLoanDAL)eduLoanDAL).Dispose();
         }
 
+        
+        public bool isLoanIDExistBL(string loanID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

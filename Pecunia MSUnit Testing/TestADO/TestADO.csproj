@@ -67,6 +67,10 @@
       <Project>{bd02ec7e-90e2-47bb-abb1-c0ac26fcb7e6}</Project>
       <Name>Pecunia.Helpers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pecunia.BusinessLayer\Pecunia.BusinessLayer.csproj">
+      <Project>{d3ca5e1a-2d48-4d88-906c-dc2da09ea5f0}</Project>
+      <Name>Pecunia.BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pecunia.DataAccessLayer\Pecunia.DataAccessLayer.csproj">
       <Project>{071de7db-bad2-4b3c-92b2-337b50b1039a}</Project>
       <Name>Pecunia.DataAccessLayer</Name>

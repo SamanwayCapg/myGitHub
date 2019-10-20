@@ -4,6 +4,7 @@ using Capgemini.Pecunia.Exceptions;
 using Capgemini.Pecunia.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,92 +44,81 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
 
         public async Task<CarLoan> ApproveLoanBL(string loanID, LoanStatus updatedStatus)
         {
-            //if (BusinessLogicUtil.validate(loanID) == false)
-            //    throw new InvalidStringException("Invalid loan ID");
-
+            
             try
             {
                 CarLoanDAL carDAL = new CarLoanDAL();
 
                 await Task.Run(() =>
                 {
-                    if (carDAL.IsLoanIDExistDAL(loanID) == false)
-                        throw new InvalidStringException("Loan ID not found");
+                    //if (carDAL.IsLoanIDExistDAL(loanID) == false)
+                    //    throw new InvalidStringException("Loan ID not found");
                 });
 
                 return carDAL.ApproveLoanDAL(loanID, updatedStatus);
             }
             catch
             {
-                return null;
+                return default(CarLoan);
             }
         }
 
         public async Task<CarLoan> GetLoanByCustomerID_BL(string customerID)
         {
-            //if (BusinessLogicUtil.validate(customerID) == false)
-            //    throw new InvalidStringException("Invalid customer ID");
             try
             {
                 CarLoanDAL carDAL = new CarLoanDAL();
-                CustomerBL custBL = new CustomerBL();
-                bool isExist = await custBL.isCustomerIDExistBL(Guid.Parse(customerID));
-
+                CarLoan car = new CarLoan();
+                
                 await Task.Run(() =>
                 {
-                    if ( isExist == false)
-                        throw new InvalidStringException("Customer ID not found");
+                    car = carDAL.GetLoanByCustomerIDDAL(customerID); 
                 });
 
-                return carDAL.GetLoanByCustomerIDDAL(customerID);
+                return car;
             }
             catch
             {
-                return null;
+                return default(CarLoan);
             }
         }
 
         public async Task<CarLoan> GetLoanByLoanID_BL(string loanID)
         {
-            //if (BusinessLogicUtil.validate(loanID) == false)
-            //    throw new InvalidStringException("Invalid loan ID");
             try
             {
                 CarLoanDAL carDAL = new CarLoanDAL();
-
+                CarLoan car = new CarLoan();
                 await Task.Run(() =>
                 {
-                    if (carDAL.IsLoanIDExistDAL(loanID) == false)
-                        throw new InvalidStringException("Loan ID not found");
+                    car = carDAL.GetLoanByLoanIDDAL(loanID);
                 });
 
-                return carDAL.GetLoanByLoanIDDAL(loanID);
+                return car;
             }
             catch
             {
-                return null;
+                return default(CarLoan);
             }
         }
 
-        public async Task<LoanStatus> GetLoanStatusBL(string loanID)
+        public async Task<string> GetLoanStatusBL(string loanID)
         {
-            //if (BusinessLogicUtil.validate(loanID) == false)
-            //    throw new InvalidStringException("Invalid loan ID");
+            string status = "";
             try
             {
                 CarLoanDAL carDAL = new CarLoanDAL();
-
+                
                 await Task.Run(() =>
                 {
-                    if (carDAL.IsLoanIDExistDAL(loanID) == false)
-                        throw new InvalidStringException("Loan ID not found");
+                    status = carDAL.GetLoanStatusDAL(loanID);
                 });
 
-                return carDAL.GetLoanStatusDAL(loanID);
+                return status;
             }
             catch
             {
-                return 0;
+                return default(string);
             }
 
         }
@@ -152,17 +142,25 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
         }
 
 
-        public List<CarLoan> ListAllLoans()
+        public async Task<DataSet> ListAllLoans()
         {
             CarLoanDAL loanDAL = new CarLoanDAL();
-            return loanDAL.ListAllLoansDAL();
+            DataSet carLoans = new DataSet();
+            try
+            {
+                await Task.Run(() =>
+                {
+                    carLoans = loanDAL.ListAllLoansDAL();
+                });
+            }
+            catch
+            {
+                return default(DataSet);
+            }
+            return carLoans;
         }
 
-        public bool isLoanIDExistBL(string loanID)
-        {
-            CarLoanDAL loanDAL = new CarLoanDAL();
-            return loanDAL.IsLoanIDExistDAL(loanID);
-        }
+        
 
 
     }

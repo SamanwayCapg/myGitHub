@@ -9,15 +9,17 @@ namespace Capgemini.Pecunia.Helpers
 {
     public class SQLServerUtil
     {
-        //public static SqlConnection getConnetion(string serverName, string databaseName, string user, string password)
-        //{
-        //    string connectionString = $"Data Source={serverName}; Initial Catalog={databaseName}; User ID={user}; Password={password}";
-        //    SqlConnection conn = new SqlConnection(connectionString);
+        public static SqlConnection getConnetion(string serverName, string databaseName, string user, string password)
+        {
+            string connectionString = $"Data Source={serverName}; Initial Catalog={databaseName}; User ID={user}; Password={password}";
+            SqlConnection conn = new SqlConnection(connectionString);
 
-        //    return conn;
-        //}
+            return conn;
+        }
 
-        public static SqlConnection getConnetion(string databaseName)
+        public static SqlConnection getConnetionWinAuth(string databaseName)
+
+
         {
             string connectionString = $"Server=localhost;Database={databaseName};Integrated Security=SSPI";
             SqlConnection conn = new SqlConnection(connectionString);
@@ -25,6 +27,6 @@ namespace Capgemini.Pecunia.Helpers
             return conn;
         }
 
-        
+
     }
 }

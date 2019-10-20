@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 using System.IO;
 using System;
 using Capgemini.Pecunia.Contracts.DALcontracts.LoanDALBase;
+using System.Data.SqlClient;
+using System.Data;
+using Capgemini.Pecunia.Helpers;
 
 namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
 {
@@ -13,131 +16,304 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
 
         public override bool ApplyLoanDAL(EduLoan edu)
         {
-            //EduLoan edu = (EduLoan)(object)obj;
-            List<EduLoan> loanList = DeserializeFromJSON("EduLoans.txt");
-            loanList.Add(edu);
-            return SerializeIntoJSON(loanList, "EduLoans.txt");
+
+            SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            //SqlConnection conn = SQLServerUtil.getConnetion("Pecunia");
+            try
+            {
+                conn.Open();
+
+
+                SqlCommand comm = new SqlCommand("TeamF.applyEduLoan", conn);
+
+                Guid loanID = Guid.NewGuid();
+                SqlParameter param1 = new SqlParameter("@LoanID", loanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                //Guid customerID;
+                //Guid.TryParse(car.CustomerID, out customerID);
+                SqlParameter param2 = new SqlParameter("@CustomerID", edu.CustomerID);
+                param2.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                SqlParameter param3 = new SqlParameter("@AmountApplied", edu.AmountApplied);
+                param3.SqlDbType = SqlDbType.Money;
+
+                SqlParameter param4 = new SqlParameter("@InterestRate", edu.InterestRate);
+                param4.SqlDbType = SqlDbType.Money;
+
+                SqlParameter param5 = new SqlParameter("@EMI_amount", edu.EMI_Amount);
+                param5.SqlDbType = SqlDbType.Money;
+
+                SqlParameter param6 = new SqlParameter("@RepaymentPeriod", edu.RepaymentPeriod);
+                param6.SqlDbType = SqlDbType.TinyInt;
+
+                DateTime dateOfApplication = DateTime.Now;
+                SqlParameter param7 = new SqlParameter("@DateOfApplication", dateOfApplication);
+                param7.SqlDbType = SqlDbType.DateTime;
+
+                SqlParameter param8 = new SqlParameter("@LoanStatus", edu.Status);
+                param8.SqlDbType = SqlDbType.VarChar;
+
+                SqlParameter param9 = new SqlParameter("@Course", edu.Course);
+                param9.SqlDbType = SqlDbType.VarChar;
+
+                SqlParameter param10 = new SqlParameter("@InstituteName", edu.InstituteName);
+                param10.SqlDbType = SqlDbType.VarChar;
+
+                SqlParameter param11 = new SqlParameter("@StudentID", edu.StudentID);
+                param11.SqlDbType = SqlDbType.VarChar;
+
+                SqlParameter param12 = new SqlParameter("@RepaymentHoliday", edu.RepaymentPeriod);
+                param12.SqlDbType = SqlDbType.TinyInt;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                Params.Add(param2);
+                Params.Add(param3);
+                Params.Add(param4);
+                Params.Add(param5);
+                Params.Add(param6);
+                Params.Add(param7);
+                Params.Add(param8);
+                Params.Add(param9);
+                Params.Add(param10);
+                Params.Add(param11);
+                Params.Add(param12);
+
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                BusinessLogicUtil.PecuniaLogException("applyEduLoan", e.Message);
+                return false;
+            }
+
         }
 
         public override EduLoan ApproveLoanDAL(string loanID, LoanStatus updatedStatus)
         {
-            List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
             EduLoan objToReturn = new EduLoan();
-            foreach (EduLoan Loan in eduLoans)
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            try
             {
-                if (Guid.Parse(loanID) == Loan.LoanID)
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.approveEduLoan", conn);
+
+                Guid LoanID;
+                Guid.TryParse(loanID, out LoanID);
+                SqlParameter param1 = new SqlParameter("@LoanID", LoanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                SqlParameter param2 = new SqlParameter("@updatedStatus", updatedStatus);
+                param2.SqlDbType = SqlDbType.VarChar;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                Params.Add(param2);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+
+
+                comm = new SqlCommand($"select * from TeamF.EduLoan where LoanID='{loanID}'", conn);
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
                 {
-                    Loan.Status = updatedStatus;
-                    objToReturn = Loan;
-                    break;
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        objToReturn = getNETdataTypes(reader, objToReturn);
+
                 }
+                conn.Close();
+                return objToReturn;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(EduLoan);
             }
 
-            SerializeIntoJSON(eduLoans, "EduLoans.txt");
-            return objToReturn;
         }
 
         public override EduLoan GetLoanByCustomerIDDAL(string customerID)
         {
-            List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            Guid customerIDGuid;
-            bool isValidGuid = Guid.TryParse(customerID, out customerIDGuid);
-
-            if (isValidGuid == true)
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            EduLoan objToReturn = new EduLoan();
+            try
             {
-                foreach (EduLoan Loan in eduLoans)
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.getEduLoanByCustomerID", conn);
+
+                Guid CustomerID;
+                Guid.TryParse(customerID, out CustomerID);
+                SqlParameter param1 = new SqlParameter("@CustomerID", CustomerID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+
+
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
                 {
-                    if (Guid.Parse(customerID) == Loan.CustomerID)
-                        return Loan;
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        objToReturn = getNETdataTypes(reader, objToReturn);
+
                 }
+                conn.Close();
+                return objToReturn;
             }
-            return default(EduLoan);
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(EduLoan);
+            }
+
         }
 
         public override EduLoan GetLoanByLoanIDDAL(string loanID)
         {
-            List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            Guid loanIDGuid;
-            bool isValidGuid = Guid.TryParse(loanID, out loanIDGuid);
-
-            if (isValidGuid == true)
-            {
-                foreach (EduLoan Loan in eduLoans)
-                {
-                    if (Guid.Parse(loanID) == Loan.LoanID)
-                        return Loan;
-                }
-            }
-            return default(EduLoan);
-        }
-
-        public override LoanStatus GetLoanStatusDAL(string loanID)
-        {
-            List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            Guid loanIDGuid;
-            bool isValidGuid = Guid.TryParse(loanID, out loanIDGuid);
-
-            if (isValidGuid == true)
-            {
-                foreach (EduLoan Loan in eduLoans)
-                {
-                    if (Guid.Parse(loanID) == Loan.LoanID)
-                        return Loan.Status;
-                }
-            }
-            return (LoanStatus)4;//LoanStatus for INVALID
-        }
-
-        public static List<EduLoan> DeserializeFromJSON(string FileName)
-        {
-            List<EduLoan> eduLoans = JsonConvert.DeserializeObject<List<EduLoan>>(File.ReadAllText(FileName));// Done to read data from file
-            return eduLoans;
-        }
-
-        public static bool SerializeIntoJSON(List<EduLoan> eduLoans, string fileName)
-        {
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            EduLoan objToReturn = new EduLoan();
             try
             {
-                JsonSerializer serializer = new JsonSerializer();
-                using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
-                using (StreamWriter sw = new StreamWriter(fs))   //filename is used so that we can have access over our own file
-                using (JsonWriter writer = new JsonTextWriter(sw))
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.getEduLoanByLoanID", conn);
+
+                Guid LoanID;
+                Guid.TryParse(loanID, out LoanID);
+                SqlParameter param1 = new SqlParameter("@LoanID", LoanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
                 {
-                    serializer.Serialize(writer, eduLoans);
-                    sw.Close();
-                    fs.Close();
-                    return true;
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        objToReturn = getNETdataTypes(reader, objToReturn);
+
                 }
+                conn.Close();
+                return objToReturn;
             }
-            catch
+            catch (Exception e)
             {
-                return false;
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(EduLoan);
             }
         }
 
-        public override List<EduLoan> ListAllLoansDAL()
+        public override string GetLoanStatusDAL(string loanID)
         {
-            List<EduLoan> eduLoans = DeserializeFromJSON("EduLoans.txt");
-            return eduLoans;
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            string status = "";
+            try
+            {
+                conn.Open();
+                Console.WriteLine("connected");
+                SqlCommand comm = new SqlCommand("TeamF.getEduLoanStatus", conn);
+
+                Guid LoanID;
+                Guid.TryParse(loanID, out LoanID);
+                SqlParameter param1 = new SqlParameter("@LoanID", LoanID);
+                param1.SqlDbType = SqlDbType.UniqueIdentifier;
+
+                List<SqlParameter> Params = new List<SqlParameter>();
+                Params.Add(param1);
+                comm.Parameters.AddRange(Params.ToArray());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.ExecuteNonQuery();
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader == null)
+                        reader.Close();
+                    else
+                        status = reader.GetString(0);
+
+                }
+                conn.Close();
+                return status;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.ReadKey();
+                return default(string);
+            }
+        }
+
+        
+        public override DataSet ListAllLoansDAL()
+        {
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from TeamF.EduLoan", conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            return ds;
         }
 
         public override bool IsLoanIDExistDAL(string loanID)
         {
-            List<EduLoan> loans = DeserializeFromJSON("EduLoans.txt");
-            Guid loanIDGuid;
-            bool isValidGuid = Guid.TryParse(loanID, out loanIDGuid);
-
-            if (isValidGuid == true)
-            {
-                foreach (var loan in loans)
-                {
-                    if (Guid.Parse(loanID) == loan.LoanID)
-                        return true;
-                }
-            }
-            return false;
+            return true;
         }
 
+        EduLoan getNETdataTypes(SqlDataReader reader, EduLoan objToReturn)
+        {
+            objToReturn.LoanID = reader.GetGuid(0);
+            objToReturn.CustomerID = reader.GetGuid(1);
+            objToReturn.AmountApplied = Convert.ToDouble(reader.GetDecimal(2));
+            objToReturn.InterestRate = Convert.ToDouble(reader.GetDecimal(3));
+            objToReturn.EMI_Amount = Convert.ToDouble(reader.GetDecimal(4));
+            objToReturn.RepaymentPeriod = reader.GetByte(5);
+            objToReturn.DateOfApplication = reader.GetDateTime(6);
+            LoanStatus status;
+            Enum.TryParse(reader.GetString(7), out status);
+            objToReturn.Status = status;
+            CourseType course;
+            Enum.TryParse(reader.GetString(8), out course);
+            objToReturn.Course = course;
+            objToReturn.InstituteName = reader.GetString(9);
+            objToReturn.StudentID = reader.GetString(10);
+            objToReturn.RepaymentHoliday = reader.GetByte(11);
+            return objToReturn;
+        }
         /// <summary>
         /// Clears unmanaged resources such as db connections or file streams.
         /// </summary>

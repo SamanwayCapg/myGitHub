@@ -675,7 +675,7 @@ namespace Capgemini.Pecunia.PresentationLayer
                 {
                     //check if customerID exists
                     CustomerBL cust = new CustomerBL();
-                    bool isExist = await cust.isCustomerIDExistBL(customerID);
+                    bool isExist = true; // await cust.isCustomerIDExistBL(customerID);
                     if (isExist == false)
                     {
                         Console.WriteLine("CustomerID not found in database\nPress Any key -> Try Again");
@@ -859,24 +859,25 @@ namespace Capgemini.Pecunia.PresentationLayer
             try
             {
                 // checking edu loan
-                if (eduLoanBL.isLoanIDExistBL(loanID) == true && type == 3)
+                //if (eduLoanBL.isLoanIDExistBL(loanID) == true && type == 3)
+                if (type == 3)
                 {
                     isValidLoanID = true;
                     //EduLoanBL eduLoanBL = new EduLoanBL();
                     EduLoan eduLoan = new EduLoan();
 
-                    eduLoan = await eduLoanBL.GetLoanByLoanIDBL(loanID);
-                    Console.WriteLine("Current Status and Loan Details:");
-                    Console.WriteLine($"Loan ID:{eduLoan.LoanID}");
-                    Console.WriteLine($"Customer ID:{eduLoan.CustomerID}");
-                    Console.WriteLine($"Amount Applied:{eduLoan.AmountApplied}");
-                    Console.WriteLine($"EMI:{eduLoan.EMI_Amount}");
-                    Console.WriteLine($"Repayment Period:{eduLoan.RepaymentPeriod}");
-                    Console.WriteLine($"Date of Application:{eduLoan.DateOfApplication}");
-                    Console.WriteLine($"Current Status:{eduLoan.Status}");
-                    Console.WriteLine($"Course of Study:{eduLoan.Course}");
-                    Console.WriteLine($"Institute Name:{eduLoan.InstituteName}");
-                    Console.WriteLine($"Student ID:{eduLoan.StudentID}");
+                    //eduLoan = await eduLoanBL.GetLoanByLoanIDBL(loanID);
+                    //Console.WriteLine("Current Status and Loan Details:");
+                    //Console.WriteLine($"Loan ID:{eduLoan.LoanID}");
+                    //Console.WriteLine($"Customer ID:{eduLoan.CustomerID}");
+                    //Console.WriteLine($"Amount Applied:{eduLoan.AmountApplied}");
+                    //Console.WriteLine($"EMI:{eduLoan.EMI_Amount}");
+                    //Console.WriteLine($"Repayment Period:{eduLoan.RepaymentPeriod}");
+                    //Console.WriteLine($"Date of Application:{eduLoan.DateOfApplication}");
+                    //Console.WriteLine($"Current Status:{eduLoan.Status}");
+                    //Console.WriteLine($"Course of Study:{eduLoan.Course}");
+                    //Console.WriteLine($"Institute Name:{eduLoan.InstituteName}");
+                    //Console.WriteLine($"Student ID:{eduLoan.StudentID}");
 
                     LoanStatus updatedStatus;
                     Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
@@ -887,7 +888,7 @@ namespace Capgemini.Pecunia.PresentationLayer
                     if (isValidStatus == true)
                     {
                         eduLoan = await eduLoanBL.ApproveLoanBL(loanID, updatedStatus);
-                        Console.WriteLine($"New Status of {loanID} is {eduLoan.Status}");
+                        //Console.WriteLine($"New Status of {loanID} is {eduLoan.Status}");
                         return true;
                     }
                     else
@@ -901,24 +902,25 @@ namespace Capgemini.Pecunia.PresentationLayer
                 }
 
                 //checking car loan
-                if (carLoanBL.isLoanIDExistBL(loanID) == true && type  == 2)
+                //if (carLoanBL.isLoanIDExistBL(loanID) == true && type  == 2)
+                if ( type == 2)
                 {
                     isValidLoanID = true;
                     //CarLoanBL carLoanBL = new CarLoanBL();
                     CarLoan carLoan = new CarLoan();
 
-                    carLoan = await carLoanBL.GetLoanByLoanID_BL(loanID);
-                    Console.WriteLine("Current Status and Loan Details:");
-                    Console.WriteLine($"Loan ID:{carLoan.LoanID}");
-                    Console.WriteLine($"Customer ID:{carLoan.CustomerID}");
-                    Console.WriteLine($"Amount Applied:{carLoan.AmountApplied}");
-                    Console.WriteLine($"EMI:{carLoan.EMI_Amount}");
-                    Console.WriteLine($"Repayment Period:{carLoan.RepaymentPeriod}");
-                    Console.WriteLine($"Date of Application:{carLoan.DateOfApplication}");
-                    Console.WriteLine($"Current Status:{carLoan.Status}");
-                    Console.WriteLine($"Occupation of Applicant:{carLoan.Occupation}");
-                    Console.WriteLine($"Net Income per month:{carLoan.GrossIncome - carLoan.SalaryDeductions}");
-                    Console.WriteLine($"Loan applied for {carLoan.Vehicle} type of vehicle");
+                    //carLoan = await carLoanBL.GetLoanByLoanID_BL(loanID);
+                    //Console.WriteLine("Current Status and Loan Details:");
+                    //Console.WriteLine($"Loan ID:{carLoan.LoanID}");
+                    //Console.WriteLine($"Customer ID:{carLoan.CustomerID}");
+                    //Console.WriteLine($"Amount Applied:{carLoan.AmountApplied}");
+                    //Console.WriteLine($"EMI:{carLoan.EMI_Amount}");
+                    //Console.WriteLine($"Repayment Period:{carLoan.RepaymentPeriod}");
+                    //Console.WriteLine($"Date of Application:{carLoan.DateOfApplication}");
+                    //Console.WriteLine($"Current Status:{carLoan.Status}");
+                    //Console.WriteLine($"Occupation of Applicant:{carLoan.Occupation}");
+                    //Console.WriteLine($"Net Income per month:{carLoan.GrossIncome - carLoan.SalaryDeductions}");
+                    //Console.WriteLine($"Loan applied for {carLoan.Vehicle} type of vehicle");
 
                     LoanStatus updatedStatus;
                     Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
@@ -929,7 +931,7 @@ namespace Capgemini.Pecunia.PresentationLayer
                     if (isValidStatus == true)
                     {
                         carLoan = await carLoanBL.ApproveLoanBL(loanID, updatedStatus);
-                        Console.WriteLine($"New Status of {loanID} is {carLoan.Status}");
+                        //Console.WriteLine($"New Status of {loanID} is {carLoan.Status}");
                         return true;
                     }
                     else
@@ -942,24 +944,25 @@ namespace Capgemini.Pecunia.PresentationLayer
                 }
 
                 //checking home loan
-                if (homeLoanBL.IsLoanIDExistBL(loanID) == true && type  == 1)
+                //if (homeLoanBL.IsLoanIDExistBL(loanID) == true && type  == 1)
+                if ( type == 1)
                 {
                     isValidLoanID = true;
                     //EduLoanBL EduLoanBL = new EduLoanBL();
                     HomeLoan homeLoan = new HomeLoan();
 
-                    homeLoan = await homeLoanBL.GetLoanByLoanIDBL(loanID);
-                    Console.WriteLine("Current Status and Loan Details:");
-                    Console.WriteLine($"Loan ID:{homeLoan.LoanID}");
-                    Console.WriteLine($"Customer ID:{homeLoan.CustomerID}");
-                    Console.WriteLine($"Amount Applied:{homeLoan.AmountApplied}");
-                    Console.WriteLine($"EMI:{homeLoan.EMI_Amount}");
-                    Console.WriteLine($"Repayment Period:{homeLoan.RepaymentPeriod}");
-                    Console.WriteLine($"Date of Application:{homeLoan.DateOfApplication}");
-                    Console.WriteLine($"Current Status:{homeLoan.Status}");
-                    Console.WriteLine($"Occupation of Applicant:{homeLoan.Occupation}");
-                    Console.WriteLine($"Net Income per month:{homeLoan.GrossIncome - homeLoan.SalaryDeductions}");
-                    Console.WriteLine($"Total service years:{homeLoan.ServiceYears}");
+                    //homeLoan = await homeLoanBL.GetLoanByLoanIDBL(loanID);
+                    //Console.WriteLine("Current Status and Loan Details:");
+                    //Console.WriteLine($"Loan ID:{homeLoan.LoanID}");
+                    //Console.WriteLine($"Customer ID:{homeLoan.CustomerID}");
+                    //Console.WriteLine($"Amount Applied:{homeLoan.AmountApplied}");
+                    //Console.WriteLine($"EMI:{homeLoan.EMI_Amount}");
+                    //Console.WriteLine($"Repayment Period:{homeLoan.RepaymentPeriod}");
+                    //Console.WriteLine($"Date of Application:{homeLoan.DateOfApplication}");
+                    //Console.WriteLine($"Current Status:{homeLoan.Status}");
+                    //Console.WriteLine($"Occupation of Applicant:{homeLoan.Occupation}");
+                    //Console.WriteLine($"Net Income per month:{homeLoan.GrossIncome - homeLoan.SalaryDeductions}");
+                    //Console.WriteLine($"Total service years:{homeLoan.ServiceYears}");
 
                     LoanStatus updatedStatus;
                     Console.WriteLine("Available Choices (Case Sensitive):\nAPPLIED\nPROCESSING\nREJECTED\nAPPROVED\nINVALID");
@@ -970,7 +973,7 @@ namespace Capgemini.Pecunia.PresentationLayer
                     if (isValidStatus == true)
                     {
                         homeLoan = await homeLoanBL.ApproveLoanBL(loanID, updatedStatus);
-                        Console.WriteLine($"New Status of {loanID} is {homeLoan.Status}");
+                        //Console.WriteLine($"New Status of {loanID} is {homeLoan.Status}");
                         return true;
                     }
                     else

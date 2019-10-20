@@ -1,6 +1,7 @@
 ﻿using Capgemini.Pecunia.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,10 @@ namespace Capgemini.Pecunia.Contracts.BLContracts.ILoanBL
         Task<bool> ApplyLoanBL(EduLoan eduLoan);
         Task<EduLoan> ApproveLoanBL(string loanID, LoanStatus updatedStatus);
         Task<EduLoan> GetLoanByCustomerIDBL(string customerID);
-        Task<LoanStatus> GetLoanStatusBL(string loanID);
+        Task<string> GetLoanStatusBL(string loanID);
         Task<EduLoan> GetLoanByLoanIDBL(string loanID);
         Task<bool> Validate(EduLoan eduLoan);
-        List<EduLoan> ListAllLoans();
+        Task<DataSet> ListAllLoans();
         bool isLoanIDExistBL(string loanID);
 
     }

@@ -38,3 +38,5 @@ E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\TestADO\obj\Debug\TestADO.
 E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\TestADO\obj\Debug\TestADO.csproj.CopyComplete
 E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\TestADO\obj\Debug\TestADO.exe
 E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\TestADO\obj\Debug\TestADO.pdb
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\TestADO\bin\Debug\Pecunia.BusinessLayer.dll
+E:\GitHubRepositories\myGitHub\Pecunia MSUnit Testing\TestADO\bin\Debug\Pecunia.BusinessLayer.pdb

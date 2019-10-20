@@ -1,0 +1,7 @@
+applyCarLoan, 19-10-2019 11:19:04,Procedure or function 'applyCarLoan' expects parameter '@Occupation', which was not supplied.
+applyCarLoan, 19-10-2019 11:20:47,Procedure or function 'applyCarLoan' expects parameter '@Occupation', which was not supplied.
+applyHomeLoan, 19-10-2019 11:38:36,Maximum allowed repayment period is 120 months and figure must be positive
+applyCarLoan, 19-10-2019 12:08:50,The INSERT statement conflicted with the FOREIGN KEY constraint "FK__CarLoan__Custome__249D5F00". The conflict occurred in database "13th Aug CLoud PT Immersive", table "TeamF.Customers", column 'CustomerID'.
+The statement has been terminated.
+applyCarLoan, 19-10-2019 12:10:18,The INSERT statement conflicted with the FOREIGN KEY constraint "FK__CarLoan__Custome__249D5F00". The conflict occurred in database "13th Aug CLoud PT Immersive", table "TeamF.Customers", column 'CustomerID'.
+The statement has been terminated.
