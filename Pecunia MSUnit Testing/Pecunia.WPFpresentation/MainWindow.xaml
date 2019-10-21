@@ -7,28 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="ApplyCarLoan"  Content="Apply Car Loan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Margin="111,87,0,0" Click="Button_Click_ApplyCarLoan"/>
-        <Button x:Name="ApplyHomeLoan" Content="Apply Home Loan" HorizontalAlignment="Left" Margin="111,161,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="-0.441,0.372" Click="ApplyHomeLoan_Click" />
-        <Button x:Name="ApplyEduLoan"  Content="Apply Edu Loan" HorizontalAlignment="Left" Margin="111,238,0,0" VerticalAlignment="Top" Width="136" Click="ApplyEduLoan_Click"/>
+        <Button x:Name="loanNavigate" Content="Loan" HorizontalAlignment="Left" Margin="289,107,0,0" VerticalAlignment="Top" Width="75" Click="LoanNavigate_Click"/>
 
-        <Button x:Name="ApproveCarLoan"  Content="Approve Car Loan" HorizontalAlignment="Left" Margin="532,88,0,0" VerticalAlignment="Top" Width="126" Click="ApproveCarLoan_Click"/>
-        <TextBox x:Name="CarLoanIDtextBox"  HorizontalAlignment="Left" Height="23" Margin="328,88,0,0" TextWrapping="Wrap" Text="Enter Car Loan ID" VerticalAlignment="Top" Width="199"/>
-
-        <Button x:Name="ApproveHomeLoan" Content="Approve Home Loan" HorizontalAlignment="Left" Margin="532,158,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="-0.182,1.362" Click="ApproveHomeLoan_Click"/>
-        <TextBox x:Name="HomeLoanIDtextBox" HorizontalAlignment="Left" Height="23" Margin="328,158,0,0" TextWrapping="Wrap" Text="Enter Home Loan ID" VerticalAlignment="Top" Width="199"/>
-
-        <Button x:Name="ApproveEduLoan"  Content="Approve Edu Loan" HorizontalAlignment="Left" Margin="532,235,0,0" VerticalAlignment="Top" Width="126" Click="ApproveEduLoan_Click"/>
-        <TextBox x:Name="EduLoanIDtextBox"  HorizontalAlignment="Left" Height="23" Margin="328,235,0,0" TextWrapping="Wrap" Text="Enter Edu Loan ID" VerticalAlignment="Top" Width="199"/>
-
-        <Label Content="Search Loan" HorizontalAlignment="Left" Margin="111,302,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="SearchLoanComboBox" HorizontalAlignment="Left" Margin="190,306,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="By Customer ID" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="By Loan ID"     HorizontalAlignment="Left" Width="118"/>
-        </ComboBox>
-        <TextBox x:Name="IDtextBox" HorizontalAlignment="Left" Height="23" Margin="315,305,0,0" TextWrapping="Wrap" Text="Enter Valid ID" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="SearchLoanBtn" Content="SEARCH" HorizontalAlignment="Left" Margin="440,308,0,0" VerticalAlignment="Top" Width="75" Click="SearchLoanBtn_Click"/>
-
-        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="294,358,0,0" VerticalAlignment="Top" Width="75" Click="BackBtn_Click"/>
 
     </Grid>
 </Window>

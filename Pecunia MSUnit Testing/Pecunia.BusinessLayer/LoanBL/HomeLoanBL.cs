@@ -64,6 +64,8 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             return loanApplied;
         }
 
+        
+
         /// <summary>
         /// For displaying loan status.
         /// </summary>

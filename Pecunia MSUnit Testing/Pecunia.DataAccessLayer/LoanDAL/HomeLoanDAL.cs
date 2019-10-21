@@ -29,8 +29,8 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
             //loanList.Add(home);
             //return SerializeIntoJSON(loanList, fileName);
 
-            SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
-            //SqlConnection conn = SQLServerUtil.getConnetion("Pecunia");
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
             try
             {
                 conn.Open();
@@ -102,8 +102,8 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
             }
             catch (Exception e)
             {
-                //Console.WriteLine(e.Message);
-                //Console.ReadKey();
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
                 BusinessLogicUtil.PecuniaLogException("applyHomeLoan", e.Message);
                 return false;
             }

@@ -16,8 +16,8 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         public override bool  ApplyLoanDAL(CarLoan car)
         {
 
-            SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
-            //SqlConnection conn = SQLServerUtil.getConnetion("Pecunia");
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
             try
             {
                 conn.Open();
@@ -227,6 +227,7 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                 }
                 conn.Close();
                 return objToReturn;
+               
             }
             catch (Exception e)
             {

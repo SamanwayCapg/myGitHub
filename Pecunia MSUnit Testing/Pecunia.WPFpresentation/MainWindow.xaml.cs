@@ -25,46 +25,11 @@ namespace Pecunia.WPFpresentation
             InitializeComponent();
         }
 
-        
-
-        private void ApplyHomeLoan_Click(object sender, RoutedEventArgs e)
+        private void LoanNavigate_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_ApplyCarLoan(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ApplyEduLoan_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ApproveCarLoan_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ApproveHomeLoan_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ApproveEduLoan_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SearchLoanBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
-        {
-
+            var loanWindow = new LoanMainWindow();
+            loanWindow.Show();
+            this.Close();
         }
     }
 }

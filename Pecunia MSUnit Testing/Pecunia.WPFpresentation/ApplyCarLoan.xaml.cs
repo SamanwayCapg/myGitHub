@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Capgemini.Pecunia.BusinessLayer.LoanBL;
+using Capgemini.Pecunia.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +25,40 @@ namespace Pecunia.WPFpresentation
         public ApplyCarLoan()
         {
             InitializeComponent();
+        }
+        
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var loanMainWindow = new LoanMainWindow();
+            loanMainWindow.Show();
+            this.Close();
+        }
+
+        private async void ApplyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CarLoan carLoan = new CarLoan();
+            Guid custID;
+
+            Guid.TryParse(customerIDTxtBox.Text, out custID);
+            carLoan.CustomerID = custID;
+            carLoan.AmountApplied = Convert.ToDouble(amountAppliedTxtBox.Text);
+            carLoan.RepaymentPeriod = Convert.ToInt32(repaymentPeriodTxtBox.Text);
+            ServiceType service;
+            Enum.TryParse(occupationComboBox.Text, out service);
+            carLoan.Occupation = service ;
+            carLoan.GrossIncome = Convert.ToDouble(grossIncomeTxtBox.Text);
+            carLoan.SalaryDeductions = Convert.ToDouble(salaryDecductionTxtBox.Text);
+            VehicleType vehicle;
+            Enum.TryParse(vehicleComboBox.Text, out vehicle);
+            carLoan.Vehicle = vehicle;
+
+            CarLoanBL car = new CarLoanBL();
+            await car.ApplyLoanBL(carLoan);
+
+            var loanMainWindow = new LoanMainWindow();
+            loanMainWindow.Show();
+            this.Close();
         }
     }
 }

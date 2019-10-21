@@ -17,8 +17,8 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         public override bool ApplyLoanDAL(EduLoan edu)
         {
 
-            SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
-            //SqlConnection conn = SQLServerUtil.getConnetion("Pecunia");
+            //SqlConnection conn = SQLServerUtil.getConnetion("ndamssql\\sqlilearn", "13th Aug CLoud PT Immersive", "sqluser", "sqluser");
+            SqlConnection conn = SQLServerUtil.getConnetionWinAuth("Pecunia");
             try
             {
                 conn.Open();
@@ -63,7 +63,7 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                 SqlParameter param11 = new SqlParameter("@StudentID", edu.StudentID);
                 param11.SqlDbType = SqlDbType.VarChar;
 
-                SqlParameter param12 = new SqlParameter("@RepaymentHoliday", edu.RepaymentPeriod);
+                SqlParameter param12 = new SqlParameter("@RepaymentHoliday", edu.RepaymentHoliday);
                 param12.SqlDbType = SqlDbType.TinyInt;
 
                 List<SqlParameter> Params = new List<SqlParameter>();
