@@ -31,9 +31,16 @@ namespace Pecunia.WPFpresentation
             EduLoan edu = new EduLoan();
             EduLoanBL eduBL = new EduLoanBL();
             edu = await eduBL.GetLoanByLoanIDBL(EduLoanIDtextBox.Text);
-            List<EduLoan> eduLoans = new List<EduLoan>();
-            eduLoans.Add(edu);
-            dataGrid.ItemsSource = eduLoans;
+
+            //invalid loan id, exception thrown at DAL
+            if (edu == default(EduLoan))
+                MessageBox.Show("INvalid Loan ID");
+            else
+            {
+                List<EduLoan> eduLoans = new List<EduLoan>();
+                eduLoans.Add(edu);
+                dataGrid.ItemsSource = eduLoans;
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -50,7 +57,11 @@ namespace Pecunia.WPFpresentation
 
             LoanStatus newStatus;
             Enum.TryParse(statusComboBox.Text, out newStatus);
-            await eduBL.ApproveLoanBL(EduLoanIDtextBox.Text, newStatus);
+            edu = await eduBL.ApproveLoanBL(EduLoanIDtextBox.Text, newStatus);
+
+            //exception thrown at DAL
+            if (edu == default(EduLoan))
+                MessageBox.Show("Updated Status can't be existing status");
 
             //showing updated status in gridbox
             edu = await eduBL.GetLoanByLoanIDBL(EduLoanIDtextBox.Text);

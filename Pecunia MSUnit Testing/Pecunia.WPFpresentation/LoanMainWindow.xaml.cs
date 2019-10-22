@@ -25,8 +25,9 @@ namespace Pecunia.WPFpresentation
         public LoanMainWindow()
         {
             InitializeComponent();
+            
         }
-
+        
         private void ApplyHomeLoan_Click(object sender, RoutedEventArgs e)
         {
             var applyHomeLoanHome = new ApplyHomeLoan();
@@ -81,47 +82,89 @@ namespace Pecunia.WPFpresentation
                 {
                     List<HomeLoan> homeLoans = new List<HomeLoan>();
                     HomeLoan homeLoan = await home.GetLoanByCustomerIDBL(IDtextBox.Text);
-                    homeLoans.Add(homeLoan);
-                    dataGrid.ItemsSource = homeLoans;
+                    if (homeLoan == default(HomeLoan))
+                        MessageBox.Show("Invalid ID!");
+                    else
+                    {
+                        homeLoans.Add(homeLoan);
+                        dataGrid.ItemsSource = homeLoans;
+                    }
                 }
                 else if (selectLoanTypeComboBox.Text.Equals("Car Loan") == true)
                 {
                     List<CarLoan> carLoans = new List<CarLoan>();
                     CarLoan carLoan = await car.GetLoanByCustomerID_BL(IDtextBox.Text);
-                    carLoans.Add(carLoan);
-                    dataGrid.ItemsSource = carLoans;
+                    if (carLoan == default(CarLoan))
+                        MessageBox.Show("Invalid ID");
+                    else
+                    {
+                        carLoans.Add(carLoan);
+                        dataGrid.ItemsSource = carLoans;
+                    }
                 }
-                else// edu loan is selected
+                else if(selectLoanTypeComboBox.Text.Equals("Edu Loan") == true)// edu loan is selected
                 {
                     List<EduLoan> eduLoans = new List<EduLoan>();
                     EduLoan eduLoan = await edu.GetLoanByCustomerIDBL(IDtextBox.Text);
-                    eduLoans.Add(eduLoan);
-                    dataGrid.ItemsSource = eduLoans;
+                    if (eduLoan == default(EduLoan))
+                        MessageBox.Show("Invalid ID");
+                    else
+                    {
+                        eduLoans.Add(eduLoan);
+                        dataGrid.ItemsSource = eduLoans;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Select a Loan Type!");
                 }
             }
-            else // By Loan ID selected
+            else if (SearchLoanComboBox.Text.Equals("By Loan ID") == true)// By Loan ID selected
             {
                 if (selectLoanTypeComboBox.Text.Equals("Home Loan") == true)
                 {
                     List<HomeLoan> homeLoans = new List<HomeLoan>();
                     HomeLoan homeLoan = await home.GetLoanByLoanIDBL(IDtextBox.Text);
-                    homeLoans.Add(homeLoan);
-                    dataGrid.ItemsSource = homeLoans;
+                    if (homeLoan == default(HomeLoan))
+                        MessageBox.Show("Invalid ID");
+                    else
+                    {
+                        homeLoans.Add(homeLoan);
+                        dataGrid.ItemsSource = homeLoans;
+                    }
                 }
                 else if (selectLoanTypeComboBox.Text.Equals("Car Loan") == true)
                 {
                     List<CarLoan> carLoans = new List<CarLoan>();
                     CarLoan carLoan = await car.GetLoanByLoanID_BL(IDtextBox.Text);
-                    carLoans.Add(carLoan);
-                    dataGrid.ItemsSource = carLoans;
+                    if (carLoan == default(CarLoan))
+                        MessageBox.Show("Invalid ID");
+                    else
+                    {
+                        carLoans.Add(carLoan);
+                        dataGrid.ItemsSource = carLoans;
+                    }
                 }
-                else// edu loan is selected
+                else if(selectLoanTypeComboBox.Text.Equals("Edu Loan") == true)// edu loan is selected
                 {
                     List<EduLoan> eduLoans = new List<EduLoan>();
                     EduLoan eduLoan = await edu.GetLoanByLoanIDBL(IDtextBox.Text);
-                    eduLoans.Add(eduLoan);
-                    dataGrid.ItemsSource = eduLoans;
+                    if (eduLoan == default(EduLoan))
+                        MessageBox.Show("Invalid ID");
+                    else
+                    {
+                        eduLoans.Add(eduLoan);
+                        dataGrid.ItemsSource = eduLoans;
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Please Select a Loan Type!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select a ID Type!");
             }
         }
 

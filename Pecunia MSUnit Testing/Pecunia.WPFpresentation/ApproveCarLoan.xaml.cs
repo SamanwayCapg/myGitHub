@@ -58,7 +58,11 @@ namespace Pecunia.WPFpresentation
 
             LoanStatus newStatus;
             Enum.TryParse(statusComboBox.Text, out newStatus);
-            await carBL.ApproveLoanBL(CarLoanIDtextBox.Text, newStatus);
+            car = await carBL.ApproveLoanBL(CarLoanIDtextBox.Text, newStatus);
+
+            //exception thrown at DAL
+            if (car == default(CarLoan))
+                MessageBox.Show("Updated Status can't be existing status");
 
             //showing updated status in gridbox
             car = await carBL.GetLoanByLoanID_BL(CarLoanIDtextBox.Text);
@@ -72,9 +76,16 @@ namespace Pecunia.WPFpresentation
             CarLoan car = new CarLoan();
             CarLoanBL carBL = new CarLoanBL();
             car = await carBL.GetLoanByLoanID_BL(CarLoanIDtextBox.Text);
-            List<CarLoan> carLoans = new List<CarLoan>();
-            carLoans.Add(car);
-            dataGrid.ItemsSource = carLoans;
+
+            //invalid loan id, exception thrown at DAL
+            if (car == default(CarLoan))
+                MessageBox.Show("INvalid Loan ID");
+            else
+            {
+                List<CarLoan> carLoans = new List<CarLoan>();
+                carLoans.Add(car);
+                dataGrid.ItemsSource = carLoans;
+            }
         }
     }
 }

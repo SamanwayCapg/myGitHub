@@ -153,9 +153,10 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
 
                 return edu;
             }
-            catch(Exception e)
+            catch
             {
-                throw new PecuniaException("invalid details");
+                //throw new PecuniaException("invalid details");
+                return default(EduLoan);
             }
         }
 

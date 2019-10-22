@@ -42,7 +42,11 @@ namespace Pecunia.WPFpresentation
             eduLoan.StudentID = studentIDTxtBox.Text;
 
             EduLoanBL edu = new EduLoanBL();
-            await edu.ApplyLoanBL(eduLoan);
+            bool isSuccess = await edu.ApplyLoanBL(eduLoan);
+            if (isSuccess == true)
+                MessageBox.Show("Loan Applied Successfully");
+            else
+                MessageBox.Show("Error Occured!");
 
             var loanMainWindow = new LoanMainWindow();
             loanMainWindow.Show();

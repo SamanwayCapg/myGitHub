@@ -50,7 +50,11 @@ namespace Pecunia.WPFpresentation
             homeLoan.SalaryDeductions = Convert.ToDouble(salaryDecductionTxtBox.Text);
             
             HomeLoanBL home = new HomeLoanBL();
-            await home.ApplyLoanBL(homeLoan);
+            bool isSuccess = await home.ApplyLoanBL(homeLoan);
+            if (isSuccess == true)
+                MessageBox.Show("Loan Applied Successfully");
+            else
+                MessageBox.Show("Error Occured!");
 
             var loanMainWindow = new LoanMainWindow();
             loanMainWindow.Show();

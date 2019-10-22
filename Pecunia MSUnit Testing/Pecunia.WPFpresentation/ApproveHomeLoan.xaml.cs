@@ -31,9 +31,16 @@ namespace Pecunia.WPFpresentation
             HomeLoan home = new HomeLoan();
             HomeLoanBL homeBL = new HomeLoanBL();
             home = await homeBL.GetLoanByLoanIDBL(HomeLoanIDtextBox.Text);
-            List<HomeLoan> homeLoans = new List<HomeLoan>();
-            homeLoans.Add(home);
-            dataGrid.ItemsSource = homeLoans;
+
+            //invalid loan id, exception thrown at DAL
+            if (home == default(HomeLoan))
+                MessageBox.Show("INvalid Loan ID");
+            else
+            {
+                List<HomeLoan> homeLoans = new List<HomeLoan>();
+                homeLoans.Add(home);
+                dataGrid.ItemsSource = homeLoans;
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -50,7 +57,11 @@ namespace Pecunia.WPFpresentation
 
             LoanStatus newStatus;
             Enum.TryParse(statusComboBox.Text, out newStatus);
-            await homeBL.ApproveLoanBL(HomeLoanIDtextBox.Text, newStatus);
+            home  = await homeBL.ApproveLoanBL(HomeLoanIDtextBox.Text, newStatus);
+
+            //exception thrown at DAL
+            if (home == default(HomeLoan))
+                MessageBox.Show("Updated Status can't be existing status");
 
             //showing updated status in gridbox
             home = await homeBL.GetLoanByLoanIDBL(HomeLoanIDtextBox.Text);

@@ -54,7 +54,11 @@ namespace Pecunia.WPFpresentation
             carLoan.Vehicle = vehicle;
 
             CarLoanBL car = new CarLoanBL();
-            await car.ApplyLoanBL(carLoan);
+            bool isSuccess = await car.ApplyLoanBL(carLoan);
+            if (isSuccess == true)
+                MessageBox.Show("Loan Applied Successfully");
+            else
+                MessageBox.Show("Error Occured!");
 
             var loanMainWindow = new LoanMainWindow();
             loanMainWindow.Show();
