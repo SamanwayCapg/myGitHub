@@ -1,0 +1,20 @@
+﻿PecuniaWPF
+
+
+winexe
+C#
+.cs
+C:\Users\samasaho\source\Pecunia WPF integration\PecuniaWPF\obj\Debug\
+PecuniaWPF
+none
+false
+DEBUG;TRACE
+C:\Users\samasaho\source\Pecunia WPF integration\PecuniaWPF\App.xaml
+371324191511
+
+46210027836
+20248044268
+AccountMenu.xaml;CustomerAdd.xaml;AddCurrentSavings.xaml;AddFixedDeposit.xaml;AddOption.xaml;AddTypeOfAccount.xaml;Admin-Home.xaml;ApplyCarLoan.xaml;ApplyEduLoan.xaml;ApplyHomeLoan.xaml;ApproveCarLoan.xaml;ApproveEduLoan.xaml;ApproveHomeLoan.xaml;ChangeAccountType.xaml;ChangeBranch.xaml;ChangeFDBranch.xaml;ChangeInitialAmount.xaml;ChequeTransaction.xaml;CustomerMain.xaml;CustomerUpdate.xaml;DeleteAccount.xaml;DeleteFixedDepositxaml.xaml;DeleteOption.xaml;Employee-Home.xaml;Employees.xaml;LoanMainWindow.xaml;MainWindow.xaml;SearchByAccountID.xaml;SearchCurrentSavings.xaml;SearchFD.xaml;SearchFDByAccountID.xaml;SearchOption.xaml;SlipTransaction.xaml;TransactionWindow.xaml;UpdateCurrentSavings.xaml;UpdateFixedDeposit.xaml;UpdateOption.xaml;
+
+True
+

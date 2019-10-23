@@ -1,0 +1,18 @@
+﻿<Window x:Class="PecuniaWPF.TransactionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PecuniaWPF"
+        mc:Ignorable="d"
+        Title="TransactionWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="ChequeT" Content="Cheque Transaction" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="114" Click="ChequeT_Click"/>
+        <Button x:Name="SlipT" Content="Slip Transaction" HorizontalAlignment="Left" Margin="30,105,0,0" VerticalAlignment="Top" Width="114" Click="SlipT_Click"/>
+        <DataGrid x:Name="dataTransactions" HorizontalAlignment="Left" Height="304" Margin="300,105,0,0" VerticalAlignment="Top" Width="468" />
+        <Label Content="List of Transactions:" HorizontalAlignment="Left" Margin="300,62,0,0" VerticalAlignment="Top" Width="152"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="693,33,0,0" VerticalAlignment="Top" Width="75" Click="BtnSearch_Click"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="23" Margin="554,33,0,0" TextWrapping="Wrap" Text="Search by Account No" VerticalAlignment="Top" Width="134"/>
+        <Button x:Name="backTransaction"  Content="Back" HorizontalAlignment="Left" Margin="30,389,0,0" VerticalAlignment="Top" Width="75" Click="BackTransaction_Click"/>
+    </Grid>
+</Window>

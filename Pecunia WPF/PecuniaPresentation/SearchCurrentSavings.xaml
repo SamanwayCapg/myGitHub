@@ -1,0 +1,17 @@
+﻿<Window x:Class="PecuniaPresentation.SearchCurrentSavings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PecuniaPresentation"
+        mc:Ignorable="d"
+        Title="SearchCurrentSavings" Height="450" Width="800">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="102" Margin="276,75,0,0" VerticalAlignment="Top" Width="128">
+            <MenuItem Name="txtSearchByAccountID" Header="Searhc By Account ID" Height="49" Width="128" Click="TxtSearchByAccountID_Click"/>
+            <MenuItem Name="txtGetAllResults" Header="Get All Accounts" Height="49" Width="128" Click="TxtGetAllResults_Click"/>
+        </Menu>
+        <DataGrid Name="txtDataGrid" HorizontalAlignment="Left" Height="100" Margin="10,214,0,0" VerticalAlignment="Top" Width="746"/>
+
+    </Grid>
+</Window>

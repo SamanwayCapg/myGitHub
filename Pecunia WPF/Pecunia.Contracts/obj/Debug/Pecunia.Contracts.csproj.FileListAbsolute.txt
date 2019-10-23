@@ -1,0 +1,103 @@
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CopyComplete
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Contracts\bin\Debug\System.ValueTuple.xml
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.dll
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.pdb
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.dll
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Entities.dll
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\System.ValueTuple.dll
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Helpers.dll
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Pecunia.Entities.pdb
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.xml
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\System.ValueTuple.xml
+E:\Pecunia\Pecunia\Pecunia.Contracts\bin\Debug\Helpers.pdb
+E:\Pecunia\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csprojResolveAssemblyReference.cache
+E:\Pecunia\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.dll
+E:\Pecunia\Pecunia\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CopyComplete
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\bin\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Helpers.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Helpers.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csprojAssemblyReference.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CopyComplete
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Helpers.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Pecunia.Entities.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\bin\Debug\Helpers.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csprojAssemblyReference.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CopyComplete
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csprojAssemblyReference.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.csproj.CopyComplete
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Contracts\obj\Debug\Pecunia.Contracts.pdb

@@ -1,0 +1,61 @@
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+E:\Pecunia\Pecunia\Helpers\bin\Debug\Helpers.dll
+E:\Pecunia\Pecunia\Helpers\bin\Debug\Helpers.pdb
+E:\Pecunia\Pecunia\Helpers\bin\Debug\System.ValueTuple.dll
+E:\Pecunia\Pecunia\Helpers\bin\Debug\System.ValueTuple.xml
+E:\Pecunia\Pecunia\Helpers\obj\Debug\Pecunia.Helpers.csprojResolveAssemblyReference.cache
+E:\Pecunia\Pecunia\Helpers\obj\Debug\Helpers.dll
+E:\Pecunia\Pecunia\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Helpers\obj\Debug\Helpers.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\bin\Debug\Helpers.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\bin\Debug\Helpers.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\obj\Debug\Helpers.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Helpers\obj\Debug\Helpers.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\bin\Debug\Helpers.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\bin\Debug\Helpers.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\obj\Debug\Helpers.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Helpers\obj\Debug\Helpers.pdb

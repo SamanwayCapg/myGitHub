@@ -1,0 +1,26 @@
+﻿<Window x:Class="PecuniaPresentation.AddCurrentSavings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PecuniaPresentation"
+        mc:Ignorable="d"
+        Title="AddCurrentSavings" Height="450" Width="800">
+    <Grid>
+        <Label Content="Account Type" HorizontalAlignment="Left" Margin="24,40,0,0" VerticalAlignment="Top" Width="89" Height="34"/>
+        <Label Content="Account Type" HorizontalAlignment="Left" Margin="24,40,0,0" VerticalAlignment="Top" Width="89" Height="34"/>
+        <ComboBox x:Name="txtAccountType"  HorizontalAlignment="Left" Margin="144,40,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="txtAccountType_SelectionChanged">
+            <ComboBoxItem x:Name="txtSavings"  Content="Savings" HorizontalAlignment="Left" Width="118.4"/>
+            <ComboBoxItem x:Name="txtCurrent"  Content="Current" HorizontalAlignment="Left" Width="118.4"/>
+        </ComboBox>
+        <Label Content="Account Branch" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Width="101"/>
+        <ComboBox x:Name="txtAccountBranch" HorizontalAlignment="Left" Margin="144,105,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem x:Name="txtPune"  Content="Pune" HorizontalAlignment="Left" Width="118.4"/>
+            <ComboBoxItem x:Name="txtMumbai"  Content="Mumbai" HorizontalAlignment="Left" Width="118.4"/>
+        </ComboBox>
+        <Label HorizontalAlignment="Left" Margin="29,171,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Customer ID" HorizontalAlignment="Left" Margin="29,171,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox x:Name="txtCustomerID" HorizontalAlignment="Left" Height="23" Margin="144,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name ="txtAddAccount" Content="Add Account" HorizontalAlignment="Left" Margin="144,228,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+    </Grid>
+</Window>

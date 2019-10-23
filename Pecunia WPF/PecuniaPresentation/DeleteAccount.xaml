@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp1.DeleteAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="DeleteAccount" Height="300" Width="300">
+    <Grid>
+        <Label Content="Account ID" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox Name="txtDeleteAccountID" HorizontalAlignment="Left" Height="23" Margin="127,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtDeleteAccountID_TextChanged"/>
+        <Label  Content="Feedback" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox Name="txtFeedback"  HorizontalAlignment="Left" Height="23" Margin="127,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name ="txtDeleteButton" Content="Delete Account" HorizontalAlignment="Left" Margin="135,144,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+
+    </Grid>
+</Window>

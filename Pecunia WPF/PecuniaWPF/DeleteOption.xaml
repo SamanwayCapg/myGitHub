@@ -1,0 +1,15 @@
+﻿<Window x:Class="PecuniaWPF.DeleteOption"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PecuniaWPF"
+        mc:Ignorable="d"
+        Title="DeleteOption" Height="450" Width="800">
+    <Grid>
+        <Menu Name="txtDeleteOption" HorizontalAlignment="Left" Height="100" Margin="96,113,0,0" VerticalAlignment="Top" Width="100">
+            <MenuItem Name="txtDeleteCurrent" Header="Current/Savings" Height="33" Width="100" Click="txtDeleteCurrent_Click"/>
+            <MenuItem Name="txtDeleteFD" Header="Fixed Deposit" Height="33" Width="100" Click="txtDeleteFD_Click"/>
+        </Menu>
+    </Grid>
+</Window>

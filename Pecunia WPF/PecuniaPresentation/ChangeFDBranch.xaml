@@ -1,0 +1,20 @@
+﻿<Window x:Class="PecuniaPresentation.ChangeFDBranch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PecuniaPresentation"
+        mc:Ignorable="d"
+        Title="ChangeFDBranch" Height="300" Width="300">
+    <Grid>
+        <Label Content="Account Branch" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="101"/>
+        <ComboBox x:Name="txtAccountBranch" HorizontalAlignment="Left" Margin="135,59,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem x:Name="txtPune"  Content="Pune" HorizontalAlignment="Left" Width="118.4"/>
+            <ComboBoxItem x:Name="txtMumbai"  Content="Mumbai" HorizontalAlignment="Left" Width="118.4"/>
+        </ComboBox>
+        <Label Content="Account ID" HorizontalAlignment="Left" Margin="15,136,0,0" VerticalAlignment="Top" Width="96"/>
+        <TextBox x:Name="txtAccountID" HorizontalAlignment="Left" Height="23" Margin="135,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
+        <Button x:Name ="txtChangeBranchButton" Content="Change Branch" HorizontalAlignment="Left" Margin="135,197,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+
+    </Grid>
+</Window>

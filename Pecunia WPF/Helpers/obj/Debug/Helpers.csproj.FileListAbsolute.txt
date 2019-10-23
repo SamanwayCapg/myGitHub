@@ -1,0 +1,11 @@
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Helpers\obj\Debug\Helpers.pdb

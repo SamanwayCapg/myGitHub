@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A74A4691-9C19-43AF-B976-1C0175DF594D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PecuniaWPF</RootNamespace>
+    <AssemblyName>PecuniaWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CustomerAdd.xaml.cs">
+      <DependentUpon>CustomerAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChequeTransaction.xaml.cs">
+      <DependentUpon>ChequeTransaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMain.xaml.cs">
+      <DependentUpon>CustomerMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUpdate.xaml.cs">
+      <DependentUpon>CustomerUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchByAccountID.xaml.cs">
+      <DependentUpon>SearchByAccountID.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCurrentSavings.xaml.cs">
+      <DependentUpon>SearchCurrentSavings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchFD.xaml.cs">
+      <DependentUpon>SearchFD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchFDByAccountID.xaml.cs">
+      <DependentUpon>SearchFDByAccountID.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchOption.xaml.cs">
+      <DependentUpon>SearchOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SlipTransaction.xaml.cs">
+      <DependentUpon>SlipTransaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionWindow.xaml.cs">
+      <DependentUpon>TransactionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCurrentSavings.xaml.cs">
+      <DependentUpon>UpdateCurrentSavings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateFixedDeposit.xaml.cs">
+      <DependentUpon>UpdateFixedDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateOption.xaml.cs">
+      <DependentUpon>UpdateOption.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AccountMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddCurrentSavings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddFixedDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddTypeOfAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin-Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplyCarLoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplyEduLoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApplyHomeLoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApproveCarLoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApproveEduLoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApproveHomeLoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeAccountType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeBranch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeFDBranch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeInitialAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChequeTransaction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteFixedDepositxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employee-Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoanMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AccountMenu.xaml.cs">
+      <DependentUpon>AccountMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddCurrentSavings.xaml.cs">
+      <DependentUpon>AddCurrentSavings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddFixedDeposit.xaml.cs">
+      <DependentUpon>AddFixedDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOption.xaml.cs">
+      <DependentUpon>AddOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddTypeOfAccount.xaml.cs">
+      <DependentUpon>AddTypeOfAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Home.xaml.cs">
+      <DependentUpon>Admin-Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApplyCarLoan.xaml.cs">
+      <DependentUpon>ApplyCarLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyEduLoan.xaml.cs">
+      <DependentUpon>ApplyEduLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyHomeLoan.xaml.cs">
+      <DependentUpon>ApplyHomeLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveCarLoan.xaml.cs">
+      <DependentUpon>ApproveCarLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveEduLoan.xaml.cs">
+      <DependentUpon>ApproveEduLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveHomeLoan.xaml.cs">
+      <DependentUpon>ApproveHomeLoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeAccountType.xaml.cs">
+      <DependentUpon>ChangeAccountType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeBranch.xaml.cs">
+      <DependentUpon>ChangeBranch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeFDBranch.xaml.cs">
+      <DependentUpon>ChangeFDBranch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeInitialAmount.xaml.cs">
+      <DependentUpon>ChangeInitialAmount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="DeleteAccount.xaml.cs">
+      <DependentUpon>DeleteAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteFixedDepositxaml.xaml.cs">
+      <DependentUpon>DeleteFixedDepositxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteOption.xaml.cs">
+      <DependentUpon>DeleteOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee-Home.xaml.cs">
+      <DependentUpon>Employee-Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.xaml.cs">
+      <DependentUpon>Employees.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoanMainWindow.xaml.cs">
+      <DependentUpon>LoanMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SearchByAccountID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchCurrentSavings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchFD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchFDByAccountID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SlipTransaction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransactionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateCurrentSavings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateFixedDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Pecunia.Helpers.csproj">
+      <Project>{bd02ec7e-90e2-47bb-abb1-c0ac26fcb7e6}</Project>
+      <Name>Pecunia.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pecunia.BusinessLayer\Pecunia.BusinessLayer.csproj">
+      <Project>{D3CA5E1A-2D48-4D88-906C-DC2DA09EA5F0}</Project>
+      <Name>Pecunia.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pecunia.Contracts\Pecunia.Contracts.csproj">
+      <Project>{4E56CF6F-49A6-408A-9B56-C4612F9260AD}</Project>
+      <Name>Pecunia.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pecunia.Entities\Pecunia.Entities.csproj">
+      <Project>{CCB8BED5-565E-438F-9415-46A1B75AAE20}</Project>
+      <Name>Pecunia.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pecunia.Exceptions\Pecunia.Exceptions.csproj">
+      <Project>{faa9b1fd-bb7d-4f4e-bc83-3a19d65f718d}</Project>
+      <Name>Pecunia.Exceptions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

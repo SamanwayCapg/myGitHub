@@ -1,0 +1,14 @@
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\ADOTest.exe.config
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\ADOTest.exe
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\ADOTest.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\Helpers.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\Pecunia.Entities.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\Helpers.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\Pecunia.Entities.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\obj\Debug\ADOTest.csprojAssemblyReference.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\obj\Debug\ADOTest.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\obj\Debug\ADOTest.csproj.CopyComplete
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\obj\Debug\ADOTest.exe
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\obj\Debug\ADOTest.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\ADOTest\bin\Debug\Pecunia.Exceptions.pdb

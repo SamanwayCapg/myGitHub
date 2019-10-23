@@ -1,0 +1,16 @@
+﻿<Window x:Class="PecuniaWPF.SearchByAccountID"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PecuniaWPF"
+        mc:Ignorable="d"
+        Title="SearchByAccountID" Height="450" Width="800">
+    <Grid>
+        <Label Content="Account ID" HorizontalAlignment="Left" Margin="59,98,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtAccountID" HorizontalAlignment="Left" Height="23" Margin="233,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="txtGetAccount" Content="Get Account" HorizontalAlignment="Left" Margin="212,162,0,0" VerticalAlignment="Top" Width="75" Click="TxtGetAccount_Click"/>
+        <DataGrid Name="txtDataGrid" HorizontalAlignment="Left" Height="100" Margin="10,206,0,0" VerticalAlignment="Top" Width="772"/>
+
+    </Grid>
+</Window>

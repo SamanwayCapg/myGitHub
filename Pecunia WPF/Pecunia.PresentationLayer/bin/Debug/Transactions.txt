@@ -1,0 +1,1 @@
+[{"AccountID":"7e9da26a-9d3b-4a14-8d15-0de8c3458116","CustomerID":"f2d915a1-8664-4386-a4cf-5bf8f9ad2f2f","Type":1,"Amount":500.0,"TransactionID":"f2d915a1-8664-4386-a4cf-5bf8f9ad2f2f","DateOfTransaction":"2019-09-22T22:40:11.3788145+05:30","Mode":"WithdrawalSlip","ChequeNo":null}]

@@ -1,0 +1,177 @@
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojResolveAssemblyReference.cache
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojResolveAssemblyReference.cache
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+E:\Pecunia\Pecunia\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll.config
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll.config
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
