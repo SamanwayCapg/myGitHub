@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Capgemini.Pecunia.Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountNumber" Type="bigint" />
+    <Property Name="HomeBranch" Type="varchar" MaxLength="20" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="Feedback" Type="varchar" MaxLength="1" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DateOfCreation" Type="datetime" />
+    <Property Name="AccountType" Type="varchar" MaxLength="7" />
+    <Property Name="AccountBalance" Type="money" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AdminName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="AdminEmail" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="AdminPassword" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CreationDateTime" Type="datetime" />
+    <Property Name="LastModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CarLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="AmountApplied" Type="money" />
+    <Property Name="InterestRate" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="EMI_amount" Type="money" />
+    <Property Name="RepaymentPeriod" Type="tinyint" />
+    <Property Name="DateOfApplication" Type="datetime" />
+    <Property Name="LoanStatus" Type="varchar" MaxLength="15" />
+    <Property Name="Occupation" Type="varchar" MaxLength="15" />
+    <Property Name="GrossIncome" Type="money" />
+    <Property Name="SalaryDeduction" Type="money" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="CustomerAddress" Type="varchar" MaxLength="200" />
+    <Property Name="CustomerMobile" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="CustomerEmail" Type="varchar" MaxLength="40" />
+    <Property Name="CustomerPan" Type="char" MaxLength="10" />
+    <Property Name="CustomerAadhaarNumber" Type="char" MaxLength="12" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="CustomerGender" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="EduLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="AmountApplied" Type="money" />
+    <Property Name="InterestRate" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="EMI_amount" Type="money" />
+    <Property Name="RepaymentPeriod" Type="tinyint" />
+    <Property Name="DateOfApplication" Type="datetime" />
+    <Property Name="LoanStatus" Type="varchar" MaxLength="15" />
+    <Property Name="Course" Type="varchar" MaxLength="15" />
+    <Property Name="InstituteName" Type="varchar" MaxLength="50" />
+    <Property Name="StudentID" Type="varchar" MaxLength="20" />
+    <Property Name="RepaymentHoliday" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="EmployeeEmail" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="EmployeePassword" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Mobile" Type="char" MaxLength="10" />
+    <Property Name="CreationDateTime" Type="datetime" />
+    <Property Name="LastModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="FixedDeposit">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FdDeposit" Type="bigint" />
+    <Property Name="InterestRate" Type="float" />
+    <Property Name="Tenure" Type="int" />
+    <Property Name="AccountNumber" Type="bigint" />
+    <Property Name="HomeBranch" Type="uniqueidentifier" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="Feedback" Type="varchar" MaxLength="1" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DateOfCreation" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HomeLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="AmountApplied" Type="money" />
+    <Property Name="InterestRate" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="EMI_amount" Type="money" />
+    <Property Name="RepaymentPeriod" Type="tinyint" />
+    <Property Name="DateOfApplication" Type="datetime" />
+    <Property Name="LoanStatus" Type="varchar" MaxLength="15" />
+    <Property Name="Occupation" Type="varchar" MaxLength="15" />
+    <Property Name="ServiceYears" Type="tinyint" />
+    <Property Name="GrossIncome" Type="money" />
+    <Property Name="SalaryDeduction" Type="money" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountNumber" Type="bigint" Nullable="false" />
+    <Property Name="AccountID" Type="uniqueidentifier" />
+    <Property Name="TypeOfTransaction" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="DateOfTransaction" Type="datetime" />
+    <Property Name="ModeOfTransaction" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="ChequeNumber" Type="char" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Account__Custome__74AE54BC">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Admins__Employee__693CA210">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Admins">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CarLoan__Custome__6EF57B66">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CarLoan" Type="Self.CarLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CarLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EduLoan__Custome__6C190EBB">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="EduLoan" Type="Self.EduLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="EduLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FixedDepo__Custo__778AC167">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="FixedDeposit" Type="Self.FixedDeposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="FixedDeposit">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HomeLoan__Custom__71D1E811">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="HomeLoan" Type="Self.HomeLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="HomeLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__Accou__7A672E12">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="applyCarLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AmountApplied" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="EMI_amount" Type="money" Mode="In" />
+    <Parameter Name="RepaymentPeriod" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfApplication" Type="datetime" Mode="In" />
+    <Parameter Name="LoanStatus" Type="varchar" Mode="In" />
+    <Parameter Name="Occupation" Type="varchar" Mode="In" />
+    <Parameter Name="GrossIncome" Type="money" Mode="In" />
+    <Parameter Name="SalaryDeduction" Type="money" Mode="In" />
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="applyEduLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AmountApplied" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="EMI_amount" Type="money" Mode="In" />
+    <Parameter Name="RepaymentPeriod" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfApplication" Type="datetime" Mode="In" />
+    <Parameter Name="LoanStatus" Type="varchar" Mode="In" />
+    <Parameter Name="Course" Type="varchar" Mode="In" />
+    <Parameter Name="InstituteName" Type="varchar" Mode="In" />
+    <Parameter Name="StudentID" Type="varchar" Mode="In" />
+    <Parameter Name="RepaymentHoliday" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="applyHomeLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AmountApplied" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="EMI_amount" Type="money" Mode="In" />
+    <Parameter Name="RepaymentPeriod" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfApplication" Type="datetime" Mode="In" />
+    <Parameter Name="LoanStatus" Type="varchar" Mode="In" />
+    <Parameter Name="Occupation" Type="varchar" Mode="In" />
+    <Parameter Name="ServiceYears" Type="tinyint" Mode="In" />
+    <Parameter Name="GrossIncome" Type="money" Mode="In" />
+    <Parameter Name="SalaryDeduction" Type="money" Mode="In" />
+  </Function>
+  <Function Name="approveCarLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="updatedStatus" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="approveEduLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="updatedStatus" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="approveHomeLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="updatedStatus" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cancelCarLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="cancelEduLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="cancelHomeLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getCarLoanByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="customerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getCarLoanByLoanID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getCarLoanStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getEduLoanByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="customerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getEduLoanByLoanID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getEduLoanStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getHomeLoanByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="customerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getHomeLoanByLoanID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getHomeLoanStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <EntityContainer Name="CapgeminiPecuniaEntitiesStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="CarLoan" EntityType="Self.CarLoan" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="EduLoan" EntityType="Self.EduLoan" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="FixedDeposit" EntityType="Self.FixedDeposit" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="HomeLoan" EntityType="Self.HomeLoan" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="TeamF" store:Type="Tables" />
+    <AssociationSet Name="FK__Account__Custome__74AE54BC" Association="Self.FK__Account__Custome__74AE54BC">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Admins__Employee__693CA210" Association="Self.FK__Admins__Employee__693CA210">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Admins" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CarLoan__Custome__6EF57B66" Association="Self.FK__CarLoan__Custome__6EF57B66">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CarLoan" EntitySet="CarLoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EduLoan__Custome__6C190EBB" Association="Self.FK__EduLoan__Custome__6C190EBB">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="EduLoan" EntitySet="EduLoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FixedDepo__Custo__778AC167" Association="Self.FK__FixedDepo__Custo__778AC167">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="FixedDeposit" EntitySet="FixedDeposit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HomeLoan__Custom__71D1E811" Association="Self.FK__HomeLoan__Custom__71D1E811">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="HomeLoan" EntitySet="HomeLoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__Accou__7A672E12" Association="Self.FK__Transacti__Accou__7A672E12">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

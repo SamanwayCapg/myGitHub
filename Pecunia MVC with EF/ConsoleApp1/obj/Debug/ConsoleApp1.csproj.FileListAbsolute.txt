@@ -1,0 +1,2 @@
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache

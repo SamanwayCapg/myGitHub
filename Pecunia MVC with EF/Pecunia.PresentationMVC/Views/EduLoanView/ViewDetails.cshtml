@@ -1,0 +1,77 @@
+﻿@model Pecunia.PresentationMVC.Models.EduLoanViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edu Loan</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        @using (Html.BeginForm())
+        {
+            <div class="row pb-3 pl-md-2 bg-info" style="height:80px"><h2>Educational Loan</h2></div>
+
+            <div class="row" style="background-color:#ddd8b9">
+                <div class="form-group col-md-6 mx-auto" style="background-color:#ddd8b9">
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.LoanID, new { @class = "col-form-label col-lg-3", text = "Loan ID" })
+                        @Html.TextBoxFor(temp => temp.LoanID, new { @class = "form-control col-lg-9", disabled = "true" })
+
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.AmountApplied, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.AmountApplied, new { @class = "form-control ", type = "number", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.RepaymentPeriod, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ", type = "number", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(t => t.Course, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.Course, new { @class = "form-control ", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.InstituteName, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.InstituteName, new { @class = "form-control ", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.StudentID, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.StudentID, new { @class = "form-control ", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.EMI_Amount, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.EMI_Amount, new { @class = "form-control ", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.InterestRate, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.InterestRate, new { @class = "form-control ", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.DateOfApplication, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.DateOfApplication, new { @class = "form-control ", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.LoanStatus, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.LoanStatus, new { @class = "form-control ", disabled = "true" })
+                    </div>
+
+                    <div class="  pt-3">
+                        <button class="btn btn-success text-right">Okay</button>
+                    </div>
+
+
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

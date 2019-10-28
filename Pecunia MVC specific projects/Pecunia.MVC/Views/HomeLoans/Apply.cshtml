@@ -1,0 +1,57 @@
+﻿@model Pecunia.MVC.Models.HomeLoanViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Apply Home Loan</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        @using (Html.BeginForm())
+        {
+            <div class="pt-3 pl-md-2 bg-info" style="height:80px"><h2>Apply Home Loan</h2></div>
+            <div class="form-group col-lg-6 mx-auto" style="background-color:#ddd8b9; height:auto">
+                <div class="form-row pt-2">
+                    @Html.LabelFor(temp => temp.LoanID, new { @class = "col-from-label col-md-3" })
+                    @Html.TextBoxFor(temp => temp.LoanID, new { @class = "form-control col-md-9", disabled = "true" })
+                </div>
+                <div class="form-row pt-2">
+
+                </div>
+                <div class="form-row pt-2">
+
+                </div>
+                <div class="form-row pt-2">
+
+
+                </div>
+                <div class="form-row pt-2">
+
+                </div>
+                <div class="form-row pt-2">
+
+                </div>
+                <div class="form-row pt-2">
+
+
+                </div>
+                <div class="form-row pt-2">
+
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CapgeminiPecuniaEntitiesStoreContainer" CdmEntityContainer="PecuniaEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarLoans">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.CarLoan">
+        <MappingFragment StoreEntitySet="CarLoan">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerMobile" ColumnName="CustomerMobile" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerPan" ColumnName="CustomerPan" />
+          <ScalarProperty Name="CustomerAadhaarNumber" ColumnName="CustomerAadhaarNumber" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="CustomerGender" ColumnName="CustomerGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EduLoans">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.EduLoan">
+        <MappingFragment StoreEntitySet="EduLoan">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RepaymentHoliday" ColumnName="RepaymentHoliday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="EmployeePassword" ColumnName="EmployeePassword" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedDeposits">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.FixedDeposit">
+        <MappingFragment StoreEntitySet="FixedDeposit">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="FdDeposit" ColumnName="FdDeposit" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="Tenure" ColumnName="Tenure" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeLoans">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.HomeLoan">
+        <MappingFragment StoreEntitySet="HomeLoan">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="ServiceYears" ColumnName="ServiceYears" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="Capgemini.Pecunia.Entities.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateOfTransaction" ColumnName="DateOfTransaction" />
+          <ScalarProperty Name="ModeOfTransaction" ColumnName="ModeOfTransaction" />
+          <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="applyCarLoan" FunctionName="Capgemini.Pecunia.Entities.Store.applyCarLoan" />
+    <FunctionImportMapping FunctionImportName="applyEduLoan" FunctionName="Capgemini.Pecunia.Entities.Store.applyEduLoan" />
+    <FunctionImportMapping FunctionImportName="applyHomeLoan" FunctionName="Capgemini.Pecunia.Entities.Store.applyHomeLoan" />
+    <FunctionImportMapping FunctionImportName="approveCarLoan" FunctionName="Capgemini.Pecunia.Entities.Store.approveCarLoan" />
+    <FunctionImportMapping FunctionImportName="approveEduLoan" FunctionName="Capgemini.Pecunia.Entities.Store.approveEduLoan" />
+    <FunctionImportMapping FunctionImportName="approveHomeLoan" FunctionName="Capgemini.Pecunia.Entities.Store.approveHomeLoan" />
+    <FunctionImportMapping FunctionImportName="cancelCarLoan" FunctionName="Capgemini.Pecunia.Entities.Store.cancelCarLoan" />
+    <FunctionImportMapping FunctionImportName="cancelEduLoan" FunctionName="Capgemini.Pecunia.Entities.Store.cancelEduLoan" />
+    <FunctionImportMapping FunctionImportName="cancelHomeLoan" FunctionName="Capgemini.Pecunia.Entities.Store.cancelHomeLoan" />
+    <FunctionImportMapping FunctionImportName="getCarLoanByCustomerID" FunctionName="Capgemini.Pecunia.Entities.Store.getCarLoanByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Capgemini.Pecunia.Entities.getCarLoanByCustomerID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getCarLoanByLoanID" FunctionName="Capgemini.Pecunia.Entities.Store.getCarLoanByLoanID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Capgemini.Pecunia.Entities.getCarLoanByLoanID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getCarLoanStatus" FunctionName="Capgemini.Pecunia.Entities.Store.getCarLoanStatus" />
+    <FunctionImportMapping FunctionImportName="getEduLoanByCustomerID" FunctionName="Capgemini.Pecunia.Entities.Store.getEduLoanByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Capgemini.Pecunia.Entities.getEduLoanByCustomerID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RepaymentHoliday" ColumnName="RepaymentHoliday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getEduLoanByLoanID" FunctionName="Capgemini.Pecunia.Entities.Store.getEduLoanByLoanID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Capgemini.Pecunia.Entities.getEduLoanByLoanID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RepaymentHoliday" ColumnName="RepaymentHoliday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getEduLoanStatus" FunctionName="Capgemini.Pecunia.Entities.Store.getEduLoanStatus" />
+    <FunctionImportMapping FunctionImportName="getHomeLoanByCustomerID" FunctionName="Capgemini.Pecunia.Entities.Store.getHomeLoanByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Capgemini.Pecunia.Entities.getHomeLoanByCustomerID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="ServiceYears" ColumnName="ServiceYears" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getHomeLoanByLoanID" FunctionName="Capgemini.Pecunia.Entities.Store.getHomeLoanByLoanID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Capgemini.Pecunia.Entities.getHomeLoanByLoanID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="ServiceYears" ColumnName="ServiceYears" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getHomeLoanStatus" FunctionName="Capgemini.Pecunia.Entities.Store.getHomeLoanStatus" />
+  </EntityContainerMapping>
+</Mapping>

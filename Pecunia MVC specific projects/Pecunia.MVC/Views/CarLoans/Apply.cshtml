@@ -1,0 +1,129 @@
+﻿
+@model Pecunia.MVC.Models.CarLoanViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Apply Car Loan</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container-fluid">
+
+        @using (Html.BeginForm())
+        {
+            <div class="pb-3 pl-md-2 bg-info" style="height:80px"><h2>Apply Car Loan</h2></div>
+
+            <div class="row" style="background-color:#ddd8b9">
+                <div class="form-group col-md-6 mx-auto" style="background-color:#ddd8b9">
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.LoanID, new { @class = "col-form-label col-lg-3", text = "Loan ID" })
+                        @Html.TextBoxFor(temp => temp.LoanID, new { @class = "form-control col-lg-9", disabled = "true" })
+
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.CustomerID, new { @class = "col-form-label col-lg-3" })
+                        <div class="col-lg-9">
+                            @Html.TextBoxFor(temp => temp.CustomerID, new { @class = "form-control ", placeholder = "customer id" })
+                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.AmountApplied, new { @class = "col-form-label col-lg-3" })
+                        <div class="col-lg-9">
+                            @Html.TextBoxFor(temp => temp.AmountApplied, new { @class = "form-control ", placeholder = "Rs." })
+                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.RepaymentPeriod, new { @class = "col-form-label col-lg-3" })
+                        <div class="col-lg-9">
+                            @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ", placeholder = "Months" })
+                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.Occupation, new { @class = "col-form-label col-lg-3" })
+
+                        <div class="col-lg-9">
+                            <div>
+                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "AGRICULTURE" })
+                                <label for="Agriculture">Agriculture</label>
+                            </div>
+                            <div>
+                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "SERVICE" })
+                                <label for="service">Service</label>
+                            </div>
+                            <div>
+                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "SELF_EMPLOYED" })
+                                <label for="Self_Employed">Self Employed</label>
+                            </div>
+                            <div>
+                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "RETIRED" })
+                                <label for="Others">Retired</label>
+                            </div>
+                            <div>
+                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "OTHERS" })
+                                <label for="Others">Others</label>
+                            </div>
+                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.GrossIncome, new { @class = "col-form-label col-lg-3" })
+                        <div class="col-lg-9">
+                            @Html.TextBoxFor(temp => temp.GrossIncome, new { @class = "form-control", placeholder = "Rs." })
+                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.SalaryDeductions, new { @class = "col-form-label col-lg-3" })
+                        <div class="col-lg-9">
+                            @Html.TextBoxFor(temp => temp.SalaryDeductions, new { @class = "form-control", placeholder = "Rs." })
+                            <span class="text-danger">@Html.ValidationMessageFor(temp => temp.CustomerID)</span>
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.Vehicle, new { @class = "col-form-label col-lg-3 " })
+                        @Html.DropDownListFor(temp => temp.Vehicle,
+                            new List<SelectListItem>()
+                            {
+                                new SelectListItem() { Text="Two Wheeler", Value="TWO_WHEELER"},
+                                new SelectListItem() { Text="Three Wheeler", Value="THREE_WHEELER"},
+                                new SelectListItem() { Text="Multi Axle", Value="MULTI_AXLE"},
+                                new SelectListItem() { Text="Others", Value="OTHERS"},
+                            }
+                       )
+                    </div>
+
+                    <div class="form-row pt-2">
+                        @Html.TextBoxFor(temp => temp.DOB, new { @class = "form-control col-lg-9", type = "date" })
+                    </div>
+
+                    <div class="form-row pt-2">
+                        @Html.CheckBoxFor(temp => temp.IsAccepted, new { @class = "form-check" })
+                        <label for="IsAccepted"> I accepts the terms and conditions</label>
+                    </div>
+
+                    <div class="  pt-3">
+                        <button class="btn btn-success text-right" data-toggle="tooltip" data-html="true" title="one click away from applying">Submit</button>
+                        <button class="btn btn-danger text-left">Cancel</button>
+                    </div>
+
+
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

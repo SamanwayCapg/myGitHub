@@ -1,0 +1,98 @@
+Source Method:EduLoanDAL.ApproveLoanDAL,Time:26-Oct-19 05:12:05 PM,Message:An error occurred while executing the command definition. See the inner exception for details.,
+ StackTrace:   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__1()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at Capgemini.Pecunia.Entities.PecuniaEntities.approveHomeLoan(Nullable`1 loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Entities\TeamF_dataModel.Context.cs:line 235
+   at Capgemini.Pecunia.DataAccessLayer.LoanDAL.EduLoanDAL.ApproveLoanDAL(String loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.DataAccessLayer\LoanDAL\EduLoanDAL.cs:line 65
+
+Source Method:EduLoanDAL.ApproveLoanDAL,Time:26-Oct-19 05:12:48 PM,Message:An error occurred while executing the command definition. See the inner exception for details.,
+ StackTrace:   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__1()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at Capgemini.Pecunia.Entities.PecuniaEntities.approveHomeLoan(Nullable`1 loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Entities\TeamF_dataModel.Context.cs:line 235
+   at Capgemini.Pecunia.DataAccessLayer.LoanDAL.EduLoanDAL.ApproveLoanDAL(String loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.DataAccessLayer\LoanDAL\EduLoanDAL.cs:line 65
+
+Source Method:EduLoanDAL.ApproveLoanDAL,Time:26-Oct-19 05:34:25 PM,Message:An error occurred while executing the command definition. See the inner exception for details.,
+ StackTrace:   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__1()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at Capgemini.Pecunia.Entities.PecuniaEntities.approveHomeLoan(Nullable`1 loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Entities\TeamF_dataModel.Context.cs:line 235
+   at Capgemini.Pecunia.DataAccessLayer.LoanDAL.EduLoanDAL.ApproveLoanDAL(String loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.DataAccessLayer\LoanDAL\EduLoanDAL.cs:line 65
+
+Source Method:EduLoanDAL.ApproveLoanDAL,Time:26-Oct-19 05:39:38 PM,Message:An error occurred while executing the command definition. See the inner exception for details.,
+ StackTrace:   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__1()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at Capgemini.Pecunia.Entities.PecuniaEntities.approveHomeLoan(Nullable`1 loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Entities\TeamF_dataModel.Context.cs:line 235
+   at Capgemini.Pecunia.DataAccessLayer.LoanDAL.EduLoanDAL.ApproveLoanDAL(String loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.DataAccessLayer\LoanDAL\EduLoanDAL.cs:line 65
+
+Source Method:EduLoanDAL.ApproveLoanDAL,Time:27-Oct-19 07:14:31 AM,Message:An error occurred while executing the command definition. See the inner exception for details.,
+ StackTrace:   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__1()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at Capgemini.Pecunia.Entities.PecuniaEntities.approveHomeLoan(Nullable`1 loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Entities\TeamF_dataModel.Context.cs:line 235
+   at Capgemini.Pecunia.DataAccessLayer.LoanDAL.EduLoanDAL.ApproveLoanDAL(String loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.DataAccessLayer\LoanDAL\EduLoanDAL.cs:line 65
+
+Source Method:EduLoanDAL.ApproveLoanDAL,Time:27-Oct-19 11:46:01 AM,Message:An error occurred while executing the command definition. See the inner exception for details.,
+ StackTrace:   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__1()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at Capgemini.Pecunia.Entities.PecuniaEntities.approveHomeLoan(Nullable`1 loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Entities\TeamF_dataModel.Context.cs:line 235
+   at Capgemini.Pecunia.DataAccessLayer.LoanDAL.EduLoanDAL.ApproveLoanDAL(String loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.DataAccessLayer\LoanDAL\EduLoanDAL.cs:line 65
+
+Source Method:EduLoanDAL.ApproveLoanDAL,Time:27-Oct-19 11:54:15 AM,Message:An error occurred while executing the command definition. See the inner exception for details.,
+ StackTrace:   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__1()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass162_0.<ExecuteFunction>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at Capgemini.Pecunia.Entities.PecuniaEntities.approveHomeLoan(Nullable`1 loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Entities\TeamF_dataModel.Context.cs:line 235
+   at Capgemini.Pecunia.DataAccessLayer.LoanDAL.EduLoanDAL.ApproveLoanDAL(String loanID, String updatedStatus) in E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.DataAccessLayer\LoanDAL\EduLoanDAL.cs:line 65
+

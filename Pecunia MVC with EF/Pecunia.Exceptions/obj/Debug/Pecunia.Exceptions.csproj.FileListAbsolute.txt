@@ -1,0 +1,104 @@
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub\Pecunia_codes\Pecunia_codes\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojResolveAssemblyReference.cache
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+E:\Pecunia_Team_F\Pecunia_Team_F\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojResolveAssemblyReference.cache
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\HP USER\Documents\GitHub\myGitHub\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub-master\myGitHub-master\Pecunia Non Generic\Pecunia\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+E:\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+E:\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+E:\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+E:\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+E:\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+E:\Pecunia\Pecunia\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+E:\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojResolveAssemblyReference.cache
+E:\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+E:\Pecunia\Pecunia\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\myGitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub\Pecunia Loan Unit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\aisarna\Downloads\Pecunia MSUnit Testing\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\aisarna\Desktop\Pecunia MSUnit Testing\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\source\Pecunia WPF integration\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
