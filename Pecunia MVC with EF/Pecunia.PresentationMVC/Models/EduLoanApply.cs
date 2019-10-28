@@ -33,5 +33,7 @@ namespace Pecunia.PresentationMVC.Models
 
         [Required(ErrorMessage = "Please accepts the terms and conditions")]
         public bool IsAccepted { get; set; }
+
+        public string button { get; set; }
     }
 }

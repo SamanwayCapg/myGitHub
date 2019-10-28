@@ -59,10 +59,16 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                 {
                     Guid guid;
                     Guid.TryParse(loanID, out guid);
-                    rowsAffected = pecEnt.approveHomeLoan(guid, updatedStatus);
-                    if (rowsAffected != 1)
+
+                    var loanEntry = pecEnt.CarLoans.SingleOrDefault(t => t.LoanID == guid);
+                    if(loanEntry != null)
                     {
-                        BusinessLogicUtil.logException("rowsAffected != 1", "no stackTrace", "CarLoanDAL.ApproveLoanDAL");
+                        loanEntry.LoanStatus = updatedStatus;
+                        pecEnt.SaveChanges();
+                    }
+                    else
+                    {
+                        BusinessLogicUtil.logException("entry not found in database", "no stacktrace", "carloanDaL.approveLoanDAL");
                         return default(List<CarLoan>);
                     }
                     carLoan = pecEnt.CarLoans.Where(t => t.LoanID == guid).ToList();
@@ -155,7 +161,25 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
             }
         }
 
-        
+        public bool DeleteLoanEntryDAL(string loanID)
+        {
+            Guid loanIDguid;
+            Guid.TryParse(loanID, out loanIDguid);
+            using (PecuniaEntities pecEnt = new PecuniaEntities())
+            {
+                var loanToDelete = pecEnt.CarLoans.SingleOrDefault(t => t.LoanID == loanIDguid);
+                if (loanToDelete != null)
+                {
+                    pecEnt.CarLoans.Remove(loanToDelete);
+                    pecEnt.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
+            }
+        }
+
+
         /// <summary>
         /// Clears unmanaged resources such as db connections or file streams.
         /// </summary>

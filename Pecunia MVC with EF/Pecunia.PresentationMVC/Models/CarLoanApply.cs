@@ -16,21 +16,20 @@ namespace Pecunia.PresentationMVC.Models
         public Guid? CustomerID { get; set; } //user input 
 
         [Required(ErrorMessage = "This field can't be blank")]
-        [RegularExpression("^[0-9]{10}$", ErrorMessage = " Invalid Amount")]
-        public double? AmountApplied { get; set; } // user input
+        public decimal? AmountApplied { get; set; } // user input
 
         [Required(ErrorMessage = "This field can't be blank")]
 
-        public int? RepaymentPeriod { get; set; } //user input
+        public byte? RepaymentPeriod { get; set; } //user input
 
         [Required(ErrorMessage = "This field can't be blank")]
         public string Occupation { get; set; } //user input
 
         [Required(ErrorMessage = "This field can't be blank")]
-        public double? GrossIncome { get; set; } //user input 
+        public decimal? GrossIncome { get; set; } //user input 
 
         [Required(ErrorMessage = "This field can't be blank")]
-        public double? SalaryDeductions { get; set; } //user input
+        public decimal? SalaryDeductions { get; set; } //user input
 
         [Required(ErrorMessage = "This field can't be blank")]
         public string Vehicle { get; set; } //user input 

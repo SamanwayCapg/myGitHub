@@ -25,7 +25,7 @@
 <body>
     <div class="container-fluid">
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Apply", "CarLoanApply", FormMethod.Post))
         {
             <div class="pb-3 pl-md-2 bg-info" style="height:80px"><h2>Apply Car Loan</h2></div>
 
@@ -39,63 +39,48 @@
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.CustomerID, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.CustomerID, new { @class = "form-control ", placeholder = "customer id" })
-                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                            @Html.DropDownListFor(t => t.CustomerID, ViewBag.customers as SelectList)
                         </div>
                     </div>
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.AmountApplied, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.AmountApplied, new { @class = "form-control ", placeholder = "Rs." })
-                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                            @Html.TextBoxFor(temp => temp.AmountApplied, new { @class = "form-control ", placeholder = "Rs.", type="number" })
+                            @Html.ValidationMessageFor(temp => temp.AmountApplied)
                         </div>
                     </div>
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.RepaymentPeriod, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ", placeholder = "Months" })
-                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                            @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ", placeholder = "Months", type = "number" })
+                            @Html.ValidationMessageFor(temp => temp.RepaymentPeriod)
                         </div>
                     </div>
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.Occupation, new { @class = "col-form-label col-lg-3" })
-
-                        <div class="col-lg-9">
-                            <div>
-                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "AGRICULTURE" })
-                                <label for="Agriculture">Agriculture</label>
-                            </div>
-                            <div>
-                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "SERVICE" })
-                                <label for="service">Service</label>
-                            </div>
-                            <div>
-                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "SELF_EMPLOYED" })
-                                <label for="Self_Employed">Self Employed</label>
-                            </div>
-                            <div>
-                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "RETIRED" })
-                                <label for="Others">Retired</label>
-                            </div>
-                            <div>
-                                @Html.RadioButtonFor(temp => temp.Occupation, new { @class = "form-check-input", type = "radio", value = "OTHERS" })
-                                <label for="Others">Others</label>
-                            </div>
-                            @Html.ValidationMessageFor(temp => temp.CustomerID)
-                        </div>
+                        @Html.DropDownListFor(temp => temp.Occupation,
+                            new List<SelectListItem>()
+                            {
+                                new SelectListItem() { Text="Agriculture", Value="AGRICULTURE"},
+                                new SelectListItem() { Text="Service", Value="SERVICE"},
+                                new SelectListItem() { Text="Self Employed", Value="SELF_EMPLOYED"},
+                                new SelectListItem() { Text="Retired", Value="RETIRED"},
+                                new SelectListItem() { Text="Others", Value="OTHERS"},
+                            }
+                       )
                     </div>
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.GrossIncome, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.GrossIncome, new { @class = "form-control", placeholder = "Rs." })
-                            @Html.ValidationMessageFor(temp => temp.CustomerID)
+                            @Html.TextBoxFor(temp => temp.GrossIncome, new { @class = "form-control", placeholder = "Rs.", type="number" })
+                            @Html.ValidationMessageFor(temp => temp.GrossIncome)
                         </div>
                     </div>
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.SalaryDeductions, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.SalaryDeductions, new { @class = "form-control", placeholder = "Rs." })
-                            <span class="text-danger">@Html.ValidationMessageFor(temp => temp.CustomerID)</span>
+                            @Html.TextBoxFor(temp => temp.SalaryDeductions, new { @class = "form-control", placeholder = "Rs.", type = "number" })
+                            <span class="text-danger">@Html.ValidationMessageFor(temp => temp.SalaryDeductions)</span>
                         </div>
                     </div>
                     <div class="form-row pt-2">
@@ -118,7 +103,6 @@
 
                     <div class="  pt-3">
                         <button class="btn btn-success text-right" data-toggle="tooltip" data-html="true" title="one click away from applying">Submit</button>
-                        <button class="btn btn-danger text-left">Cancel</button>
                     </div>
 
 

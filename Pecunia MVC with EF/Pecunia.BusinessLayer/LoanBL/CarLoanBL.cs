@@ -168,6 +168,26 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             return carLoans;
         }
 
+        public async Task<bool> DeleteLoanEntryBL(string loanID)
+        {
+            CarLoanDAL carLoanDAL = new CarLoanDAL();
+            bool isDeleted = false;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    isDeleted = carLoanDAL.DeleteLoanEntryDAL(loanID);
+                });
+                return isDeleted;
+            }
+            catch (Exception e)
+            {
+                BusinessLogicUtil.logException(e.Message, e.StackTrace, "carLoanBL.deleteLoanEntry");
+                return isDeleted;
+            }
+        }
+
+
         public void Dispose()
         {
             throw new NotImplementedException();

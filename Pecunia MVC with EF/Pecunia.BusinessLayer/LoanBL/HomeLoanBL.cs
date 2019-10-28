@@ -220,6 +220,25 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             return HomeLoansList;
         }
 
+        public async Task<bool> DeleteLoanEntryBL(string loanID)
+        {
+            HomeLoanDAL homeLoanDAL = new HomeLoanDAL();
+            bool isDeleted = false;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    isDeleted = homeLoanDAL.DeleteLoanEntryDAL(loanID);
+                });
+                return isDeleted;
+            }
+            catch (Exception e)
+            {
+                BusinessLogicUtil.logException(e.Message, e.StackTrace, "homeLoanBL.deleteLoanEntry");
+                return isDeleted;
+            }
+        }
+
         /// <summary>
         /// Checks if a particular loan ID exists.
         /// </summary>    

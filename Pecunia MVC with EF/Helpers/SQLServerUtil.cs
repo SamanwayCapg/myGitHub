@@ -27,6 +27,5 @@ namespace Capgemini.Pecunia.Helpers
             return conn;
         }
 
-
     }
 }

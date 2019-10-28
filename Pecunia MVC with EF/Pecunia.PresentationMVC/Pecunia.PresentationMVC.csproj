@@ -169,16 +169,22 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CarLoanApplyController.cs" />
+    <Compile Include="Controllers\CarLoanViewController.cs" />
     <Compile Include="Controllers\EduLoanApplyController.cs" />
     <Compile Include="Controllers\EduLoanViewController.cs" />
     <Compile Include="Controllers\HomeLoanApplyController.cs" />
+    <Compile Include="Controllers\HomeLoanViewController.cs" />
+    <Compile Include="Controllers\ShowMessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CarLoanApply.cs" />
+    <Compile Include="Models\CarLoanView.cs" />
     <Compile Include="Models\EduLoanApply.cs" />
     <Compile Include="Models\EduLoanView.cs" />
     <Compile Include="Models\HomeLoanApply.cs" />
+    <Compile Include="Models\HomeLoanView.cs" />
+    <Compile Include="Models\ShowMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +192,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\CarLoanView\ViewDetails.cshtml" />
+    <Content Include="Views\HomeLoanView\ViewDetails.cshtml" />
+    <Content Include="Views\ShowMessage\DisplayMessage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

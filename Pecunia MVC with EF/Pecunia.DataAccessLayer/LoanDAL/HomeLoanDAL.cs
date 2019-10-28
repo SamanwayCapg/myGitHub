@@ -75,10 +75,16 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                 {
                     Guid guid;
                     Guid.TryParse(loanID, out guid);
-                    rowsAffected = pecEnt.approveHomeLoan(guid, updatedStatus);
-                    if (rowsAffected != 1)
+
+                    var loanEntry = pecEnt.HomeLoans.SingleOrDefault(t => t.LoanID == guid);
+                    if (loanEntry != null)
                     {
-                        BusinessLogicUtil.logException("rowsAffected != 1", "no stackTrace", "HomeLoanDAL.ApproveLoanDAL");
+                        loanEntry.LoanStatus = updatedStatus;
+                        pecEnt.SaveChanges();
+                    }
+                    else
+                    {
+                        BusinessLogicUtil.logException("entry not found in database", "no stacktrace", "homeloanDaL.approveLoanDAL");
                         return default(List<HomeLoan>);
                     }
                     homeLoan = pecEnt.HomeLoans.Where(t => t.LoanID == guid).ToList();
@@ -189,6 +195,24 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
             {
                 BusinessLogicUtil.logException(e.Message, e.StackTrace, "HomeLoanDAL.ListAllLoans");
                 return default(List<HomeLoan>);
+            }
+        }
+
+        public bool DeleteLoanEntryDAL(string loanID)
+        {
+            Guid loanIDguid;
+            Guid.TryParse(loanID, out loanIDguid);
+            using (PecuniaEntities pecEnt = new PecuniaEntities())
+            {
+                var loanToDelete = pecEnt.HomeLoans.SingleOrDefault(t => t.LoanID == loanIDguid);
+                if (loanToDelete != null)
+                {
+                    pecEnt.HomeLoans.Remove(loanToDelete);
+                    pecEnt.SaveChanges();
+                    return true;
+                }
+                else
+                    return false;
             }
         }
 

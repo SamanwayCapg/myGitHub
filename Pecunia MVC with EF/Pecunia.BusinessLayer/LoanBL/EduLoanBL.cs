@@ -208,10 +208,25 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             }
         }
 
-        /// <summary>
-        /// Checks if a particular loan ID exists.
-        /// </summary>    
-        /// <returns>Returns bool value to know if loan ID exists or not.</returns>
+        
+        public async Task<bool> DeleteLoanEntryBL(string loanID)
+        {
+            EduLoanDAL eduLoanDAL = new EduLoanDAL();
+            bool isDeleted = false;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    isDeleted = eduLoanDAL.DeleteLoanEntryDAL(loanID);
+                });
+                return isDeleted;
+            }
+            catch(Exception e)
+            {
+                BusinessLogicUtil.logException(e.Message, e.StackTrace, "eduLoanBL.deleteLoanEntry");
+                return isDeleted;
+            }
+        }
         
         /// <summary>
         /// Disposes DAL object(s).

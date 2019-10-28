@@ -38,12 +38,13 @@ namespace ConsoleApp3
             HomeLoanBL homeLoanBL = new HomeLoanBL();
 
             int rowsAffected = 0;
+            bool success = false;
             String status;
             Guid guid;
-            Guid.TryParse("81A22477-2D0B-4DF7-AF26-94C36A4DD42D", out guid);
+            Guid.TryParse("00000000-0000-0000-0000-000000000000", out guid);
 
-            EduLoanDAL eduLoanDAL = new EduLoanDAL();
-            eduLoanDAL.ApproveLoanDAL("29257E8B-1F70-4A8F-92B3-22EF7A599BC9", "INVALID");
+            success = await carLoanBL.DeleteLoanEntryBL("8D3BD188-DC69-4CFE-A0B1-F65550122B30");
+            Console.WriteLine(success);
 
             //success
             //bool isAdded = false;
@@ -103,30 +104,32 @@ namespace ConsoleApp3
 
 
             //failed
-            //eduLoans = await eduLoanBL.ApproveLoanBL("48C6B13C-562E-40E0-9DA2-C1C5DDF6B8B6", "adfasdf");
-            //Console.WriteLine("eduloan:"+ eduLoans.ElementAt(0).LoanStatus);
+            //eduLoans = await eduLoanBL.ApproveLoanBL("FB938F03-6128-458D-8E7D-08DD61283138", "INVALId");
+            //Console.WriteLine("eduloan:" + eduLoans.ElementAt(0).LoanStatus);
 
-            //carLoans = await carLoanBL.ApproveLoanBL("AFEB76EE-9045-4095-9C31-6FE07FF5E308", "PROCESSING");
+            //carLoans = await carLoanBL.ApproveLoanBL("110AEF73-6D71-426C-B4D3-D5AAE1CE58F1", "INVALID");
             //Console.WriteLine("carloan:" + carLoans.ElementAt(0).LoanStatus);
 
-            //homeLoans = await homeLoanBL.ApproveLoanBL("13EB5DE9-5995-4446-97A9-8F7ACB0CC255", "PROCESSING");
-            //Console.WriteLine("homeloan:" + homeLoans.ElementAt(0).LoanStatus);
+            homeLoans = await homeLoanBL.ApproveLoanBL("13EB5DE9-5995-4446-97A9-8F7ACB0CC255", "INVALID");
+            Console.WriteLine("homeloan:" + homeLoans.ElementAt(0).LoanStatus);
 
-            CustomerDAL customerDAL = new CustomerDAL();
-            List<MyData> list = new List<MyData>();
-            using(PecuniaEntities pecEnt = new PecuniaEntities())
-            {
-                list = (from cust
-                        in pecEnt.Customers
-                        select new MyData
-                        {
-                            CustomerID = cust.CustomerID,
-                            NameMob = cust.CustomerName + cust.CustomerMobile
-                        }).ToList();
-            }
 
-            foreach(MyData myData in list)
-                Console.WriteLine(myData.CustomerID+ " "+myData.NameMob);
+            //testing to set two fields for dropdown list
+            //CustomerDAL customerDAL = new CustomerDAL();
+            //List<MyData> list = new List<MyData>();
+            //using(PecuniaEntities pecEnt = new PecuniaEntities())
+            //{
+            //    list = (from cust
+            //            in pecEnt.Customers
+            //            select new MyData
+            //            {
+            //                CustomerID = cust.CustomerID,
+            //                NameMob = cust.CustomerName + cust.CustomerMobile
+            //            }).ToList();
+            //}
+
+            //foreach(MyData myData in list)
+            //    Console.WriteLine(myData.CustomerID+ " "+myData.NameMob);
         }
     }
     public class MyData

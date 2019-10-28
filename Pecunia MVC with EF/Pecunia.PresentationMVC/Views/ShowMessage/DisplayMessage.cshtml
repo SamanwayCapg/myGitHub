@@ -1,0 +1,30 @@
+﻿@model Pecunia.PresentationMVC.Models.ShowMessageModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Message</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container-fluid">
+        @using (Html.BeginForm("Redirect", "ShowMessage", FormMethod.Post))
+        { 
+            <div class="pb-3 pl-md-2 bg-info" style="height:80px"><h2>Apply Car Loan</h2></div>
+
+            <div>@Html.TextBoxFor(t => t.Message, new { @class = "text-info" })</div>
+
+            <button class="text-success">Home</button>
+        }
+    </div>
+</body>
+</html>

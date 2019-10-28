@@ -19,6 +19,7 @@ namespace Pecunia.PresentationMVC.Controllers
             EduLoanApplyModel eduLoanApplyModel = new EduLoanApplyModel()
             {
                 //LoanID = Guid.NewGuid()
+                button="submit"
             };
 
             //getting list of customers
@@ -47,9 +48,11 @@ namespace Pecunia.PresentationMVC.Controllers
 
             bool isApplied = await eduLoanBL.ApplyLoanBL(eduLoan);
             if (isApplied == true)
-                return RedirectToAction( "ViewDetails", "EduLoanView", new { loanID = eduLoan.LoanID});
+                return RedirectToAction("ViewDetails", "EduLoanView", new { loanID = eduLoan.LoanID });
             else
                 return RedirectToAction("Apply", "HomeLoanApply");
+
+
         }
 
         List<DropDownListData> GetDropDownListData()
