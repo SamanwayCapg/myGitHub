@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/PecuniaLayout.cshtml";
+}
+
+@using System.Web.Optimization
+@Scripts.Render("~/scripts/bootstrapBundle")
+
+<div class="row">
+    <div class="col-md-2">
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">
+                Accounts Menu
+            </a>
+            <a href="@Url.Action("Create", "Accounts")" class="list-group-item list-group-item-action">Create Account</a>
+            <a href="@Url.Action("Create", "FixedDeposit")" class="list-group-item list-group-item-action">Create Fixed Deposit</a>
+            <a href="@Url.Action("EditingAccountMenu", "Accounts")" class="list-group-item list-group-item-action">Update Account</a>
+            <a href="@Url.Action("EditingFixedDepositMenu", "FixedDeposit")" class="list-group-item list-group-item-action">Update Fixed Deposit</a>
+            <a href="@Url.Action("ShowAllAccount", "Accounts")" class="list-group-item list-group-item-action">Show Accounts</a>
+            <a href="@Url.Action("ShowAllFixedDeposit", "FixedDeposit")" class="list-group-item list-group-item-action">Show Fixed Deposits</a>
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        @RenderBody()
+    </div>
+</div>
+
+

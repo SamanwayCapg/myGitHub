@@ -1,17 +1,10 @@
 ﻿@model Pecunia.PresentationMVC.Models.EduLoanApplyModel
 
 @{
-    Layout = null;
-}
-
-@{
     ViewBag.Title = "apply";
+    Layout = "~/Views/Shared/LoanNavBar.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
     <meta name="viewport" content="width=device-width" />
     <title>Apply Education Loan</title>
     <script src="~/Scripts/jquery-3.4.1.js"></script>
@@ -21,8 +14,6 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
-</head>
-<body>
     <div class="container-fluid">
         @*                      action   controller     formMethod*@
         @using (Html.BeginForm("Apply", "EduLoanApply", FormMethod.Post))
@@ -34,12 +25,11 @@
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.LoanID, new { @class = "col-form-label col-lg-3", text = "Loan ID" })
                         @Html.TextBoxFor(temp => temp.LoanID, new { @class = "form-control col-lg-9", placeholder = "ID will be generated once you finished the form!", disabled = "true" })
-
                     </div>
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.CustomerID, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.DropDownListFor(t=>t.CustomerID, ViewBag.customers as SelectList)
+                            @Html.DropDownListFor(t => t.CustomerID, ViewBag.customers as SelectList)
                         </div>
                     </div>
                     <div class="form-row pt-2">
@@ -52,7 +42,7 @@
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.RepaymentPeriod, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ",type="number", placeholder = "Months" })
+                            @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ", type = "number", placeholder = "Months" })
                             @Html.ValidationMessageFor(temp => temp.RepaymentPeriod)
                         </div>
                     </div>
@@ -75,31 +65,24 @@
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.InstituteName, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.InstituteName, new { @class = "form-control ", placeholder = "No abbreviations" })
+                            @Html.TextBoxFor(temp => temp.InstituteName, new { @class = "form-control ", placeholder = "No abbreviations", @maxlength = "50" })
                             @Html.ValidationMessageFor(temp => temp.InstituteName)
                         </div>
                     </div>
                     <div class="form-row pt-2">
                         @Html.LabelFor(temp => temp.StudentID, new { @class = "col-form-label col-lg-3" })
                         <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.StudentID, new { @class = "form-control ", placeholder = "Provided by your institution" })
+                            @Html.TextBoxFor(temp => temp.StudentID, new { @class = "form-control ", placeholder = "Provided by your institution", @maxlength = "20" })
                             @Html.ValidationMessageFor(temp => temp.StudentID)
                         </div>
                     </div>
-                    <div class="form-row pt-2">
-                        @Html.CheckBoxFor(temp => temp.IsAccepted, new { @class = "form-check" })
-                        <label for="IsAccepted"> I accepts the terms and conditions</label>
-                    </div>
-
+                    
                     <div class="pt-3">
                         <button class="btn btn-success text-right" type="submit" name="button" value="save">Apply</button>
                     </div>
-
 
                 </div>
             </div>
         }
     </div>
-</body>
-</html>
 

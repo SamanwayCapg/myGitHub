@@ -1,0 +1,851 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TeamF_EF_Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="Guid" Nullable="false" />
+    <Property Name="AccountNumber" Type="Int64" />
+    <Property Name="HomeBranch" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Feedback" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DateOfCreation" Type="DateTime" Precision="3" />
+    <Property Name="AccountType" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="AccountBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CustomerID" Type="Guid" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Account__Custome__1EE485AA" FromRole="Account" ToRole="Customers" />
+    <NavigationProperty Name="Transactions" Relationship="Self.FK__Transacti__Accou__2E26C93A" FromRole="Account" ToRole="Transactions" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Guid" Nullable="false" />
+    <Property Name="AdminName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminEmail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminPassword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreationDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="EmployeeID" Type="Guid" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Admins__Employee__1C0818FF" FromRole="Admins" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="CarLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="Guid" Nullable="false" />
+    <Property Name="CustomerID" Type="Guid" />
+    <Property Name="AmountApplied" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InterestRate" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="EMI_amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RepaymentPeriod" Type="Byte" />
+    <Property Name="DateOfApplication" Type="DateTime" Precision="3" />
+    <Property Name="LoanStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Occupation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="GrossIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SalaryDeduction" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="VehicleType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__CarLoan__Custome__249D5F00" FromRole="CarLoan" ToRole="Customers" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Guid" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerMobile" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerPan" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CustomerAadhaarNumber" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="CustomerGender" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__Custome__1EE485AA" FromRole="Customers" ToRole="Account" />
+    <NavigationProperty Name="CarLoans" Relationship="Self.FK__CarLoan__Custome__249D5F00" FromRole="Customers" ToRole="CarLoan" />
+    <NavigationProperty Name="EduLoans" Relationship="Self.FK__EduLoan__Custome__21C0F255" FromRole="Customers" ToRole="EduLoan" />
+    <NavigationProperty Name="FixedDeposits" Relationship="Self.FK__FixedDepo__Custo__24885067" FromRole="Customers" ToRole="FixedDeposit" />
+    <NavigationProperty Name="HomeLoans" Relationship="Self.FK__HomeLoan__Custom__2779CBAB" FromRole="Customers" ToRole="HomeLoan" />
+  </EntityType>
+  <EntityType Name="EduLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="Guid" Nullable="false" />
+    <Property Name="CustomerID" Type="Guid" />
+    <Property Name="AmountApplied" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InterestRate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EMI_amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RepaymentPeriod" Type="Byte" />
+    <Property Name="DateOfApplication" Type="DateTime" Precision="3" />
+    <Property Name="LoanStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Course" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="InstituteName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StudentID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RepaymentHoliday" Type="Byte" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__EduLoan__Custome__21C0F255" FromRole="EduLoan" ToRole="Customers" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeEmail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeePassword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mobile" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CreationDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Admins" Relationship="Self.FK__Admins__Employee__1C0818FF" FromRole="Employees" ToRole="Admins" />
+  </EntityType>
+  <EntityType Name="FixedDeposit">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="Guid" Nullable="false" />
+    <Property Name="FdDeposit" Type="Int64" />
+    <Property Name="InterestRate" Type="Double" />
+    <Property Name="Tenure" Type="Int32" />
+    <Property Name="AccountNumber" Type="Int64" />
+    <Property Name="HomeBranch" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerID" Type="Guid" />
+    <Property Name="Feedback" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DateOfCreation" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__FixedDepo__Custo__24885067" FromRole="FixedDeposit" ToRole="Customers" />
+  </EntityType>
+  <EntityType Name="HomeLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="Guid" Nullable="false" />
+    <Property Name="CustomerID" Type="Guid" />
+    <Property Name="AmountApplied" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InterestRate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EMI_amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RepaymentPeriod" Type="Byte" />
+    <Property Name="DateOfApplication" Type="DateTime" Precision="3" />
+    <Property Name="LoanStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Occupation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceYears" Type="Byte" />
+    <Property Name="GrossIncome" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SalaryDeduction" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__HomeLoan__Custom__2779CBAB" FromRole="HomeLoan" ToRole="Customers" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Guid" Nullable="false" />
+    <Property Name="AccountID" Type="Guid" />
+    <Property Name="TypeOfTransaction" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DateOfTransaction" Type="DateTime" Precision="3" />
+    <Property Name="Mode" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChequeNumber" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Transacti__Accou__2E26C93A" FromRole="Transactions" ToRole="Account" />
+  </EntityType>
+  <Association Name="FK__Account__Custome__1EE485AA">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__Accou__2E26C93A">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Admins__Employee__1C0818FF">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Admins" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Admins">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CarLoan__Custome__249D5F00">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CarLoan" Type="Self.CarLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CarLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EduLoan__Custome__21C0F255">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="EduLoan" Type="Self.EduLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="EduLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FixedDepo__Custo__24885067">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="FixedDeposit" Type="Self.FixedDeposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="FixedDeposit">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HomeLoan__Custom__2779CBAB">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="HomeLoan" Type="Self.HomeLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="HomeLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PecuniaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="CarLoans" EntityType="Self.CarLoan" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="EduLoans" EntityType="Self.EduLoan" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="FixedDeposits" EntityType="Self.FixedDeposit" />
+    <EntitySet Name="HomeLoans" EntityType="Self.HomeLoan" />
+    <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+    <AssociationSet Name="FK__Account__Custome__1EE485AA" Association="Self.FK__Account__Custome__1EE485AA">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__Accou__2E26C93A" Association="Self.FK__Transacti__Accou__2E26C93A">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Admins__Employee__1C0818FF" Association="Self.FK__Admins__Employee__1C0818FF">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Admins" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CarLoan__Custome__249D5F00" Association="Self.FK__CarLoan__Custome__249D5F00">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CarLoan" EntitySet="CarLoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EduLoan__Custome__21C0F255" Association="Self.FK__EduLoan__Custome__21C0F255">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="EduLoan" EntitySet="EduLoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FixedDepo__Custo__24885067" Association="Self.FK__FixedDepo__Custo__24885067">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="FixedDeposit" EntitySet="FixedDeposits" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HomeLoan__Custom__2779CBAB" Association="Self.FK__HomeLoan__Custom__2779CBAB">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="HomeLoan" EntitySet="HomeLoans" />
+    </AssociationSet>
+    <FunctionImport Name="AddAccountDAL">
+      <Parameter Name="AccountType" Mode="In" Type="String" />
+      <Parameter Name="AccountNumber" Mode="In" Type="Int64" />
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="AddAccountDAL1">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="AccountType" Mode="In" Type="String" />
+      <Parameter Name="AccountNumber" Mode="In" Type="Int64" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="AddAdmin">
+      <Parameter Name="adminid" Mode="In" Type="Guid" />
+      <Parameter Name="adminname" Mode="In" Type="String" />
+      <Parameter Name="adminemail" Mode="In" Type="String" />
+      <Parameter Name="adminpassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddCustomerDAL">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="CustomerAddress" Mode="In" Type="String" />
+      <Parameter Name="CustomerMobile" Mode="In" Type="String" />
+      <Parameter Name="CustomerEmail" Mode="In" Type="String" />
+      <Parameter Name="CustomerPan" Mode="In" Type="String" />
+      <Parameter Name="CustomerAadhaarNumber" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="CustomerGender" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddEmployees">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+      <Parameter Name="empname" Mode="In" Type="String" />
+      <Parameter Name="empemail" Mode="In" Type="String" />
+      <Parameter Name="emppassword" Mode="In" Type="String" />
+      <Parameter Name="empmobile" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddFixedDepositDAL">
+      <Parameter Name="AccountNumber" Mode="In" Type="Int64" />
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="FdDeposit" Mode="In" Type="Decimal" />
+      <Parameter Name="InterestRate" Mode="In" Type="Decimal" />
+      <Parameter Name="Tenure" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddFixedDepositDAL1">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="AccountNumber" Mode="In" Type="Int64" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="Tenure" Mode="In" Type="Int32" />
+      <Parameter Name="FdDeposit" Mode="In" Type="Decimal" />
+      <Parameter Name="InterestRate" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="AddFixedDepositDAL2">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="FdDeposit" Mode="In" Type="Decimal" />
+      <Parameter Name="AccountNumber" Mode="In" Type="Int64" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="InterestRate" Mode="In" Type="Decimal" />
+      <Parameter Name="Tenure" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="applyCarLoan">
+      <Parameter Name="LoanID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="AmountApplied" Mode="In" Type="Decimal" />
+      <Parameter Name="InterestRate" Mode="In" Type="Decimal" />
+      <Parameter Name="EMI_amount" Mode="In" Type="Decimal" />
+      <Parameter Name="RepaymentPeriod" Mode="In" Type="Byte" />
+      <Parameter Name="DateOfApplication" Mode="In" Type="DateTime" />
+      <Parameter Name="LoanStatus" Mode="In" Type="String" />
+      <Parameter Name="Occupation" Mode="In" Type="String" />
+      <Parameter Name="GrossIncome" Mode="In" Type="Decimal" />
+      <Parameter Name="SalaryDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="VehicleType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="applyEduLoan">
+      <Parameter Name="LoanID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="AmountApplied" Mode="In" Type="Decimal" />
+      <Parameter Name="InterestRate" Mode="In" Type="Decimal" />
+      <Parameter Name="EMI_amount" Mode="In" Type="Decimal" />
+      <Parameter Name="RepaymentPeriod" Mode="In" Type="Byte" />
+      <Parameter Name="DateOfApplication" Mode="In" Type="DateTime" />
+      <Parameter Name="LoanStatus" Mode="In" Type="String" />
+      <Parameter Name="Course" Mode="In" Type="String" />
+      <Parameter Name="InstituteName" Mode="In" Type="String" />
+      <Parameter Name="StudentID" Mode="In" Type="String" />
+      <Parameter Name="RepaymentHoliday" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="applyHomeLoan">
+      <Parameter Name="LoanID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="AmountApplied" Mode="In" Type="Decimal" />
+      <Parameter Name="InterestRate" Mode="In" Type="Decimal" />
+      <Parameter Name="EMI_amount" Mode="In" Type="Decimal" />
+      <Parameter Name="RepaymentPeriod" Mode="In" Type="Byte" />
+      <Parameter Name="DateOfApplication" Mode="In" Type="DateTime" />
+      <Parameter Name="LoanStatus" Mode="In" Type="String" />
+      <Parameter Name="Occupation" Mode="In" Type="String" />
+      <Parameter Name="ServiceYears" Mode="In" Type="Byte" />
+      <Parameter Name="GrossIncome" Mode="In" Type="Decimal" />
+      <Parameter Name="SalaryDeduction" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="approveCarLoan">
+      <Parameter Name="LoanID" Mode="In" Type="Guid" />
+      <Parameter Name="updatedStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="approveEduLoan">
+      <Parameter Name="LoanID" Mode="In" Type="Guid" />
+      <Parameter Name="updatedStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="approveHomeLoan">
+      <Parameter Name="LoanID" Mode="In" Type="Guid" />
+      <Parameter Name="updatedStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="cancelCarLoan">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="cancelEduLoan">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="cancelHomeLoan">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeAccountType1">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="AccountType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeBranchofAccount">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeBranchofAccount1">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeBranchofFixedDeposit">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeFDDeposit">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="FdDeposit" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="CreditBalance">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="CreditTransactionByCheque">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="typeOfTranscation" Mode="In" Type="String" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+      <Parameter Name="modeOfTransaction" Mode="In" Type="String" />
+      <Parameter Name="chequeNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CreditTransactionByDepositSlip">
+      <Parameter Name="accountNumber" Mode="In" Type="Int64" />
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="typeOfTranscation" Mode="In" Type="String" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+      <Parameter Name="modeOfTransaction" Mode="In" Type="String" />
+      <Parameter Name="chequeNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DebitBalance">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="DebitBalanceC">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+      <Parameter Name="chequeNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DebitTransactionByCheque">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="typeOfTranscation" Mode="In" Type="String" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+      <Parameter Name="modeOfTransaction" Mode="In" Type="String" />
+      <Parameter Name="chequeNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DebitTransactionByWithdrawalSlip">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+      <Parameter Name="mode" Mode="In" Type="String" />
+      <Parameter Name="chequeNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteAccountDAL">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="FeedBack" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteAccountDAL1">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="Feedback" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteEmployee">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteFixedDepositDAL">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="Feedback" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteFixedDepositDAL1">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="Feedback" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="FdAdding">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="HomeBranch" Mode="In" Type="String" />
+      <Parameter Name="Tenure" Mode="In" Type="Int32" />
+      <Parameter Name="FdDeposit" Mode="In" Type="Decimal" />
+      <Parameter Name="InterestRate" Mode="In" Type="Decimal" />
+      <Parameter Name="AccountNumber" Mode="In" Type="Int64" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="GetAccountByAccountID" ReturnType="Collection(TeamF_EF_Entities.GetAccountByAccountID_Result)">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetAccountByAccountID1" ReturnType="Collection(TeamF_EF_Entities.GetAccountByAccountID1_Result)">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetAccountByCustomerID" ReturnType="Collection(TeamF_EF_Entities.GetAccountByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetAccountByCustomerID1" ReturnType="Collection(TeamF_EF_Entities.GetAccountByCustomerID1_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetAdminByAdminID" ReturnType="Collection(TeamF_EF_Entities.GetAdminByAdminID_Result)">
+      <Parameter Name="adminID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetAdminByEmailandPassword" ReturnType="Collection(TeamF_EF_Entities.GetAdminByEmailandPassword_Result)">
+      <Parameter Name="adminEmail" Mode="In" Type="String" />
+      <Parameter Name="adminPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllCustomersDAL" />
+    <FunctionImport Name="GetAllEmployees" ReturnType="Collection(TeamF_EF_Entities.GetAllEmployees_Result)" />
+    <FunctionImport Name="GetAllTransactions" ReturnType="Collection(TeamF_EF_Entities.GetAllTransactions_Result)" />
+    <FunctionImport Name="getCarLoanByCustomerID" ReturnType="Collection(TeamF_EF_Entities.getCarLoanByCustomerID_Result)">
+      <Parameter Name="customerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getCarLoanByLoanID" ReturnType="Collection(TeamF_EF_Entities.getCarLoanByLoanID_Result)">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getCarLoanStatus" ReturnType="Collection(String)">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetCustomerByCustomerIDDAL">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getEduLoanByCustomerID" ReturnType="Collection(TeamF_EF_Entities.getEduLoanByCustomerID_Result)">
+      <Parameter Name="customerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getEduLoanByLoanID" ReturnType="Collection(TeamF_EF_Entities.getEduLoanByLoanID_Result)">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getEduLoanStatus" ReturnType="Collection(String)">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeByEmail">
+      <Parameter Name="empemail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeByEmailandPassword" ReturnType="Collection(TeamF_EF_Entities.GetEmployeeByEmailandPassword_Result)">
+      <Parameter Name="empemail" Mode="In" Type="String" />
+      <Parameter Name="emppassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeByEmployeeID" ReturnType="Collection(TeamF_EF_Entities.GetEmployeeByEmployeeID_Result)">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeeEmailandPassword" ReturnType="Collection(TeamF_EF_Entities.GetEmployeeEmailandPassword_Result)">
+      <Parameter Name="empemail" Mode="In" Type="String" />
+      <Parameter Name="emppassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployeesByName">
+      <Parameter Name="empname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetFixedDepositByAccountID" ReturnType="Collection(TeamF_EF_Entities.GetFixedDepositByAccountID_Result)">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetFixedDepositByCustomerID" ReturnType="Collection(TeamF_EF_Entities.GetFixedDepositByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getHomeLoanByCustomerID" ReturnType="Collection(TeamF_EF_Entities.getHomeLoanByCustomerID_Result)">
+      <Parameter Name="customerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getHomeLoanByLoanID" ReturnType="Collection(TeamF_EF_Entities.getHomeLoanByLoanID_Result)">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="getHomeLoanStatus" ReturnType="Collection(String)">
+      <Parameter Name="loanID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="GetTransactionsByAccountID" ReturnType="Collection(TeamF_EF_Entities.GetTransactionsByAccountID_Result)">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="RemoveCustomerDAL">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="StoreTransactionRecords">
+      <Parameter Name="accountID" Mode="In" Type="Guid" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+      <Parameter Name="mode" Mode="In" Type="String" />
+      <Parameter Name="chequeNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateAdminEmail">
+      <Parameter Name="adminID" Mode="In" Type="Guid" />
+      <Parameter Name="adminEmail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateAdminNameAndEmail">
+      <Parameter Name="adminID" Mode="In" Type="Guid" />
+      <Parameter Name="adminName" Mode="In" Type="String" />
+      <Parameter Name="adminEmail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateAdminPassword">
+      <Parameter Name="adminID" Mode="In" Type="Guid" />
+      <Parameter Name="adminPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateAllEmployeeDetails">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+      <Parameter Name="empname" Mode="In" Type="String" />
+      <Parameter Name="empemail" Mode="In" Type="String" />
+      <Parameter Name="empmobile" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateCustomerByCustomerIDDAL">
+      <Parameter Name="CustomerID" Mode="In" Type="Guid" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="CustomerAddress" Mode="In" Type="String" />
+      <Parameter Name="CustomerMobile" Mode="In" Type="String" />
+      <Parameter Name="CustomerEmail" Mode="In" Type="String" />
+      <Parameter Name="CustomerPan" Mode="In" Type="String" />
+      <Parameter Name="CustomerAadhaarNumber" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="CustomerGender" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEmployeeEmail">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+      <Parameter Name="empemail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEmployeeMobile">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+      <Parameter Name="empmobile" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEmployeeName">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+      <Parameter Name="empname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEmployeePassword">
+      <Parameter Name="empid" Mode="In" Type="Guid" />
+      <Parameter Name="emppassword" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAccountByAccountID_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="true" />
+    <Property Type="String" Name="HomeBranch" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Feedback" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfCreation" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AccountType" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="AccountBalance" Nullable="true" Precision="19" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAccountByAccountID1_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="true" />
+    <Property Type="String" Name="HomeBranch" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Feedback" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfCreation" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AccountType" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="AccountBalance" Nullable="true" Precision="19" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAccountByCustomerID_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="true" />
+    <Property Type="String" Name="HomeBranch" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Feedback" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfCreation" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AccountType" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="AccountBalance" Nullable="true" Precision="19" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAccountByCustomerID1_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="true" />
+    <Property Type="String" Name="HomeBranch" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Feedback" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfCreation" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AccountType" Nullable="true" MaxLength="7" />
+    <Property Type="Decimal" Name="AccountBalance" Nullable="true" Precision="19" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAdminByAdminID_Result">
+    <Property Type="Guid" Name="AdminID" Nullable="false" />
+    <Property Type="String" Name="AdminName" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="AdminEmail" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="AdminPassword" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="CreationDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastModifiedDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Guid" Name="EmployeeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAdminByEmailandPassword_Result">
+    <Property Type="Guid" Name="AdminID" Nullable="false" />
+    <Property Type="String" Name="AdminName" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="AdminEmail" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="AdminPassword" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="CreationDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastModifiedDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Guid" Name="EmployeeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAllEmployees_Result">
+    <Property Type="Guid" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="EmployeeEmail" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="CreationDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastModifiedDateTime" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetAllTransactions_Result">
+    <Property Type="Guid" Name="TransactionID" Nullable="false" />
+    <Property Type="Guid" Name="AccountID" Nullable="true" />
+    <Property Type="String" Name="TypeOfTransaction" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" />
+    <Property Type="DateTime" Name="DateOfTransaction" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mode" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="ChequeNumber" Nullable="false" MaxLength="6" />
+  </ComplexType>
+  <ComplexType Name="getCarLoanByCustomerID_Result">
+    <Property Type="Guid" Name="LoanID" Nullable="false" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="Decimal" Name="AmountApplied" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="InterestRate" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="EMI_amount" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="RepaymentPeriod" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfApplication" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanStatus" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Occupation" Nullable="true" MaxLength="15" />
+    <Property Type="Decimal" Name="GrossIncome" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="SalaryDeduction" Nullable="true" Precision="19" />
+    <Property Type="String" Name="VehicleType" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="getCarLoanByLoanID_Result">
+    <Property Type="Guid" Name="LoanID" Nullable="false" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="Decimal" Name="AmountApplied" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="InterestRate" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="EMI_amount" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="RepaymentPeriod" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfApplication" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanStatus" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Occupation" Nullable="true" MaxLength="15" />
+    <Property Type="Decimal" Name="GrossIncome" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="SalaryDeduction" Nullable="true" Precision="19" />
+    <Property Type="String" Name="VehicleType" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="getEduLoanByCustomerID_Result">
+    <Property Type="Guid" Name="LoanID" Nullable="false" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="Decimal" Name="AmountApplied" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="InterestRate" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="EMI_amount" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="RepaymentPeriod" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfApplication" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanStatus" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Course" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="InstituteName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StudentID" Nullable="true" MaxLength="20" />
+    <Property Type="Byte" Name="RepaymentHoliday" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getEduLoanByLoanID_Result">
+    <Property Type="Guid" Name="LoanID" Nullable="false" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="Decimal" Name="AmountApplied" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="InterestRate" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="EMI_amount" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="RepaymentPeriod" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfApplication" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanStatus" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Course" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="InstituteName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StudentID" Nullable="true" MaxLength="20" />
+    <Property Type="Byte" Name="RepaymentHoliday" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetEmployeeByEmailandPassword_Result">
+    <Property Type="Guid" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="EmployeeEmail" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="CreationDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastModifiedDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetEmployeeByEmployeeID_Result">
+    <Property Type="Guid" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="EmployeeEmail" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="EmployeePassword" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="CreationDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastModifiedDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetEmployeeEmailandPassword_Result">
+    <Property Type="String" Name="EmployeeEmail" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="EmployeePassword" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="GetFixedDepositByAccountID_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Int64" Name="FdDeposit" Nullable="true" />
+    <Property Type="Double" Name="InterestRate" Nullable="true" />
+    <Property Type="Int32" Name="Tenure" Nullable="true" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="true" />
+    <Property Type="String" Name="HomeBranch" Nullable="true" MaxLength="20" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="Feedback" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfCreation" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetFixedDepositByCustomerID_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Int64" Name="FdDeposit" Nullable="true" />
+    <Property Type="Double" Name="InterestRate" Nullable="true" />
+    <Property Type="Int32" Name="Tenure" Nullable="true" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="true" />
+    <Property Type="String" Name="HomeBranch" Nullable="true" MaxLength="20" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="Feedback" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfCreation" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="getHomeLoanByCustomerID_Result">
+    <Property Type="Guid" Name="LoanID" Nullable="false" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="Decimal" Name="AmountApplied" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="InterestRate" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="EMI_amount" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="RepaymentPeriod" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfApplication" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanStatus" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Occupation" Nullable="true" MaxLength="15" />
+    <Property Type="Byte" Name="ServiceYears" Nullable="true" />
+    <Property Type="Decimal" Name="GrossIncome" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="SalaryDeduction" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="getHomeLoanByLoanID_Result">
+    <Property Type="Guid" Name="LoanID" Nullable="false" />
+    <Property Type="Guid" Name="CustomerID" Nullable="true" />
+    <Property Type="Decimal" Name="AmountApplied" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="InterestRate" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="EMI_amount" Nullable="true" Precision="19" />
+    <Property Type="Byte" Name="RepaymentPeriod" Nullable="true" />
+    <Property Type="DateTime" Name="DateOfApplication" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LoanStatus" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Occupation" Nullable="true" MaxLength="15" />
+    <Property Type="Byte" Name="ServiceYears" Nullable="true" />
+    <Property Type="Decimal" Name="GrossIncome" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="SalaryDeduction" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="GetTransactionsByAccountID_Result">
+    <Property Type="Guid" Name="TransactionID" Nullable="false" />
+    <Property Type="Guid" Name="AccountID" Nullable="true" />
+    <Property Type="String" Name="TypeOfTransaction" Nullable="false" MaxLength="6" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" />
+    <Property Type="DateTime" Name="DateOfTransaction" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mode" Nullable="false" MaxLength="14" />
+    <Property Type="String" Name="ChequeNumber" Nullable="false" MaxLength="6" />
+  </ComplexType>
+</Schema>

@@ -1,12 +1,8 @@
 ﻿@model Pecunia.PresentationMVC.Models.ShowMessageModel
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/LoanNavBar.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
     <meta name="viewport" content="width=device-width" />
     <title>Message</title>
     <script src="~/Scripts/jquery-3.4.1.js"></script>
@@ -14,17 +10,17 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
-</head>
-<body>
     <div class="container-fluid">
         @using (Html.BeginForm("Redirect", "ShowMessage", FormMethod.Post))
-        { 
-            <div class="pb-3 pl-md-2 bg-info" style="height:80px"><h2>Apply Car Loan</h2></div>
+        {
+            <div class="pb-3 pl-md-2 bg-info pt-3" style="height:80px"><h4>Hi! We have a message for you</h4></div>
 
-            <div>@Html.TextBoxFor(t => t.Message, new { @class = "text-info" })</div>
+            @*redirection not required as nav bar or group list is available everywhere*@
+            <div class=" col-lg-6  pt-5 mx-auto text-center">
+                @Html.TextBoxFor(t => t.Message, new { @class = "text-info col-lg-12 mx-auto", disabled = "true" })
+                @*<button class="text-light bg-dark mt-3">Home</button>*@
+            </div>
 
-            <button class="text-success">Home</button>
         }
     </div>
-</body>
-</html>
+

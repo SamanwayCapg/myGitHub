@@ -185,7 +185,7 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             if (homeLoan.AmountApplied > 2000000 || homeLoan.AmountApplied<=0)
                 throw new InvalidAmountException("Maximum loan amount is Rs.20 lakh and cant be negative or zero");
 
-            if (homeLoan.RepaymentPeriod > 180 || homeLoan.RepaymentPeriod<=0)
+            if (homeLoan.RepaymentPeriod >= 180 || homeLoan.RepaymentPeriod<=0)
                 throw new InvalidRangeException("Repayment period can be maximum of 180 months and cant be negative or zero");
 
             if (homeLoan.SalaryDeduction >= homeLoan.GrossIncome)

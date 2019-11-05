@@ -1,0 +1,103 @@
+﻿@model Pecunia.Mvc.Models.LoginViewModel
+@using System.Web.Optimization;
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand font-weight-bold" href="#"><h2 class="display-4">Pecunia</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            
+            
+        </ul>
+
+    </div>
+</nav>
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Scripts.Render("~/scripts/jquery")
+    @Scripts.Render("~/scripts/jqueryvalidation")
+    @Scripts.Render("~/scripts/bootstrap")
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    @Styles.Render("~/styles/bootstrap")
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">Login</a>
+
+        </nav>
+
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            <div class="row mt-5 border border-light bg-light">
+
+                <div class="mt-5 col-md-6 mx-auto border-secondary">
+                    <div class="mt-5 form-group form-row" data-toggle="tooltip" data-placement="right" title="Your Email">
+                        @Html.LabelFor(temp => temp.Email, new { @class = "col-form-label col-lg-2 " })
+                        @Html.TextBoxFor(temp => temp.Email, new { @class = "form-control col-lg-7 email", placeholder = "Email" })
+                        <div class="col-lg-3 text-nowrap col-form-label">
+                            @Html.ValidationMessageFor(temp => temp.Email)
+                        </div>
+
+
+                    </div>
+                    <div class="mt-5 form-group form-row" data-toggle="tooltip" data-placement="right" title="Password">
+                        @Html.LabelFor(temp => temp.Password, new { @class = "col-form-label col-lg-2" })
+                        @Html.PasswordFor(temp => temp.Password, new { @class = "form-control col-lg-7 password", placeholder = "Password" })
+                        <div class="col-lg-3 text-nowrap col-form-label">
+                            @Html.ValidationMessageFor(temp => temp.Password)
+                        </div>
+                    </div>
+
+
+                    <div class="mt-5 form-group form-row" data-toggle="tooltip" data-placement="right" title="Enter user type">
+                        @Html.LabelFor(temp => temp.UserType, new { @class = "col-form-label col-lg-2 " })
+                        @Html.DropDownListFor(temp=>temp.UserType, new  List<SelectListItem>(){
+                       new SelectListItem(){Text="Please Select", Value=null, Selected = true},
+                                new SelectListItem() { Text="Admin", Value="Admin"},
+                                new SelectListItem() { Text="Employee", Value="Employee"}
+                            }, new { @class= "dropdown form-control col-lg-7" }
+                        )
+                        <div class="col-lg-3 text-nowrap">
+                            @Html.ValidationMessageFor(temp => temp.UserType)
+                        </div>
+                    </div>
+
+                    <div class="mt-5 border-top text-right pt-2">
+
+                        <button class="btn btn-success" type="submit" id="login">Login</button>
+
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('#login').attr('disabled', 'disabled');
+            });
+
+            $('input[type=text],input[type=password],input[type=dropdown]').keyup(function () {
+
+                if ($('.email').val() != '' && $('.password').val() != '') {
+                    $('#login').removeAttr('disabled');
+                }
+                else {
+                    $('#login').attr('disabled', 'disabled');
+                }
+            });
+        });
+    </script>

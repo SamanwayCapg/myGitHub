@@ -1,0 +1,17 @@
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\Pecunia.Contracts.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\Pecunia.Contracts.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\Pecunia.Contracts.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\EntityFramework.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\Pecunia.Entities.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\System.ValueTuple.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\Pecunia.Entities.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\Pecunia.Entities.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\EntityFramework.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\bin\Release\System.ValueTuple.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\obj\Release\Pecunia.Contracts.csprojAssemblyReference.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\obj\Release\Pecunia.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\obj\Release\Pecunia.Contracts.csproj.CopyComplete
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\obj\Release\Pecunia.Contracts.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Contracts\obj\Release\Pecunia.Contracts.pdb

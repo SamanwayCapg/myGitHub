@@ -23,7 +23,6 @@ namespace Capgemini.Pecunia.Entities
         public System.Guid AccountID { get; set; }
         public Nullable<long> AccountNumber { get; set; }
         public string HomeBranch { get; set; }
-        public Nullable<decimal> Balance { get; set; }
         public string Feedback { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> DateOfCreation { get; set; }

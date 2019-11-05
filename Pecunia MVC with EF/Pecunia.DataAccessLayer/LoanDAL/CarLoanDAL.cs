@@ -51,6 +51,13 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
 
         public override List<CarLoan> ApproveLoanDAL(string loanID, string updatedStatus)
         {
+            // status  - priority
+            // applied - 1 lowest
+            // processing - 2
+            // approved - 3
+            // rejected - 3
+            // invalid - 3 highest
+            // possible updation from low to high
             try
             {
                 List<CarLoan> carLoan = new List<CarLoan>();
@@ -61,9 +68,20 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                     Guid.TryParse(loanID, out guid);
 
                     var loanEntry = pecEnt.CarLoans.SingleOrDefault(t => t.LoanID == guid);
-                    if(loanEntry != null)
+                    if (loanEntry != null)
                     {
-                        loanEntry.LoanStatus = updatedStatus;
+                        if (loanEntry.LoanStatus.Equals("APPLIED") == true)
+                        {
+                            loanEntry.LoanStatus = updatedStatus;
+                        }
+                        else if (loanEntry.LoanStatus.Equals("PROCESSING") == true && updatedStatus.Equals("APPLIED") == false)
+                        {
+                            loanEntry.LoanStatus = updatedStatus;
+                        }
+                        else
+                        {
+                            //updation not possible
+                        }
                         pecEnt.SaveChanges();
                     }
                     else
@@ -80,6 +98,7 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                 BusinessLogicUtil.logException(e.Message, e.StackTrace, "CarLoanDAL.ApproveLoanDAL");
                 return default(List<CarLoan>);
             }
+
         }
 
         public override List<CarLoan> GetLoanByCustomerIDDAL(string customerID)
@@ -163,19 +182,33 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
 
         public bool DeleteLoanEntryDAL(string loanID)
         {
-            Guid loanIDguid;
-            Guid.TryParse(loanID, out loanIDguid);
-            using (PecuniaEntities pecEnt = new PecuniaEntities())
+            try
             {
-                var loanToDelete = pecEnt.CarLoans.SingleOrDefault(t => t.LoanID == loanIDguid);
-                if (loanToDelete != null)
+                Guid loanIDguid;
+                Guid.TryParse(loanID, out loanIDguid);
+                using (PecuniaEntities pecEnt = new PecuniaEntities())
                 {
-                    pecEnt.CarLoans.Remove(loanToDelete);
-                    pecEnt.SaveChanges();
-                    return true;
+                    System.Diagnostics.Debug.WriteLine(loanIDguid);
+                    var loanToDelete = pecEnt.CarLoans.SingleOrDefault(t => t.LoanID == loanIDguid);
+                    if (loanToDelete != null)
+                    {
+                        pecEnt.CarLoans.Remove(loanToDelete);
+                        pecEnt.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("SingleOrDefault returns null");
+                        BusinessLogicUtil.logException("SingleOrDefault returns null ", "no stacktrace", "carLoanDAL.deleteLoanEntry");
+                        return false;
+                    }
                 }
-                else
-                    return false;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine($"{e.Message} \n {e.StackTrace}");
+                BusinessLogicUtil.logException(e.Message, e.StackTrace, "carLoanDAL.deleteLoanEntry");
+                return false;
             }
         }
 

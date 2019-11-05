@@ -1,4 +1,6 @@
 ﻿using Capgemini.Pecunia.Entities;
+
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,22 +30,13 @@ namespace Capgemini.Pecunia.Contracts.DALContracts
         public abstract bool UpdateEmployeePasswordDAL(Employee updateEmployee);
         public abstract bool DeleteEmployeeDAL(Guid deleteEmployeeID);
 
-        /// <summary>
-        /// Writes collection to the file in JSON format.
-        /// </summary>
         
-
-        /// <summary>
-        /// Reads collection from the file in JSON format.
-        /// </summary>
-        
-
         /// <summary>
         /// Static Constructor.
         /// </summary>
         static EmployeeDALBase()
         {
-           // Deserialize();
+            //Deserialize();
         }
     }
 }

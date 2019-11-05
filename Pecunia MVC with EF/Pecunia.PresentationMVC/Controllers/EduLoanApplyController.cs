@@ -50,7 +50,7 @@ namespace Pecunia.PresentationMVC.Controllers
             if (isApplied == true)
                 return RedirectToAction("ViewDetails", "EduLoanView", new { loanID = eduLoan.LoanID });
             else
-                return RedirectToAction("Apply", "HomeLoanApply");
+                return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Server Error! Try Again Later!" });
 
 
         }

@@ -57,79 +57,120 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="CarLoan.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="EduLoan.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="FixedDeposit.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccountByAccountID1_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccountByAccountID_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccountByCustomerID1_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccountByCustomerID_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAdminByAdminID_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAdminByEmailandPassword_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllEmployees_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllTransactions_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getCarLoanByCustomerID_Result.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getCarLoanByLoanID_Result.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getEduLoanByCustomerID_Result.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getEduLoanByLoanID_Result.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmployeeByEmailandPassword_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmployeeByEmployeeID_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmployeeEmailandPassword_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFixedDepositByAccountID_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFixedDepositByCustomerID_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getHomeLoanByCustomerID_Result.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getHomeLoanByLoanID_Result.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTransactionsByAccountID_Result.cs">
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="HomeLoan.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="IUser.cs" />
     <Compile Include="Loan.cs" />
+    <Compile Include="PecuniaEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PecuniaEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PecuniaEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PecuniaEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PecuniaEntity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeamF_dataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TeamF_dataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TeamF_dataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TeamF_dataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TeamF_dataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Transaction.cs">
-      <DependentUpon>TeamF_dataModel.tt</DependentUpon>
+      <DependentUpon>PecuniaEntity.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="TeamF_dataModel.edmx">
+    <EntityDeploy Include="PecuniaEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TeamF_dataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PecuniaEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TeamF_dataModel.edmx.diagram">
-      <DependentUpon>TeamF_dataModel.edmx</DependentUpon>
-      <SubType>Designer</SubType>
+    <None Include="PecuniaEntity.edmx.diagram">
+      <DependentUpon>PecuniaEntity.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -139,19 +180,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TeamF_dataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TeamF_dataModel.Context.cs</LastGenOutput>
-      <DependentUpon>TeamF_dataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="TeamF_dataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TeamF_dataModel.edmx</DependentUpon>
-      <LastGenOutput>TeamF_dataModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="PecuniaEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PecuniaEntity.edmx</DependentUpon>
+      <LastGenOutput>PecuniaEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PecuniaEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PecuniaEntity.edmx</DependentUpon>
+      <LastGenOutput>PecuniaEntity.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

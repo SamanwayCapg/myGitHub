@@ -1,0 +1,114 @@
+﻿@model Pecunia.Mvc.Models.CustomerViewModel
+@using System.Web.Optimization
+
+@{
+
+    Layout = "~/Views/Shared/PecuniaLayout.cshtml";
+}
+
+
+
+<meta name="viewport" content="width=device-width" />
+<title>Welcome</title>
+@Scripts.Render("~/scripts/jqueryBundle")
+@Scripts.Render("~/scripts/validatorBundle")
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Content/bootstrap.css"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<style>
+
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+
+
+<div class="container-fluid">
+    <div class="bg-info text-white " style="height:80px">
+        <div class="pt-3 pl-md-2">
+            <h2>
+                Pecunia
+            </h2>
+        </div>
+    </div>
+
+
+    <h2>Update Customer</h2>
+    @using (Html.BeginForm("Update1", "Customers", FormMethod.Post))
+    {
+        @Html.HiddenFor(temp => temp.CustomerID)
+
+        <div class=" row">
+
+            <div class="col-md-6 mx-auto border-secondary">
+
+
+
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.CustomerName, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.TextBoxFor(temp => temp.CustomerName, new { @class = "form control", placeholder = "Enter Name" })
+                    @Html.ValidationMessageFor(temp => temp.CustomerName)
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.CustomerAddress, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.TextBoxFor(temp => temp.CustomerAddress, new { @class = "form control", placeholder = "Enter Address" })
+                    @Html.ValidationMessageFor(temp => temp.CustomerAddress)
+                </div>
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.CustomerEmail, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.TextBoxFor(temp => temp.CustomerEmail, new { @class = "form control", placeholder = "Enter Email" })
+                    @Html.ValidationMessageFor(temp => temp.CustomerEmail)
+                </div>
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.CustomerMobile, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.TextBoxFor(temp => temp.CustomerMobile, new { @class = "form control", placeholder = "Enter Mobile" })
+                    @Html.ValidationMessageFor(temp => temp.CustomerMobile)
+                </div>
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.CustomerPan, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.TextBoxFor(temp => temp.CustomerPan, new { @class = "form control", placeholder = "Enter Pan" })
+                    @Html.ValidationMessageFor(temp => temp.CustomerPan)
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.CustomerAadhaarNumber, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.TextBoxFor(temp => temp.CustomerAadhaarNumber, new { @class = "form control", placeholder = "Aadhaar Number" })
+                    @Html.ValidationMessageFor(temp => temp.CustomerAadhaarNumber)
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.DOB, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.TextBoxFor(temp => temp.DOB, new { @class = "form control", placeholder = "Date of Birth", type = "date" })
+                    @Html.ValidationMessageFor(temp => temp.DOB)
+                </div>
+
+
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.CustomGender, new { style = "color:blue", @class = "col-form-label col-lg-5" })
+                    @Html.DropDownListFor(temp=> temp.CustomGender,
+                   new List<SelectListItem>(){
+                       new SelectListItem() { Text = "please select", Value = null } ,
+                        new SelectListItem() {Text ="Male",Value="M" },
+                        new SelectListItem() {Text ="Female",Value="F" },
+                        new SelectListItem() {Text ="Transgender",Value="T" }
+                   })
+                    @Html.ValidationMessageFor(temp => temp.CustomGender)
+
+
+
+                </div>
+                <div class="border-top text-right pt-2 ">
+                    <button class="btn btn-success">Update</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+

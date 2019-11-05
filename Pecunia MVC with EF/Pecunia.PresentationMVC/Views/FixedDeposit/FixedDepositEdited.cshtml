@@ -1,0 +1,19 @@
+﻿@model List<PecuniaMVC.Models.FixedDepositViewModelDisplay>
+@using System.Web.Optimization
+@{
+    Layout = "~/Views/Shared/AccountGroupList.cshtml";
+}
+
+<meta name="viewport" content="width=device-width" />
+<title>FixedDepositEdited</title>
+@Scripts.Render("~/scripts/jquery")
+@Scripts.Render("~/scripts/jqueryvalidation")
+@Scripts.Render("~/scripts/bootstrap")
+@Styles.Render("~/styles/bootstrap")
+
+<div>
+    Fixed Deposit Editec Successfully.
+
+    <a href="@Url.Action("ShowAllFixedDeposit", "FixedDeposit")">Show All Fixed Deposits</a>
+
+</div>

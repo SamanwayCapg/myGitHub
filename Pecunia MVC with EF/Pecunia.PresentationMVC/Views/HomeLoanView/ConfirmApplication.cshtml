@@ -1,0 +1,76 @@
+﻿@model Pecunia.PresentationMVC.Models.HomeLoanViewModel
+@{
+    Layout = "~/Views/Shared/LoanNavBar.cshtml";
+}
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Edu Loan</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <div class="container-fluid">
+        @using (Html.BeginForm())
+        {
+            <div class="row pb-3 pl-md-2 bg-info" style="height:80px"><h2>Educational Loan</h2></div>
+
+            <div class="row" style="background-color:#ddd8b9">
+                <div class="form-group col-md-6 mx-auto" style="background-color:#ddd8b9">
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.LoanID, new { @class = "col-form-label col-lg-3", text = "Loan ID" })
+                        @Html.TextBoxFor(temp => temp.LoanID, new { @class = "form-control col-lg-9", disabled = "true" })
+
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.AmountApplied, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.AmountApplied, new { @class = "form-control col-lg-9", type = "number", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.RepaymentPeriod, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control col-lg-9", type = "number", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(t => t.Occupation, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.Occupation, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.GrossIncome, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.GrossIncome, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.SalaryDeductions, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.SalaryDeductions, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.ServiceYears, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.ServiceYears, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.EMI_Amount, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.EMI_Amount, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.InterestRate, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.InterestRate, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.DateOfApplication, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.DateOfApplication, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+                    <div class="form-row pt-2">
+                        @Html.LabelFor(temp => temp.Status, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.Status, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+
+                    <div class="pt-3 mx-auto">
+                        <button class="btn btn-success text-right" type="submit" name="button" value="apply">Submit & Apply</button>
+                        <button class="btn btn-success text-right" type="submit" name="button" value="cancel">Cancel & Back</button>
+                    </div>
+
+
+                </div>
+            </div>
+        }
+    </div>

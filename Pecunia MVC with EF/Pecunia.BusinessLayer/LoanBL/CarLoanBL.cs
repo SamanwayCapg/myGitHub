@@ -176,6 +176,7 @@ namespace Capgemini.Pecunia.BusinessLayer.LoanBL
             {
                 await Task.Run(() =>
                 {
+                    System.Diagnostics.Debug.WriteLine("bl:" + loanID);
                     isDeleted = carLoanDAL.DeleteLoanEntryDAL(loanID);
                 });
                 return isDeleted;

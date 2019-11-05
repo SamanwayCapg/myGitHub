@@ -1,0 +1,36 @@
+﻿
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand font-weight-bold" href="#"><h2 class="display-4">Pecunia</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("AdminIndex", "AdminHome")">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("Index", "Employees")">Employees <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Login")">Log Out</a>
+            </li>
+            <li class="btn-group pt-2">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Approve Loan
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="@Url.Action("ListAllCarLoans", "CarLoanApprove")">Car Loan</a>
+                    <a class="dropdown-item" href="@Url.Action("ListAllEduLoans", "EduLoanApprove")">Edu Loan</a>
+                    <a class="dropdown-item" href="@Url.Action("ListAllHomeLoans", "HomeLoanApprove")">Home Loan</a>
+
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+@RenderBody()

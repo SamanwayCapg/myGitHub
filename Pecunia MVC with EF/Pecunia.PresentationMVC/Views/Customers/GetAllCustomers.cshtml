@@ -1,0 +1,95 @@
+﻿@model List<Pecunia.Mvc.Models.CustomerViewModel>
+@using System.Web.Optimization
+@{
+
+    Layout = "~/Views/Shared/PecuniaLayout.cshtml";
+}
+
+
+<meta name="viewport" content="width=device-width" />
+<title>Welcome</title>
+@Scripts.Render("~/scripts/jqueryBundle")
+@Scripts.Render("~/scripts/validatorBundle")
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Content/bootstrap.css"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<style>
+
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+
+
+<meta name="viewport" content="width=device-width" />
+
+<title>GetAllCustomers</title>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<table border="1" style="text-decoration:dashed;text-decoration-color:rebeccapurple">
+    <thead style="text">
+        <tr class="col-8">
+            <td>CustomerID</td>
+            <td>Customer Name</td>
+            <td>Customer Address</td>
+            <td>Customer Mobile</td>
+            <td>Customer Email</td>
+            <td>Customer Pan</td>
+            <td>Customer Aadhaar</td>
+            <td>DOB</td>
+            <td>Customer Gender</td>
+            <td>Update</td>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        @using (Html.BeginForm())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CustomerID</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.CustomerAddress</td>
+                    <td>@item.CustomerMobile</td>
+                    <td>@item.CustomerEmail</td>
+                    <td>@item.CustomerPan</td>
+                    <td>@item.CustomerAadhaarNumber</td>
+                    <td>@item.DOB.ToString("yyyy-MM-dd")</td>
+                    <td>@item.CustomGender</td>
+                    <td>
+
+                        <a href="@Url.Action("Update","Customers",new { id=item.CustomerID})" class="btn btn-secondary">Edit</a>
+                    </td>
+
+
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+

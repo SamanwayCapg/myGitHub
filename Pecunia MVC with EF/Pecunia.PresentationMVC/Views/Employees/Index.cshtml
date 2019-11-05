@@ -1,0 +1,79 @@
+﻿@model List<Pecunia.Mvc.Models.EmployeeViewModel>
+@using System.Web.Optimization;
+
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    @Scripts.Render("~/scripts/jquery")
+    @Scripts.Render("~/scripts/jqueryvalidation")
+    @Scripts.Render("~/scripts/bootstrap")
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/dataTables.bootstrap4.min.js"></script>
+    <link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    @Styles.Render("~/styles/bootstrap")
+
+
+    <div class="container-fluid ">
+        @{ var index = 0;}
+        <div>
+
+           
+            <a class="btn btn-outline-dark mt-5 mb-5 btn-info text-white float-right" data-toggle="tooltip" data-placement="bottom" title="Click to add a new employee" href="@Url.Action("Add", "Employees")">Add Employee</a>
+        </div>
+
+        <table class="table table-hover bg-light" id="tb1">
+            <thead class="thead-dark">
+                <tr>
+                    <th>S.No</th>
+                    <th>Employee Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var emp in Model)
+                {
+                    <tr id="selectRow">
+                        <td class="index" @(index++)>@index</td>
+                        <td class="name">@emp.EmployeeName</td>
+                        <td class="email">@emp.EmployeeEmail</td>
+                        <td class="mobile">@emp.Mobile</td>
+                        <td><a onclick="return confirm('Are you sure?')" href="@Url.Action("Delete", "Employees", new {employeeID = Model[index-1].EmployeeID })" class="btn btn-outline-secondary btn-dark text-white">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            $('#tb1').DataTable();
+            $('#tb1_wrapper').find('label').each(function () {
+                $(this).parent().append($(this).children());
+            });
+            $('#tb1_wrapper .dataTables_filter').find('input').each(function () {
+                const $this = $(this);
+                $this.attr("placeholder", "Search");
+                $this.removeClass('form-control-sm');
+            });
+            $('#tb1_wrapper .dataTables_length').addClass('d-flex flex-row');
+            $('#tb1_wrapper .dataTables_filter').addClass('md-form');
+            $('#tb1_wrapper select').removeClass(
+                'custom-select custom-select-sm form-control form-control-sm');
+            $('#tb1_wrapper select').addClass('mdb-select');
+            $('#tb1_wrapper .mdb-select').materialSelect();
+            $('#tb1_wrapper .dataTables_filter').find('label').remove();
+        });
+    </script>*@

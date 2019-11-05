@@ -1,0 +1,90 @@
+﻿@model PecuniaMVC.Models.FixedDepositViewModel
+@using System.Web.Optimization
+
+@{
+    Layout = "~/Views/Shared/AccountGroupList.cshtml";
+}
+
+   <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    @Scripts.Render("~/scripts/jquery")
+    @Scripts.Render("~/scripts/jqueryvalidation")
+    @Scripts.Render("~/scripts/bootstrap")
+    @Styles.Render("~/styles/bootstrap")
+
+    <div class="container-fluid">
+        <div class="col-md-6 mx-auto pt-3">
+            <h3>Create FixedDeposit</h3>
+        </div>
+
+        @using (Html.BeginForm("Create", "FixedDeposit", FormMethod.Post))
+        {
+
+            <div class="row pt-5">
+
+                <div class="col-md-6 mx-auto">
+
+                    <div class="form-group form-row">
+                        @Html.LabelFor(temp => temp.CustomerID,
+           new { @class = "col-form-label col-lg-3" })
+                        @Html.DropDownListFor(temp => temp.CustomerID, ViewBag.CustomersList as SelectList, "Please Select",
+         new { @class = "form-control col-lg-9" })
+
+                        @Html.ValidationMessageFor(temp => temp.CustomerID)
+                    </div>
+
+                    <div class="form-group form-row">
+                        @Html.LabelFor(temp => temp.Tenure,
+           new { @class = "col-form-label col-lg-3" })
+                        @Html.DropDownListFor(temp => temp.Tenure, new List<SelectListItem>()
+                   {
+                       new SelectListItem(){ Text="5 Years (Interest Rate 4%)",Value="5"},
+                        new SelectListItem(){ Text="10 Years(Interest Rate 6%)",Value="10"},
+                                new SelectListItem(){ Text="15 Years(Interest Rate 8%)",Value="15"}
+
+                   },
+                   "Please Select",
+         new { @class = "form-control col-lg-9" })
+
+                        @Html.ValidationMessageFor(temp => temp.Tenure)
+                    </div>
+
+                    <div class="form-group form-row">
+                        @Html.LabelFor(temp => temp.HomeBranch,
+           new { @class = "col-form-label col-lg-3" })
+                        @Html.DropDownListFor(temp => temp.HomeBranch, new List<SelectListItem>()
+                   {
+                       new SelectListItem(){ Text="Pune",Value="Pune"},
+                        new SelectListItem(){ Text="Mumbai",Value="Mumbai"},
+                        new SelectListItem(){ Text="Kolkata",Value="Kolkata"},
+
+                   },
+                    "Please Select",
+         new { @class = "form-control col-lg-9" })
+
+                        @Html.ValidationMessageFor(temp => temp.HomeBranch)
+                    </div>
+
+                    <div class="form-group form-row">
+
+                        @Html.LabelFor(temp => temp.FdDeposit,
+           new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.FdDeposit, new { @class = "form-control col-lg-9", @maxlength = "8" })
+
+                        @Html.ValidationMessageFor(temp => temp.FdDeposit)
+                    </div>
+
+                    <div class="border-top text-right pt-2">
+
+                        <button class="btn btn-success">Create</button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        }
+
+        <a href="@Url.Action("EditingFixedDepositMenu", "FixedDeposit")">Edit</a>
+    </div>

@@ -35,7 +35,65 @@ namespace Pecunia.PresentationMVC.Controllers
                 ServiceYears = homeLoans.ElementAt(0).ServiceYears
             };
 
-            return View(homeLoanViewModel);
+            //to pass value from one action to another action
+            TempData["loanID"] = Convert.ToString(homeLoans.ElementAt(0).LoanID);
+
+            return View("ConfirmApplication", homeLoanViewModel);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> ViewDetails(string button, CarLoanViewModel carLoanModel)
+        {
+            bool isDeleted = false;
+            switch (button)
+            {
+                case "apply":
+                    return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Loan Applied Successfully" });
+
+                case "cancel":
+                    HomeLoanBL homeLoan = new HomeLoanBL();
+                    isDeleted = await homeLoan.DeleteLoanEntryBL(Convert.ToString(TempData["loanID"]));
+                    System.Diagnostics.Debug.WriteLine(isDeleted);
+                    if (isDeleted == true)
+                        return RedirectToAction("DisplayMessage", "ShowMessage", new {Message = "Loan ID:" +  TempData["loanID"] + "\nHey! Loan Application Cancelled" });
+                    else
+                        return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Loan ID:" + TempData["loanID"] + "\nSorry! Request can't be processed now, come back later " });
+
+                default:
+                    return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Loan Applied Successfully" });
+            }
+        }
+
+
+        public async Task<ActionResult> ViewHomeLoanDetails()
+        {
+            List<HomeLoan> homeLoans = new List<HomeLoan>();
+
+            List<HomeLoanViewModel> homeLoanViewModels = new List<HomeLoanViewModel>();
+
+            HomeLoanBL homeLoanBL = new HomeLoanBL();
+
+            homeLoans = await homeLoanBL.ListAllLoansBL();
+
+            foreach (HomeLoan loan in homeLoans)
+            {
+                HomeLoanViewModel homeLoanViewModel = new HomeLoanViewModel()
+                {
+                    LoanID = loan.LoanID,
+                    AmountApplied = loan.AmountApplied,
+                    InterestRate = loan.InterestRate,
+                    EMI_Amount = loan.EMI_amount,
+                    RepaymentPeriod = loan.RepaymentPeriod,
+                    DateOfApplication = loan.DateOfApplication,
+                    Status = loan.LoanStatus,
+                    Occupation = loan.Occupation,
+                    GrossIncome = loan.GrossIncome,
+                    SalaryDeductions = loan.SalaryDeduction,
+                    ServiceYears = loan.ServiceYears
+                };
+                homeLoanViewModels.Add(homeLoanViewModel);
+            }
+            return View("ShowHomeLoanDetails", homeLoanViewModels);
         }
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d0cb8881365b41f1a9e6f37e561e715f" Name="Diagram1">
+        <EntityTypeShape EntityType="TeamF_EF_Entities.Account" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.Admin" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.CarLoan" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.Customer" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.EduLoan" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.Employee" Width="1.5" PointX="5.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.FixedDeposit" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.HomeLoan" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeamF_EF_Entities.Transaction" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="TeamF_EF_Entities.FK__Account__Custome__1EE485AA" ManuallyRouted="false" />
+        <AssociationConnector Association="TeamF_EF_Entities.FK__Transacti__Accou__2E26C93A" ManuallyRouted="false" />
+        <AssociationConnector Association="TeamF_EF_Entities.FK__Admins__Employee__1C0818FF" ManuallyRouted="false" />
+        <AssociationConnector Association="TeamF_EF_Entities.FK__CarLoan__Custome__249D5F00" ManuallyRouted="false" />
+        <AssociationConnector Association="TeamF_EF_Entities.FK__EduLoan__Custome__21C0F255" ManuallyRouted="false" />
+        <AssociationConnector Association="TeamF_EF_Entities.FK__FixedDepo__Custo__24885067" ManuallyRouted="false" />
+        <AssociationConnector Association="TeamF_EF_Entities.FK__HomeLoan__Custom__2779CBAB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

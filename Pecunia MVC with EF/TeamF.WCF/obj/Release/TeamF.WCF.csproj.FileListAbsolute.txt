@@ -1,0 +1,7 @@
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\TeamF.WCF\bin\TeamF.WCF.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\TeamF.WCF\bin\TeamF.WCF.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\TeamF.WCF\bin\TeamF.WCF.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\TeamF.WCF\obj\Release\TeamF.WCF.csprojAssemblyReference.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\TeamF.WCF\obj\Release\TeamF.WCF.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\TeamF.WCF\obj\Release\TeamF.WCF.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\TeamF.WCF\obj\Release\TeamF.WCF.pdb

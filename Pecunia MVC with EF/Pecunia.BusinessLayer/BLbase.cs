@@ -8,6 +8,9 @@ using Capgemini.Pecunia.Exceptions;
 
 namespace Capgemini.Pecunia.BusinessLayer
 {
+
+
+
     public abstract class BLbase<T>
     {
         public async virtual Task<bool> Validate(T entityObject)
@@ -20,10 +23,10 @@ namespace Capgemini.Pecunia.BusinessLayer
                 Type type = typeof(T);
                 PropertyInfo[] properties = type.GetProperties();
 
-                foreach(var prop in properties)
+                foreach (var prop in properties)
                 {
                     var attr = prop.GetCustomAttribute<RequiredAttribute>();
-                    if(attr != null)
+                    if (attr != null)
                     {
                         object currentValue = prop.GetValue(entityObject);
                         if (string.IsNullOrEmpty(Convert.ToString(currentValue)))
@@ -57,4 +60,6 @@ namespace Capgemini.Pecunia.BusinessLayer
             return valid;
         }
     }
+
+
 }

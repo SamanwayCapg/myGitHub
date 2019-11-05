@@ -15,6 +15,7 @@ namespace Pecunia.PresentationMVC.Controllers
     public class CarLoanApplyController : Controller
     {
         // URL: CarLoanApply/apply
+        //[Route("carapply/apply")]
         public ActionResult Apply()
         {
             CarLoanApplyModel carLoanApplyModel = new CarLoanApplyModel();
@@ -48,7 +49,7 @@ namespace Pecunia.PresentationMVC.Controllers
             if (isApplied == true)
                 return RedirectToAction("ViewDetails", "CarLoanView", new { loanID = carLoan.LoanID });
             else
-                return RedirectToAction("Apply", "HomeLoanApply");
+                return RedirectToAction("DisplayMessage", "ShowMessage", new { Message= "Salary deductions must be less than Gross Income"});
 
         }
 

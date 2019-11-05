@@ -11,18 +11,17 @@ namespace Capgemini.Pecunia.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Transaction
     {
         public System.Guid TransactionID { get; set; }
-        public long AccountNumber { get; set; }
-        public Nullable<System.Guid> AccountID { get; set; }
+        public System.Guid AccountID { get; set; }
         public string TypeOfTransaction { get; set; }
         public decimal Amount { get; set; }
         public Nullable<System.DateTime> DateOfTransaction { get; set; }
-        public string ModeOfTransaction { get; set; }
+        public string Mode { get; set; }
         public string ChequeNumber { get; set; }
-    
+
         public virtual Account Account { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Capgemini.Pecunia.Entities
         public Nullable<double> InterestRate { get; set; }
         public Nullable<int> Tenure { get; set; }
         public Nullable<long> AccountNumber { get; set; }
-        public Nullable<System.Guid> HomeBranch { get; set; }
+        public string HomeBranch { get; set; }
         public Nullable<System.Guid> CustomerID { get; set; }
         public string Feedback { get; set; }
         public Nullable<bool> IsActive { get; set; }

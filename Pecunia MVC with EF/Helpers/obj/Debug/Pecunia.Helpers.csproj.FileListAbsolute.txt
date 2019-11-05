@@ -68,3 +68,45 @@ E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Helpers\bin\Debug\System.Valu
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Helpers\bin\Debug\System.ValueTuple.xml
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\obj\Debug\Helpers.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Helpers\obj\Debug\Helpers.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\Helpers.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csprojAssemblyReference.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\obj\Debug\Pecunia.Helpers.csproj.CopyComplete
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\obj\Debug\Helpers.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Helpers\obj\Debug\Helpers.pdb

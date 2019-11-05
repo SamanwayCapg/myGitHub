@@ -16,13 +16,13 @@ namespace ConsoleApp3
         [STAThread]
         public static void Main()
         {
-            Test.doWork().Wait();
+            Test.DoWork().Wait();
         }
     }
 
     class Test
     {
-        public static async Task doWork()
+        public static async Task DoWork()
         {
             List<Customer> customers = new List<Customer>();
             List<CarLoan> carLoans = new List<CarLoan>();
@@ -43,7 +43,7 @@ namespace ConsoleApp3
             Guid guid;
             Guid.TryParse("00000000-0000-0000-0000-000000000000", out guid);
 
-            success = await carLoanBL.DeleteLoanEntryBL("8D3BD188-DC69-4CFE-A0B1-F65550122B30");
+            success = await carLoanBL.DeleteLoanEntryBL("65B88E7E-6A14-46A2-8A2B-215867E1DF72");
             Console.WriteLine(success);
 
             //success
@@ -110,8 +110,8 @@ namespace ConsoleApp3
             //carLoans = await carLoanBL.ApproveLoanBL("110AEF73-6D71-426C-B4D3-D5AAE1CE58F1", "INVALID");
             //Console.WriteLine("carloan:" + carLoans.ElementAt(0).LoanStatus);
 
-            homeLoans = await homeLoanBL.ApproveLoanBL("13EB5DE9-5995-4446-97A9-8F7ACB0CC255", "INVALID");
-            Console.WriteLine("homeloan:" + homeLoans.ElementAt(0).LoanStatus);
+            //homeLoans = await homeLoanBL.ApproveLoanBL("13EB5DE9-5995-4446-97A9-8F7ACB0CC255", "INVALID");
+            //Console.WriteLine("homeloan:" + homeLoans.ElementAt(0).LoanStatus);
 
 
             //testing to set two fields for dropdown list

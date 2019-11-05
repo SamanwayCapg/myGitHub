@@ -1,0 +1,81 @@
+﻿@model MvcTransaction.Models.TransactionViewModel
+@using System.Web.Optimization
+
+@{ 
+    Layout = "~/Views/Shared/PecuniaLayout.cshtml";
+}
+
+    <meta name="viewport" content="width=device-width" />
+    <title>ChequeTransaction</title>
+   @Scripts.Render("~/scripts/jquery")
+   @Scripts.Render("~/scripts/jqueryvalidation")
+   @Scripts.Render("~/scripts/bootstrap.js")
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+
+    
+    <div class="container-fluid">
+       <div class="text-black"> 
+           <div class="col-md-6 mx-auto pt-5 pb-5"><h2>Cheque Transaction</h2></div>
+        </div>
+        @using (Html.BeginForm("SaveCheque","Transaction", FormMethod.Post))
+        {
+            <div class="row">
+
+                <div class="col-md-6 mx-auto border-secondary">
+                    <div class="form-row pt-5 pb-4">
+                        @Html.LabelFor(temp => temp.TransactionID, new { @class = "col-form label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.TransactionID, new { @class = "form-control col-lg-9", disabled = "true" })
+                    </div>
+
+                    <div class="form-row pb-4">
+                        @Html.LabelFor(temp => temp.AccountID, new { @class = "col-form label col-lg-3" })
+                        <div class="form-row pb-2  col-lg-9">
+                            @Html.DropDownListFor(temp => temp.AccountID, ViewBag.AccountsList as SelectList,
+                            new { @class = "form-control" })
+                            @Html.ValidationMessageFor(temp => temp.AccountID)
+                        </div>
+                    </div>
+
+                    <div class="form-row pb-4"  data-toggle="tooltip" data-html="true" title="Select type of Transaction you want to make">
+                        @Html.LabelFor(temp => temp.TypeOfTransaction, new { @class = "col-form-label col-lg-3" })
+                        @Html.DropDownListFor(temp => temp.TypeOfTransaction, new List<SelectListItem>()
+                            {
+                                //new SelectListItem() {Text="Please Select", Value=null},
+                                new SelectListItem() {Text="Credit", Value="Credit"},
+                                new SelectListItem() {Text="Debit", Value="Debit"}
+
+                            })
+                    </div>
+
+                    <div class="form-row pb-4">
+                        @Html.LabelFor(temp => temp.Amount, new { @class = "col-form label col-lg-3" })
+                        <div class="form-row pb-2"  data-toggle="tooltip" data-html="true" title="Enter Amount less than 50,000">
+                            @Html.TextBoxFor(temp => temp.Amount, new { @class = "form-control col-lg-9", placeholder = "Enter Amount", @maxlength = "5" })
+                            @Html.ValidationMessageFor(temp => temp.Amount)
+                        </div>
+                    </div>
+
+                    <div class="form-row pb-4">
+                        @Html.LabelFor(temp => temp.Mode, new { @class = "col-form-label col-lg-3" })
+                        @Html.TextBoxFor(temp => temp.Mode, new { @class = "form-control col-lg-9", disabled = "true", placeholder = "Cheque" })
+                    </div>
+                    
+                    <div class="form-row pb-4">
+                        @Html.LabelFor(temp => temp.ChequeNumber, new { @class = "col-form label col-lg-3" })
+                        <div class=" pb-2" data-toggle="tooltip" data-html="true" title="Enter Cheque Number">
+                            @Html.TextBoxFor(temp => temp.ChequeNumber, new { @class = "form-control col-lg-12", placeholder = "Enter Cheque Number", @maxlength = "6" })
+                            @Html.ValidationMessageFor(temp => temp.ChequeNumber)
+                        </div>
+                    </div>
+                    <div class="text-center pt-5">
+                        <button class=" btn btn-success text-right" data-toggle="tooltip" data-html="true" title="Make Transaction">Submit</button>
+                        <a href="@Url.Action("Index","Transaction")" class=" btn btn-danger text-left" data-toggle="tooltip" data-html="true" title="Cancel Transaction">Cancel</a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+
+

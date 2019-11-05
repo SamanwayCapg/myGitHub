@@ -7,6 +7,7 @@ using Capgemini.Pecunia.Entities;
 
 
 
+
 namespace Capgemini.Pecunia.Contracts.BLContracts
 {
     public interface ICustomerBL

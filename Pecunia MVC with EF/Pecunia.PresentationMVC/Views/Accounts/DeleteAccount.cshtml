@@ -1,0 +1,47 @@
+﻿
+@model PecuniaMVC.Models.AccountViewModelDisplay
+@using System.Web.Optimization
+
+
+@{
+    Layout = "~/Views/Shared/AccountGroupList.cshtml";
+}
+
+<meta name="viewport" content="width=device-width" />
+<title>DeleteAccount</title>
+@Scripts.Render("~/scripts/jquery")
+@Scripts.Render("~/scripts/jqueryvalidation")
+@Scripts.Render("~/scripts/bootstrap")
+@Styles.Render("~/styles/bootstrap")
+
+<div class="container-fluid">
+    <h3>Delete Account</h3>
+    @Html.BeginForm("DeleteAccountDeleted", "Accounts", FormMethod.Post)
+    {
+    <div class="row">
+
+
+        <div class="col-md-6 mx-auto">
+
+            <div class="form-group form-row">
+                @Html.LabelFor(temp => temp.Feedback,
+                      new { @class="col-form-label col-lg-3" })
+                @Html.TextBoxFor(temp => temp.Feedback, new { @class = "form-control col-lg-9" })
+                @Html.ValidationMessageFor(temp => temp.Feedback)
+
+                @Html.HiddenFor(temp => temp.AccountID)
+
+            </div>
+
+            <div class="border-top text-right pt-2">
+
+                <button>Delete	</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    }
+
+</div>

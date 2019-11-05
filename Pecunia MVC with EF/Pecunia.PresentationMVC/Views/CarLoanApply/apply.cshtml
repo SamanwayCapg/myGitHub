@@ -1,115 +1,96 @@
 ﻿@model Pecunia.PresentationMVC.Models.CarLoanApplyModel
-
-@{
-    Layout = null;
-}
+@using System.Web.Optimization
 
 @{
     ViewBag.Title = "apply";
+    Layout = "~/Views/Shared/LoanNavBar.cshtml";
 }
 
-<!DOCTYPE html>
+@Scripts.Render("~/scripts/jqueryBundle")
+@Scripts.Render("~/scripts/validatorBundle")
+@Scripts.Render("~/scripts/bootstrapBundle")
+<title>Apply Car Loan</title>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Apply Car Loan</title>
-    <script src="~/Scripts/jquery-3.4.1.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-    <script src="~/Scripts/umd/popper.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+@using (Html.BeginForm("Apply", "CarLoanApply", FormMethod.Post))
+{
+    <div class="row pb-3 pl-md-2 bg-info" style="height:80px; width:100%"><h2>Apply Car Loan</h2></div>
 
-</head>
-<body>
-    <div class="container-fluid">
+    <div class="row" style="background-color:#ddd8b9">
+        <div class="form-group col-md-6 mx-auto" style="background-color:#ddd8b9">
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.LoanID, new { @class = "col-form-label col-lg-3", text = "Loan ID" })
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(temp => temp.LoanID, new { @class = "form-control", placeholder = "ID will be generated once you finished the form!", disabled = "true" })
+                </div>
 
-        @using (Html.BeginForm("Apply", "CarLoanApply", FormMethod.Post))
-        {
-            <div class="pb-3 pl-md-2 bg-info" style="height:80px"><h2>Apply Car Loan</h2></div>
-
-            <div class="row" style="background-color:#ddd8b9">
-                <div class="form-group col-md-6 mx-auto" style="background-color:#ddd8b9">
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.LoanID, new { @class = "col-form-label col-lg-3", text = "Loan ID" })
-                        @Html.TextBoxFor(temp => temp.LoanID, new { @class = "form-control col-lg-9", placeholder="ID will be generated once you finished the form!", disabled = "true" })
-
-                    </div>
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.CustomerID, new { @class = "col-form-label col-lg-3" })
-                        <div class="col-lg-9">
-                            @Html.DropDownListFor(t => t.CustomerID, ViewBag.customers as SelectList)
-                        </div>
-                    </div>
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.AmountApplied, new { @class = "col-form-label col-lg-3" })
-                        <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.AmountApplied, new { @class = "form-control ", placeholder = "Rs.", type="number" })
-                            @Html.ValidationMessageFor(temp => temp.AmountApplied)
-                        </div>
-                    </div>
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.RepaymentPeriod, new { @class = "col-form-label col-lg-3" })
-                        <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ", placeholder = "Months", type = "number" })
-                            @Html.ValidationMessageFor(temp => temp.RepaymentPeriod)
-                        </div>
-                    </div>
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.Occupation, new { @class = "col-form-label col-lg-3" })
-                        @Html.DropDownListFor(temp => temp.Occupation,
-                            new List<SelectListItem>()
-                            {
-                                new SelectListItem() { Text="Agriculture", Value="AGRICULTURE"},
-                                new SelectListItem() { Text="Service", Value="SERVICE"},
-                                new SelectListItem() { Text="Self Employed", Value="SELF_EMPLOYED"},
-                                new SelectListItem() { Text="Retired", Value="RETIRED"},
-                                new SelectListItem() { Text="Others", Value="OTHERS"},
-                            }
-                       )
-                    </div>
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.GrossIncome, new { @class = "col-form-label col-lg-3" })
-                        <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.GrossIncome, new { @class = "form-control", placeholder = "Rs.", type="number" })
-                            @Html.ValidationMessageFor(temp => temp.GrossIncome)
-                        </div>
-                    </div>
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.SalaryDeductions, new { @class = "col-form-label col-lg-3" })
-                        <div class="col-lg-9">
-                            @Html.TextBoxFor(temp => temp.SalaryDeductions, new { @class = "form-control", placeholder = "Rs.", type = "number" })
-                            <span class="text-danger">@Html.ValidationMessageFor(temp => temp.SalaryDeductions)</span>
-                        </div>
-                    </div>
-                    <div class="form-row pt-2">
-                        @Html.LabelFor(temp => temp.Vehicle, new { @class = "col-form-label col-lg-3 " })
-                        @Html.DropDownListFor(temp => temp.Vehicle,
-                            new List<SelectListItem>()
-                            {
-                                new SelectListItem() { Text="Two Wheeler", Value="TWO_WHEELER"},
-                                new SelectListItem() { Text="Three Wheeler", Value="THREE_WHEELER"},
-                                new SelectListItem() { Text="Multi Axle", Value="MULTI_AXLE"},
-                                new SelectListItem() { Text="Others", Value="OTHERS"},
-                            }
-                       )
-                    </div>
-
-                    <div class="form-row pt-2">
-                        @Html.CheckBoxFor(temp => temp.IsAccepted, new { @class = "form-check" })
-                        <label for="IsAccepted"> I accepts the terms and conditions</label>
-                    </div>
-
-                    <div class="  pt-3">
-                        <button class="btn btn-success text-right" data-toggle="tooltip" data-html="true" title="one click away from applying">Submit</button>
-                    </div>
-
-
+            </div>
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.CustomerID, new { @class = "col-form-label col-lg-3" })
+                <div class="col-lg-9">
+                    @Html.DropDownListFor(t => t.CustomerID, ViewBag.customers as SelectList, new { @class = "form-control" })
                 </div>
             </div>
-        }
-    </div>
-</body>
-</html>
 
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.AmountApplied, new { @class = "col-form-label col-lg-3" })
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(temp => temp.AmountApplied, new { @class = "form-control ", placeholder = "Rs.", type = "number" })
+                    @Html.ValidationMessageFor(temp => temp.AmountApplied)
+                </div>
+            </div>
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.RepaymentPeriod, new { @class = "col-form-label col-lg-3" })
+                <div class="col-lg-7">
+                    @Html.TextBoxFor(temp => temp.RepaymentPeriod, new { @class = "form-control ", placeholder = "Months", type = "number" })
+
+                </div>
+                <div class="text-nowrap col-lg-2"> @Html.ValidationMessageFor(temp => temp.RepaymentPeriod)</div>
+            </div>
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.Occupation, new { @class = "col-form-label col-lg-3" })
+                @Html.DropDownListFor(temp => temp.Occupation,
+                    new List<SelectListItem>()
+                    {
+                        new SelectListItem() { Text="Agriculture", Value="AGRICULTURE"},
+                        new SelectListItem() { Text="Service", Value="SERVICE"},
+                        new SelectListItem() { Text="Self Employed", Value="SELF_EMPLOYED"},
+                        new SelectListItem() { Text="Retired", Value="RETIRED"},
+                        new SelectListItem() { Text="Others", Value="OTHERS"},
+                    }
+               )
+            </div>
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.GrossIncome, new { @class = "col-form-label col-lg-3" })
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(temp => temp.GrossIncome, new { @class = "form-control col-lg-6", placeholder = "Rs.", type = "number" })
+                    @Html.ValidationMessageFor(temp => temp.GrossIncome)
+                </div>
+            </div>
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.SalaryDeductions, new { @class = "col-form-label col-lg-3" })
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(temp => temp.SalaryDeductions, new { @class = "form-control", placeholder = "Rs.", type = "number" })
+                    <span class="text-danger">@Html.ValidationMessageFor(temp => temp.SalaryDeductions)</span>
+                </div>
+            </div>
+            <div class="form-row pt-2">
+                @Html.LabelFor(temp => temp.Vehicle, new { @class = "col-form-label col-lg-3 " })
+                @Html.DropDownListFor(temp => temp.Vehicle,
+                    new List<SelectListItem>()
+                    {
+                        new SelectListItem() { Text="Two Wheeler", Value="TWO_WHEELER"},
+                        new SelectListItem() { Text="Three Wheeler", Value="THREE_WHEELER"},
+                        new SelectListItem() { Text="Multi Axle", Value="MULTI_AXLE"},
+                        new SelectListItem() { Text="Others", Value="OTHERS"},
+                    }
+               )
+            </div>
+
+            <div class="  pt-3">
+                <button class="btn btn-success text-right" data-toggle="tooltip" data-html="true" title="one click away from applying">Submit</button>
+            </div>
+
+        </div>
+    </div>
+}

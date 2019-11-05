@@ -88,3 +88,327 @@ E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\E
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.SqlServer.xml
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.dll
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.exe
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.exe.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.rsp
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.exe
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.exe.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.rsp
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.AppContext.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Console.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Compression.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Pipes.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Claims.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XPath.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.exe
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.exe.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.rsp
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Mvc.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Razor.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Razor.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Helpers.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Mvc.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Antlr3.Runtime.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Newtonsoft.Json.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Optimization.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\WebGrease.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Antlr3.Runtime.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Newtonsoft.Json.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Optimization.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Net.Http.Formatting.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.WebHost.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Net.Http.Formatting.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.WebHost.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.exe
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.exe.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.rsp
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.exe
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.exe.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.rsp
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.AppContext.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Console.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Compression.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.FileSystem.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Pipes.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.AccessControl.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Claims.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.ValueTuple.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XPath.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.exe
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.exe.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.rsp
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\VBCSCompiler.exe
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Antlr3.Runtime.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.SqlServer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Newtonsoft.Json.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Net.Http.Formatting.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Helpers.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.WebHost.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Mvc.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Optimization.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Razor.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Razor.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\WebGrease.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Antlr3.Runtime.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.SqlServer.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Newtonsoft.Json.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Net.Http.Formatting.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.WebHost.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Optimization.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Razor.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Razor.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Helpers.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Mvc.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csprojAssemblyReference.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csproj.CoreCompileInputs.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csproj.CopyComplete
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\TeamF.WCF.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\TeamF.WCF.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\TeamF.WCF.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.PresentationMVC.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.exe
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.exe.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csc.rsp
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.exe
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.exe.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\csi.rsp
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.AppContext.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Console.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Compression.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.IO.Pipes.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Claims.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.ValueTuple.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XPath.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.exe
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.exe.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\vbc.rsp
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Antlr3.Runtime.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Newtonsoft.Json.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Net.Http.Formatting.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Helpers.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.WebHost.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Mvc.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Optimization.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Razor.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\TeamF.WCF.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\WebGrease.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.BusinessLayer.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Entities.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\TeamF.WCF.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\TeamF.WCF.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Antlr3.Runtime.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Newtonsoft.Json.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Net.Http.Formatting.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.ValueTuple.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Http.WebHost.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Optimization.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Razor.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Helpers.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\System.Web.Mvc.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Contracts.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.DataAccessLayer.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Pecunia.Exceptions.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\bin\Helpers.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csprojAssemblyReference.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.csproj.CopyComplete
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.PresentationMVC\obj\Debug\Pecunia.PresentationMVC.pdb

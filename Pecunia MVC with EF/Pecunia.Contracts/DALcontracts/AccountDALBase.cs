@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Capgemini.Pecunia.Entities;
 
+
 namespace Pecunia.Contracts.DALContracts
 {
     public abstract class AccountDALBase

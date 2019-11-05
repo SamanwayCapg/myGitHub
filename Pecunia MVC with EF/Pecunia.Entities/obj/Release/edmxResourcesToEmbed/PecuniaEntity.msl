@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TeamF_EF_EntitiesStoreContainer" CdmEntityContainer="PecuniaEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarLoans">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.CarLoan">
+        <MappingFragment StoreEntitySet="CarLoan">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerMobile" ColumnName="CustomerMobile" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerPan" ColumnName="CustomerPan" />
+          <ScalarProperty Name="CustomerAadhaarNumber" ColumnName="CustomerAadhaarNumber" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="CustomerGender" ColumnName="CustomerGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EduLoans">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.EduLoan">
+        <MappingFragment StoreEntitySet="EduLoan">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RepaymentHoliday" ColumnName="RepaymentHoliday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="EmployeePassword" ColumnName="EmployeePassword" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedDeposits">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.FixedDeposit">
+        <MappingFragment StoreEntitySet="FixedDeposit">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="FdDeposit" ColumnName="FdDeposit" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="Tenure" ColumnName="Tenure" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeLoans">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.HomeLoan">
+        <MappingFragment StoreEntitySet="HomeLoan">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="ServiceYears" ColumnName="ServiceYears" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="TeamF_EF_Entities.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateOfTransaction" ColumnName="DateOfTransaction" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddAccountDAL" FunctionName="TeamF_EF_Entities.Store.AddAccountDAL" />
+    <FunctionImportMapping FunctionImportName="AddAccountDAL1" FunctionName="TeamF_EF_Entities.Store.AddAccountDAL1" />
+    <FunctionImportMapping FunctionImportName="AddAdmin" FunctionName="TeamF_EF_Entities.Store.AddAdmin" />
+    <FunctionImportMapping FunctionImportName="AddCustomerDAL" FunctionName="TeamF_EF_Entities.Store.AddCustomerDAL" />
+    <FunctionImportMapping FunctionImportName="AddEmployees" FunctionName="TeamF_EF_Entities.Store.AddEmployees" />
+    <FunctionImportMapping FunctionImportName="AddFixedDepositDAL" FunctionName="TeamF_EF_Entities.Store.AddFixedDepositDAL" />
+    <FunctionImportMapping FunctionImportName="AddFixedDepositDAL1" FunctionName="TeamF_EF_Entities.Store.AddFixedDepositDAL1" />
+    <FunctionImportMapping FunctionImportName="AddFixedDepositDAL2" FunctionName="TeamF_EF_Entities.Store.AddFixedDepositDAL2" />
+    <FunctionImportMapping FunctionImportName="applyCarLoan" FunctionName="TeamF_EF_Entities.Store.applyCarLoan" />
+    <FunctionImportMapping FunctionImportName="applyEduLoan" FunctionName="TeamF_EF_Entities.Store.applyEduLoan" />
+    <FunctionImportMapping FunctionImportName="applyHomeLoan" FunctionName="TeamF_EF_Entities.Store.applyHomeLoan" />
+    <FunctionImportMapping FunctionImportName="approveCarLoan" FunctionName="TeamF_EF_Entities.Store.approveCarLoan" />
+    <FunctionImportMapping FunctionImportName="approveEduLoan" FunctionName="TeamF_EF_Entities.Store.approveEduLoan" />
+    <FunctionImportMapping FunctionImportName="approveHomeLoan" FunctionName="TeamF_EF_Entities.Store.approveHomeLoan" />
+    <FunctionImportMapping FunctionImportName="cancelCarLoan" FunctionName="TeamF_EF_Entities.Store.cancelCarLoan" />
+    <FunctionImportMapping FunctionImportName="cancelEduLoan" FunctionName="TeamF_EF_Entities.Store.cancelEduLoan" />
+    <FunctionImportMapping FunctionImportName="cancelHomeLoan" FunctionName="TeamF_EF_Entities.Store.cancelHomeLoan" />
+    <FunctionImportMapping FunctionImportName="ChangeAccountType1" FunctionName="TeamF_EF_Entities.Store.ChangeAccountType1" />
+    <FunctionImportMapping FunctionImportName="ChangeBranchofAccount" FunctionName="TeamF_EF_Entities.Store.ChangeBranchofAccount" />
+    <FunctionImportMapping FunctionImportName="ChangeBranchofAccount1" FunctionName="TeamF_EF_Entities.Store.ChangeBranchofAccount1" />
+    <FunctionImportMapping FunctionImportName="ChangeBranchofFixedDeposit" FunctionName="TeamF_EF_Entities.Store.ChangeBranchofFixedDeposit" />
+    <FunctionImportMapping FunctionImportName="ChangeFDDeposit" FunctionName="TeamF_EF_Entities.Store.ChangeFDDeposit" />
+    <FunctionImportMapping FunctionImportName="CreditBalance" FunctionName="TeamF_EF_Entities.Store.CreditBalance" />
+    <FunctionImportMapping FunctionImportName="CreditTransactionByCheque" FunctionName="TeamF_EF_Entities.Store.CreditTransactionByCheque" />
+    <FunctionImportMapping FunctionImportName="CreditTransactionByDepositSlip" FunctionName="TeamF_EF_Entities.Store.CreditTransactionByDepositSlip" />
+    <FunctionImportMapping FunctionImportName="DebitBalance" FunctionName="TeamF_EF_Entities.Store.DebitBalance" />
+    <FunctionImportMapping FunctionImportName="DebitBalanceC" FunctionName="TeamF_EF_Entities.Store.DebitBalanceC" />
+    <FunctionImportMapping FunctionImportName="DebitTransactionByCheque" FunctionName="TeamF_EF_Entities.Store.DebitTransactionByCheque" />
+    <FunctionImportMapping FunctionImportName="DebitTransactionByWithdrawalSlip" FunctionName="TeamF_EF_Entities.Store.DebitTransactionByWithdrawalSlip" />
+    <FunctionImportMapping FunctionImportName="DeleteAccountDAL" FunctionName="TeamF_EF_Entities.Store.DeleteAccountDAL" />
+    <FunctionImportMapping FunctionImportName="DeleteAccountDAL1" FunctionName="TeamF_EF_Entities.Store.DeleteAccountDAL1" />
+    <FunctionImportMapping FunctionImportName="DeleteEmployee" FunctionName="TeamF_EF_Entities.Store.DeleteEmployee" />
+    <FunctionImportMapping FunctionImportName="DeleteFixedDepositDAL" FunctionName="TeamF_EF_Entities.Store.DeleteFixedDepositDAL" />
+    <FunctionImportMapping FunctionImportName="DeleteFixedDepositDAL1" FunctionName="TeamF_EF_Entities.Store.DeleteFixedDepositDAL1" />
+    <FunctionImportMapping FunctionImportName="FdAdding" FunctionName="TeamF_EF_Entities.Store.FdAdding" />
+    <FunctionImportMapping FunctionImportName="GetAccountByAccountID" FunctionName="TeamF_EF_Entities.Store.GetAccountByAccountID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAccountByAccountID_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAccountByAccountID1" FunctionName="TeamF_EF_Entities.Store.GetAccountByAccountID1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAccountByAccountID1_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAccountByCustomerID" FunctionName="TeamF_EF_Entities.Store.GetAccountByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAccountByCustomerID_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAccountByCustomerID1" FunctionName="TeamF_EF_Entities.Store.GetAccountByCustomerID1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAccountByCustomerID1_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAdminByAdminID" FunctionName="TeamF_EF_Entities.Store.GetAdminByAdminID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAdminByAdminID_Result">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAdminByEmailandPassword" FunctionName="TeamF_EF_Entities.Store.GetAdminByEmailandPassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAdminByEmailandPassword_Result">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllCustomersDAL" FunctionName="TeamF_EF_Entities.Store.GetAllCustomersDAL" />
+    <FunctionImportMapping FunctionImportName="GetAllEmployees" FunctionName="TeamF_EF_Entities.Store.GetAllEmployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAllEmployees_Result">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllTransactions" FunctionName="TeamF_EF_Entities.Store.GetAllTransactions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetAllTransactions_Result">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateOfTransaction" ColumnName="DateOfTransaction" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getCarLoanByCustomerID" FunctionName="TeamF_EF_Entities.Store.getCarLoanByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.getCarLoanByCustomerID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getCarLoanByLoanID" FunctionName="TeamF_EF_Entities.Store.getCarLoanByLoanID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.getCarLoanByLoanID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getCarLoanStatus" FunctionName="TeamF_EF_Entities.Store.getCarLoanStatus" />
+    <FunctionImportMapping FunctionImportName="GetCustomerByCustomerIDDAL" FunctionName="TeamF_EF_Entities.Store.GetCustomerByCustomerIDDAL" />
+    <FunctionImportMapping FunctionImportName="getEduLoanByCustomerID" FunctionName="TeamF_EF_Entities.Store.getEduLoanByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.getEduLoanByCustomerID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RepaymentHoliday" ColumnName="RepaymentHoliday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getEduLoanByLoanID" FunctionName="TeamF_EF_Entities.Store.getEduLoanByLoanID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.getEduLoanByLoanID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="InstituteName" ColumnName="InstituteName" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="RepaymentHoliday" ColumnName="RepaymentHoliday" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getEduLoanStatus" FunctionName="TeamF_EF_Entities.Store.getEduLoanStatus" />
+    <FunctionImportMapping FunctionImportName="GetEmployeeByEmail" FunctionName="TeamF_EF_Entities.Store.GetEmployeeByEmail" />
+    <FunctionImportMapping FunctionImportName="GetEmployeeByEmailandPassword" FunctionName="TeamF_EF_Entities.Store.GetEmployeeByEmailandPassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetEmployeeByEmailandPassword_Result">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeeByEmployeeID" FunctionName="TeamF_EF_Entities.Store.GetEmployeeByEmployeeID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetEmployeeByEmployeeID_Result">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="EmployeePassword" ColumnName="EmployeePassword" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeeEmailandPassword" FunctionName="TeamF_EF_Entities.Store.GetEmployeeEmailandPassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetEmployeeEmailandPassword_Result">
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="EmployeePassword" ColumnName="EmployeePassword" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeesByName" FunctionName="TeamF_EF_Entities.Store.GetEmployeesByName" />
+    <FunctionImportMapping FunctionImportName="GetFixedDepositByAccountID" FunctionName="TeamF_EF_Entities.Store.GetFixedDepositByAccountID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetFixedDepositByAccountID_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="FdDeposit" ColumnName="FdDeposit" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="Tenure" ColumnName="Tenure" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetFixedDepositByCustomerID" FunctionName="TeamF_EF_Entities.Store.GetFixedDepositByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetFixedDepositByCustomerID_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="FdDeposit" ColumnName="FdDeposit" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="Tenure" ColumnName="Tenure" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="HomeBranch" ColumnName="HomeBranch" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getHomeLoanByCustomerID" FunctionName="TeamF_EF_Entities.Store.getHomeLoanByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.getHomeLoanByCustomerID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="ServiceYears" ColumnName="ServiceYears" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getHomeLoanByLoanID" FunctionName="TeamF_EF_Entities.Store.getHomeLoanByLoanID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.getHomeLoanByLoanID_Result">
+          <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="AmountApplied" ColumnName="AmountApplied" />
+          <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+          <ScalarProperty Name="EMI_amount" ColumnName="EMI_amount" />
+          <ScalarProperty Name="RepaymentPeriod" ColumnName="RepaymentPeriod" />
+          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+          <ScalarProperty Name="LoanStatus" ColumnName="LoanStatus" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="ServiceYears" ColumnName="ServiceYears" />
+          <ScalarProperty Name="GrossIncome" ColumnName="GrossIncome" />
+          <ScalarProperty Name="SalaryDeduction" ColumnName="SalaryDeduction" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getHomeLoanStatus" FunctionName="TeamF_EF_Entities.Store.getHomeLoanStatus" />
+    <FunctionImportMapping FunctionImportName="GetTransactionsByAccountID" FunctionName="TeamF_EF_Entities.Store.GetTransactionsByAccountID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TeamF_EF_Entities.GetTransactionsByAccountID_Result">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateOfTransaction" ColumnName="DateOfTransaction" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RemoveCustomerDAL" FunctionName="TeamF_EF_Entities.Store.RemoveCustomerDAL" />
+    <FunctionImportMapping FunctionImportName="StoreTransactionRecords" FunctionName="TeamF_EF_Entities.Store.StoreTransactionRecords" />
+    <FunctionImportMapping FunctionImportName="UpdateAdminEmail" FunctionName="TeamF_EF_Entities.Store.UpdateAdminEmail" />
+    <FunctionImportMapping FunctionImportName="UpdateAdminNameAndEmail" FunctionName="TeamF_EF_Entities.Store.UpdateAdminNameAndEmail" />
+    <FunctionImportMapping FunctionImportName="UpdateAdminPassword" FunctionName="TeamF_EF_Entities.Store.UpdateAdminPassword" />
+    <FunctionImportMapping FunctionImportName="UpdateAllEmployeeDetails" FunctionName="TeamF_EF_Entities.Store.UpdateAllEmployeeDetails" />
+    <FunctionImportMapping FunctionImportName="UpdateCustomerByCustomerIDDAL" FunctionName="TeamF_EF_Entities.Store.UpdateCustomerByCustomerIDDAL" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployeeEmail" FunctionName="TeamF_EF_Entities.Store.UpdateEmployeeEmail" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployeeMobile" FunctionName="TeamF_EF_Entities.Store.UpdateEmployeeMobile" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployeeName" FunctionName="TeamF_EF_Entities.Store.UpdateEmployeeName" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployeePassword" FunctionName="TeamF_EF_Entities.Store.UpdateEmployeePassword" />
+  </EntityContainerMapping>
+</Mapping>

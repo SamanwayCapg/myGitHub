@@ -20,5 +20,8 @@ namespace Pecunia.PresentationMVC.Models
         public decimal? GrossIncome { get; set; } //user input 
         public decimal? SalaryDeductions { get; set; } //user input 
         public string Vehicle { get; set; } //user input 
+
+        public bool IsSelected { get; set; } // to perform batch actions like update or delete
+        public int Index { get; set; }
     }
 }

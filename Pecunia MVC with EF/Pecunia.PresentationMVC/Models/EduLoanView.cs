@@ -8,6 +8,7 @@ namespace Pecunia.PresentationMVC.Models
     public class EduLoanViewModel
     {
         public Guid? LoanID { get; set; } // system generated 
+       // public Guid CustomerID { get; set; } //user input 
         public decimal? AmountApplied { get; set; } //user input 
         public decimal? InterestRate { get; set; } //system fixed 
         public decimal? EMI_Amount { get; set; } //system computed 

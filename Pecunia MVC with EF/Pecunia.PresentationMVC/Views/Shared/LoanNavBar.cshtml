@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/PecuniaLayout.cshtml";
+}
+
+@using System.Web.Optimization
+@Scripts.Render("~/scripts/bootstrapBundle")
+
+<div class="row">
+    <div class="col-md-2">
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">
+                Menu
+            </a>
+
+            <div class="btn-group pt-2">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Car Loan
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="@Url.Action("Apply", "CarLoanApply")">Apply</a>
+                    <a class="dropdown-item" href="@Url.Action("ListAllCarLoansToCancel", "CarLoanApprove")">Cancel</a>
+                    <a class="dropdown-item" href="@Url.Action("ViewCarLoanDetails", "CarLoanView")">View</a>
+
+                </div>
+            </div>
+
+            <div class="btn-group pt-2">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Edu Loan
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="@Url.Action("Apply", "EduLoanApply")">Apply</a>
+                    <a class="dropdown-item" href="@Url.Action("ListAllEduLoansToCancel", "EduLoanApprove")">Cancel</a>
+                    <a class="dropdown-item" href="@Url.Action("ViewEduLoanDetails", "EduLoanView")">View</a>
+
+                </div>
+            </div>
+
+            <div class="btn-group pt-2">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Home Loan
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="@Url.Action("Apply", "HomeLoanApply")">Apply</a>
+                    <a class="dropdown-item" href="@Url.Action("ListAllHomeLoansToCancel", "HomeLoanApprove")">Cancel</a>
+                    <a class="dropdown-item" href="@Url.Action("ViewHomeLoanDetails", "HomeLoanView")">View</a>
+
+                </div>
+            </div>
+
+
+
+
+            @*<a href="@Url.Action("ListAllCarLoans", "CarLoanApprove")" class="list-group-item list-group-item-action">Approve  Car Loan</a>
+                <a href="@Url.Action("ListAllEduLoans", "EduLoanApprove")" class="list-group-item list-group-item-action">Approve Edu Loan</a>
+                <a href="@Url.Action("ListAllHomeLoans", "HomeLoanApprove")" class="list-group-item list-group-item-action">Approve Home Loan</a>*@
+
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        @RenderBody()
+    </div>
+</div>
+
+

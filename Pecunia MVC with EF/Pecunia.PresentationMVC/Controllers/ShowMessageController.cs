@@ -23,7 +23,25 @@ namespace Pecunia.PresentationMVC.Controllers
         [HttpPost]
         public ActionResult Redirect()
         {
-            return RedirectToAction("apply", "CarLoanApply");
+            return RedirectToAction("EmployeeIndex", "EmployeeHome");
+        }
+
+
+        /////////////////////////////////////////////////////
+        public ActionResult DisplayMessageForAdmin(string message)
+        {
+            ShowMessageModel showMessageView = new ShowMessageModel()
+            {
+                Message = message
+            };
+
+            return View("DisplayMessageAdmin",showMessageView);
+        }
+
+        [HttpPost]
+        public ActionResult RedirectForAdmin()
+        {
+            return RedirectToAction("AdminIndex", "AdminHome");
         }
     }
 }

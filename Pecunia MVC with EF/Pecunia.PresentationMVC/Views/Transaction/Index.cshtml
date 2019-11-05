@@ -1,0 +1,73 @@
+﻿@model List<MvcTransaction.Models.TransactionViewModel>
+@using System.Web.Optimization
+
+@{
+    Layout = "~/Views/Shared/PecuniaLayout.cshtml";
+}
+
+<meta name="viewport" content="width=device-width" />
+<title>Transactions Menu</title>
+@Scripts.Render("~/scripts/jquery")
+@Scripts.Render("~/scripts/jqueryvalidation")
+@Scripts.Render("~/scripts/bootstrap.js")
+
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/dataTables.bootstrap4.min.js"></script>
+<link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/StyleSheet1.css" rel="stylesheet" />
+
+    
+    <div class="container-fluid">
+        <div class="text-black">
+
+            <div class="pt-3 pb-4">
+                <a href="@Url.Action("ChequeTransactions","Transaction")" class=" btn btn-info text-right" data-toggle="tooltip" data-html="true" title="Make Cheque Transaction">Cheque Transaction</a>
+                <a href="@Url.Action("SlipTransactions","Transaction")" class=" btn btn-info text-left" data-toggle="tooltip" data-html="true" title="Make Slip Transaction">Slip Transaction</a>
+            </div>
+
+            <div class="col-md-6 mx-auto pb-2"><h2>List of all Transactions </h2></div>
+
+        </div>
+        <table id="tb1" class="table table-striped table-bordered" style="width:100%">
+            <thead class="table-dark">
+                <tr>
+                    <th>AccountID</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Date of Transaction</th>
+                    <th>Mode</th>
+                    <th>Cheque Number</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.AccountID</td>
+                        <td>@item.Amount</td>
+                        <td>@item.TypeOfTransaction</td>
+                        <td>@item.DateOfTransaction</td>
+                        <td>@item.Mode</td>
+                        <td>@item.ChequeNumber</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tb1').DataTable();
+    });
+    //var ro = document.getElementById("tb1").rows;
+    //alert(ro.length);
+    //alert(ro[2].cells[4].innerHTML);
+    //$(ro[2]).hide();
+</script>

@@ -67,6 +67,13 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
         /// <returns>Returns Home loan object.</returns>
         public override List<HomeLoan> ApproveLoanDAL(string loanID, string updatedStatus)
         {
+            // status  - priority
+            // applied - 1 lowest
+            // processing - 2
+            // approved - 3
+            // rejected - 3
+            // invalid - 3 highest
+            // possible updation from low to high
             try
             {
                 List<HomeLoan> homeLoan = new List<HomeLoan>();
@@ -79,7 +86,18 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                     var loanEntry = pecEnt.HomeLoans.SingleOrDefault(t => t.LoanID == guid);
                     if (loanEntry != null)
                     {
-                        loanEntry.LoanStatus = updatedStatus;
+                        if (loanEntry.LoanStatus.Equals("APPLIED") == true)
+                        {
+                            loanEntry.LoanStatus = updatedStatus;
+                        }
+                        else if (loanEntry.LoanStatus.Equals("PROCESSING") == true && updatedStatus.Equals("APPLIED") == false)
+                        {
+                            loanEntry.LoanStatus = updatedStatus;
+                        }
+                        else
+                        {
+                            //updation not possible
+                        }
                         pecEnt.SaveChanges();
                     }
                     else

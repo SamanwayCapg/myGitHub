@@ -1,0 +1,58 @@
+﻿@model Pecunia.Mvc.Models.CustomerViewModel
+@using System.Web.Optimization
+@{
+
+    Layout = "~/Views/Shared/PecuniaLayout.cshtml";
+}
+
+
+
+<meta name="viewport" content="width=device-width" />
+<title>CustomersMenu</title>
+@Scripts.Render("~/scripts/jqueryBundle")
+@Scripts.Render("~/scripts/validatorBundle")
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Content/bootstrap.css"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<div class="container-fluid " style="background-color:#c3a2a2">
+
+    <div class="bg-info text-white " style="height:80px">
+        <div class="pt-3 pl-md-2">
+            <h2>
+                Customers Menu
+            </h2>
+        </div>
+    </div>
+
+
+    <style>
+        .block {
+            display: block;
+            width: 400%;
+            border: solid;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+            .block:hover {
+                background-color: #ddd;
+                color: black;
+            }
+    </style>
+    <div>
+        <table>
+            <tr>  <td> <a href="@Url.Action("AddCustomers","Customers")" class="block">Add New Customers</a></td></tr>       @*class="btn btn-success"*@
+
+            <tr>   <td><a href="@Url.Action("GetAllCustomers","Customers")" class="block">Get All Customers</a></td></tr>
+
+
+
+        </table>
+    </div>
+</div>
+

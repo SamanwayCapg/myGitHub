@@ -1,0 +1,16 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = "~/Views/Shared/AccountGroupList.cshtml";
+}
+<meta name="viewport" content="width=device-width" />
+<title>AccountDeleted</title>
+@Scripts.Render("~/scripts/jquery")
+@Scripts.Render("~/scripts/jqueryvalidation")
+@Scripts.Render("~/scripts/bootstrap")
+@Styles.Render("~/styles/bootstrap")
+
+
+<div>
+    Account Deleted Successfully.
+    <a href="@Url.Action("ShowAllAccount", "Accounts")">Show All Accounts</a>
+</div>

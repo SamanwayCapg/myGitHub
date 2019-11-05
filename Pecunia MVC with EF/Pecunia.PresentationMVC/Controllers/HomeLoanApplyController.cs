@@ -46,7 +46,7 @@ namespace Pecunia.PresentationMVC.Controllers
             if (isApplied == true)
                 return RedirectToAction("ViewDetails", "HomeLoanView", new { loanID = homeLoan.LoanID });
             else
-                return RedirectToAction("Apply", "HomeLoanApply");
+                return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Salary deductions must be less than Gross Income" });
 
         }
 

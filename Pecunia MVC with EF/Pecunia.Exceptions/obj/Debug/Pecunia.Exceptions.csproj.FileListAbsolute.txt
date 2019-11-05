@@ -102,3 +102,45 @@ E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.SqlServer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csprojAssemblyReference.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.csproj.CopyComplete
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.Exceptions\obj\Debug\Pecunia.Exceptions.pdb

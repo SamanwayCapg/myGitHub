@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TeamF_EF_Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountNumber" Type="bigint" />
+    <Property Name="HomeBranch" Type="varchar" MaxLength="20" />
+    <Property Name="Feedback" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DateOfCreation" Type="datetime" />
+    <Property Name="AccountType" Type="varchar" MaxLength="7" />
+    <Property Name="AccountBalance" Type="money" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AdminName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="AdminEmail" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="AdminPassword" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CreationDateTime" Type="datetime" />
+    <Property Name="LastModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CarLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="AmountApplied" Type="money" />
+    <Property Name="InterestRate" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="EMI_amount" Type="money" />
+    <Property Name="RepaymentPeriod" Type="tinyint" />
+    <Property Name="DateOfApplication" Type="datetime" />
+    <Property Name="LoanStatus" Type="varchar" MaxLength="15" />
+    <Property Name="Occupation" Type="varchar" MaxLength="15" />
+    <Property Name="GrossIncome" Type="money" />
+    <Property Name="SalaryDeduction" Type="money" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="CustomerAddress" Type="varchar" MaxLength="200" />
+    <Property Name="CustomerMobile" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="CustomerEmail" Type="varchar" MaxLength="40" />
+    <Property Name="CustomerPan" Type="char" MaxLength="10" />
+    <Property Name="CustomerAadhaarNumber" Type="char" MaxLength="12" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="CustomerGender" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="EduLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="AmountApplied" Type="money" />
+    <Property Name="InterestRate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="EMI_amount" Type="money" />
+    <Property Name="RepaymentPeriod" Type="tinyint" />
+    <Property Name="DateOfApplication" Type="datetime" />
+    <Property Name="LoanStatus" Type="varchar" MaxLength="15" />
+    <Property Name="Course" Type="varchar" MaxLength="15" />
+    <Property Name="InstituteName" Type="varchar" MaxLength="50" />
+    <Property Name="StudentID" Type="varchar" MaxLength="20" />
+    <Property Name="RepaymentHoliday" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="EmployeeEmail" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="EmployeePassword" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Mobile" Type="char" MaxLength="10" />
+    <Property Name="CreationDateTime" Type="datetime" />
+    <Property Name="LastModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="FixedDeposit">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FdDeposit" Type="bigint" />
+    <Property Name="InterestRate" Type="float" />
+    <Property Name="Tenure" Type="int" />
+    <Property Name="AccountNumber" Type="bigint" />
+    <Property Name="HomeBranch" Type="varchar" MaxLength="20" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="Feedback" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DateOfCreation" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HomeLoan">
+    <Key>
+      <PropertyRef Name="LoanID" />
+    </Key>
+    <Property Name="LoanID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="AmountApplied" Type="money" />
+    <Property Name="InterestRate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="EMI_amount" Type="money" />
+    <Property Name="RepaymentPeriod" Type="tinyint" />
+    <Property Name="DateOfApplication" Type="datetime" />
+    <Property Name="LoanStatus" Type="varchar" MaxLength="15" />
+    <Property Name="Occupation" Type="varchar" MaxLength="15" />
+    <Property Name="ServiceYears" Type="tinyint" />
+    <Property Name="GrossIncome" Type="money" />
+    <Property Name="SalaryDeduction" Type="money" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccountID" Type="uniqueidentifier" />
+    <Property Name="TypeOfTransaction" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="DateOfTransaction" Type="datetime" />
+    <Property Name="Mode" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="ChequeNumber" Type="char" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Account__Custome__1EE485AA">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Admins__Employee__1C0818FF">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Admins">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CarLoan__Custome__249D5F00">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CarLoan" Type="Self.CarLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CarLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EduLoan__Custome__21C0F255">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="EduLoan" Type="Self.EduLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="EduLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FixedDepo__Custo__24885067">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="FixedDeposit" Type="Self.FixedDeposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="FixedDeposit">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HomeLoan__Custom__2779CBAB">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="HomeLoan" Type="Self.HomeLoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="HomeLoan">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__Accou__2E26C93A">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddAccountDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountType" Type="varchar" Mode="In" />
+    <Parameter Name="AccountNumber" Type="bigint" Mode="In" />
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="AddAccountDAL1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AccountType" Type="varchar" Mode="In" />
+    <Parameter Name="AccountNumber" Type="bigint" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="AddAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="adminid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="adminname" Type="varchar" Mode="In" />
+    <Parameter Name="adminemail" Type="varchar" Mode="In" />
+    <Parameter Name="adminpassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="AddCustomerDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerAddress" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerMobile" Type="char" Mode="In" />
+    <Parameter Name="CustomerEmail" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerPan" Type="char" Mode="In" />
+    <Parameter Name="CustomerAadhaarNumber" Type="char" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+    <Parameter Name="CustomerGender" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="AddEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="empname" Type="varchar" Mode="In" />
+    <Parameter Name="empemail" Type="varchar" Mode="In" />
+    <Parameter Name="emppassword" Type="varchar" Mode="In" />
+    <Parameter Name="empmobile" Type="char" Mode="In" />
+  </Function>
+  <Function Name="AddFixedDepositDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountNumber" Type="bigint" Mode="In" />
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="FdDeposit" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="Tenure" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddFixedDepositDAL1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AccountNumber" Type="bigint" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="Tenure" Type="int" Mode="In" />
+    <Parameter Name="FdDeposit" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+  </Function>
+  <Function Name="AddFixedDepositDAL2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="FdDeposit" Type="money" Mode="In" />
+    <Parameter Name="AccountNumber" Type="bigint" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="Tenure" Type="int" Mode="In" />
+  </Function>
+  <Function Name="applyCarLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AmountApplied" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="EMI_amount" Type="money" Mode="In" />
+    <Parameter Name="RepaymentPeriod" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfApplication" Type="datetime" Mode="In" />
+    <Parameter Name="LoanStatus" Type="varchar" Mode="In" />
+    <Parameter Name="Occupation" Type="varchar" Mode="In" />
+    <Parameter Name="GrossIncome" Type="money" Mode="In" />
+    <Parameter Name="SalaryDeduction" Type="money" Mode="In" />
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="applyEduLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AmountApplied" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="EMI_amount" Type="money" Mode="In" />
+    <Parameter Name="RepaymentPeriod" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfApplication" Type="datetime" Mode="In" />
+    <Parameter Name="LoanStatus" Type="varchar" Mode="In" />
+    <Parameter Name="Course" Type="varchar" Mode="In" />
+    <Parameter Name="InstituteName" Type="varchar" Mode="In" />
+    <Parameter Name="StudentID" Type="varchar" Mode="In" />
+    <Parameter Name="RepaymentHoliday" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="applyHomeLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AmountApplied" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="EMI_amount" Type="money" Mode="In" />
+    <Parameter Name="RepaymentPeriod" Type="tinyint" Mode="In" />
+    <Parameter Name="DateOfApplication" Type="datetime" Mode="In" />
+    <Parameter Name="LoanStatus" Type="varchar" Mode="In" />
+    <Parameter Name="Occupation" Type="varchar" Mode="In" />
+    <Parameter Name="ServiceYears" Type="tinyint" Mode="In" />
+    <Parameter Name="GrossIncome" Type="money" Mode="In" />
+    <Parameter Name="SalaryDeduction" Type="money" Mode="In" />
+  </Function>
+  <Function Name="approveCarLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="updatedStatus" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="approveEduLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="updatedStatus" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="approveHomeLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="LoanID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="updatedStatus" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="cancelCarLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="cancelEduLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="cancelHomeLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="ChangeAccountType1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AccountType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ChangeBranchofAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ChangeBranchofAccount1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ChangeBranchofFixedDeposit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ChangeFDDeposit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="FdDeposit" Type="money" Mode="In" />
+  </Function>
+  <Function Name="CreditBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+  </Function>
+  <Function Name="CreditTransactionByCheque" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="typeOfTranscation" Type="varchar" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+    <Parameter Name="modeOfTransaction" Type="varchar" Mode="In" />
+    <Parameter Name="chequeNumber" Type="char" Mode="In" />
+  </Function>
+  <Function Name="CreditTransactionByDepositSlip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountNumber" Type="bigint" Mode="In" />
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="typeOfTranscation" Type="varchar" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+    <Parameter Name="modeOfTransaction" Type="varchar" Mode="In" />
+    <Parameter Name="chequeNumber" Type="char" Mode="In" />
+  </Function>
+  <Function Name="DebitBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+  </Function>
+  <Function Name="DebitBalanceC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+    <Parameter Name="chequeNumber" Type="char" Mode="In" />
+  </Function>
+  <Function Name="DebitTransactionByCheque" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="typeOfTranscation" Type="varchar" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+    <Parameter Name="modeOfTransaction" Type="varchar" Mode="In" />
+    <Parameter Name="chequeNumber" Type="char" Mode="In" />
+  </Function>
+  <Function Name="DebitTransactionByWithdrawalSlip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="type" Type="varchar" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+    <Parameter Name="mode" Type="varchar" Mode="In" />
+    <Parameter Name="chequeNumber" Type="char" Mode="In" />
+  </Function>
+  <Function Name="DeleteAccountDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="FeedBack" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteAccountDAL1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Feedback" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="DeleteFixedDepositDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Feedback" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteFixedDepositDAL1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Feedback" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="FdAdding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="HomeBranch" Type="varchar" Mode="In" />
+    <Parameter Name="Tenure" Type="int" Mode="In" />
+    <Parameter Name="FdDeposit" Type="money" Mode="In" />
+    <Parameter Name="InterestRate" Type="money" Mode="In" />
+    <Parameter Name="AccountNumber" Type="bigint" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetAccountByAccountID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetAccountByAccountID1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetAccountByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetAccountByCustomerID1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetAdminByAdminID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="adminID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetAdminByEmailandPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="adminEmail" Type="varchar" Mode="In" />
+    <Parameter Name="adminPassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAllCustomersDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF" />
+  <Function Name="GetAllEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF" />
+  <Function Name="GetAllTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF" />
+  <Function Name="getCarLoanByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="customerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getCarLoanByLoanID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getCarLoanStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetCustomerByCustomerIDDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getEduLoanByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="customerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getEduLoanByLoanID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getEduLoanStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetEmployeeByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empemail" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetEmployeeByEmailandPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empemail" Type="varchar" Mode="In" />
+    <Parameter Name="emppassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetEmployeeByEmployeeID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetEmployeeEmailandPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empemail" Type="varchar" Mode="In" />
+    <Parameter Name="emppassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetEmployeesByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empname" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetFixedDepositByAccountID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetFixedDepositByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getHomeLoanByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="customerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getHomeLoanByLoanID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="getHomeLoanStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="loanID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="GetTransactionsByAccountID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="RemoveCustomerDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="StoreTransactionRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="accountID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="type" Type="varchar" Mode="In" />
+    <Parameter Name="amount" Type="money" Mode="In" />
+    <Parameter Name="mode" Type="varchar" Mode="In" />
+    <Parameter Name="chequeNumber" Type="char" Mode="In" />
+  </Function>
+  <Function Name="UpdateAdminEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="adminID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="adminEmail" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateAdminNameAndEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="adminID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="adminName" Type="varchar" Mode="In" />
+    <Parameter Name="adminEmail" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateAdminPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="adminID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="adminPassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateAllEmployeeDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="empname" Type="varchar" Mode="In" />
+    <Parameter Name="empemail" Type="varchar" Mode="In" />
+    <Parameter Name="empmobile" Type="char" Mode="In" />
+  </Function>
+  <Function Name="UpdateCustomerByCustomerIDDAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="CustomerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerAddress" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerMobile" Type="char" Mode="In" />
+    <Parameter Name="CustomerEmail" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerPan" Type="char" Mode="In" />
+    <Parameter Name="CustomerAadhaarNumber" Type="char" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+    <Parameter Name="CustomerGender" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateEmployeeEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="empemail" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateEmployeeMobile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="empmobile" Type="char" Mode="In" />
+  </Function>
+  <Function Name="UpdateEmployeeName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="empname" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateEmployeePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TeamF">
+    <Parameter Name="empid" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="emppassword" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="TeamF_EF_EntitiesStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="CarLoan" EntityType="Self.CarLoan" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="EduLoan" EntityType="Self.EduLoan" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="FixedDeposit" EntityType="Self.FixedDeposit" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="HomeLoan" EntityType="Self.HomeLoan" Schema="TeamF" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="TeamF" store:Type="Tables" />
+    <AssociationSet Name="FK__Account__Custome__1EE485AA" Association="Self.FK__Account__Custome__1EE485AA">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Admins__Employee__1C0818FF" Association="Self.FK__Admins__Employee__1C0818FF">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Admins" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CarLoan__Custome__249D5F00" Association="Self.FK__CarLoan__Custome__249D5F00">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CarLoan" EntitySet="CarLoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EduLoan__Custome__21C0F255" Association="Self.FK__EduLoan__Custome__21C0F255">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="EduLoan" EntitySet="EduLoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FixedDepo__Custo__24885067" Association="Self.FK__FixedDepo__Custo__24885067">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="FixedDeposit" EntitySet="FixedDeposit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HomeLoan__Custom__2779CBAB" Association="Self.FK__HomeLoan__Custom__2779CBAB">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="HomeLoan" EntitySet="HomeLoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__Accou__2E26C93A" Association="Self.FK__Transacti__Accou__2E26C93A">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TeamF.WCF.TransactionService" CodeBehind="TransactionService.svc.cs" %>

@@ -1,6 +1,7 @@
 ﻿using Capgemini.Pecunia.BusinessLayer.LoanBL;
 using Capgemini.Pecunia.Entities;
 using Pecunia.PresentationMVC.Models;
+using Pecunia.PresentationMVC.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Pecunia.PresentationMVC.Controllers
     public class CarLoanViewController : Controller
     {
         // URL: CarLoanView/Viewdetails
+       
         public async Task<ActionResult> ViewDetails(Guid loanID)
         {
 
@@ -35,7 +37,10 @@ namespace Pecunia.PresentationMVC.Controllers
                 Vehicle = carLoans.ElementAt(0).VehicleType
             };
 
-            return View(carLoanViewModel);
+            //to pass value from one action to another action
+            TempData["loanID"] = Convert.ToString(carLoans.ElementAt(0).LoanID);
+
+            return View("ConfirmApplication", carLoanViewModel);
         }
 
         [HttpPost]
@@ -46,17 +51,55 @@ namespace Pecunia.PresentationMVC.Controllers
             {
                 case "apply":
                     return RedirectToAction("DisplayMessage", "ShowMessage", new {Message="Loan Applied Successfully"});
+
                 case "cancel":
                     CarLoanBL carLoan = new CarLoanBL();
-                    
-                    isDeleted = await carLoan.DeleteLoanEntryBL(Convert.ToString(carLoanModel.LoanID));
-                    if(isDeleted == true)
-                        return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Hey! Loan Application Cancelled" });
+                    isDeleted = await carLoan.DeleteLoanEntryBL(Convert.ToString(TempData["loanID"]));
+                    System.Diagnostics.Debug.WriteLine(isDeleted);
+                    if (isDeleted == true)
+                        return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Loan ID:" + TempData["loanID"] + "\nHey! Loan Application Cancelled" });
                     else
-                        return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Sorry! Request can't be processed now, come back later " });
+                        return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Loan ID:" + TempData["loanID"] + "\nSorry! Request can't be processed now, come back later " });
+
                 default:
                     return RedirectToAction("DisplayMessage", "ShowMessage", new { Message = "Loan Applied Successfully" });
             }
         }
+
+
+        public async Task<ActionResult> ViewCarLoanDetails()
+        {
+            List<CarLoanViewModel> carLoanViewModels = new List<CarLoanViewModel>();
+
+            using (TransactionServiceClient carLoanServiceClient = new TransactionServiceClient())
+            {
+                CarLoanBL carLoanBL = new CarLoanBL();
+
+                List<CarLoan> carLoans = new List<CarLoan>();
+                carLoans = await carLoanBL.ListAllLoansBL();
+
+                foreach (CarLoan car in carLoans)
+                {
+                    CarLoanViewModel carLoanViewModel = new CarLoanViewModel()
+                    {
+                        LoanID = car.LoanID,
+                        AmountApplied = car.AmountApplied,
+                        InterestRate = car.InterestRate,
+                        EMI_Amount = car.EMI_amount,
+                        RepaymentPeriod = car.RepaymentPeriod,
+                        DateOfApplication = car.DateOfApplication,
+                        Status = car.LoanStatus,
+                        Occupation = car.Occupation,
+                        GrossIncome = car.GrossIncome,
+                        SalaryDeductions = car.SalaryDeduction,
+                        Vehicle = car.VehicleType
+                    };
+                    carLoanViewModels.Add(carLoanViewModel);
+                }
+            }
+
+            return View("ShowCarLoanDetails", carLoanViewModels);
+        }
+
     }
 }

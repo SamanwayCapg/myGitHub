@@ -201,3 +201,90 @@ E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Deb
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll.config
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
 E:\GitHubRepositories\myGitHub\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll.config
+C:\Users\samasaho\GitHub\myGitHub-master\myGitHub-master\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll.config
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Pecunia MVC with EF\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.BusinessLayer.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Helpers.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Contracts.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.DataAccessLayer.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Entities.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.pdb
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\Pecunia.Exceptions.dll.config
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.csproj.CopyComplete
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.dll
+C:\Users\samasaho\Downloads\Pecunia MVC with EF integrated after BU visit\Pecunia MVC with EF\Pecunia.BusinessLayer\obj\Debug\Pecunia.BusinessLayer.pdb

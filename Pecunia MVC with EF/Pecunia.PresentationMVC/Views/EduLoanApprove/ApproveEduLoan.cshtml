@@ -1,0 +1,78 @@
+﻿@model List<Pecunia.PresentationMVC.Models.EduLoanViewModel>
+@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "apply";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@Scripts.Render("~/scripts/jqueryBundle")
+@Scripts.Render("~/scripts/validatorBundle")
+@Scripts.Render("~/scripts/bootstrapBundle")
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<style type="text/css">
+    .textBox {
+        width: 150%;
+    }
+</style>
+<title>Approve Car Loan</title>
+
+<h3 class="text-success mx-auto">Approve Educational Loans</h3>
+<table border="1" class="table table-striped table-sm table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <td>Loan ID</td>
+            <td>Amount (Rs.)</td>
+            <td>Interest Rate</td>
+            <td>EMI Amount(Rs.)</td>
+            <td>Repayment Period</td>
+            <td style="font-size:small">Application Date</td>
+            <td style="font-size:small">Institute Name</td>
+            <td style="font-size:small">Student ID</td>
+            <td style="font-size:small">Course</td>
+            <td style="font-size:small">Status</td>
+            <td>Update</td>
+        </tr>
+    </thead>
+    <tbody>
+        @using (Html.BeginForm("UpdateStatus", "EduLoanApprove", FormMethod.Post))
+        {
+
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td style="font-size:small">@Html.TextBoxFor(t => Model[i].LoanID, new { @class = "text-wrap ", disabled = "true" })</td>
+                    <td style="font-size:small">@Model[i].AmountApplied</td>
+                    <td>@Model[i].InterestRate</td>
+                    <td>@Model[i].EMI_Amount</td>
+                    <td>@Model[i].RepaymentPeriod</td>
+                    <td style="font-size:small">@Model[i].DateOfApplication</td>
+                    <td style="font-size:small">@Model[i].InstituteName</td>
+                    <td style="font-size:small">@Model[i].StudentID</td>
+                    <td style="font-size:small">@Model[i].Course</td>
+                    <td style="font-size:small">@Model[i].LoanStatus</td>
+                    <td class="form-control">
+                        @Html.DropDownListFor(t =>  Model[i].LoanStatus,
+                        new List<SelectListItem>
+                            ()
+                            {
+                            new SelectListItem() { Text="Please Select", Value="NotUpdated"},
+                            new SelectListItem() { Text="APPLIED", Value="APPLIED"},
+                            new SelectListItem() { Text="PROCESSING", Value="PROCESSING"},
+                            new SelectListItem() { Text="APPROVED", Value="APPROVED"},
+                            new SelectListItem() { Text="REJECTED", Value="REJECTED"},
+                            new SelectListItem() { Text="INVALID", Value="INVALID"},
+                            }
+
+                        )
+
+                    </td>
+
+
+                </tr>
+            }
+            <tr><td><button>Update All Changes</button></td></tr>
+        }
+
+    </tbody>
+</table>

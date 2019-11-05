@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Capgemini.Pecunia.Contracts;
 using Capgemini.Pecunia.Entities;
+
 namespace Capgemini.Pecunia.Contracts.DALContracts
 {
     public abstract class FixedDepositBase

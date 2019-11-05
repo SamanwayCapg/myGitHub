@@ -12,13 +12,13 @@ namespace Capgemini.Pecunia.Contracts.BLContracts
     {
 
         Task<bool> AddAccountBL(Account account, Guid customerID, string accountType);
-         Task<bool> DeleteAccount(Guid accountID, string feedback);
+        Task<bool> DeleteAccount(Guid accountID, string feedback);
         List<Account> GetAccountByCustomerIDBL(Guid customerID);
-         Task<Account> GetAccountByAccountIDBL(Guid accountID);
+        Task<Account> GetAccountByAccountIDBL(Guid accountID);
         Task<bool> ChangeAccountTypeBL(Guid accountID, string accountType);
         Task<bool> ChangeBranchBL(Guid accountID, string homeBranch);
         List<Account> GetAllAccountsBL();
-         
+
     }
 
 }

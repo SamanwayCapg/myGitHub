@@ -1,0 +1,56 @@
+﻿@model List<Pecunia.PresentationMVC.Models.CarLoanViewModel>
+@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "apply";
+    Layout = "~/Views/Shared/LoanNavBar.cshtml";
+}
+
+@Scripts.Render("~/scripts/jqueryBundle")
+@Scripts.Render("~/scripts/validatorBundle")
+@Scripts.Render("~/scripts/bootstrapBundle")
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<title>Car Loans</title>
+
+<h3 class="text-success mx-auto">Car Loans</h3>
+<table border="1" class="table table-striped table-sm table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <td>Loan ID</td>
+            <td>Amount(Rs.)</td>
+            <td>Status</td>
+            <td>Interest Rate</td>
+            <td>EMI Amount(Rs.)</td>
+            <td>Repayment Period</td>
+            <td>Application Date</td>
+            <td>Occupation</td>
+            <td>Income(Rs.)</td>
+            <td>Deductions(Rs.)</td>
+            <td>Vehicle</td>
+        </tr>
+    </thead>
+    <tbody>
+        @using (Html.BeginForm())
+        {
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td style="font-size:small">@Model[i].LoanID</td>
+                    <td style="font-size:small">@Model[i].AmountApplied</td>
+                    <td>@Model[i].Status</td>
+                    <td>@Model[i].InterestRate</td>
+                    <td>@Model[i].EMI_Amount</td>
+                    <td>@Model[i].RepaymentPeriod</td>
+                    <td>@Model[i].DateOfApplication</td>
+                    <td>@Model[i].Occupation</td>
+                    <td>@Model[i].GrossIncome</td>
+                    <td>@Model[i].SalaryDeductions</td>
+                    <td>@Model[i].Vehicle</td>
+
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>

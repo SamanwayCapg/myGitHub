@@ -54,6 +54,13 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
 
         public override List<EduLoan> ApproveLoanDAL(string loanID, string updatedStatus)
         {
+            // status  - priority
+            // applied - 1 lowest
+            // processing - 2
+            // approved - 3
+            // rejected - 3
+            // invalid - 3 highest
+            // possible updation from low to high
             try
             {
                 List<EduLoan> eduLoan = new List<EduLoan>();
@@ -65,7 +72,18 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                     var loanEntry = pecEnt.EduLoans.SingleOrDefault(t => t.LoanID == guid);
                     if (loanEntry != null)
                     {
-                        loanEntry.LoanStatus = updatedStatus;
+                        if (loanEntry.LoanStatus.Equals("APPLIED") == true)
+                        {
+                            loanEntry.LoanStatus = updatedStatus;
+                        }
+                        else if (loanEntry.LoanStatus.Equals("PROCESSING") == true && updatedStatus.Equals("APPLIED") == false)
+                        {
+                            loanEntry.LoanStatus = updatedStatus;
+                        }
+                        else
+                        {
+                            //updation not possible
+                        }
                         pecEnt.SaveChanges();
                     }
                     else
@@ -82,6 +100,7 @@ namespace Capgemini.Pecunia.DataAccessLayer.LoanDAL
                 BusinessLogicUtil.logException(e.Message, e.StackTrace, "EduLoanDAL.ApproveLoanDAL");
                 return default(List<EduLoan>);
             }
+
         }
 
         public override List<EduLoan> GetLoanByCustomerIDDAL(string customerID)
