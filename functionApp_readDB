@@ -1,0 +1,42 @@
+#r "Newtonsoft.Json"
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
+using System.Data.SqlClient;
+using System.Data;
+
+public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
+{
+    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+    dynamic data = JsonConvert.DeserializeObject(requestBody);
+
+    string connectionString = "Server=tcp:13thaugust.database.windows.net,1433;Initial Catalog=13thaugust;Persist Security Info=False;User ID=sqluser;Password=Smith123#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+    try
+    {
+        SqlConnection conn = new SqlConnection(connectionString);
+
+        string command = "select * from TeamB.Samanway";
+        
+        SqlCommand comm = new SqlCommand(command, conn);
+        comm.CommandType = CommandType.Text;
+        conn.Open();
+        comm.ExecuteNonQuery();
+        
+        SqlDataReader reader = comm.ExecuteReader();
+        string records="";
+       
+        while(reader.Read())
+        {
+            records+= $"<{reader.GetString(0)},{reader.GetString(1)}>\n";
+        }
+
+        conn.Close();
+        return (ActionResult)new OkObjectResult($"TABLE CONTENTS\n{records}");
+    }
+    catch(Exception ex)
+    {
+        return (ActionResult)new OkObjectResult(ex.Message);
+    }
+}
